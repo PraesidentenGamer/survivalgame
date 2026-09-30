@@ -8,19 +8,6 @@ Wichtig: Eine Idee auf dieser Liste bedeutet **nicht**, dass sie sofort umgesetz
 
 ### Ressourcen und Überleben
 - Moos als vielseitige Ressource
-  - Natur-Wasserfilter
-  - Gebäudetarnung
-  - Dämmmaterial
-  - Zunder
-  - Notnahrung
-  - einfache medizinische Nutzung
-  - Kompost / Pflanzenbau
-  - Fallentarnung
-  - Wasseraufnahme
-  - Schlaf- und Füllmaterial
-  - Geräuschdämmung
-  - Pilzzucht
-  - mögliche Torf-Verarbeitung
 - Sand und Kies als alternative Filtermaterialien
 - Sand + Kies zusammen erhöhen das Filtertempo
 - Natur-Wasserfilter reicht vorläufig für 6 Flaschen Wasser
@@ -33,76 +20,32 @@ Grundregel:
 - zusätzliche Varianten nur dann, wenn sie spielmechanisch wirklich einen eigenen Zweck haben
 - keine zusätzlichen Varianten nur wegen Optik, Herkunft oder Gebiet
 
-Beispiele für sinnvolle Varianten:
+Beispiele:
 - Glas -> kugelsicheres Glas
 - Reifen -> kugelsichere Reifen
 
-Beispiele für bewusst einfache Grundformen:
-- Holz bleibt Holz
-- Stein bleibt Stein
-- Sand bleibt Sand
-- Schrott bleibt Schrott, solange verschiedene Schrottarten keinen eigenen spielmechanischen Zweck haben
-
-### Kältegebiete
-Typische natürliche Ressourcen:
-- Schnee
-- Eis
-- Harz
-- Beeren
-- Tannenzapfen
-- Tannennadeln
-- Winterkraut
-
-Grundressourcen wie Holz und Stein bleiben normale Items. Für kalte Gebiete reichen später passende Modelle, Materialien und Texturen; eigene Varianten wie Frostholz oder Froststein sind nicht nötig.
-
-### Beeren und Wintertee
-- Beeren können direkt gegessen werden
-- Beeren können später zu Lebensmitteln weiterverarbeitet werden
-- Beeren können für Tee verwendet werden
-- Wintertee kann aus passenden Zutaten wie Beeren, Tannennadeln und Wasser entstehen
-- Wintertee soll zeitlich begrenzten Kälteschutz geben
-- Getränke ersetzen passende Winterkleidung nicht vollständig, sondern dienen als Zusatz- oder Notlösung
-
 ### Crafting und Produktionsketten
-- Zwei Rezept-Anzeigemodi:
-  - Direkt: Materialien, Mengen und Station werden vollständig angezeigt
-  - Indirekt: Spieler muss benötigte Materialien selbst herausfinden
-- Freigeschaltete Rezepte sollen in einem Rezept- oder Wissensbuch nachsehbar sein
-- Story-Schlüsselrezepte sollen auch im indirekten Modus genügend Hinweise erhalten
-- ein fertiges Produkt soll maximal **5 Abhängigkeiten / Verarbeitungsschritte** haben
-- normale Produkte sollen meist deutlich unter dieser Grenze bleiben
+- zwei Rezept-Anzeigemodi: direkt und indirekt
+- maximal **5 Abhängigkeiten / Verarbeitungsschritte** pro fertigem Produkt
 - unnötige Zwischenprodukte vermeiden
-- Beispiel für kurze Kette: Sand -> Glas -> Fenster
-- Beispiel für komplexere Kette: Schrott -> Metallreste -> Barren -> Metallplatte -> Fahrzeugteil
+- normale Produkte sollen meist deutlich kürzere Ketten haben
 
 ### Recycler und Schmelzer
-- Recycler als wichtige Werkbank / Produktionsstation
-- Schrott wird dort zerlegt
-- Ergebnisse können über Wahrscheinlichkeiten und Mengenbereiche bestimmt werden
-- mehrere Ergebnisse können gleichzeitig entstehen
-- mögliche Kernmaterialien:
-  - Eisenreste
-  - Kupferreste
-  - Aluminiumreste
-  - Elektronikteile
-- Metallreste werden bei Bedarf im Schmelzer zu verwendbaren Metallen oder Barren verarbeitet
-- Recycler und Schmelzer bleiben getrennte Systeme
-- spätere Recycler-Upgrades können Ausbeute oder seltene Rückgewinnungen beeinflussen
+- Schrott wird im Recycler zerlegt
+- Ergebnisse über Wahrscheinlichkeiten und Mengenbereiche
+- mögliche Kernmaterialien: Eisenreste, Kupferreste, Aluminiumreste, Elektronikteile
+- Metallreste können anschließend im Schmelzer weiterverarbeitet werden
 
 ### Datenbank-Architektur
-Langfristiges Leitprinzip:
-
 **C# enthält die Mechanik. Datenbanken enthalten Spielinhalte, Werte und Abläufe.**
 
-Daten, die möglichst in .db-Dateien ausgelagert werden sollen:
+Geplante Datenbereiche:
 - Items
 - Ressourcen
 - Rezepte
-- Zutaten
 - Werkbänke
 - Produktionszeiten
 - Recycler-Ausbeuten
-- Wahrscheinlichkeiten
 - Lootpools
 - Gebietsressourcen
 - Gegnerwerte
@@ -115,106 +58,126 @@ Daten, die möglichst in .db-Dateien ausgelagert werden sollen:
 - Balancewerte
 - Events
 
-Geplante Ordneridee:
+Größere Events sollen möglichst eigene .db-Dateien erhalten, z. B.:
+`Datenbanken/Events/Gleich_eins_aufs_Maul_Event.db`
 
-```text
-Datenbanken
-├── Items
-├── Crafting
-├── Ressourcen
-├── Loot
-├── Gebiete
-├── Events
-├── Quests
-├── Gegner
-├── Haendler
-├── Fahrzeuge
-├── Dialoge
-└── Balance
-```
-
-Für größere Events:
-- möglichst eigene Datenbank pro Event
-- Beispiel: `Datenbanken/Events/Gleich_eins_aufs_Maul_Event.db`
-- weitere Events erhalten jeweils eigene .db-Dateien
-- Eventdaten können Bedingungen, Phasen, Ziele, Gegner, Loot, Timer, Dialoge und Belohnungen enthalten
-- C# stellt nur die allgemeine Event-Engine bereit
-- Updates sollen einzelne Datenbanken gezielt ersetzen können
-- Spielstände werden strikt von Spieldatenbanken getrennt
-- feste IDs statt sichtbarer Namen als technische Referenzen verwenden
-- Datenbanken sollen später Versionsinformationen erhalten, z. B. SchemaVersion, ContentVersion und MinimumGameVersion
+Updates sollen einzelne Datenbanken gezielt ersetzen können. Spielstände bleiben strikt getrennt.
 
 ### Gegner-Idee: Maunzi
 - Typ: Gegner
 - Name: Maunzi
-- charakteristischer Spruch / Spezialangriff: **„Ich bin Maunzi“**
-- Vorkommen: noch offen; normale Gebiete und/oder Events möglich
+- Spezialangriff / Spruch: **„Ich bin Maunzi“**
+- Vorkommen: noch offen; Gebiete und/oder Event
 - Spruchschaden: zufällig **0 bis 35** Lebenspunkte
-- Schwäche: Angriff mit dem besonderen Gegenstand / der besonderen Waffe **Busfahrer „Kalle“**
+- Schwäche: besonderer Gegenstand / besondere Waffe **Busfahrer „Kalle“**
 - Schaden durch Kalle: zufällig **0 bis 50** Lebenspunkte pro Treffer
-- Busfahrer „Kalle“ soll über Loot, Events oder andere Fundmöglichkeiten erhältlich sein
-- Lebenspunkte, Reichweite, Abklingzeit, Spawnrate und eigener Loot werden später festgelegt
-- Schaden und Effektwerte werden grundsätzlich nur als ganze Zahlen gespeichert und berechnet
+- Kalle kann über Loot, Events oder andere Fundmöglichkeiten erhalten werden
+- Schaden und Effektwerte grundsätzlich nur als ganze Zahlen
+
+### Skill-Idee: Gutes Auge
+Mehrstufige Fähigkeit zum leichteren Auffinden von Ressourcen.
+
+Grundidee:
+- Stufe 1: Ressourcen in kleinem Umkreis werden sichtbar / hervorgehoben
+- Stufe 2: größerer Erkennungsradius
+- Stufe 3: nochmals größerer Erkennungsradius
+- genaue Radien werden später balanciert
+- optional können höhere Stufen seltene oder versteckte Ressourcen besser erkennen
+- Ressourcen sollen nicht automatisch durch jede Wand permanent sichtbar werden
+- Umsetzung später über das Skill-System und idealerweise datengetrieben
 
 ### Story, Sprecher und Hinweise
 - Story soll nicht ausschließlich über lange Lesetexte vermittelt werden
 - Erzähler / Sprecher für wichtige Storyabschnitte
 - Untertitel parallel zur Sprachausgabe
-- Sprache und Untertitel getrennt ein-/ausschaltbar
-- eigener Lautstärkeregler für Sprache
-- Story-Sprachausgabe soll überspringbar sein
-- mögliche Kategorien:
-  - Erzähler
-  - NPC-Stimmen
-  - Funkdurchsagen
-  - Tonaufzeichnungen
-  - Hinweise
-- adaptive Hinweise, wenn ein Spieler bei einer Suche längere Zeit nicht weiterkommt
-- Hinweise können gestuft werden: leicht -> konkreter -> deutlich
-- alternativ Hinweis auf Anfrage über Questbuch / Hinweisfunktion
-- Sprecherstimmen werden erst sehr spät endgültig erzeugt oder aufgenommen
+- adaptive gesprochene Hinweise, wenn ein Spieler bei Suchaufgaben lange nicht weiterkommt
+- alternative Hinweisfunktion auf Anfrage
+- Sprecherstimmen erst sehr spät endgültig erzeugen oder aufnehmen
+
+### Lesbare Dokumente und Umwelt-Storytelling
+- gefundene Dokumente sollen teilweise vollständig lesbar sein
+- mögliche Typen:
+  - interne Berichte
+  - E-Mails
+  - Versuchsprotokolle
+  - Einsatzbefehle
+  - Wartungsberichte
+  - handschriftliche Notizen
+  - Lieferscheine
+  - Sicherheitsmeldungen
+  - Evakuierungsbefehle
+  - geschwärzte oder beschädigte Dokumente
+- Dokumente können Zugangscodes, Koordinaten, Hinweise und zusätzliche Story enthalten
+- storykritische Informationen sollen nicht ausschließlich vom Lesen optionaler Dokumente abhängen
+- Dokumente sollen später ebenfalls datengetrieben verwaltet werden können
+
+### Alte Demo- und Testobjekte als Storyelement
+- frühe Platzhalterobjekte müssen nicht vollständig entfernt werden
+- ausgewählte Demo-Objekte können bewusst im fertigen Spiel erhalten bleiben
+- mögliche Story-Erklärung:
+  - alte Testsektoren
+  - Trainings- oder Versuchsanlagen
+  - frühe Prototypen
+  - beschädigte Gebäude
+  - vernichtete oder teilweise vernichtete Beweise
+- Vertuschungs-Idee:
+  - Einrichtungen wurden absichtlich beschädigt oder geräumt
+  - verbrannte Akten
+  - zerstörte Terminals
+  - zugemauerte / gesprengte Zugänge
+  - zurückgelassene Versuchstechnik
+- Spieler kann nach und nach erkennen, dass bestimmte Schäden nicht nur vom Ausbruch stammen
+- Verbindung zu Forschungsanlage, Bunkern und der größeren Ursprungsgeschichte möglich
+
+### Genre-Mischung
+Das Spiel soll bewusst mehrere Bereiche verbinden:
+- Survival
+- Erkunden
+- Bauen
+- Crafting
+- Looting
+- Story
+- Progression
+- Events
+- Horror / Bedrohungsatmosphäre
+
+Horror soll eher über Atmosphäre, Unsicherheit, verlassene Anlagen, Dokumente, Spuren und unbekannte Hintergründe entstehen und nicht ausschließlich über Jumpscares.
+
+### Gebäude
+- aktuelle Demo-Gebäude dienen nur technischen Tests
+- echte Gebäude sollen deutlich größer werden
+- Eltern-/Kindobjekte werden genutzt, um Gebäude sauber zu strukturieren
+- normale Türen sollen grundsätzlich in beide Richtungen geöffnet werden können
+- besondere Türtypen wie Schiebe-, Garagen-, Bunker- oder Sicherheitstüren erhalten eigene Mechaniken
+- `Prefab_Gebaeude_Test_01` soll als technisches Relikt aufgehoben werden und kann später Storyzweck bekommen
+
+### Firmen, Marken und Namen
+- allgemeine Begriffe können normal verwendet werden
+- für klar geschützte oder eindeutig zuordenbare reale Firmen-/Markennamen sollen eigene fiktive Namen entwickelt werden
+- eigene Firmen erhalten nach Möglichkeit eigene Logos, Farben, Produkte und Hintergrundgeschichten
+- konkrete fiktive Namen werden vor finaler Verwendung noch geprüft
 
 ### Musik
-- Musiksystem erst gegen Ende
 - instrumentale Stücke
-- situationsabhängige Musik, z. B. Erkundung, Kampf, Gefahr, Boss, Horde, Story
-- weiche Übergänge / Crossfades
-- Kampfmusik soll nicht sofort beim kleinsten Kontakt hektisch wechseln
-- finale Musikproduktion erst nach stabiler Spielmechanik und Storystruktur
+- situationsabhängig, z. B. Erkundung, Kampf, Gefahr, Boss, Horde, Story
+- weiche Übergänge
+- finale Musikproduktion erst spät
 
 ### Basis, Siedlung und Ressourcen-Reset
-- Moos-Tarnung für Wände und andere Bauteile
-- getarnte Gebäude sollen von Gegnern erst aus geringerer Entfernung erkannt werden
-- Tarnung darf Hordenangriffe nicht vollständig verhindern
-- Moos kann eventuell Fallen und kleine Lager tarnen
-- Siedlung soll als eigener aufbaubarer Bereich funktionieren
-- Test_Basis besitzt bereits als Prototyp natürliche Ressourcen über den AreaSpawnManager
-- spätere Basis-Regel:
-  - abgebaute natürliche Ressourcen bleiben zunächst weg
-  - nach einer festgelegten Zeit kann ein Basis-Ressourcenreset stattfinden
-  - nur natürliche Ressourcen werden neu erzeugt
-  - Gebäude, Wände, Werkbänke, Lager, Fahrzeuge und andere Spielerobjekte bleiben unverändert
-  - Ressourcen dürfen nur auf freien Flächen neu spawnen
-- ob der Reset-Timer auf Echtzeit oder aktiver Spielzeit basiert, wird später entschieden
-- Basisressourcen sollen normale Ressourcengebiete nicht überflüssig machen
-
-### Fortschritt und Story
-- Zweite Basis über Story freischalten
-- Siedlung als eigener großer Mechanikbereich
-- Hunde als erste Tierbegleiter
-- Fahrzeuge und weitere große Systeme erst in späteren Entwicklungsphasen
+- Siedlung ist eine Ausnahme und erhält keine normalen zufälligen Grundressourcen
+- Test_Basis und Zweite_Basis besitzen natürliche Grundressourcen
+- späterer Ressourcenreset nur auf freien Flächen
+- gebaute Objekte bleiben unverändert
+- genaue Reset-Zeit später festlegen
 
 ### Entwicklungs- und Build-Bezeichnung
 - aktueller Zustand entspricht eher Prototyp / Pre-Demo als Beta
 - mögliche spätere Build-Bezeichnung: `SurvivalGame_Pre-Demo_v0.0.001_Build00025.exe`
-- Alpha erst, wenn die Kernmechaniken weitgehend vollständig und grundsätzlich durchspielbar sind
-- Beta erst deutlich später mit weitgehend vollständigen Systemen und Fokus auf Fehlerbehebung, Balancing und Feinschliff
 
 ### Späte Entwicklungsphase
-- finale Modelle, Texturen, Effekte und UI erst nach funktionaler Fertigstellung der Systeme
+- finale Modelle, Texturen, Effekte und UI erst nach funktionaler Fertigstellung
 - Musik und Sprecherstimmen ebenfalls spät
 - Hardware-Kompatibilitätsprüfer erst gegen Ende
-- geplanter Hardware-Prüfer soll spätere, separat definierte Hardware-Einschränkungen kontrollieren, ohne die aktuelle Kernentwicklung zu blockieren
 
 ## Ideen-Parkplatz
 
