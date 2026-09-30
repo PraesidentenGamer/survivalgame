@@ -49,6 +49,49 @@ Damit sind aktuell **30 von 30** festen Gebieten bei der Ressourcen-Grundkonfigu
 - danach weitere repräsentative Tests
 - später automatischer Gebiets-/Spawn-Validator
 
+## Aktueller Teststand
+
+Bereits technisch geprüft:
+- Spielerbewegung
+- einfache Interaktion mit E
+- Ressourcen sammeln und abbauen
+- Inventar-Grundfunktion mit Stacks
+- Gesundheit und einfacher Faustkampf
+- Weltkarten-Ausgänge und Szenenwechsel
+- zufälliges Ressourcen-Spawning mit Mindestabstand
+- kleine und große Gebäudehüllen
+- Eltern-/Kind-Struktur für Gebäude
+- normale Tür mit Scharnier, Öffnen/Schließen mit E und Öffnung in beide Richtungen
+- Lootkiste mit mehreren möglichen Loot-Einträgen
+- zufällige Lootmengen
+- prozentuale Lootchancen
+- mehrere Loot-Treffer in einer Kiste
+- Kiste kann nur einmal geleert werden
+- Testgröße der Lootkiste als sinnvolles Hindernis: Scale 1.2 / 1.5 / 0.8
+
+Noch technisch zu prüfen bzw. als nächster Funktionsblock:
+- Kisten mit eigenem Mini-Inventar statt automatischer Übergabe
+- echtes Container-/Stack-Verschieben zwischen Kiste und Spieler
+- Gegner-Spawning pro Gebiet
+- mehrere Gegnertypen und besondere Angriffe
+- echtes Crafting mit Werkbank
+- Produktionszeiten
+- Recycler
+- Schmelzer
+- Hunger, Wasser und weitere Überlebenswerte
+- Strahlung, Infektion und Temperatur
+- Bausystem und Abriss
+- Basis-Ressourcenreset auf freien Flächen
+- Events und Eventphasen
+- Quest-/Storyfortschritt
+- Skill-/Fortschrittssystem
+- Fahrzeuge
+- Begleiter
+- Siedlungsmechaniken
+- lesbare Dokumente / Fundstücke
+- Speichern/Laden aller späteren persistenten Systeme
+- später: datengetriebener Zugriff auf .db-Dateien
+
 ## Bereits vorhandene Grundsysteme
 
 - Spielerbewegung
@@ -173,7 +216,7 @@ Das aktuelle Gebäude ist bewusst nur ein kleines technisches Testmodell. Echte 
 
 ## Noch nicht vollständig umgesetzt
 
-- Lootkisten mit echten Lootpools
+- Lootkisten mit Datenbank-Lootpools und eigenem Mini-Inventar
 - Gegner-Spawning pro Gebiet
 - größere Gebäude, Ruinen und feste Kartenstrukturen
 - endgültige Grafik und Assets
@@ -241,4 +284,6 @@ Beispiele:
 
 ## Aktueller Fokus
 
-**Nach Abschluss der Ressourcen-Grundkonfiguration aller 30 Gebiete werden jetzt Gebäude und feste Kartenobjekte funktional aufgebaut. Hochwertige Grafik, finale Assets, Musik, Sprecherstimmen und der Hardware-Kompatibilitätsprüfer kommen später.**
+**Die Ressourcen-Grundkonfiguration und die grundlegenden Gebäudetests sind erledigt. Als nächstes werden die noch fehlenden Kernmechaniken technisch einzeln geprüft. Der Lootkisten-Grundtest ist bestanden; als nächstes soll die Kiste ein eigenes Mini-Inventar erhalten.**
+
+Große Inhaltsmengen wie Lootpools, Items, Events und Rezepte sollen später nicht im C#-Code gepflegt werden, sondern aus modularen .db-Dateien kommen. C# bleibt dabei die Logik- und Vermittlungsschicht.
