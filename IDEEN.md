@@ -36,6 +36,19 @@ Beispiele:
 - mögliche Kernmaterialien: Eisenreste, Kupferreste, Aluminiumreste, Elektronikteile
 - Metallreste können anschließend im Schmelzer weiterverarbeitet werden
 
+### Lootkisten und Lootpools
+- eine Testkiste mit mehreren Loot-Einträgen wurde technisch geprüft
+- Min-/Max-Mengen und Prozentchancen funktionieren als Prototyp
+- mehrere Einträge können gleichzeitig gezogen werden
+- die Kiste soll später ein eigenes Mini-Inventar besitzen
+- Loot soll nicht sofort automatisch ins Spielerinventar wandern
+- große Lootpools werden später nicht als lange C#-/Inspector-Listen gepflegt
+- die Kiste soll langfristig nur eine Pool-ID kennen
+- C# liest diese Pool-ID, lädt den passenden Pool aus der Datenbank, würfelt die Ergebnisse und befüllt das Kisteninventar
+- Beispiel: `PoolID = LOOT_CITY_COMMON`
+- konkrete Itemmengen, Chancen und Pool-Zuordnungen liegen später in .db-Dateien
+- die Testgröße `1.2 / 1.5 / 0.8` hat sich für die aktuelle Lootkiste als gutes physisches Hindernis erwiesen
+
 ### Datenbank-Architektur
 **C# enthält die Mechanik. Datenbanken enthalten Spielinhalte, Werte und Abläufe.**
 
@@ -62,6 +75,11 @@ Größere Events sollen möglichst eigene .db-Dateien erhalten, z. B.:
 `Datenbanken/Events/Gleich_eins_aufs_Maul_Event.db`
 
 Updates sollen einzelne Datenbanken gezielt ersetzen können. Spielstände bleiben strikt getrennt.
+
+Für große Inhaltsmengen gilt ausdrücklich:
+- C# dient nur als Logik- und Vermittlungsschicht
+- Datenbanken enthalten die eigentlichen Masseninhalte
+- dadurch werden nicht hunderte oder tausende einzelne C#-Skripte für Items, Lootpools, Events oder Rezepte benötigt
 
 ### Gegner-Idee: Maunzi
 - Typ: Gegner
