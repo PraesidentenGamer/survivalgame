@@ -30,14 +30,23 @@ Geplante feste Gebiete: **30**
 - Verlassene_Stadt
 - Stadtruinen
 - Verlassene_Einrichtung
-
-Damit sind aktuell **19 von 30** festen Gebieten bei der Ressourcen-Grundkonfiguration eingerichtet.
-
-### Als Nächstes
 - Forschungsanlage
-- weitere Spezial-, Story- und Industriegebiete
-- Insel und übrige noch offene Gebiete
-- anschließend repräsentative Tests und später ein automatischer Gebiets-/Spawn-Validator
+- Militaerstuetzpunkt
+- Insel
+- Siedlung
+- Zweite_Basis
+- Test_Basis
+
+Damit sind aktuell **25 von 30** festen Gebieten bei der Ressourcen-Grundkonfiguration beziehungsweise beim vorgesehenen Spawn-Grundzustand eingerichtet.
+
+### Noch offen
+- Bunker_A
+- Bunker_B
+- Bunker_C
+- Bunker_D
+- Tschernobyl
+
+Anschließend folgen repräsentative Tests und später ein automatischer Gebiets-/Spawn-Validator.
 
 ## Bereits vorhandene Grundsysteme
 
@@ -108,17 +117,33 @@ Damit sind aktuell **19 von 30** festen Gebieten bei der Ressourcen-Grundkonfigu
 ### Küstengebiete
 - Kuestengebiet: Sand als Hauptressource, kein Salz
 - Hafen: weniger Vegetation, mehr loses Material und Stein; Salz kommt nur im roten Gebiet Hafen vor
+- Insel: Mischung aus Wald- und Küstenressourcen mit Sand 15-25
 
-### Stadt- und Ruinengebiete
+### Stadt-, Technik- und Militärgebiete
 - Verlassene_Stadt: Schrott 10-20
 - Stadtruinen: Schrott 20-30
 - Verlassene_Einrichtung: Schrott 15-25, natürliche Ressourcen knapp
+- Forschungsanlage: Schrott 20-30, nur wenige natürliche Ressourcen
+- Militaerstuetzpunkt: Schrott 25-35, natürliche Ressourcen deutlich untergeordnet
+
+### Basis und Siedlung
+- Siedlung: derzeit keine zufälligen Bodenressourcen; später eigener aufbaubarer Siedlungsbereich
+- Zweite_Basis: derzeit keine zufälligen Ressourcen; endgültige Basis-Regeln folgen später
+- Test_Basis: aktueller AreaSpawnManager als Prototyp mit:
+  - Baum 15-25
+  - Stein 10-20
+  - loses Holz 8-15
+  - loser Stein 8-15
+  - Hanf 5-10
+  - Mindestabstand 2,5
+  - maximal 50 Spawnversuche
+- später soll die Basis natürliche Ressourcen zeitgesteuert zurücksetzen können, ohne gebaute Objekte zu überschreiben
 
 ## Noch nicht vollständig umgesetzt
 
 - Lootkisten mit echten Lootpools
 - Gegner-Spawning pro Gebiet
-- Gebäude und Ruinen
+- Gebäude, Ruinen und feste Kartenstrukturen
 - endgültige Grafik und Assets
 - finales Inventar-UI
 - Storysystem
@@ -134,6 +159,7 @@ Damit sind aktuell **19 von 30** festen Gebieten bei der Ressourcen-Grundkonfigu
 - Nahrungs- und Getränkesystem
 - Skill- und Fortschrittssysteme
 - datengetriebene Spielinhalte über .db-Dateien
+- zeitgesteuerter Basis-Ressourcenreset
 - späterer Hardware-Kompatibilitätsprüfer
 
 ## Wichtige Designentscheidungen
@@ -155,6 +181,7 @@ Damit sind aktuell **19 von 30** festen Gebieten bei der Ressourcen-Grundkonfigu
 - Holz und Stein bleiben auch in Kältegebieten normale Ressourcen; Unterschiede entstehen später hauptsächlich durch Modelle und Texturen
 - Materialvarianten werden nur eingeführt, wenn sie spielmechanisch einen echten eigenen Zweck haben, z. B. Glas und kugelsicheres Glas oder Reifen und kugelsichere Reifen
 - pro fertigem Produkt sind maximal **5 Abhängigkeiten / Verarbeitungsschritte** vorgesehen
+- Schaden und Effektstärken werden grundsätzlich als **ganze Zahlen** behandelt
 - Schrott wird später im Recycler in Kernmaterialien zerlegt; Metallreste können anschließend im Schmelzer weiterverarbeitet werden
 - C# soll langfristig primär die Spielmechanik enthalten; veränderliche Spieldaten sollen möglichst in modularen .db-Dateien liegen
 - größere Events sollen jeweils eigene, leicht austauschbare Event-Datenbanken erhalten
@@ -162,6 +189,7 @@ Damit sind aktuell **19 von 30** festen Gebieten bei der Ressourcen-Grundkonfigu
 - Storytexte sollen später optional vertont werden; adaptive Hinweise können bei festhängenden Spielern ebenfalls gesprochen werden
 - finale Musik und Sprecherstimmen kommen erst in einer späten Entwicklungsphase
 - der aktuelle Build-Charakter entspricht eher einem Prototyp / einer Pre-Demo als einer Beta
+- Gebäude und andere feste Kartenstrukturen werden nach der aktuellen Ressourcen-Grundkonfiguration ergänzt
 
 ## Geplante Datenarchitektur
 
