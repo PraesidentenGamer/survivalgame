@@ -4,7 +4,7 @@
 
 ## Aktuelle Entwicklungsphase
 
-Der aktuelle Schwerpunkt liegt weiterhin auf den festen Gebieten: Ressourcen, Spawnregeln und erste Gebiets-Balance. Die finale Grafik, Vertonung und weitere Endstufen-Systeme kommen bewusst später.
+Der Schwerpunkt liegt nach der Ressourcen-Grundkonfiguration nun auf **Gebäuden und festen Kartenobjekten**. Finale Grafik, Vertonung und weitere Endstufen-Systeme kommen bewusst später.
 
 ## Gebietsfortschritt
 
@@ -36,17 +36,18 @@ Geplante feste Gebiete: **30**
 - Siedlung
 - Zweite_Basis
 - Test_Basis
-
-Damit sind aktuell **25 von 30** festen Gebieten bei der Ressourcen-Grundkonfiguration beziehungsweise beim vorgesehenen Spawn-Grundzustand eingerichtet.
-
-### Noch offen
 - Bunker_A
 - Bunker_B
 - Bunker_C
 - Bunker_D
 - Tschernobyl
 
-Anschließend folgen repräsentative Tests und später ein automatischer Gebiets-/Spawn-Validator.
+Damit sind aktuell **30 von 30** festen Gebieten bei der Ressourcen-Grundkonfiguration beziehungsweise beim vorgesehenen Spawn-Grundzustand eingerichtet.
+
+### Nächster Entwicklungsblock
+- Gebäude und feste Kartenobjekte
+- danach weitere repräsentative Tests
+- später automatischer Gebiets-/Spawn-Validator
 
 ## Bereits vorhandene Grundsysteme
 
@@ -65,6 +66,10 @@ Anschließend folgen repräsentative Tests und später ein automatischer Gebiets
 - AreaSpawnManager für zufälliges Ressourcen-Spawning
 - Mindestabstand zwischen gespawnten Ressourcen
 - GameManager mit DontDestroyOnLoad
+- funktionierender Demo-Türmechanismus:
+  - Tür mit Scharnier-/Drehpunkt
+  - Öffnen/Schließen mit E
+  - Öffnung je nach Spielerseite in beide Richtungen
 
 ## Bereits eingeführte Ressourcen
 
@@ -117,33 +122,60 @@ Anschließend folgen repräsentative Tests und später ein automatischer Gebiets
 ### Küstengebiete
 - Kuestengebiet: Sand als Hauptressource, kein Salz
 - Hafen: weniger Vegetation, mehr loses Material und Stein; Salz kommt nur im roten Gebiet Hafen vor
-- Insel: Mischung aus Wald- und Küstenressourcen mit Sand 15-25
+- Insel: Mischung aus Wald- und Küstenressourcen
 
 ### Stadt-, Technik- und Militärgebiete
 - Verlassene_Stadt: Schrott 10-20
 - Stadtruinen: Schrott 20-30
-- Verlassene_Einrichtung: Schrott 15-25, natürliche Ressourcen knapp
-- Forschungsanlage: Schrott 20-30, nur wenige natürliche Ressourcen
-- Militaerstuetzpunkt: Schrott 25-35, natürliche Ressourcen deutlich untergeordnet
+- Verlassene_Einrichtung: Schrott 15-25
+- Forschungsanlage: Schrott 20-30
+- Militaerstuetzpunkt: Schrott 25-35
+
+### Bunker
+- Bunker_A bis Bunker_D sind mit knappen Außenressourcen und zunehmendem Schrottanteil grundkonfiguriert
+- natürliche Ressourcen sollen später nur im Außen-/Eingangsbereich erscheinen
+- Innenebenen erhalten stattdessen Gegner, Kisten, Storyobjekte und eigene Lootpools
+
+### Tschernobyl
+- natürliche Grundressourcen bleiben vorhanden
+- Schrott ist stark vertreten
+- Strahlung und andere Gefahren werden später als Gebietseffekte umgesetzt
 
 ### Basis und Siedlung
-- Siedlung: derzeit keine zufälligen Bodenressourcen; später eigener aufbaubarer Siedlungsbereich
-- Zweite_Basis: derzeit keine zufälligen Ressourcen; endgültige Basis-Regeln folgen später
-- Test_Basis: aktueller AreaSpawnManager als Prototyp mit:
+- Siedlung ist eine bewusste Ausnahme und besitzt keine normalen zufälligen Grundressourcen
+- Test_Basis besitzt als Prototyp:
   - Baum 15-25
   - Stein 10-20
   - loses Holz 8-15
   - loser Stein 8-15
   - Hanf 5-10
-  - Mindestabstand 2,5
-  - maximal 50 Spawnversuche
-- später soll die Basis natürliche Ressourcen zeitgesteuert zurücksetzen können, ohne gebaute Objekte zu überschreiben
+- Zweite_Basis soll ebenfalls natürliche Basisressourcen erhalten
+- späterer Basis-Ressourcenreset:
+  - natürliche Ressourcen können nach definierter Zeit neu erscheinen
+  - nur auf freien Flächen
+  - gebaute Objekte bleiben unangetastet
+
+## Gebäude-Prototyp
+
+In `Verlassene_Stadt` wurde `Gebaeude_Test_01` aufgebaut.
+
+Enthalten:
+- Boden
+- vier Außenwände
+- Türöffnung
+- `Tuer_Drehpunkt` als Empty GameObject
+- `Tuer` als Cube und Kindobjekt des Drehpunkts
+- funktionierende Türinteraktion über `DemoDoor.cs`
+- Innenwand als einfacher Raumtrenner
+- vorgesehener Prefab-Name: `Prefab_Gebaeude_Test_01`
+
+Das aktuelle Gebäude ist bewusst nur ein kleines technisches Testmodell. Echte Gebäude werden später deutlich größer und detaillierter.
 
 ## Noch nicht vollständig umgesetzt
 
 - Lootkisten mit echten Lootpools
 - Gegner-Spawning pro Gebiet
-- Gebäude, Ruinen und feste Kartenstrukturen
+- größere Gebäude, Ruinen und feste Kartenstrukturen
 - endgültige Grafik und Assets
 - finales Inventar-UI
 - Storysystem
@@ -173,23 +205,17 @@ Anschließend folgen repräsentative Tests und später ein automatischer Gebiets
 - Eventgebiete verwenden eine eigene Kennzeichnung
 - Spieleransprache erfolgt in der Du-Form
 - zwei Rezept-Anzeigemodi sind geplant: direkt und indirekt
-- Moos wird als vielseitige Ressource verwendet
-- Natur-Wasserfilter: Sand **oder** Kies genügt; beides zusammen erhöht das Filtertempo
-- ein Natur-Wasserfilter reicht vorläufig für 6 Flaschen Wasser
-- Beeren können direkt gegessen und später weiterverarbeitet werden
-- ein geplanter Wintertee kann zeitlich begrenzten Kälteschutz geben
-- Holz und Stein bleiben auch in Kältegebieten normale Ressourcen; Unterschiede entstehen später hauptsächlich durch Modelle und Texturen
-- Materialvarianten werden nur eingeführt, wenn sie spielmechanisch einen echten eigenen Zweck haben, z. B. Glas und kugelsicheres Glas oder Reifen und kugelsichere Reifen
+- Materialvarianten werden nur eingeführt, wenn sie spielmechanisch einen echten eigenen Zweck haben
 - pro fertigem Produkt sind maximal **5 Abhängigkeiten / Verarbeitungsschritte** vorgesehen
 - Schaden und Effektstärken werden grundsätzlich als **ganze Zahlen** behandelt
 - Schrott wird später im Recycler in Kernmaterialien zerlegt; Metallreste können anschließend im Schmelzer weiterverarbeitet werden
 - C# soll langfristig primär die Spielmechanik enthalten; veränderliche Spieldaten sollen möglichst in modularen .db-Dateien liegen
 - größere Events sollen jeweils eigene, leicht austauschbare Event-Datenbanken erhalten
 - Spieldatenbanken und Spielstände werden strikt getrennt
-- Storytexte sollen später optional vertont werden; adaptive Hinweise können bei festhängenden Spielern ebenfalls gesprochen werden
+- Storytexte sollen später optional vertont werden; adaptive Hinweise können gesprochen werden
 - finale Musik und Sprecherstimmen kommen erst in einer späten Entwicklungsphase
 - der aktuelle Build-Charakter entspricht eher einem Prototyp / einer Pre-Demo als einer Beta
-- Gebäude und andere feste Kartenstrukturen werden nach der aktuellen Ressourcen-Grundkonfiguration ergänzt
+- alte Demo-/Testobjekte müssen nicht zwingend entfernt werden; sie können später bewusst als Storyelemente weiterverwendet werden
 
 ## Geplante Datenarchitektur
 
@@ -198,7 +224,7 @@ Langfristig gilt als Leitprinzip:
 **C# = Logik und Systeme**  
 **.db = Inhalte, Werte, Zuordnungen und Abläufe**
 
-Beispiele für Datenbank-Inhalte:
+Beispiele:
 - Items und Ressourcen
 - Rezepte und Zutaten
 - Werkbänke und Produktionszeiten
@@ -213,10 +239,6 @@ Beispiele für Datenbank-Inhalte:
 - Dialoge und Sprecherzuordnungen
 - Balancewerte
 
-Die Datenbanken sollen modular aufgebaut sein, damit Updates einzelne .db-Dateien ersetzen können, ohne unnötig die komplette Spiellogik anzufassen.
-
 ## Aktueller Fokus
 
-**Zuerst werden die Gebiete und Kernmechaniken funktional aufgebaut. Hochwertige Grafik, finale Assets, Musik, Sprecherstimmen und der Hardware-Kompatibilitätsprüfer kommen später.**
-
-Neue Ideen werden gesammelt und architektonisch berücksichtigt, aber nicht automatisch sofort umgesetzt, wenn sie nicht zur aktuellen Entwicklungsphase gehören.
+**Nach Abschluss der Ressourcen-Grundkonfiguration aller 30 Gebiete werden jetzt Gebäude und feste Kartenobjekte funktional aufgebaut. Hochwertige Grafik, finale Assets, Musik, Sprecherstimmen und der Hardware-Kompatibilitätsprüfer kommen später.**
