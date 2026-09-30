@@ -144,6 +144,18 @@ Für größere Events:
 - feste IDs statt sichtbarer Namen als technische Referenzen verwenden
 - Datenbanken sollen später Versionsinformationen erhalten, z. B. SchemaVersion, ContentVersion und MinimumGameVersion
 
+### Gegner-Idee: Maunzi
+- Typ: Gegner
+- Name: Maunzi
+- charakteristischer Spruch / Spezialangriff: **„Ich bin Maunzi“**
+- Vorkommen: noch offen; normale Gebiete und/oder Events möglich
+- Spruchschaden: zufällig **0 bis 35** Lebenspunkte
+- Schwäche: Angriff mit dem besonderen Gegenstand / der besonderen Waffe **Busfahrer „Kalle“**
+- Schaden durch Kalle: zufällig **0 bis 50** Lebenspunkte pro Treffer
+- Busfahrer „Kalle“ soll über Loot, Events oder andere Fundmöglichkeiten erhältlich sein
+- Lebenspunkte, Reichweite, Abklingzeit, Spawnrate und eigener Loot werden später festgelegt
+- Schaden und Effektwerte werden grundsätzlich nur als ganze Zahlen gespeichert und berechnet
+
 ### Story, Sprecher und Hinweise
 - Story soll nicht ausschließlich über lange Lesetexte vermittelt werden
 - Erzähler / Sprecher für wichtige Storyabschnitte
@@ -170,11 +182,21 @@ Für größere Events:
 - Kampfmusik soll nicht sofort beim kleinsten Kontakt hektisch wechseln
 - finale Musikproduktion erst nach stabiler Spielmechanik und Storystruktur
 
-### Basis und Tarnung
+### Basis, Siedlung und Ressourcen-Reset
 - Moos-Tarnung für Wände und andere Bauteile
 - getarnte Gebäude sollen von Gegnern erst aus geringerer Entfernung erkannt werden
 - Tarnung darf Hordenangriffe nicht vollständig verhindern
 - Moos kann eventuell Fallen und kleine Lager tarnen
+- Siedlung soll als eigener aufbaubarer Bereich funktionieren
+- Test_Basis besitzt bereits als Prototyp natürliche Ressourcen über den AreaSpawnManager
+- spätere Basis-Regel:
+  - abgebaute natürliche Ressourcen bleiben zunächst weg
+  - nach einer festgelegten Zeit kann ein Basis-Ressourcenreset stattfinden
+  - nur natürliche Ressourcen werden neu erzeugt
+  - Gebäude, Wände, Werkbänke, Lager, Fahrzeuge und andere Spielerobjekte bleiben unverändert
+  - Ressourcen dürfen nur auf freien Flächen neu spawnen
+- ob der Reset-Timer auf Echtzeit oder aktiver Spielzeit basiert, wird später entschieden
+- Basisressourcen sollen normale Ressourcengebiete nicht überflüssig machen
 
 ### Fortschritt und Story
 - Zweite Basis über Story freischalten
