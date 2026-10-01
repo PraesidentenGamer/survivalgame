@@ -23,8 +23,8 @@ Eine Idee auf der Ideenliste bedeutet nicht automatisch, dass sie als Nächstes 
 Die technische Grundentwicklung läuft weiter, parallel wird aktuell der große Produktions-/Crafting-Bereich vollständig geplant.
 
 Aktuelle Planungsreihenfolge:
-- Werkbänke und Produktionsstätten vollständig definieren
-- ähnliche oder doppelte Stationen zusammenlegen
+- Werkbank-/Produktionsstations-Prüfung abgeschlossen: 80 Kandidaten auf aktuell 43 eigenständige Bereiche reduziert
+- verbleibende Stationen final prüfen und bei späteren Überschneidungen weiter zusammenlegen
 - Eventitems festlegen
 - komplettes Itemsystem systematisch ausarbeiten
 - Rezepte und Produktionsketten definieren
