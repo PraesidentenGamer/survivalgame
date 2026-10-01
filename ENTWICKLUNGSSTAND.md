@@ -8,39 +8,58 @@ Der Schwerpunkt liegt auf den Kernsystemen für Inventar, Container und Basis. R
 
 ## Aktuelle Designplanung
 
-Parallel zur technischen Entwicklung wird derzeit das Werkbank-/Produktionssystem vollständig festgelegt.
+Die erste vollständige Prüfung der ursprünglich **80 Werkbank-/Produktionsstations-Kandidaten** ist abgeschlossen.
 
-Bereits festgelegt bzw. vorgemerkt:
-- einfache Gegenstände dürfen teilweise direkt hergestellt werden; Werkbänke sind vor allem für komplexe oder spezialisierte Herstellung vorgesehen
+### Ergebnis der Bereinigung
+
+- Ursprüngliche Kandidaten: **80**
+- Aktuell verbleibende eigenständige Stationen/Funktionsbereiche: **43**
+- Gestrichen, zusammengelegt oder in andere Systeme integriert: **37**
+
+Die Zahl 43 ist der aktuelle Planungsstand. Weitere Zusammenlegungen bleiben möglich, wenn sich bei Rezepten oder technischen Abläufen noch Überschneidungen zeigen.
+
+### Wichtige Zusammenlegungen und Änderungen
+
+- Kreissäge entfällt; komplette Holzverarbeitung läuft über das Sägewerk
+- Schneider bündelt Schneiderei, Gerberei, Lederwerkbank, Nähmaschine und Textilmaschine
+- Webstuhl bleibt eigenständig für besondere Effekte auf Kleidung und Rüstung
+- Metzger übernimmt die komplette Tierverarbeitung einschließlich Fleisch, Fisch, Fett, Knochen, Haut/Fell, Konservieren und Räuchern
+- Pharmazeutische Station wurde zur **Apotheke**
+- Klinik ist als späteres Siedlungsgebäude vorgesehen
+- Kunststoffverarbeitung wurde vorerst gestrichen
+- Recyclingstation übernimmt allgemeines Zerlegen und Metallrecycling
+- Ölraffinerie bleibt wichtig; Kunststoff/Plaste kann später wieder zu ölartigen Ausgangsstoffen verarbeitet werden
+- Alkohol aus der Destillieranlage darf als Notfallkraftstoff dienen, verursacht aber schnelleren Verschleiß
+- Fahrzeugwerkstatt bündelt Land-, Wasser- und Luftfahrzeuge sowie Motoren, Reparatur, Modifikationen, Lackierung und Hebebühne
+- Panzer ist als zusätzliches schweres Fahrzeug vorgemerkt
+- das bisher intern als „LSD Labor“ bezeichnete Endstufenfahrzeug bleibt die höchste Fahrzeugstufe; endgültiger Eigenname wird später festgelegt
+- Waffenwerkstatt bündelt Nahkampf, Schusswaffen, Bögen/Armbrüste, Sprengstoffe, Waffenmodifikationen und Spezialwaffen
+- Fallenwerkbank bleibt vorerst getrennt für Verteidigungs- und Sicherungsfallen
+- Forschungsstation und High-End-Forschungsstation bleiben vorerst getrennt
+- Forschungs-/Prototypenstation bleibt vorerst eigenständig
+- Uranverarbeitungsstation bleibt eigenständig
+- Erz-/Steinbrecher wird als gemeinsame **Brecheranlage** geführt
+- Zementmischer geht vollständig im Betonmischer auf
+- Brennofen, Hochtemperaturofen und Gießerei werden als gemeinsame Ofen-/Hochtemperaturanlage geführt; endgültiger Name folgt später
+- Werkzeugschleifer geht in die Werkzeugwerkbank
+- Mühle bleibt vorerst bestehen und soll bei Einführung eines Bäckers mit diesem zusammengeführt werden
+- Chemieanlage/Laborabzug wird vorerst in die Forschung integriert
+- chemische Mischstation geht ins Chemielabor
+- medizinisches Labor wird auf Medizinische Station, Apotheke und Forschung verteilt
+- Wasserpumpe wird zum **Wasserwerk**; große Wasseraufbereitung geht darin auf
+- Gewächshaus ist die bessere Ausbaustufe des normalen Feldes und keine eigene Werkbank
+- Küchenstation geht in die Kochstation
+- Batterie-Ladegerät geht in die Batteriewerkbank
+- Batterie-/Energiestation wird auf Batteriewerkbank, Elektrostation und Generatorwerkstatt verteilt
+- Funk-/Kommunikationsstation bleibt erhalten; spätere Freundes-/Koop-Kommunikation ist als Erweiterung denkbar
+
+### Grundregeln
+
+- einfache Gegenstände dürfen teilweise direkt hergestellt werden
+- Werkbänke sind vor allem für komplexe oder spezialisierte Herstellung vorgesehen
 - Produktionsketten sollen höchstens etwa 5 Verarbeitungsschritte besitzen
 - schwere Maschinen benötigen geeigneten/festen Boden und Strom
-- Kreissäge gestrichen; das Sägewerk übernimmt die komplette Holzverarbeitung
-- Sägewerk vorläufig 3 Stufen und für größere Produktionsmengen vorgesehen
-- Steinbearbeitungsstation 3 Stufen
-- Metallwerkbank 4 Stufen
-- Schmelzofen 4 Stufen
-- Schmiede 4 Stufen
-- Bauwerkbank 4 Stufen
-- Betonmischer 4 Stufen
-- Glaswerkbank 3 Stufen
-- Werkzeugwerkbank 4 Stufen
-- Waffenwerkbank 5 Stufen
-- Rüstungswerkbank 4 Stufen
-- Schneiderei/Gerberei werden unter **Schneider** zusammengeführt
-- **Webstuhl** bleibt als eigene Spezialstation und dient später zum Übertragen besonderer Effekte auf Kleidung/Rüstung
-- allgemeine Reparaturstation statt separater Schweißstation
-- Elektronikwerkbank 5 Stufen
-- Batteriewerkbank 4 Stufen
-- Elektrostation 4 Stufen
-- Generatorwerkstatt 4 Stufen
-- Kochstation 4 Stufen
-- Fleisch-/Tierverarbeitung wird unter **Metzger** zusammengeführt; der Metzger übernimmt grundsätzlich alles, was mit tierischen Rohstoffen zu tun hat
-- Landwirtschaftsstation 4 Stufen
-- Wasseraufbereitung 4 Stufen
-- Medizinische Station 4 Stufen
-- **Klinik** als späteres Siedlungsgebäude zur Behandlung vorgesehen
-- Chemielabor 4 Stufen
-- Pharmazeutische Station wird zur **Apotheke**
+- genaue Rezepte, Mengen, Produktionszeiten und Balancewerte werden erst nach der Stationsbereinigung festgelegt
 
 Weitere neue Designpunkte:
 - spezielle verschlossene Lootkisten sollen bestimmte Skills bzw. Skillstufen voraussetzen
