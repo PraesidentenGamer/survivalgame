@@ -6,6 +6,53 @@
 
 Der Schwerpunkt liegt auf den Kernsystemen für Inventar, Container und Basis. Ressourcen-Grundkonfiguration und grundlegende Gebäudetests sind abgeschlossen. Finale Grafik, hochwertige Assets und Endstufen-Systeme kommen später.
 
+## Aktuelle Designplanung
+
+Parallel zur technischen Entwicklung wird derzeit das Werkbank-/Produktionssystem vollständig festgelegt.
+
+Bereits festgelegt bzw. vorgemerkt:
+- einfache Gegenstände dürfen teilweise direkt hergestellt werden; Werkbänke sind vor allem für komplexe oder spezialisierte Herstellung vorgesehen
+- Produktionsketten sollen höchstens etwa 5 Verarbeitungsschritte besitzen
+- schwere Maschinen benötigen geeigneten/festen Boden und Strom
+- Kreissäge gestrichen; das Sägewerk übernimmt die komplette Holzverarbeitung
+- Sägewerk vorläufig 3 Stufen und für größere Produktionsmengen vorgesehen
+- Steinbearbeitungsstation 3 Stufen
+- Metallwerkbank 4 Stufen
+- Schmelzofen 4 Stufen
+- Schmiede 4 Stufen
+- Bauwerkbank 4 Stufen
+- Betonmischer 4 Stufen
+- Glaswerkbank 3 Stufen
+- Werkzeugwerkbank 4 Stufen
+- Waffenwerkbank 5 Stufen
+- Rüstungswerkbank 4 Stufen
+- Schneiderei/Gerberei werden unter **Schneider** zusammengeführt
+- **Webstuhl** bleibt als eigene Spezialstation und dient später zum Übertragen besonderer Effekte auf Kleidung/Rüstung
+- allgemeine Reparaturstation statt separater Schweißstation
+- Elektronikwerkbank 5 Stufen
+- Batteriewerkbank 4 Stufen
+- Elektrostation 4 Stufen
+- Generatorwerkstatt 4 Stufen
+- Kochstation 4 Stufen
+- Fleisch-/Tierverarbeitung wird unter **Metzger** zusammengeführt; der Metzger übernimmt grundsätzlich alles, was mit tierischen Rohstoffen zu tun hat
+- Landwirtschaftsstation 4 Stufen
+- Wasseraufbereitung 4 Stufen
+- Medizinische Station 4 Stufen
+- **Klinik** als späteres Siedlungsgebäude zur Behandlung vorgesehen
+- Chemielabor 4 Stufen
+- Pharmazeutische Station wird zur **Apotheke**
+
+Weitere neue Designpunkte:
+- spezielle verschlossene Lootkisten sollen bestimmte Skills bzw. Skillstufen voraussetzen
+- Tageslänge soll voraussichtlich vom Spieler wählbar sein, bis hin zu **1 Ingame-Tag = 24 Stunden Echtzeit**
+- starke Elektrowaffe mit wiederaufladbaren Akkus ist vorgesehen
+- leere Waffenakkus behalten eine kleine Notreserve, damit die Waffe nach einer Wartezeit noch einmal genutzt werden kann
+- Basis-PC soll später GEAM OS als spielinternes Computersystem verwenden
+- Datenwiederherstellung, Entschlüsselung und ähnliche Story-Minispiele sollen unter anderem am Basis-PC stattfinden
+- Storyidee um Sarah: zunächst freundliche und hilfreiche Figur, deren Verhalten später als Fassade entlarvt werden kann
+- mögliche Storyspur um eine fiktive amerikanische Forschungs-/Militärorganisation und deren Verbindung zum Ausbruch
+- klare Sprachregel für alle Spieltexte: verständliches Standarddeutsch, keine vulgären Beleidigungen, keine unnötig derbe Sprache
+
 ## Aktueller Teststand
 
 Bereits technisch geprüft:
