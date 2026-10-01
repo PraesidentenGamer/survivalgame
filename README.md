@@ -20,10 +20,15 @@ Eine Idee auf der Ideenliste bedeutet nicht automatisch, dass sie als Nächstes 
 
 ## Aktueller Schwerpunkt
 
-- feste Gebiete technisch vorbereiten
-- Ressourcen und Spawnregeln einrichten
-- Gebiets-Balance festlegen
-- danach Loot, Gegner, Gebäude und weitere Map-Inhalte
+Die technische Grundentwicklung läuft weiter, parallel wird aktuell der große Produktions-/Crafting-Bereich vollständig geplant.
+
+Aktuelle Planungsreihenfolge:
+- Werkbänke und Produktionsstätten vollständig definieren
+- ähnliche oder doppelte Stationen zusammenlegen
+- Eventitems festlegen
+- komplettes Itemsystem systematisch ausarbeiten
+- Rezepte und Produktionsketten definieren
+- danach die Systeme schrittweise technisch in Unity umsetzen
 
 ## Hinweis
 
