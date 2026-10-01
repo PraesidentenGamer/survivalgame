@@ -197,6 +197,68 @@ Horror soll eher über Atmosphäre, Unsicherheit, verlassene Anlagen, Dokumente,
 - Musik und Sprecherstimmen ebenfalls spät
 - Hardware-Kompatibilitätsprüfer erst gegen Ende
 
+
+### Werkbänke, Berufe und zusammengefasste Stationen
+- Kreissäge entfällt; komplette Holzverarbeitung läuft über das Sägewerk
+- ähnliche Stationen werden erst nach Festlegung ihrer tatsächlichen Aufgaben endgültig zusammengelegt
+- Schneider bündelt Schneiderei, Gerberei und einfache textile Verarbeitung
+- Webstuhl bleibt getrennt und dient später als Spezialstation zum Übertragen besonderer Effekte auf Kleidung/Rüstung
+- allgemeine Reparaturstation ersetzt die frühere Schweißstation
+- Metzger übernimmt die komplette Tierverarbeitung
+- Pharmazeutische Station wird zur Apotheke
+- Klinik als eigenes späteres Siedlungsgebäude zur Behandlung
+- mögliche weitere Zusammenlegungen werden bei Rezepten und Produktionsabläufen entschieden
+
+### Spezialkisten und Skills
+- besondere verschlossene Kisten benötigen einen passenden Skill bzw. eine bestimmte Skillstufe
+- normale Kisten bleiben ohne solchen Skill zugänglich
+- bei zu niedrigem Skill bleibt die Kiste geschlossen und zeigt die benötigte Voraussetzung
+- Spezialkisten können seltenere Lootpools verwenden
+- Story-/Eventkisten dürfen eigene Zugangsvoraussetzungen besitzen
+
+### Zeit-System
+- bisherige feste Tageslänge soll durch eine wählbare Einstellung ersetzt werden
+- mögliche Presets: kurz, normal, lang, Echtzeit und benutzerdefiniert
+- Extrembeispiel: 1 Ingame-Tag = 24 Stunden Echtzeit
+- Horde, Tag/Nacht, Pflanzen, Quests und andere zeitabhängige Systeme bleiben an die Ingame-Zeit gekoppelt
+- laufende Timer sollen beim Ändern der Tageslänge nicht zurückgesetzt werden
+
+### Elektrowaffe und Akkus
+- starke spätere Elektrowaffe mit wiederaufladbaren Akkus
+- Akku-Ladung und Waffenhaltbarkeit sind getrennte Werte
+- Akkus können gewechselt und wieder aufgeladen werden
+- bei regulär leerem Akku bleibt eine kleine Notreserve
+- die Notreserve erlaubt nach einer Wartezeit noch eine einzelne Notfallnutzung
+- konkrete Kapazitäten, Wartezeiten und Schaden werden erst beim Balancing festgelegt
+
+### Basiscomputer und GEAM OS
+- Basis-PC soll GEAM OS als spielinternes Computersystem verwenden
+- mögliche Funktionen: Dateimanager, Datenwiederherstellung, Entschlüsselung, Forschungsarchiv, Karten-/Koordinatenmodul, Funk, Kameras und Storydaten
+- gefundene Datenträger und beschädigte Hardware können zur Basis gebracht und dort ausgewertet werden
+- Datenwiederherstellung und ähnliche Aufgaben können als Minispiele umgesetzt werden
+
+### Storyidee: Sarah
+- Sarah erscheint zunächst freundlich, hilfreich und vertrauenswürdig
+- später kann sich herausstellen, dass dieses Verhalten nur Fassade war
+- frühe Hinweise sollen rückblickend Sinn ergeben und die Wendung vorbereiten
+- mögliche Verbindung zu Forschungsdaten, Ausbruch oder einer größeren Organisation
+- genaue Endrolle bleibt vorerst offen
+
+### Storyidee: Forschungsorganisation
+- mögliche fiktive amerikanische Forschungs-/Militärorganisation mit Verbindung zum Ausbruch
+- Ziel des ursprünglichen Projekts muss nicht die Erschaffung von Zombies gewesen sein
+- Tschernobyl kann weiterhin zunächst als scheinbarer Ursprung wirken
+- spätere Enthüllung möglich: Tschernobyl war nur Forschungs-, Lager- oder Eindämmungsort
+- Hinweise über Dokumente, Funk, Datenträger, Computer und zerstörte Anlagen
+
+### Sprachregeln
+- klares, normales Standarddeutsch
+- keine vulgären Beleidigungen
+- unnötig derbe Sprache vermeiden
+- erwachsene Themen, Horror und Gewalt bleiben davon unberührt
+- Menü-, Quest-, Item-, Computer- und Storytexte sollen gut lesbar und verständlich bleiben
+
+
 ## Ideen-Parkplatz
 
 Neue Vorschläge können hier gesammelt werden, auch wenn sie erst viel später geprüft oder umgesetzt werden.
