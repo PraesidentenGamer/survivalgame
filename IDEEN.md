@@ -209,6 +209,18 @@ Horror soll eher über Atmosphäre, Unsicherheit, verlassene Anlagen, Dokumente,
 - Klinik als eigenes späteres Siedlungsgebäude zur Behandlung
 - mögliche weitere Zusammenlegungen werden bei Rezepten und Produktionsabläufen entschieden
 
+### Ergebnis der Werkbank-Bereinigung
+- Ausgangsliste: **80** Kandidaten
+- aktuell verbleibend: **43** eigenständige Stationen/Funktionsbereiche
+- **37** Kandidaten wurden gestrichen, umbenannt, zusammengelegt oder in andere Stationen integriert
+- weitere Zusammenlegungen bleiben bei der späteren Rezept- und Ablaufplanung möglich
+- Fahrzeugfunktionen werden zentral in der Fahrzeugwerkstatt gebündelt
+- Waffenfunktionen werden zentral in der Waffenwerkstatt gebündelt
+- Tierverarbeitung wird zentral beim Metzger gebündelt
+- Textil-/Lederverarbeitung wird zentral beim Schneider gebündelt
+- Recycling/Zerlegen/Metallrecycling wird zentral beim Recycler gebündelt
+- Gewächshaus ist eine bessere Feld-Ausbaustufe statt eigener Produktionsstation
+
 ### Spezialkisten und Skills
 - besondere verschlossene Kisten benötigen einen passenden Skill bzw. eine bestimmte Skillstufe
 - normale Kisten bleiben ohne solchen Skill zugänglich
