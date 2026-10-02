@@ -167,6 +167,34 @@ Grundregel:
 - klare Asset- und Dateistruktur
 - Platzhalter und finale Assets getrennt verwalten
 
+
+## Weitere festgelegte spätere Erweiterungen
+
+### Freies Fliegen
+- eigene Questreihe
+- nach Freischaltung freies Fliegen ohne Fahrzeug
+- eigener kleiner Skillbaum möglich
+- getrennt von Helikopter/Luftfahrzeugen
+- bestimmte Innenräume/Bunker dürfen Fliegen einschränken
+
+### Kamera
+- bestehendes CameraFollow-System später um Zoom erweitern
+- Zoom bis in First Person
+- Gebäude blenden störende Decken beim Betreten aus
+- bei mehreren Etagen nur relevante obere Ebene ausblenden
+
+### XP-Event
+- wiederkehrendes Event zum schnelleren Aufholen
+- Bonus insbesondere auf Kämpfen, Sammeln, Crafting, Erkunden und Nebenquests
+- normales ausgewogenes Spielen soll dennoch ohne Grind ausreichen
+
+### Inhaltsoptionen
+- Blut: Aus / Schwach / Normal / Stark
+- Aus/Schwach verwendet neutrale Farbflecken als Trefferfeedback
+- keine illegalen/recreationalen Drogen als Spielsystem
+- Alkohol und Medikamente dürfen vorkommen
+
+
 ## Grundregel
 
 Das Spiel soll schwierig sein dürfen, aber nicht unfair. Verluste sollen nur dann hart sein, wenn der Spieler grundsätzlich eine reale Chance hat, sie wieder auszugleichen oder zurückzuholen.
