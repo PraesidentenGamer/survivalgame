@@ -1,78 +1,422 @@
 # Entwicklungsstand
 
-**Stand:** 01.10.2026
+**Stand:** 02.10.2026
 
 ## Aktuelle Entwicklungsphase
 
-Der Schwerpunkt liegt auf den Kernsystemen für Inventar, Container und Basis. Ressourcen-Grundkonfiguration und grundlegende Gebäudetests sind abgeschlossen. Finale Grafik, hochwertige Assets und Endstufen-Systeme kommen später.
+Der Schwerpunkt liegt weiterhin auf den zwingend erforderlichen Kernsystemen für die erste vollständig spielbare Version. Gleichzeitig werden die Datenstrukturen bereits so vorbereitet, dass spätere Updates neue Inhalte, Gebiete, Systeme und Balancingwerte möglichst ohne größere Umbauten ergänzen können.
 
-## Aktuelle Designplanung
+Wichtig: Nicht jedes geplante System muss in der ersten vollständig spielbaren Version bereits aktiv sein. Spätere Funktionen dürfen vorbereitet, deaktiviert oder mit **„Kommt bald“** gekennzeichnet werden.
 
-Die erste vollständige Prüfung der ursprünglich **80 Werkbank-/Produktionsstations-Kandidaten** ist abgeschlossen.
+## Entwicklungsgrundsatz für Version 1
 
-### Ergebnis der Bereinigung
+Die erste vollständig spielbare Version konzentriert sich auf einen geschlossenen Kern-Gameplay-Loop:
 
-- Ursprüngliche Kandidaten: **80**
-- Aktuell verbleibende eigenständige Stationen/Funktionsbereiche: **43**
-- Gestrichen, zusammengelegt oder in andere Systeme integriert: **37**
+**Vorbereiten -> Reisen -> Sammeln/Kämpfen -> Beute sichern -> Verarbeiten/Bauen -> Fortschritt -> nächstes Gebiet**
 
-Die Zahl 43 ist der aktuelle Planungsstand. Weitere Zusammenlegungen bleiben möglich, wenn sich bei Rezepten oder technischen Abläufen noch Überschneidungen zeigen.
+Pflichtsysteme werden zuerst vollständig geplant und anschließend technisch umgesetzt. Spätere Großsysteme werden so vorbereitet, dass Updates darauf aufbauen können.
 
-### Wichtige Zusammenlegungen und Änderungen
+## Datenarchitektur
 
-- Kreissäge entfällt; komplette Holzverarbeitung läuft über das Sägewerk
-- Schneider bündelt Schneiderei, Gerberei, Lederwerkbank, Nähmaschine und Textilmaschine
-- Webstuhl bleibt eigenständig für besondere Effekte auf Kleidung und Rüstung
-- Metzger übernimmt die komplette Tierverarbeitung einschließlich Fleisch, Fisch, Fett, Knochen, Haut/Fell, Konservieren und Räuchern
-- Pharmazeutische Station wurde zur **Apotheke**
-- Klinik ist als späteres Siedlungsgebäude vorgesehen
-- Kunststoffverarbeitung wurde vorerst gestrichen
-- Recyclingstation übernimmt allgemeines Zerlegen und Metallrecycling
-- Ölraffinerie bleibt wichtig; Kunststoff/Plaste kann später wieder zu ölartigen Ausgangsstoffen verarbeitet werden
-- Alkohol aus der Destillieranlage darf als Notfallkraftstoff dienen, verursacht aber schnelleren Verschleiß
-- Fahrzeugwerkstatt bündelt Land-, Wasser- und Luftfahrzeuge sowie Motoren, Reparatur, Modifikationen, Lackierung und Hebebühne
-- Panzer ist als zusätzliches schweres Fahrzeug vorgemerkt
-- das bisher intern als „LSD Labor“ bezeichnete Endstufenfahrzeug bleibt die höchste Fahrzeugstufe; endgültiger Eigenname wird später festgelegt
-- Waffenwerkstatt bündelt Nahkampf, Schusswaffen, Bögen/Armbrüste, Sprengstoffe, Waffenmodifikationen und Spezialwaffen
-- Fallenwerkbank bleibt vorerst getrennt für Verteidigungs- und Sicherungsfallen
-- Forschungsstation und High-End-Forschungsstation bleiben vorerst getrennt
-- Forschungs-/Prototypenstation bleibt vorerst eigenständig
-- Uranverarbeitungsstation bleibt eigenständig
-- Erz-/Steinbrecher wird als gemeinsame **Brecheranlage** geführt
-- Zementmischer geht vollständig im Betonmischer auf
-- Brennofen, Hochtemperaturofen und Gießerei werden als gemeinsame Ofen-/Hochtemperaturanlage geführt; endgültiger Name folgt später
-- Werkzeugschleifer geht in die Werkzeugwerkbank
-- Mühle bleibt vorerst bestehen und soll bei Einführung eines Bäckers mit diesem zusammengeführt werden
-- Chemieanlage/Laborabzug wird vorerst in die Forschung integriert
-- chemische Mischstation geht ins Chemielabor
-- medizinisches Labor wird auf Medizinische Station, Apotheke und Forschung verteilt
-- Wasserpumpe wird zum **Wasserwerk**; große Wasseraufbereitung geht darin auf
-- Gewächshaus ist die bessere Ausbaustufe des normalen Feldes und keine eigene Werkbank
-- Küchenstation geht in die Kochstation
-- Batterie-Ladegerät geht in die Batteriewerkbank
-- Batterie-/Energiestation wird auf Batteriewerkbank, Elektrostation und Generatorwerkstatt verteilt
-- Funk-/Kommunikationsstation bleibt erhalten; spätere Freundes-/Koop-Kommunikation ist als Erweiterung denkbar
+**C# = Logik und Systeme**  
+**.db = Inhalte, Werte, Zuordnungen, Balance und Freischaltungen**
 
-### Grundregeln
+Geplante Datenbereiche:
+- Items und Ressourcen
+- Rezepte
+- Werkbänke und Produktionszeiten
+- Lootpools
+- Gebietsressourcen
+- Gegner und KI-Werte
+- Händler
+- Fahrzeuge
+- Freischaltungen
+- Quests und Story
+- Events
+- Dialoge
+- XP- und Levelwerte
+- Schwierigkeitsprofile
+- Weltkartendaten
 
+Spielstände und Spieldatenbanken bleiben strikt getrennt.
+
+## Item- und Materialstand
+
+Die normale Itemliste wurde auf aktuell **340 Einträge** erweitert.
+
+Neue bzw. neu eingeordnete Einträge ab ID 327:
+- 327 Eisenerz
+- 328 Lithiumrohstoff
+- 329 Lithium
+- 330 Bleibatterie
+- 331 Lithiumbatterie
+- 332 Chlor
+- 333 Salpetersäure
+- 334 Industriereiniger
+- 335 Dekontaminationsmittel
+- 336 Verseuchte Kiste
+- 337 Gereinigte Kiste
+- 338 Panzerglas
+- 339 Antriebsmodul
+- 340 Prototypenmodul
+
+Wichtige Bereinigungsregeln:
+- Spezialwaffe bleibt nur Kategorie, kein allgemeines konkretes Item
+- Maschinenrahmen bleibt gestrichen
+- Getriebebauteil wird als **Antriebsmodul** geführt
+- Chemikalien werden als **Allgemeine Chemikalien** geführt
+- Metalllogik wird vereinheitlicht zu **Erz -> Metall -> Bauteil**
+- unnötige Roh-/Barren-Doppelstufen werden entfernt
+- Stahl bleibt ein einziges normales Material; keine zusätzlichen Stahlarten
+- Kabel-Grundrezept: **Kupfer + Gummi -> Kabel**
+- Panzerglas ist die höchste und extrem stabile Glasstufe; genaue Werte folgen beim Balancing
+
+## Produktions- und Werkbankstand
+
+Die große Stationsbereinigung ist abgeschlossen und die wichtigsten Stationen wurden bereits auf die neue Materiallogik angepasst.
+
+Wichtige Regeln:
 - einfache Gegenstände dürfen teilweise direkt hergestellt werden
-- Werkbänke sind vor allem für komplexe oder spezialisierte Herstellung vorgesehen
-- Produktionsketten sollen höchstens etwa 5 Verarbeitungsschritte besitzen
-- schwere Maschinen benötigen geeigneten/festen Boden und Strom
-- genaue Rezepte, Mengen, Produktionszeiten und Balancewerte werden erst nach der Stationsbereinigung festgelegt
+- komplexe Gegenstände benötigen passende Stationen
+- Produktionsketten sollen im Regelfall höchstens etwa 5 Verarbeitungsschritte besitzen
+- Eingabeslots von Produktionsstationen: maximal 20 Stück pro Slot
+- Produktionsstationen erhalten interne 10-Slot-Lager
+- Produktionswarteschlangen unterstützen Reihenfolge, Pause, Löschen und mehrere Durchläufe
+- fehlende Materialien pausieren Aufträge
+- Offline-Produktion ist vorgesehen
+- Stationslevel erhöhen nicht das 20er-Eingabelimit, können aber Rezepte, Tempo, Ausbeute und Effizienz verbessern
 
-Weitere neue Designpunkte:
-- spezielle verschlossene Lootkisten sollen bestimmte Skills bzw. Skillstufen voraussetzen
-- Tageslänge soll voraussichtlich vom Spieler wählbar sein, bis hin zu **1 Ingame-Tag = 24 Stunden Echtzeit**
-- starke Elektrowaffe mit wiederaufladbaren Akkus ist vorgesehen
-- leere Waffenakkus behalten eine kleine Notreserve, damit die Waffe nach einer Wartezeit noch einmal genutzt werden kann
-- Basis-PC soll später GEAM OS als spielinternes Computersystem verwenden
-- Datenwiederherstellung, Entschlüsselung und ähnliche Story-Minispiele sollen unter anderem am Basis-PC stattfinden
-- Storyidee um Sarah: zunächst freundliche und hilfreiche Figur, deren Verhalten später als Fassade entlarvt werden kann
-- mögliche Storyspur um eine fiktive amerikanische Forschungs-/Militärorganisation und deren Verbindung zum Ausbruch
-- klare Sprachregel für alle Spieltexte: verständliches Standarddeutsch, keine vulgären Beleidigungen, keine unnötig derbe Sprache
+Bereits überarbeitet wurden unter anderem:
+- Sägewerk
+- Steinbearbeitung
+- Metallwerkbank
+- Schmelzofen
+- Schmiede
+- Bauwerkbank
+- Betonmischer
+- Glaswerkbank
+- Werkzeugwerkbank
+- Waffenwerkstatt
+- Rüstungswerkbank
+- Reparaturstation
+- Schneiderei
+- Elektronikwerkbank
+- Batteriewerkbank
+- Elektrostation
+- Generatorwerkstatt
+- Kochstation
+- Metzger
+- Landwirtschaftsstation
+- Wasserwerk
+- Medizinische Station
+- Chemielabor
+- Apotheke
+- Recyclingstation
+- Ölraffinerie
+- Fahrzeugwerkstatt
+- Maschinenwerkstatt
+- Fallenwerkbank
+- Forschungsstation
+- High-End-Forschung
+- Prototypenbereich
+- Brecheranlage
+- Hochtemperatur-/Gießereibereich
+- Webstuhl
+- Mühle
+- Destillieranlage
+- Funk-/Kommunikationsstation
+- Strahlenschutzstation
+- Gewächshaus
+- Uranverarbeitung
+- Dekontaminationsbecken
 
-## Aktueller Teststand
+## Survival- und Statussysteme
+
+Aktueller Plan:
+- Leben 100/100
+- Hunger 100/100
+- Durst 100/100
+- Temperatur gebietsabhängig ungefähr -40 °C bis +40 °C
+- Strahlung als eigener Belastungswert
+- Infektion als eigener Belastungswert
+- Geruch beeinflusst bei passenden Gegnern die Erkennungsreichweite
+- normale Dusche entfernt Geruch/Schmutz
+- Dekontaminationsdusche entfernt die dafür vorgesehenen negativen Umwelt-/Kontaminationseffekte
+- Kleidung und Spezialausrüstung können Belastungen reduzieren oder vollständig ausgleichen
+- Grundwerte fallen nicht unter 0; negative Werte gibt es nur bei ausdrücklich vorgesehenen Effekten
+
+## Tod und Leichen
+
+Festgelegt:
+- komplettes Inventar einschließlich Main Hand und Second Hand geht beim Tod grundsätzlich in die Leiche
+- Rückholzeit: 2 Stunden aktive Spielzeit
+- Timer pausiert bei geschlossenem Spiel
+- Leiche verschwindet sofort, wenn sie vollständig geleert wurde
+- maximal 3 Leichen gleichzeitig
+- Kartenmarker für Leichen
+
+Sonderregel für abgelaufene Eventgebiete:
+- befindet sich der Spieler noch im Eventgebiet, darf er dort bleiben, auch wenn der Eventtimer abgelaufen ist
+- stirbt er danach und das Gebiet wäre nicht mehr erneut erreichbar, behält er sein komplettes Inventar
+- sollte durch einen Fehler dennoch ein unerreichbarer Inventarverlust entstehen, ist vollständige Wiederherstellung plus zusätzliche Entschädigung aus einem Selten-/Episch-/Legendär-Pool vorgesehen
+
+Leitregel: **Das Spiel darf schwierig sein, aber nicht unfair.**
+
+## Weltkarte
+
+Die Weltkarte wurde als eigener Pflichtblock vorbereitet.
+
+Version-1-Gebiete:
+- Basis
+- Kiefernwald
+- Steinbruch
+- Eisenmine
+- Kohlemine
+- Stadt-Ruinen
+- Sumpfgebiet
+- Hafen
+- Bunker A
+- mindestens ein temporäres Eventgebiet
+
+Geplant sind weiterhin ungefähr 30 dauerhafte Hauptgebiete; temporäre Events zählen nicht dazu.
+
+Gebietsdaten enthalten unter anderem:
+- Name
+- Gebietstyp
+- Schwierigkeit
+- Hauptressourcen
+- mögliche Beute
+- besondere Gefahren
+- empfohlene Ausrüstung
+- Reisezeit
+- Freischaltbedingungen
+- permanent/temporär
+- Eventdauer
+- erforderliche Spielversion
+
+Weltkarten-Infopanel:
+- Gebietsname
+- Schwierigkeit
+- Vorschaubild
+- Hauptressourcen
+- mögliche Beute
+- besondere Gefahren
+- empfohlene Ausrüstung
+- Reisezeit
+- Betreten
+
+Die Anzeige orientiert sich am nützlichen Grundprinzip bekannter Survival-Weltkarten, erhält aber eine eigene Optik, eigene Gebiete und eigene Regeln.
+
+## KI-System
+
+KI ist ein Pflichtsystem für Version 1.
+
+Gemeinsame Grundlage für:
+- Gegner
+- Tiere
+- NPCs
+- Begleiter
+
+Mindestens vorgesehen:
+- Warten/Idle
+- Umherlaufen
+- Verfolgen
+- Angreifen
+- Fliehen
+- Folgen
+- Arbeiten
+- Bewachen
+- Wahrnehmung über Sicht, Geräusch und später Geruch
+- NavMesh/Wegfindung
+- Freund-/Feind- bzw. Fraktionslogik
+- Festhänge-Recovery
+- Performance-Abstufung für entfernte KI
+- Speicherung wichtiger NPC-Zustände
+
+Dialoge und Sprachausgabe kommen später.
+
+## Kampf, Rüstung und Resistenz
+
+Erster Systementwurf steht.
+
+Schadensarten:
+- Physisch
+- Ballistisch
+- Explosiv
+- Feuer
+- Kälte
+- Elektro
+- Gift/Chemisch
+- Strahlung
+- Infektion
+
+Ausrüstung:
+- Polizei = einfache Schutzstufe
+- SWAT = stärkere Schutzstufe
+- Spezialkleidung für Kälte, Strahlung, Sporen/Chemie und spätere High-End-Kombinationen
+
+Rüstung reduziert Schaden; genaue Werte werden später über die .db balanciert.
+
+## XP- und Levelsystem
+
+Aktueller vollständiger Erstentwurf:
+- Level 1 bis 100
+- nichtlineare XP-Kurve
+- ungefähr 4,76 Millionen XP von Level 1 bis 100 nach aktuellem Entwurf
+- XP für Kämpfen, Sammeln, Crafting, Bauen, Erkunden, Forschung, Quests, Story und Events
+- Hauptstory und Nebenstory werden getrennt bewertet
+- Story-XP ist einmalig
+- Item-XP wird datengetrieben verwaltet
+- XP-Klassen 0 bis 6
+- Level-Up-Belohnungen über Forschungspunkte, Münzen, Güterpakete und Meilenstein-Freischaltungen
+- Level allein schaltet nicht alles frei; Story, Forschung und andere Bedingungen können zusätzlich erforderlich sein
+- Level 100 ist zunächst Maximum; Gesamt-XP kann intern weitergeführt werden
+
+## Loot- und Seltenheitssystem
+
+Seltenheitsstufen:
+- Grün = normal
+- Blau = selten
+- Gelb = episch
+- Rot = legendär / höchste normale Seltenheit
+
+Getrennte Lootquellen:
+- Weltressourcen
+- normale Kisten
+- Versorgungskisten
+- Technikkisten
+- Sicherheits-/Militärkisten
+- Spezialkisten
+- Gegner
+- Bosse
+- Bunker
+- Events
+- Story
+- Expeditionen
+- Händler
+
+Loot wird beim Erzeugen gespeichert, damit Neuladen keine neue Auswürfelung erzwingt.
+
+## Händler
+
+Der Händler wird als neutraler/friedlicher Sonder-NPC vorbereitet.
+
+Festgelegt:
+- pro Erscheinen verlangt er **genau 3 verschiedene Ressourcen**
+- die drei Anforderungen bleiben für diesen Aufenthalt gleich
+- beim nächsten Erscheinen werden neue Anforderungen bestimmt
+- vollständige Lieferung gibt die normale Belohnung
+- zusätzlicher Bonus aus eigenem Bonuspool möglich
+- eigener Händler-Loot-/Angebotspool
+- Händlerposition darf zwischen vorbereiteten Punkten rotieren
+- Händlergebiet enthält keine normalen Zombie-/Feindspawns
+- einige normale Ressourcen dürfen im Händlergebiet vorkommen
+- wenn der Spieler den Händler angreift, wehrt er sich
+- Händler greift nur innerhalb seiner Reichweite an
+- er stoppt spätestens bei 10 Restleben des Spielers
+- Handel/Interaktion bleibt bis zum erneuten Betreten des Gebiets gesperrt
+- Händler ist grundsätzlich neutral und kein normaler Kampfgegner
+
+## Eventgebiete
+
+Neue Persistenzregel:
+- wenn der Spieler innerhalb eines Eventgebiets offline geht, bleibt er dort gespeichert
+- läuft der Eventtimer ab, wird er nicht automatisch entfernt
+- beim nächsten Laden bleibt das Gebiet aktiv, solange der Spieler noch darin ist
+- Eventgegner dürfen weiterhin angreifen
+- erst nach dem Verlassen wird das abgelaufene Eventgebiet entfernt
+- stirbt der Spieler nach Ablauf des Timers im nicht mehr erneut betretbaren Eventgebiet, bleibt sein Inventar erhalten
+
+## Bausystem
+
+Grundregeln:
+- normales freies Spielerbauen verwendet ein 3x3-Raster
+- keine allgemeine Statik-/Traglastsimulation
+- Abriss gibt 25 % der Materialien zurück
+- normale Bauteile bleiben bestehen, wenn sie gültig platziert wurden
+
+Ausnahme:
+**Von uns definierte Spezialgebäude sind so groß, tief und komplex, wie wir es festlegen.**
+
+Beispiele:
+- Bunker
+- Forschungsanlagen
+- Fabriken
+- Kraftwerke
+- große Siedlungsgebäude
+
+Bei Bunkern befindet sich auf der normalen Ebene der Eingang; der eigentliche Bunker kann sich über mehrere unterirdische Ebenen fortsetzen.
+
+## Speichern / Autosave / Recovery
+
+Geplant:
+- 10 manuelle Spielstände
+- Autosave: Aus / 5 / 10 / 15 / 30 / 60 Minuten
+- Gebiets-/Szenenwechsel speichert immer
+- Recovery-Spielstand bei Absturz/Fehler
+- Recovery wird beim nächsten Start angeboten, nicht erzwungen
+- Save-Slots zeigen mindestens Ort, Datum/Uhrzeit, Spielzeit und Level
+- Save-Versionierung und spätere Migration vorgesehen
+
+## Zeit / Offline-Fortschritt
+
+- 24-Stunden-Ingame-Uhr
+- Tagesdauer konfigurierbar
+- Produktions-, Bau- und geeignete Eventzeiten können offline weiterlaufen
+- Leichentimer pausiert offline
+- Hunger/Durst werden nicht einfach offline weiter abgesenkt
+- zeitabhängige Systeme verwenden zentrale Zeitregeln
+
+## Grafik, Texturen und Audio
+
+Für die erste vollständig spielbare Version zwingend:
+- erkennbare und stimmige Grafik
+- Boden-, Gebäude-, Objekt- und Itemtexturen
+- Modelle für Spieler, Gegner, Tiere, NPCs, Fahrzeuge und Werkbänke
+- UI-Grafiken und Weltkartenmarker
+- Musik für Menü, Basis, Erkundung und Gefahr/Kampf
+- Umgebungsgeräusche
+- Oberflächen-Schritte
+- grundlegende Effekte
+
+Platzhalter und finale Assets werden getrennt geführt.
+
+## Schwierigkeitsgrad
+
+Für die erste Veröffentlichung ist nur **Normal / Ausgeglichen** aktiv.
+
+Später mögliche Datenstruktur:
+- `/Data/Schwierigkeit/leicht.db`
+- `/Data/Schwierigkeit/normal.db`
+- `/Data/Schwierigkeit/hardcore.db`
+
+Zunächst wird nur `normal.db` benötigt. Weitere Modi werden erst nach echtem Spielerfeedback aktiviert.
+
+## Multiplayer
+
+Multiplayer ist **nicht Teil der ersten Version**, soll aber architektonisch mitgedacht werden.
+
+Später möglich:
+- Welt wie im Singleplayer hosten
+- Freunde können beitreten
+- optional dedizierter Server
+- Whitelist/Rechte/Einladungen später
+
+Singleplayer bleibt zuerst vollständig und unabhängig spielbar.
+
+## Update-System
+
+Spätere Richtung:
+- ZIP-basierte Updates
+- separater Updater
+- wichtige Dateien vor Austausch als .bak/.old bzw. in Backup-Struktur sichern
+- SHA-256-Prüfung möglich
+- Rollback bei Fehler
+- keine feste Annahme zur endgültigen Spielgröße
+- kleine Updates können nur geänderte .db-/Asset-Dateien liefern
+- vorbereitete Funktionen können über Feature-Flags, Abhängigkeiten oder Updates aktiviert werden
+
+## Aktueller technischer Teststand
 
 Bereits technisch geprüft:
 - Spielerbewegung
@@ -88,7 +432,6 @@ Bereits technisch geprüft:
 - zufällige Lootmengen und prozentuale Chancen
 - mehrere Loot-Treffer
 - Kiste kann nur einmal gelootet werden
-- Lootkiste als physisches Hindernis, aktuelle Testgröße 1.2 / 1.5 / 0.8
 - eigenes Kisten-Mini-Inventar
 - einzelne Items nehmen
 - Alles nehmen
@@ -98,129 +441,31 @@ Bereits technisch geprüft:
 - geschlossene Kiste blockiert Einlagerung
 - geöffnete Kiste erlaubt Einlagerung
 
-Die aktuelle Container-GUI ist noch eine technische Demo und wird später ersetzt.
+Offener Testpunkt:
+- beim aktuellen PlayerMovement-Test tritt sporadisch ein Richtungswechsel-/Bewegungsproblem auf; diagonale Bewegung funktioniert grundsätzlich. Der Fehler wird später gezielt weiter geprüft und blockiert die Planung derzeit nicht.
 
-## Container-/Inventarsystem
+## Aktuelle Priorität
 
-Zielaufbau der finalen Oberfläche:
-- links: Spielerinventar
-- oben links: INVENTORY
-- Tasche und Rucksack
-- unten links: NUTZEN und AUFTEILEN sowie weitere Spieleraktionen
-- rechts: aktuell geöffneter Container, z. B. Lootkiste, Gegner oder später andere Container
-- Transfer über Mengen-Slider
-- ALLE NEHMEN
-- ALLES EINLAGERN
+Zuerst werden die zwingenden Kernsysteme vollständig vorbereitet und danach technisch umgesetzt:
 
-Die Transferlogik soll für alle Container gemeinsam verwendet werden.
+1. Spielersteuerung und Interaktion
+2. Inventar und Itemsystem
+3. KI-Grundsystem
+4. Kampf und Schaden
+5. Survival-/Statussysteme
+6. Tod/Respawn/Leichen
+7. Ressourcen und Gebietsmanager
+8. Crafting und Produktion
+9. Bausystem
+10. Weltkarte und Reisen
+11. Lootsystem
+12. XP-/Levelsystem
+13. Speichern/Autosave/Recovery
+14. Zeit/Tag-Nacht/Offline
+15. UI/HUD
+16. Grafik/Texturen/Audio
+17. Quest-/Storysystem
+18. Händler
+19. Eventsystem
 
-## Lootkisten
-
-- Loot wird einmal erzeugt und bleibt in der Kiste.
-- Kein erneutes Würfeln beim späteren Öffnen.
-- Einzelne Mengen können entnommen werden.
-- Ein kompletter ausgewählter Stack kann mit Alles nehmen entnommen werden.
-- Normale Kisten dürfen grundsätzlich auch als Lager für eigene Gegenstände verwendet werden.
-- Eine spätere Option soll festlegen können, ob leere gelootete Kisten automatisch gesperrt werden.
-- Große Lootpools werden später datengetrieben über .db-Dateien verwaltet.
-- C# kennt langfristig nur die Logik bzw. Pool-ID; Inhalte, Mengen und Chancen liegen in den Datenbanken.
-
-## Startbasis
-
-Die gezeigte Grundbase ist nur der Startzustand und kann vollständig umgebaut werden.
-
-### Abreißbar
-- Boden
-- Wände
-- Türen
-- Fenster
-- sonstige normale Bauteile
-
-### Grundobjekte
-Grundobjekte innerhalb der Basis sind nicht zerstörbar. Sie können aufgenommen/eingelagert und später wieder herausgenommen und neu platziert werden. Beispiel: Spind.
-
-### Defekter Pickup
-- dauerhaft vorhanden
-- nicht abreißbar
-- nicht verschiebbar
-- nicht einlagerbar
-- dauerhaft als kleines erstes Lager nutzbar
-
-### Abriss
-Beim Abriss werden **25 % der Ressourcen der aktuell verbauten Ausbaustufe** zurückgegeben. Das gilt für alle Ausbaustufen und abreißbaren Bauteile.
-
-Bei einer Ressourcenberechnung wird auf die nächste ganze Ressource aufgerundet. Teilressourcen existieren im Inventar nicht.
-
-### Erste Holzstufe
-Aktuelle Referenz:
-- Holzboden: Haltbarkeit 6, Kosten 1 Holz
-- Holzwand: Haltbarkeit 6, Kosten 1 Holz
-- Holztür: Haltbarkeit 6, Kosten 1 Holz
-- Holzfenster: Haltbarkeit 6, Kosten 1 Holz
-
-## Zahlenregeln
-
-Grundsätzlich werden Spielwerte bewusst einfach gehalten.
-
-### Standard
-Nur ganze Zahlen bei:
-- Ressourcen
-- Inventarmengen
-- Baukosten
-- Händlerpreisen
-- Käufen
-- Tauschmengen
-- XP
-- Haltbarkeit
-- Schaden
-- Kapazitäten
-- Belohnungen
-
-### Ausnahme
-Leben, Hunger und Durst/Wasser dürfen ganze Zahlen oder 0,5er-Schritte verwenden.
-
-### Negative Werte
-Negative Werte sind nur bei ausdrücklich vorgesehenen negativen Effekten erlaubt, z. B. Kältegebiet mit falscher Kleidung.
-
-Die Spielregeln stehen über mathematischen Rundungsregeln.
-
-## Nächste Programmier-Schritte
-
-1. Gemeinsames zweigeteiltes Inventar-/Container-UI bauen.
-2. Spielerinventar links mit Tasche/Rucksack und den Aktionen NUTZEN/AUFTEILEN.
-3. Rechten Containerbereich verallgemeinern, damit Kiste, Gegner usw. dasselbe System verwenden.
-4. Mengen-Slider für beide Transferrichtungen endgültig einbauen.
-5. ALLE NEHMEN und ALLES EINLAGERN finalisieren.
-6. Pickup als stationäres Mini-Lager anbinden.
-7. Grundobjekte der Basis einlagerbar und wieder platzierbar machen.
-8. Bausystem für Boden, Wände, Türen, Fenster und weitere Bauteile.
-9. Abrisssystem mit 25-%-Rückerstattung der aktuellen Ausbaustufe.
-10. Danach Gegner-Spawning, Crafting/Werkbänke, Hunger/Wasser, Temperatur, Strahlung/Infektion und weitere Kernsysteme einzeln umsetzen und testen.
-
-## Datenarchitektur
-
-**C# = Logik und Systeme**  
-**.db = Inhalte, Werte, Zuordnungen und Abläufe**
-
-Geplante Datenbereiche:
-- Items/Ressourcen
-- Rezepte
-- Werkbänke/Produktionszeiten
-- Lootpools
-- Gebietsressourcen
-- Gegner
-- Händler
-- Fahrzeuge
-- Freischaltungen
-- Quests/Story
-- Events
-- Dialoge
-- Balancewerte
-
-Spieldatenbanken und Spielstände bleiben getrennt.
-
-## Gebietsstand
-
-Geplant und grundkonfiguriert: **30 dauerhaft vorhandene Hauptgebiete**. Temporäre Eventgebiete zählen nicht dazu.
-
-Die bisher festgelegten Gebiets-, Ressourcen-, Story-, Fahrzeug-, Siedlungs- und weiteren Langzeitideen bleiben Bestandteil der Roadmap und werden schrittweise umgesetzt.
+Große spätere Systeme wie vollständige Siedlungsverwaltung, High-End-Forschung, Prototypen, große Kraftwerke, komplexe Expeditionen und umfangreiche Dialoge dürfen vorbereitet, aber zunächst deaktiviert sein.
