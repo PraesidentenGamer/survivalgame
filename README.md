@@ -2,11 +2,11 @@
 
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
 
-Das Projekt befindet sich weiterhin in einer frühen Entwicklungs- und Planungsphase. Der Schwerpunkt liegt jetzt darauf, die **zwingenden Kernsysteme für die erste vollständig spielbare Version** vollständig zu definieren und anschließend technisch umzusetzen.
+Das Projekt befindet sich in einer frühen, aber inzwischen breit geplanten Entwicklungsphase. Die vorhandene Unity-/C#-Basis wurde vollständig geprüft; aktuell sind **42 C#-Skripte** im Projektbestand erfasst.
 
 ## Aktueller Stand
 
-Den vollständigen Entwicklungsstand findest du hier:
+Den ausführlichen Entwicklungsstand findest du hier:
 
 - [ENTWICKLUNGSSTAND.md](ENTWICKLUNGSSTAND.md)
 
@@ -16,46 +16,67 @@ Spätere Ideen und optionale Erweiterungen werden getrennt gesammelt:
 
 - [IDEEN.md](IDEEN.md)
 
-Neue Vorschläge werden bewusst geparkt, damit laufende Entwicklungsblöcke abgeschlossen werden können und der Umfang nicht unkontrolliert wächst.
-
 ## Aktueller Schwerpunkt
 
-Aktuell vorbereitet bzw. deutlich erweitert wurden unter anderem:
+Die Planungsblöcke für viele Pflichtsysteme sind inzwischen weit fortgeschritten. Zusätzlich wurde der aktuelle technische Bestand Script für Script geprüft.
 
-- Item- und Materialbereinigung bis aktuell 340 normale Item-Einträge
-- Produktions- und Werkbanklogik
-- Weltkarte und Version-1-Gebiete
-- Loot- und Seltenheitssystem
-- XP- und Levelsystem bis Level 100
-- KI-Grundsystem
-- Kampf, Rüstung und Resistenz
-- Survival-/Statussysteme
-- Tod/Leichen/Respawn
-- Händlerlogik
-- Eventgebiets-Persistenz
-- Speichern/Autosave/Recovery
-- Grafik-/Textur-/Audio-Pflichtumfang
-- spätere Update- und Multiplayer-Architektur
+Wichtige Festlegungen:
+- bestehende C#-Skriptnamen bleiben unverändert
+- vorhandene Inspector-/Prefab-/Map-Abhängigkeiten werden kompatibel weitergeführt
+- C# bleibt die Logikschicht
+- .db-Dateien enthalten strukturierte Spielinhalte und Balance
+- JSON wird für normale Einstellungen verwendet
+- Spielstände verwenden später die eigene Endung `.sgsave`
 
-## Grundprinzip der ersten vollständig spielbaren Version
+## Save-Richtung
 
-Die erste Version muss nicht alle langfristig geplanten Systeme enthalten.
+Geplant ist ein robustes Save-System mit:
+- 10 manuellen Slots
+- Autosave
+- Recovery
+- Save-Versionierung
+- `.sgsave`
+- AES-256-GCM
+- internem Support-/Repair-Tool
 
-Wichtig ist ein stabiler Gameplay-Loop:
+## UI
 
-**Vorbereiten -> Reisen -> Sammeln/Kämpfen -> Beute sichern -> Verarbeiten/Bauen -> Fortschritt**
+Die visuelle Richtung ist inzwischen für folgende Bereiche festgelegt:
+- HUD
+- Inventar/Container
+- Questbuch
+- Weltkarte
+- Hauptmenü/Einstellungen
 
-Spätere Systeme dürfen bereits vorbereitet sein und über Updates aktiviert oder erweitert werden.
+Auf starken Geräten darf die Oberfläche stark transparent/gläsern wirken. Auf schwächeren Geräten wird die Transparenz automatisch reduziert.
 
-## Datenarchitektur
+## Story
 
-**C# = Logik und Systeme**  
-**.db = Inhalte, Werte, Balance und Freischaltungen**
+Die Hauptstory soll sehr groß werden und eng mit dem Levelsystem verbunden sein. Tschernobyl ist ein sehr später Hauptstoryabschnitt, aber nicht das endgültige Ende des Spiels.
 
-Dadurch sollen spätere Updates neue Items, Rezepte, Gebiete, Händlerangebote, Events und Balancewerte möglichst ohne große Änderungen an den Kernsystemen ergänzen können.
+## Technische Basis
+
+Bereits vorhanden bzw. als Prototyp bestätigt sind unter anderem:
+- Spielerbewegung
+- Kamera
+- Spielerleben
+- Kampf
+- Interaktion
+- Inventar/Stacks
+- Koordinaten
+- Save-Prototyp
+- Weltkarten-Ausgänge und Reisen
+- AreaData
+- AreaSpawnManager
+- AreaSpawnZone
+- Ressourcen-Spawning
+- Lootkisten/Container
+- Türsystem
+- Testzombie
+- GameManager
 
 ## Hinweis
 
-Für die erste Veröffentlichung ist zunächst nur der Schwierigkeitsmodus **Normal / Ausgeglichen** vorgesehen.
+Für die erste Veröffentlichung ist zunächst nur **Normal / Ausgeglichen** aktiv.
 
-Singleplayer hat Priorität. Multiplayer ist als spätere Erweiterung vorgesehen, wird aber architektonisch bereits mitgedacht.
+Singleplayer hat Priorität. Multiplayer bleibt eine spätere Erweiterung, wird aber architektonisch mitgedacht.
