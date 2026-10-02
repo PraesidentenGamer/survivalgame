@@ -2,7 +2,7 @@
 
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
 
-Das Spiel befindet sich noch in einer frühen Entwicklungsphase. Der aktuelle Schwerpunkt liegt auf dem technischen Aufbau der Gebiete, Ressourcen, Spawnregeln und der ersten Balance.
+Das Projekt befindet sich weiterhin in einer frühen Entwicklungs- und Planungsphase. Der Schwerpunkt liegt jetzt darauf, die **zwingenden Kernsysteme für die erste vollständig spielbare Version** vollständig zu definieren und anschließend technisch umzusetzen.
 
 ## Aktueller Stand
 
@@ -12,24 +12,50 @@ Den vollständigen Entwicklungsstand findest du hier:
 
 ## Ideen und Vorschläge
 
-Geplante und vorgemerkte Ideen werden getrennt vom aktuellen Entwicklungsstand gesammelt:
+Spätere Ideen und optionale Erweiterungen werden getrennt gesammelt:
 
 - [IDEEN.md](IDEEN.md)
 
-Eine Idee auf der Ideenliste bedeutet nicht automatisch, dass sie als Nächstes umgesetzt wird. Die Entwicklung erfolgt schrittweise nach dem jeweils aktuellen Schwerpunkt.
+Neue Vorschläge werden bewusst geparkt, damit laufende Entwicklungsblöcke abgeschlossen werden können und der Umfang nicht unkontrolliert wächst.
 
 ## Aktueller Schwerpunkt
 
-Die technische Grundentwicklung läuft weiter, parallel wird aktuell der große Produktions-/Crafting-Bereich vollständig geplant.
+Aktuell vorbereitet bzw. deutlich erweitert wurden unter anderem:
 
-Aktuelle Planungsreihenfolge:
-- Werkbank-/Produktionsstations-Prüfung abgeschlossen: 80 Kandidaten auf aktuell 43 eigenständige Bereiche reduziert
-- verbleibende Stationen final prüfen und bei späteren Überschneidungen weiter zusammenlegen
-- Eventitems festlegen
-- komplettes Itemsystem systematisch ausarbeiten
-- Rezepte und Produktionsketten definieren
-- danach die Systeme schrittweise technisch in Unity umsetzen
+- Item- und Materialbereinigung bis aktuell 340 normale Item-Einträge
+- Produktions- und Werkbanklogik
+- Weltkarte und Version-1-Gebiete
+- Loot- und Seltenheitssystem
+- XP- und Levelsystem bis Level 100
+- KI-Grundsystem
+- Kampf, Rüstung und Resistenz
+- Survival-/Statussysteme
+- Tod/Leichen/Respawn
+- Händlerlogik
+- Eventgebiets-Persistenz
+- Speichern/Autosave/Recovery
+- Grafik-/Textur-/Audio-Pflichtumfang
+- spätere Update- und Multiplayer-Architektur
+
+## Grundprinzip der ersten vollständig spielbaren Version
+
+Die erste Version muss nicht alle langfristig geplanten Systeme enthalten.
+
+Wichtig ist ein stabiler Gameplay-Loop:
+
+**Vorbereiten -> Reisen -> Sammeln/Kämpfen -> Beute sichern -> Verarbeiten/Bauen -> Fortschritt**
+
+Spätere Systeme dürfen bereits vorbereitet sein und über Updates aktiviert oder erweitert werden.
+
+## Datenarchitektur
+
+**C# = Logik und Systeme**  
+**.db = Inhalte, Werte, Balance und Freischaltungen**
+
+Dadurch sollen spätere Updates neue Items, Rezepte, Gebiete, Händlerangebote, Events und Balancewerte möglichst ohne große Änderungen an den Kernsystemen ergänzen können.
 
 ## Hinweis
 
-Grafik, hochwertige Assets und große spätere Systeme wie Fahrzeuge, Begleiter, Siedlung und umfangreiche Story-Inhalte werden erst nach den grundlegenden Spielsystemen weiter ausgebaut.
+Für die erste Veröffentlichung ist zunächst nur der Schwierigkeitsmodus **Normal / Ausgeglichen** vorgesehen.
+
+Singleplayer hat Priorität. Multiplayer ist als spätere Erweiterung vorgesehen, wird aber architektonisch bereits mitgedacht.
