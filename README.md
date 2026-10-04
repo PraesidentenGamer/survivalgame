@@ -18,13 +18,13 @@ Spätere Ideen und optionale Erweiterungen werden getrennt gesammelt:
 
 ## Aktueller Schwerpunkt
 
-Die Planungsblöcke für viele Pflichtsysteme sind inzwischen weit fortgeschritten. Zusätzlich wurde der aktuelle technische Bestand Script für Script geprüft.
+Die Planungsblöcke für viele Pflichtsysteme sind inzwischen weit fortgeschritten. Zusätzlich wurde der aktuelle technische Bestand Script für Script geprüft. Die Weltkarte ist inzwischen technisch funktionsfähig; alle 30 dauerhaften Maps sowie die Weltkarte selbst sind in den Unity Build Settings eingetragen.
 
 Wichtige Festlegungen:
 - bestehende C#-Skriptnamen bleiben unverändert
 - vorhandene Inspector-/Prefab-/Map-Abhängigkeiten werden kompatibel weitergeführt
 - C# bleibt die Logikschicht
-- .db-Dateien enthalten strukturierte Spielinhalte und Balance
+- strukturierte Spieldaten liegen aktuell als `.json.db` im Ordner `database`
 - JSON wird für normale Einstellungen verwendet
 - Spielstände verwenden später die eigene Endung `.sgsave`
 
@@ -66,6 +66,9 @@ Bereits vorhanden bzw. als Prototyp bestätigt sind unter anderem:
 - Koordinaten
 - Save-Prototyp
 - Weltkarten-Ausgänge und Reisen
+- funktionsfähige Weltkarte mit `WorldMapUI.cs`
+- Hover-/InfoPanel-Anzeige und Betreten von Gebieten
+- 30 Maps + Weltkarte in den Build Settings
 - AreaData
 - AreaSpawnManager
 - AreaSpawnZone
@@ -80,3 +83,13 @@ Bereits vorhanden bzw. als Prototyp bestätigt sind unter anderem:
 Für die erste Veröffentlichung ist zunächst nur **Normal / Ausgeglichen** aktiv.
 
 Singleplayer hat Priorität. Multiplayer bleibt eine spätere Erweiterung, wird aber architektonisch mitgedacht.
+
+## Nächster Entwicklungsblock
+
+Als nächstes wird das Gegner-System an die vorhandene Area-/Spawn-Struktur angebunden:
+- `EnemySpawnManager.cs`
+- gebietsabhängige Gegnerdefinitionen aus `database/*.json.db`
+- zufällige gültige Spawnpositionen innerhalb der SpawnZone
+- Mindestabstand zum Spieler
+- danach Verallgemeinerung der vorhandenen `DemoZombie.cs`-Logik
+- anschließend AreaState/Persistenz, Loot-Zentralisierung und weitere Survival-Systeme
