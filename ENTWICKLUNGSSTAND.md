@@ -1,6 +1,6 @@
 # Entwicklungsstand
 
-**Stand:** 03.10.2026
+**Stand:** 04.10.2026
 
 ## Aktuelle Entwicklungsphase
 
@@ -15,7 +15,7 @@ Grundregel für den weiteren Ausbau:
 ## Architektur
 
 **C# = Logik und Systeme**  
-**.db = strukturierte Spielinhalte und Balance**  
+**`.json.db` = strukturierte Spielinhalte und Balance im Ordner `database`**  
 **JSON = Einstellungen/Config**  
 **.sgsave = Spielstand**
 
@@ -23,7 +23,7 @@ Grundregel für den weiteren Ausbau:
 Normale Einstellungen dürfen als JSON gespeichert werden, z. B. Grafik, Audio, Steuerung, Interface und Gameplay.
 
 ### Spieldatenbanken
-.db-Dateien sind für strukturierte Inhalte vorgesehen, z. B.:
+Die strukturierten Spieldaten liegen aktuell als `.json.db` im Projektordner `database`. Diese Dateien sind für strukturierte Inhalte vorgesehen, z. B.:
 - Items
 - Ressourcen
 - Rezepte
@@ -173,6 +173,21 @@ Optische Richtung festgelegt:
 
 UI-Transparenz wird abhängig von der Systemleistung reduziert. Automatik darf CPU/GPU/RAM/VRAM und Grafikfähigkeiten über normale Unity-/SystemInfo-Abfragen berücksichtigen. Keine Windows-Dienste oder tiefe Systemintegration notwendig.
 
+## Aktueller Weltkarten-Stand
+
+Die Weltkarte ist technisch funktionsfähig.
+
+Aktuell bestätigt:
+- **30 dauerhafte Maps + Weltkarte** sind in den Unity **Build Settings** eingetragen
+- `WorldMapUI.cs` ist aktiv im Einsatz
+- Gebietsmarker reagieren auf **Hover**
+- ein **InfoPanel** zeigt die vorgesehenen Gebietsinformationen
+- Gebiete können über die Weltkarte **betreten** werden
+- die vorhandene Reise-/Szenenstruktur bleibt mit `WorldMapExit.cs` und `WorldMapTravel.cs` kompatibel
+- die 30 dauerhaften Gebiete bleiben die feste Hauptstruktur; Event-/Storygebiete werden getrennt behandelt
+
+Damit ist die Weltkarte kein reines Mockup mehr, sondern eine funktionierende technische Basis für die weitere Entwicklung.
+
 ## Kamera
 
 `CameraFollow.cs` bleibt bestehen.
@@ -286,12 +301,47 @@ Die gleichartigen Demo-Ressourcenskripte bleiben ebenfalls erhalten. Sie werden 
 
 ## Nächster technischer Schwerpunkt
 
-Nach der Bestandsaufnahme kann jetzt wieder echte Entwicklung erfolgen.
+Der nächste konkrete Entwicklungsblock ist das Gegner-Spawn-System.
 
-Sinnvolle nächste Schritte:
-1. bestehende Kernskripte kompatibel weiterentwickeln
-2. DB-Loader ergänzen, ohne bestehende Script-/Inspector-Strukturen zu brechen
-3. Gegner-Spawn-System an Area-/Spawn-System anbinden
-4. Lootverteilung über GM/AM weiter zentralisieren
-5. AreaState/Persistenz ergänzen
-6. Survival-, Tod-, XP-, Quest- und Produktionssysteme schrittweise implementieren
+### 1. `EnemySpawnManager.cs`
+Geplant:
+- Anbindung an die vorhandene Area-/Spawn-Struktur
+- Gegner-Prefabs bzw. Gegnerdefinitionen pro Gebiet
+- Min-/Max-Anzahl pro Gebiet
+- zufällige gültige Spawnpositionen innerhalb der `AreaSpawnZone`
+- Mindestabstand zum Spieler
+- keine Spawns außerhalb der gültigen Kartenfläche
+- Vorbereitung auf gebietsabhängige Schwierigkeitsstufen
+- erneute Zufallsverteilung beim erneuten Betreten normaler Ressourcengebiete
+- Event-/Storygebiete können später eigene Regeln verwenden
+
+### 2. Datenanbindung
+Gegnerdaten sollen schrittweise aus den vorhandenen `database/*.json.db`-Dateien geladen werden. Dazu gehören insbesondere:
+- Gegnertyp
+- Gebietszuordnung
+- Spawngewicht/Wahrscheinlichkeit
+- Mindest-/Maximalanzahl
+- Leben
+- Schaden
+- Bewegung
+- weitere spätere KI-/Loot-/Statuswerte
+
+### 3. `DemoZombie.cs` kompatibel weiterentwickeln
+Der bestehende Dateiname bleibt unverändert. Die vorhandene Erkennung, Verfolgung, Angriff und Tod werden schrittweise aus der hart codierten Demo in eine allgemeiner nutzbare Gegnerlogik überführt.
+
+Erster Testgegner bleibt bewusst einfach:
+- schwacher Zombie
+- ungefähr 5 Leben
+- Bewegungstempo ungefähr 0,5
+- Schaden ungefähr 0,5 pro Treffer
+- erster Einsatz im grünen Kiefernwald
+
+### Danach
+Vorgesehene Reihenfolge nach dem Gegner-Spawn-System:
+1. Gegnerdaten/AI weiter verallgemeinern
+2. Lootverteilung stärker über GM/AM und Datenbank zentralisieren
+3. AreaState und Gebiets-Persistenz
+4. Survivalwerte und Tod-/Leichensystem
+5. XP-/Levelsystem
+6. Quest-/Storysystem
+7. Produktion/Werkbänke und weitere Progressionssysteme
