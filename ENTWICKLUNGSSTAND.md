@@ -1,6 +1,6 @@
 # Entwicklungsstand
 
-**Stand:** 04.10.2026
+**Stand:** 05.10.2026
 
 ## Aktuelle Entwicklungsphase
 
@@ -79,34 +79,86 @@ Interne Save-Bereiche:
 
 ## Story- und Questsystem
 
-Die Hauptstory soll deutlich größer als ein einzelner kurzer Kampagnenbogen werden.
+Der aktuell konkret ausgearbeitete Hauptstory-Grundbogen umfasst **25 Hauptmissionen**. Frühere sehr große Zielzahlen waren grobe Langzeitideen; für die aktuelle Datenbankplanung gilt der 25-Missionen-Grundbogen als Arbeitsbasis und kann später über Updates erweitert werden.
 
-Grundrichtung:
-- mehrere große Akte und Kapitel
-- ungefähr 150–250 Hauptquests als mögliche Zielgröße
-- Tschernobyl ist sehr später Storyabschnitt, aber nicht endgültiges Ende
-- spätere Storyupdates können weitere Sagas anschließen
-- Hauptstory ist eng an Level und Fortschritt gekoppelt
+Bestätigte Richtung:
+- große, storygetriebene Progression
+- Tschernobyl als sehr später Hauptstoryabschnitt und scheinbarer Ursprung
+- widersprüchliche Akten, Vertuschung und Beweisvernichtung
+- freies Spiel nach Abschluss des aktuellen Storybogens
+- spätere Storyupdates können den Cliffhanger fortführen
+- 12 SECRET-Missionen mit versteckten Freischaltungen
+- optionale Neben-, Auftrag-, Event-, Fundstück- und Freischaltungsquests
 
-Beispielhafte Levelbereiche:
-- Akt 1–3: Level 1–20
-- Akt 4–5: etwa 20–35
-- Akt 6–7: etwa 35–50
-- Akt 8–10: etwa 50–70
-- Akt 11–13: etwa 70–85
-- Akt 14–16: etwa 85–100
+## Sarah / Karma-System
 
-Dabei sollen Levelbereiche sich überschneiden dürfen. Normales ausgewogenes Spielen aus Hauptquests, Nebenquests, Looten, Farmen, Erkunden, Crafting und Kämpfen soll die nötigen Level ohne zähes Grinding erreichbar machen.
+Sarah ist als wichtige wiederkehrende Storyfigur geplant.
 
-### XP-Event
-Wiederkehrendes XP-Event vorgesehen, z. B. mit Bonus auf:
-- Gegner
-- Farmen/Sammeln
-- Crafting/Produktion
-- Erkunden
-- Nebenquests
+Aktuell bestätigt:
+- anfangs freundlich und hilfsbereit
+- Start des Vertrauens-/Karmawertes bei 50 %
+- ab 50 % bleibt sie als Begleiterin verfügbar
+- unter 50 % entwickelt sich der neutrale/negative Pfad
+- sehr niedrige Werte können zu einer späteren Trennung und Konfrontation in Tschernobyl führen
+- kein zwingender Kampf gegen Sarah
+- Akten dürfen offenlassen, ob Sarah maßgeblich verantwortlich war oder selbst als Marionette benutzt wurde
+- auf Leicht ist die Karmaanzeige sichtbar und negative Entscheidungen wirken abgeschwächt
+- auf höheren Schwierigkeitsstufen vermitteln Dialoge, Verhalten und Körpersprache die Entwicklung
+- negativer Endzustand kann den zeitlich begrenzten Effekt **Gebrochen** auslösen
+- **Gebrochen:** -20 % effektive maximale Haltbarkeit für haltbare Gegenstände; aktuell 6 Ingame-Stunden / 90 Minuten aktive Spielzeit vorgesehen
 
-Hauptstory-XP muss nicht zwingend verstärkt werden.
+## Begleiter- und NPC-KI
+
+### Grundprinzip
+Der Spieler bleibt immer im Vordergrund. Begleiter unterstützen, ersetzen ihn aber nicht.
+
+### Menschliche Begleiter
+- keine normalen Lebenspunkte / nicht dauerhaft tötbar
+- eigene, vollständig ausbaubare Skills
+- aktuell 5 Skillstufen pro Skill vorgesehen
+- aktive Begleiter nutzen die vom Spieler vergebenen Skills
+- aktive Begleiter: maximal 75 % effektive Skillwirkung
+- nicht aktive Begleiter in der Siedlung: autonom, 100 % und Maximal-Skills
+- später maximal 3 eigene Begleiter pro Spieler als Squad-Rahmen
+- im späteren Multiplayer besitzt und steuert jeder Spieler ausschließlich seine eigenen Begleiter
+
+### Passive Hilfe
+Alle Begleiter verwenden das dreistufige System **Passive Hilfe**:
+1. subtil
+2. deutlicher
+3. starker Hinweis
+
+Die Aufgabe wird niemals automatisch für den Spieler gelöst.
+
+### Tierbegleiter
+Hunde/Tierbegleiter bleiben ein eigenes System:
+- keine Lebenspunkte
+- keine normale Skillleiste
+- zufällig bestimmte Fähigkeiten
+- zu Beginn maximal 2 Fähigkeiten pro Hund
+- Hinweise vor allem nonverbal, z. B. Blickrichtung zum gesuchten Bereich
+- späteres Zucht-/Kreuzungssystem vorgesehen
+
+### Begrenzte Autonomie
+Nicht aktive menschliche Begleiter dürfen innerhalb ihrer Aufgabe selbstständig handeln:
+- fehlende Ressourcen erkennen
+- erlaubte Siedlungslager nutzen
+- benötigte Ressourcen selbst beschaffen
+- danach zur eigentlichen Aufgabe zurückkehren
+
+Private Lager des Spielers sind grundsätzlich tabu. Siedlungslager können ausdrücklich für NPCs freigegeben werden.
+
+Aktive Begleiter dürfen ohne expliziten Befehl ebenfalls begrenzt eigenständig reagieren, z. B. folgen, Gefahren abwehren, Position verbessern, warnen und Passive Hilfe geben. Storyentscheidungen und wichtige Interaktionen bleiben beim Spieler.
+
+### KI-Fallback
+Die KI darf harmlose Selbstkorrekturen wie eine neue Routenberechnung durchführen. Bei einem echten Hänger gilt jedoch:
+- Aufgabe einfrieren
+- Fehlerstatus melden
+- keine weiteren Ressourcenbewegungen
+- kein automatischer harter Neustart
+- nur der Spieler darf Neustart, Rückruf, Abbruch oder erneuten Versuch auslösen
+
+Die Begleiter-KI soll damit vollständig durch feste Regeln und Datenbankberechtigungen kontrolliert bleiben.
 
 ## Freies Fliegen
 
@@ -299,49 +351,30 @@ Die gleichartigen Demo-Ressourcenskripte bleiben ebenfalls erhalten. Sie werden 
 - `DemoZombie.cs` besitzt bereits einfache Erkennung, Verfolgung, Angriff und Tod.
 - `GameManager.cs` ist als persistente Singleton-Schaltstelle vorbereitet.
 
-## Nächster technischer Schwerpunkt
+## Aktueller Datenbank-Schwerpunkt
 
-Der nächste konkrete Entwicklungsblock ist das Gegner-Spawn-System.
+Bevor weitere technische Loader/Manager umgesetzt werden, werden zuerst die offenen Datenbanken und Regeln abgeschlossen.
 
-### 1. `EnemySpawnManager.cs`
-Geplant:
-- Anbindung an die vorhandene Area-/Spawn-Struktur
-- Gegner-Prefabs bzw. Gegnerdefinitionen pro Gebiet
-- Min-/Max-Anzahl pro Gebiet
-- zufällige gültige Spawnpositionen innerhalb der `AreaSpawnZone`
-- Mindestabstand zum Spieler
-- keine Spawns außerhalb der gültigen Kartenfläche
-- Vorbereitung auf gebietsabhängige Schwierigkeitsstufen
-- erneute Zufallsverteilung beim erneuten Betreten normaler Ressourcengebiete
-- Event-/Storygebiete können später eigene Regeln verwenden
+Aktuelle Reihenfolge:
+1. Begleiter-/NPC-KI vollständig definieren
+2. Quest-/Story-Datenbank finalisieren
+3. Items und Referenzen bereinigen
+4. Ressourcen, Loot, Einstellungen, Fahrzeuge und Events schließen
+5. Progression und Belohnungspakete auditieren
+6. Shop/Händler/Economy definieren
+7. vollständige Referenz- und Integritätsprüfung
 
-### 2. Datenanbindung
-Gegnerdaten sollen schrittweise aus den vorhandenen `database/*.json.db`-Dateien geladen werden. Dazu gehören insbesondere:
-- Gegnertyp
-- Gebietszuordnung
-- Spawngewicht/Wahrscheinlichkeit
-- Mindest-/Maximalanzahl
-- Leben
-- Schaden
-- Bewegung
-- weitere spätere KI-/Loot-/Statuswerte
+Der genaue Arbeitsstand wird kompakt in [FORTSCHRITT.md](FORTSCHRITT.md) gepflegt.
 
-### 3. `DemoZombie.cs` kompatibel weiterentwickeln
-Der bestehende Dateiname bleibt unverändert. Die vorhandene Erkennung, Verfolgung, Angriff und Tod werden schrittweise aus der hart codierten Demo in eine allgemeiner nutzbare Gegnerlogik überführt.
+## Danach: technischer Ausbau
 
-Erster Testgegner bleibt bewusst einfach:
-- schwacher Zombie
-- ungefähr 5 Leben
-- Bewegungstempo ungefähr 0,5
-- Schaden ungefähr 0,5 pro Treffer
-- erster Einsatz im grünen Kiefernwald
-
-### Danach
-Vorgesehene Reihenfolge nach dem Gegner-Spawn-System:
-1. Gegnerdaten/AI weiter verallgemeinern
-2. Lootverteilung stärker über GM/AM und Datenbank zentralisieren
-3. AreaState und Gebiets-Persistenz
-4. Survivalwerte und Tod-/Leichensystem
-5. XP-/Levelsystem
-6. Quest-/Storysystem
-7. Produktion/Werkbänke und weitere Progressionssysteme
+Nach Abschluss der Datenbankrunde folgt wieder der C#-Block:
+- `EnemySpawnManager.cs`
+- Datenbank-Loader/Manager
+- Verallgemeinerung von `DemoZombie.cs`
+- AreaState/Persistenz
+- zentrale Lootanbindung
+- Survival-/Todsystem
+- XP/Level
+- Quest-/Story-Loader
+- Begleiter-/NPC-KI-Ausführung auf Basis der festgelegten Datenbanken
