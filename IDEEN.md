@@ -42,6 +42,9 @@ Wichtig: Eine Idee auf dieser Liste bedeutet **nicht**, dass sie sofort umgesetz
 - Freunde können später beitreten
 - optional dedizierter Server
 - Architektur wird früh so vorbereitet, dass Multiplayer nicht komplett neu aufgebaut werden muss
+- späterer Squad-Rahmen: Spieler + maximal 3 eigene Begleiter
+- Begleiter bleiben immer ihrem jeweiligen Besitzer zugeordnet
+- andere Spieler dürfen fremde Begleiter nicht steuern, umskillen oder umkommandieren
 
 ### Update-System
 - ZIP-basierte Updates
@@ -128,17 +131,28 @@ Grundregel:
 - große Kraftwerke als spätere Siedlungs-/Endgame-Systeme
 
 ### KI und NPC
-- gemeinsame KI-Basis für Gegner, Tiere, NPCs und Begleiter
-- Dialoge und Sprachausgabe später
-- NPCs können später folgen, warten, arbeiten, sammeln, transportieren und bewachen
-- wichtige NPCs dauerhaft/unverwundbar, sofern für ihre Rolle nötig
+- gemeinsame technische KI-Basis, Verhalten aber klar nach Gegnern, Tieren, NPCs und Begleitern getrennt
+- Begleiter-KI wird datengetrieben und über feste Regeln/Berechtigungen kontrolliert
+- aktive Begleiter dürfen begrenzt eigenständig reagieren, wenn kein expliziter Befehl vorliegt
+- nicht aktive menschliche Begleiter dürfen in der Siedlung autonom arbeiten und benötigte Ressourcen beschaffen
+- private Lager des Spielers sind für autonome NPCs grundsätzlich tabu
+- Siedlungslager können ausdrücklich für NPC-Nutzung freigegeben werden
+- Stationen zeigen autonomen Status und geschätzte Rückkehrzeit
+- echter KI-Hänger führt zu Fehlerstatus; harter Neustart nur durch den Spieler
+- alle Begleiter besitzen die 3-stufige **Passive Hilfe**
+- wichtige menschliche Begleiter sind ohne normale Lebenspunkte/unverwundbar
+- Tiere/Hunde haben ebenfalls keine Lebenspunkte, aber ein getrenntes Fähigkeitssystem
 
 ### Story und Hinweise
 - Hauptstory und Nebenstory getrennt
 - Story soll großen Anteil am Spiel haben
 - Tschernobyl zunächst scheinbarer Ursprung; spätere größere Ursache bleibt offen
 - Hinweise über Dokumente, Funk, Datenträger, Computer, Storyorte und Prototypen
-- Sarah zunächst freundlich/vertrauenswürdig, spätere Fassade möglich
+- Sarah zunächst freundlich und hilfsbereit
+- Sarah besitzt ein Karma-/Vertrauenssystem mit positiver und negativer Entwicklung
+- ab 50 % bleibt Sarah Begleiterin; darunter neutraler/negativer Pfad
+- negativer Pfad kann nach Tschernobyl führen, ohne zwingenden Bosskampf
+- widersprüchliche Akten lassen offen, ob Sarah verantwortlich war oder selbst benutzt wurde
 - fiktive Forschungs-/Militärorganisation als mögliche Hintergrundspur
 
 ### Forschung und Prototypen
