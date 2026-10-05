@@ -9,6 +9,7 @@ Das Projekt befindet sich in einer frühen, aber inzwischen breit geplanten Entw
 Den ausführlichen Entwicklungsstand findest du hier:
 
 - [ENTWICKLUNGSSTAND.md](ENTWICKLUNGSSTAND.md)
+- [FORTSCHRITT.md](FORTSCHRITT.md) – kompakte Arbeitsübersicht mit Datenbankstatus
 
 ## Ideen und Vorschläge
 
@@ -18,7 +19,17 @@ Spätere Ideen und optionale Erweiterungen werden getrennt gesammelt:
 
 ## Aktueller Schwerpunkt
 
-Die Planungsblöcke für viele Pflichtsysteme sind inzwischen weit fortgeschritten. Zusätzlich wurde der aktuelle technische Bestand Script für Script geprüft. Die Weltkarte ist inzwischen technisch funktionsfähig; alle 30 dauerhaften Maps sowie die Weltkarte selbst sind in den Unity Build Settings eingetragen.
+Der aktuelle Schwerpunkt liegt auf der **vollständigen Datenbank- und Regeldefinition**, bevor weitere Loader/Manager gebaut werden. Gegner, Gebiete, Rezepte, Welt/Reise, Spieler-Skills und Forschung sind bereits weitgehend bzw. vollständig festgelegt. Aktuell werden Quests, Begleiter/NPC-KI sowie die noch offenen Balancewerte fertiggestellt.
+
+Neu konkretisiert:
+- 25 Hauptmissionen als aktueller Story-Grundbogen
+- 12 SECRET-Missionen
+- Sarah-Karma-/Vertrauenssystem
+- universelles Begleiter-Skillsystem
+- 75-%-Regel für aktive Begleiter / 100-%-Autonomie in der Siedlung
+- 3-stufige **Passive Hilfe**
+- getrenntes Hund-/Tierbegleitersystem
+- datengetriebene NPC-Autonomie mit Lagerberechtigungen und spielergesteuertem Fallback
 
 Wichtige Festlegungen:
 - bestehende C#-Skriptnamen bleiben unverändert
@@ -86,10 +97,15 @@ Singleplayer hat Priorität. Multiplayer bleibt eine spätere Erweiterung, wird 
 
 ## Nächster Entwicklungsblock
 
-Als nächstes wird das Gegner-System an die vorhandene Area-/Spawn-Struktur angebunden:
-- `EnemySpawnManager.cs`
-- gebietsabhängige Gegnerdefinitionen aus `database/*.json.db`
-- zufällige gültige Spawnpositionen innerhalb der SpawnZone
-- Mindestabstand zum Spieler
-- danach Verallgemeinerung der vorhandenen `DemoZombie.cs`-Logik
-- anschließend AreaState/Persistenz, Loot-Zentralisierung und weitere Survival-Systeme
+Aktuell gilt bewusst: **Datenbanken und Regeln zuerst, Loader/Code danach.**
+
+Reihenfolge:
+1. Begleiter-/NPC-KI-Regeln abschließen
+2. Quest-/Story-DB finalisieren
+3. offene Werte in Items, Ressourcen, Loot, Settings, Fahrzeuge und Events schließen
+4. Progression/Pakete auf Referenzen und Item-IDs prüfen
+5. Shop, Händler und Economy als Datenbanken planen
+6. vollständige Integritätsprüfung
+7. anschließend EnemySpawnManager, Loader/Manager und weitere C#-Systeme weiterbauen
+
+Details: [FORTSCHRITT.md](FORTSCHRITT.md)
