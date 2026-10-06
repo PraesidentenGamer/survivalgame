@@ -1,10 +1,20 @@
 # Entwicklungsstand
 
-**Stand:** 05.10.2026
+**Stand:** 06.10.2026
 
 ## Aktuelle Entwicklungsphase
 
 Die grundlegende Planung der Pflichtsysteme ist weit fortgeschritten. Parallel wurde der aktuelle Unity-/C#-Bestand vollständig geprüft: **42 vorhandene C#-Skripte** sind erfasst und eingeordnet.
+
+Der aktuelle technische Schwerpunkt liegt auf der **datengetriebenen Weltkarte und den Gebietssystemen** sowie auf einem ersten dynamischen Eventkarten-Test. Die maßgebliche Datenrichtung lautet:
+
+```text
+DB = eigentliche Datenquelle
+C# = Vermittler zwischen Spiel und DB
+Spielsysteme = benutzen die gelieferten Daten
+```
+
+Doppelte Pflege derselben Gebietsdaten in C# und Datenbank soll vermieden werden.
 
 Grundregel für den weiteren Ausbau:
 - bestehende **Skriptnamen bleiben unverändert**
@@ -240,6 +250,52 @@ Aktuell bestätigt:
 
 Damit ist die Weltkarte kein reines Mockup mehr, sondern eine funktionierende technische Basis für die weitere Entwicklung.
 
+## Dynamische Eventmarker auf der Weltkarte
+
+Für temporäre Eventgebiete wird aktuell ein dynamisches Markersystem getestet.
+
+Festgelegt:
+- kein dauerhaft vorbereiteter Eventmarker
+- das aktive Event erzeugt seinen Marker selbst
+- Form: gelber Stern
+- Größe: 40 × 40
+- Rotation: 15 Grad pro Sekunde
+- Parent: `MapData`, damit normale Gebietsmarker und Eventmarker dasselbe UI-Koordinatensystem verwenden
+
+Die aktuelle Positionssuche erfolgt mit einer Convex-Hull-Lösung:
+1. feste `Marker_*` sammeln
+2. Außenkontur der festen Marker berechnen
+3. Rasterpositionen innerhalb dieser Kontur prüfen
+4. Sicherheitsabstand zur Außenkante einhalten
+5. Sicherheitsabstand zu normalen Gebietsmarkern einhalten
+6. freie Position reservieren
+
+Aktuelle Testwerte:
+- Grid Spacing = 50
+- Marker Safety Distance = 65
+- Hull Safety Distance = 35
+
+Der letzte Test lag sichtbar sinnvoll innerhalb der nutzbaren Kartenfläche. Vor dem nächsten Ausbau folgen mehrere Play-Neustarts zur Stabilitätsprüfung.
+
+Danach ist vorgesehen:
+```text
+Eventmarker
+↓
+Hover
+↓
+Eventname
+↓
+Klick
+↓
+InfoPanel rechts
+↓
+BETRETEN
+↓
+WorldMapTravel
+```
+
+Die bestehende `WorldMapUI.cs`-Logik soll dafür weitgehend weiterverwendet und nicht durch ein zweites paralleles Weltkarten-UI ersetzt werden.
+
 ## Kamera
 
 `CameraFollow.cs` bleibt bestehen.
@@ -287,10 +343,14 @@ Aktuell:
 Das vorhandene System ist bereits ein echter Kernbestandteil.
 
 ### `AreaData.cs`
-- verwaltet die festen/permanenten Gebiete
+- lädt die Gebietsdaten aus `areas.json.db`
+- sucht Gebiete anhand von Szene oder ID
+- übersetzt die Daten in `AreaInfo`
+- reicht sie an `WorldMapUI`, Spawn-Systeme und weitere Verbraucher weiter
+- die frühere große fest codierte `switch(sceneName)`-Liste ist nicht mehr die maßgebliche Datenquelle
 - 30 dauerhafte Hauptgebiete bleiben zentrale Zielstruktur
 - Story-/Eventgebiete werden getrennt behandelt
-- bestehende Struktur bleibt kompatibel
+- bestehende funktionierende Strukturen bleiben kompatibel
 
 ### `AreaSpawnManager.cs`
 - zentrale Spawnlogik für Ressourcen im Gebiet
