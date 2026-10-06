@@ -1,26 +1,50 @@
 # Projektfortschritt
 
-**Stand:** 05.10.2026
+**Stand:** 06.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Datenbankblöcke von noch offenen Werten und späterer Code-Umsetzung.
 
 ## Aktueller Schwerpunkt
 
-**Zuerst alle offenen Datenbankwerte und Regeln sauber festlegen, danach Loader/Code weiterbauen.**
+**Weltkarte und Gebietssysteme dauerhaft auf die Datenbanken umstellen und den ersten dynamischen Eventkarten-Test stabilisieren.**
+
+Aktuelle Architektur:
+```text
+DB = eigentliche Datenquelle
+C# = Vermittler zwischen Spiel und DB
+Spielsysteme = benutzen die gelieferten Daten
+```
 
 Grundregel:
 - bestehende Werte erhalten
 - spätere ausdrücklich bestätigte Entscheidungen ersetzen ältere Vorschläge
 - unbekannte Werte nicht erfinden
-- Datenbanken einzeln bearbeiten und validieren
-- C# führt die Regeln aus; Verhalten und Balance werden möglichst datengetrieben
+- keine doppelte Pflege derselben Gebietsdaten in C# und DB
+- C# führt Logik aus; Inhalte und Balance werden möglichst datengetrieben
+- bestehende funktionierende UI-/Prefab-/Inspector-Strukturen bleiben kompatibel
+
+## Geschätzter Gesamtfortschritt
+
+Der Gesamtfortschritt bezieht sich auf die geplante erste vollständig spielbare Fassung, nicht nur auf Planung oder Datenbankarbeit.
+
+| Bereich | Geschätzter Stand |
+|---|---:|
+| Planung / Regeln / Systemdesign | ca. 80 % |
+| Datenbanken / strukturierte Inhalte | ca. 65 % |
+| technische Kernsysteme / Prototypen | ca. 45 % |
+| Weltkarte / Gebietsgrundsystem | ca. 60 % |
+| eigentliche Gameplay-Inhalte / Kartenbefüllung | ca. 20 % |
+| finale UI / Grafik / Audio / Polishing | ca. 10 % |
+| **Gesamtprojekt** | **ca. 35 %** |
+
+Die Prozentwerte sind bewusst Näherungswerte. Viele Systeme sind bereits geplant oder prototypisch vorhanden, müssen aber noch vollständig miteinander verbunden, mit Inhalten gefüllt, getestet und finalisiert werden.
 
 ## Datenbankstatus
 
 | Bereich | Stand | Offene Punkte |
 |---|---|---:|
 | Gegner | fertig, 53 Gegner | 0 |
-| Gebiete | fertig, 30 dauerhafte Gebiete | 0 |
+| Gebiete | 30 dauerhafte Gebiete; `areas.json.db` ist die maßgebliche Datenquelle für Gebietsdaten | weitere Integrations-/Praxistests |
 | Rezepte | fertig | 0 |
 | Welt/Reise | fertig | 0 |
 | Skills Spieler | fertig, 75 normale Skills + SECRET-System | 0 |
@@ -246,12 +270,170 @@ Vorgesehene Trennung:
 
 Die endgültige Aufteilung wird erst festgeschrieben, wenn alle offenen Begleiterregeln geklärt sind.
 
+## Aktueller Weltkarten- und Eventkarten-Stand
+
+### Gebietsdaten
+
+Die alte große feste `switch(sceneName)`-Konfiguration in `AreaData.cs` soll nicht mehr die maßgebliche Quelle sein.
+
+Zielstruktur:
+```text
+areas.json.db
+↓
+AreaData.cs
+↓
+WorldMapUI / LootChestSpawnManager / weitere Systeme
+```
+
+`AreaData.cs` dient damit als Vermittler:
+- `areas.json.db` laden
+- Gebiet nach Szene oder ID suchen
+- Daten in `AreaInfo` übersetzen
+- Daten an andere Systeme weiterreichen
+
+Vorhandene DB-Felder umfassen unter anderem:
+- id
+- name
+- scene
+- difficulty
+- difficultyColor
+- mainLoot
+- possibleLoot
+- permanent
+- storyLocked
+- enemySpawning
+
+Nicht vorhandene alte Felder werden nicht künstlich erfunden.
+
+### WorldMapUI
+
+Die bestehende Weltkartenlogik bleibt erhalten:
+- Hover
+- Hover-Label
+- Marker-Auswahl
+- InfoPanel rechts
+- Gebietsname
+- Schwierigkeit
+- Hauptbeute
+- mögliche Beute
+- BETRETEN-Button
+- `WorldMapMarker`
+- Pointer Enter / Exit / Click
+
+Ablauf:
+```text
+Marker anklicken
+↓
+InfoPanel rechts
+↓
+Gebietsdaten anzeigen
+↓
+BETRETEN
+↓
+WorldMapTravel lädt Zielszene
+```
+
+Der Markerklick reist nicht direkt. Marker bleiben sichtbar und anklickbar; spätere Sperren blockieren nur das tatsächliche Betreten.
+
+### WorldMapTravel
+
+`WorldMapTravel.cs` bleibt absichtlich klein und benötigt keine eigenen Gebietsdaten. Die Zielszene kommt aus der DB über `AreaData` und `WorldMapUI`.
+
+### Dynamische Eventmarker
+
+Temporäre Eventkarten erzeugen ihren Marker selbst. Es gibt keinen dauerhaft vorbereiteten Eventmarker.
+
+Aktueller Test:
+- gelber Stern
+- 40 × 40
+- langsame Rotation mit 15°/s
+- Marker wird unter `MapData` erzeugt
+- feste Gebietsmarker und Eventmarker verwenden damit dasselbe UI-Koordinatensystem
+
+Ablauf:
+```text
+Event aktiv
+↓
+freie Position suchen
+↓
+Eventmarker erzeugen
+↓
+Position reservieren
+↓
+Event läuft
+↓
+Marker bei Eventende entfernen
+```
+
+### WorldMapEventPlacement.cs
+
+Aktuell beste Lösung: **Convex Hull / Außenkontur der festen Gebietsmarker**.
+
+Prüfung:
+- feste `Marker_*` sammeln
+- Außenkontur berechnen
+- Rasterpositionen testen
+- nur Positionen innerhalb der Außenkontur zulassen
+- Sicherheitsabstand zur Außenkante prüfen
+- Sicherheitsabstand zu normalen Markern prüfen
+- freie Eventposition speichern
+
+Aktuelle Testwerte:
+- Grid Spacing = 50
+- Marker Safety Distance = 65
+- Hull Safety Distance = 35
+- Show Debug Positions = AUS
+
+Letzter erfolgreicher Testpunkt:
+- Eventmarker ungefähr bei `(333.0, -396.0)`
+- Position sichtbar sinnvoll innerhalb der nutzbaren Weltkartenfläche
+
+Die Convex-Hull-Lösung wird jetzt zuerst über mehrere Play-Neustarts stabil getestet, bevor weitere Umbauten erfolgen.
+
+### EventMapTest.cs
+
+Aktuell:
+- wartet einen Frame auf `WorldMapEventPlacement`
+- holt eine freie Eventposition
+- reserviert sie
+- erzeugt den Stern
+- setzt Parent auf `MapData`
+- setzt 40 × 40
+- rotiert mit 15°/s
+- kann den Marker wieder entfernen
+
+Die frühere Abhängigkeit von `placement.mapArea` wurde auf `placement.GetMarkerRoot()` korrigiert.
+
+### Lootkisten
+
+Geplante Datenrichtung:
+```text
+areas.json.db
+↓
+AreaData
+↓
+LootChestSpawnManager
+
+loot.json.db
+↓
+DemoLootChest
+↓
+Kisteninhalt
+
+items.json.db
+↓
+Itemdefinitionen
+```
+
+Lootkisten erhalten eigene Spawnzonen und bleiben von Ressourcen- und Gegnerspawnzonen getrennt. Die Gebietsschwierigkeit wird nicht noch einmal im LootChestSpawnManager gepflegt.
+
 ## Nächste Arbeitsschritte
 
-1. Begleiter-/NPC-KI-Regeln vollständig abschließen.
-2. Quest-/Story-DB weiter finalisieren.
-3. offene Werte in Items, Ressourcen, Loot, Settings, Fahrzeuge und Events schließen.
-4. Progression- und Paketdaten gegen bestätigte Referenzen prüfen.
-5. Shop/Händler/Economy planen und als DBs aufbauen.
-6. vollständige Referenz- und Integritätsprüfung aller Datenbanken.
-7. erst danach Loader/Manager und weitere C#-Umsetzung fortsetzen.
+1. Convex-Hull-Eventpositionierung über 5–10 Play-Neustarts prüfen.
+2. Sicherstellen, dass der Stern nie außerhalb der brauchbaren Kartenfläche, auf einem normalen Marker oder zu dicht an einem Marker erscheint.
+3. Bei stabilem Ergebnis den dynamischen Eventmarker an die bestehende Hover-/Klick-/InfoPanel-Logik anbinden.
+4. Eventname und Eventdaten im rechten InfoPanel anzeigen.
+5. BETRETEN für Eventkarten über den bestehenden Reiseablauf anbinden.
+6. Danach echte Event-DB-/Dateianbindung umsetzen.
+7. Anschließend Lootkisten vollständig auf AreaData + Loot-DB + Item-DB umstellen.
+8. Parallel offene Datenbankwerte und Referenzprüfungen weiter abschließen.
