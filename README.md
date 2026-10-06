@@ -19,7 +19,19 @@ Spätere Ideen und optionale Erweiterungen werden getrennt gesammelt:
 
 ## Aktueller Schwerpunkt
 
-Der aktuelle Schwerpunkt liegt auf der **vollständigen Datenbank- und Regeldefinition**, bevor weitere Loader/Manager gebaut werden. Gegner, Gebiete, Rezepte, Welt/Reise, Spieler-Skills und Forschung sind bereits weitgehend bzw. vollständig festgelegt. Aktuell werden Quests, Begleiter/NPC-KI sowie die noch offenen Balancewerte fertiggestellt.
+Der aktuelle Schwerpunkt liegt auf der **datengetriebenen Weltkarte und den Gebietssystemen** sowie auf dem ersten dynamischen Eventkarten-Test.
+
+Aktuelle Datenrichtung:
+
+```text
+areas.json.db
+↓
+AreaData.cs
+↓
+WorldMapUI / Spawn-Systeme / weitere Verbraucher
+```
+
+Die frühere fest codierte Gebietskonfiguration in C# soll damit nicht mehr die maßgebliche Datenquelle sein. Parallel werden offene Datenbankwerte und Regeln weiter vervollständigt.
 
 Neu konkretisiert:
 - 25 Hauptmissionen als aktueller Story-Grundbogen
@@ -97,15 +109,14 @@ Singleplayer hat Priorität. Multiplayer bleibt eine spätere Erweiterung, wird 
 
 ## Nächster Entwicklungsblock
 
-Aktuell gilt bewusst: **Datenbanken und Regeln zuerst, Loader/Code danach.**
+Aktuelle Reihenfolge:
+1. Convex-Hull-Positionierung des dynamischen Eventmarkers über mehrere Play-Neustarts prüfen
+2. Eventmarker an Hover, Klick und bestehendes InfoPanel anbinden
+3. BETRETEN für Eventkarten über den bestehenden Reiseablauf integrieren
+4. echte Event-DB-/Dateianbindung umsetzen
+5. Lootkisten vollständig an AreaData, Loot-DB und Item-DB anbinden
+6. offene Datenbankwerte, Referenzen und Balance parallel weiter vervollständigen
 
-Reihenfolge:
-1. Begleiter-/NPC-KI-Regeln abschließen
-2. Quest-/Story-DB finalisieren
-3. offene Werte in Items, Ressourcen, Loot, Settings, Fahrzeuge und Events schließen
-4. Progression/Pakete auf Referenzen und Item-IDs prüfen
-5. Shop, Händler und Economy als Datenbanken planen
-6. vollständige Integritätsprüfung
-7. anschließend EnemySpawnManager, Loader/Manager und weitere C#-Systeme weiterbauen
+Aktuell geschätzter Gesamtfortschritt der ersten vollständig spielbaren Fassung: **ca. 35 %**.
 
 Details: [FORTSCHRITT.md](FORTSCHRITT.md)
