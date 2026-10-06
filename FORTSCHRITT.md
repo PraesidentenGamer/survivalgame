@@ -2,11 +2,11 @@
 
 **Stand:** 06.10.2026
 
-Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Datenbankblöcke von noch offenen Werten und späterer Code-Umsetzung.
+Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
 ## Aktueller Schwerpunkt
 
-**Weltkarte und Gebietssysteme dauerhaft auf die Datenbanken umstellen und den ersten dynamischen Eventkarten-Test stabilisieren.**
+**Dynamische Eventgebiete stabilisieren und anschließend die noch fehlenden Kernsysteme für eine vollständig spielbare Fassung schließen.**
 
 Aktuelle Architektur:
 ```text
@@ -19,421 +19,298 @@ Grundregel:
 - bestehende Werte erhalten
 - spätere ausdrücklich bestätigte Entscheidungen ersetzen ältere Vorschläge
 - unbekannte Werte nicht erfinden
-- keine doppelte Pflege derselben Gebietsdaten in C# und DB
+- keine doppelte Pflege derselben Daten in C# und DB
 - C# führt Logik aus; Inhalte und Balance werden möglichst datengetrieben
 - bestehende funktionierende UI-/Prefab-/Inspector-Strukturen bleiben kompatibel
 
 ## Geschätzter Gesamtfortschritt
 
-Der Gesamtfortschritt bezieht sich auf die geplante erste vollständig spielbare Fassung, nicht nur auf Planung oder Datenbankarbeit.
+Die Prozentwerte beziehen sich auf die erste vollständig spielbare Fassung. Grafik, Audio, Shader und finales optisches Polishing sind bei dieser Einschätzung **vorerst ausdrücklich ausgeklammert**.
 
 | Bereich | Geschätzter Stand |
 |---|---:|
 | Planung / Regeln / Systemdesign | ca. 80 % |
 | Datenbanken / strukturierte Inhalte | ca. 65 % |
-| technische Kernsysteme / Prototypen | ca. 45 % |
-| Weltkarte / Gebietsgrundsystem | ca. 60 % |
+| technische Kernsysteme / Prototypen | ca. 50 % |
+| Weltkarte / Gebietsgrundsystem | ca. 70 % |
+| Eventkarten-Grundsystem | ca. 65 % |
 | eigentliche Gameplay-Inhalte / Kartenbefüllung | ca. 20 % |
-| finale UI / Grafik / Audio / Polishing | ca. 10 % |
-| **Gesamtprojekt** | **ca. 35 %** |
+| funktional spielbare Gesamtfassung ohne Grafik/Audio/Shader-Polish | **ca. 40 %** |
 
-Die Prozentwerte sind bewusst Näherungswerte. Viele Systeme sind bereits geplant oder prototypisch vorhanden, müssen aber noch vollständig miteinander verbunden, mit Inhalten gefüllt, getestet und finalisiert werden.
+Die Prozentwerte bleiben Näherungswerte. Viele Systeme sind bereits geplant oder prototypisch vorhanden, müssen aber noch vollständig miteinander verbunden, mit Inhalten gefüllt und getestet werden.
 
 ## Datenbankstatus
 
 | Bereich | Stand | Offene Punkte |
 |---|---|---:|
 | Gegner | fertig, 53 Gegner | 0 |
-| Gebiete | 30 dauerhafte Gebiete; `areas.json.db` ist die maßgebliche Datenquelle für Gebietsdaten | weitere Integrations-/Praxistests |
+| Gebiete | 30 dauerhafte Gebiete; `areas.json.db` ist die maßgebliche Datenquelle | Integrations-/Praxistests |
 | Rezepte | fertig | 0 |
 | Welt/Reise | fertig | 0 |
 | Skills Spieler | fertig, 75 normale Skills + SECRET-System | 0 |
 | Forschung | fertig, 133 Knoten | 0 |
-| Items | integriert, 326 historische Slots + Systemitems | noch offen |
-| Ressourcen | strukturell fertig | 48 |
-| Loot | strukturell fertig | 31 |
-| Fahrzeuge | strukturell fertig | 111 |
-| Events | strukturell fertig | 19 |
-| Einstellungen | strukturell fertig | 21 |
-| Progression/XP | vollständig erzeugt | Qualitäts-/Referenzprüfung offen |
-| Pakete/Belohnungen | vollständig erzeugt | Item-Referenz-/Stackprüfung offen |
-| Quests/Story | aktive Planungsphase | noch offen |
+| Items | integriert, 326 historische Slots + Systemitems | Referenz-/Qualitätsprüfung |
+| Ressourcen | strukturell fertig | Restwerte schließen |
+| Loot | strukturell fertig | Restwerte schließen |
+| Fahrzeuge | strukturell fertig | Restwerte schließen |
+| Events | strukturell vorbereitet | echte Laufzeitanbindung |
+| Einstellungen | strukturell fertig | Restwerte schließen |
+| Progression/XP | vollständig erzeugt | Qualitäts-/Referenzprüfung |
+| Pakete/Belohnungen | vollständig erzeugt | Item-Referenz-/Stackprüfung |
+| Quests/Story | aktive Planungsphase | DB und Laufzeitsystem offen |
 | Shop | noch nicht gebaut | offen |
 | Händler | noch nicht gebaut | offen |
 | Economy | noch nicht gebaut | offen |
-| Begleiter/NPC-KI | Regeln werden gerade finalisiert | DBs noch nicht gebaut |
-
-### Wichtige Item-Korrektur
-- Item 053 wird von **Infektionsmittel** zu **Infektionshemmer**
-- ID wird von `infektionsmittel` zu `infektionshemmer`
-- Zweck: bestehende Infektion reduzieren bzw. Fortschreiten bremsen
-- Kategorie Medizin
-- Stack 10
-- spezialisierte Seltenheit: Gelb/Episch
-- nicht in normalen Versorgungs-/Loginpaketen
-
-Zusätzlich vorgesehen:
-- neues Item **Fähigkeits-Neukalibrierung**
-- wird für das Zurücksetzen normaler Spieler-Skills verwendet
-
-## Spieler-Progression
-
-Bestätigt:
-- Level 1–100
-- ganze XP-Werte
-- Level 100 = Maximum
-- pro Level-Up 1 Skillpunkt
-- Level 100 ergibt insgesamt 99 reguläre Skillpunkte
-- alle 5 Level zusätzliche Forschungspunkte
-- alle 10 Level größere Belohnung und permanenter Sammel-XP-Bonus
-- Story-Freischaltungen bleiben getrennt
-- Skills dürfen Storyvoraussetzungen nicht umgehen
-
-### Skill-Reset
-- ab Level 20
-- kostet 1× Fähigkeits-Neukalibrierung
-- 100 % der regulären Skillpunkte werden zurückgegeben
-- SECRET-, Story-, Forschungs-, Gebiets- und Fahrzeugfreischaltungen bleiben erhalten
-- Reset muss immer bestätigt werden
-
-## Login-System
-
-Bestätigt:
-- fester 30-Tage-Kalender
-- verpasste Tage setzen den Fortschritt nicht zurück
-- 4 vorbereitete Kalender A → B → C → D → A
-- insgesamt 120 Login-Tage pro Rotation
-- unabhängig vom realen Kalendermonat
-- keine Echtgeld-, Story-, SECRET- oder einzigartigen Questgegenstände
-- Tag 30 ist jeweils die größte Belohnung
-
-Die erzeugten Detailtabellen werden vor dem endgültigen Produktionsstatus noch einmal gegen die bestätigten Planungsstände geprüft.
-
-## Quest- und Storyfortschritt
-
-### Hauptstory
-Aktuell ist ein konkreter Grundbogen mit **25 Hauptmissionen** definiert.
-
-Wichtige Stationen:
-- Start auf dem eigenen Grundstück
-- erstes Waldgebiet
-- Signal/Testsektoren
-- Beweisvernichtung und verschlossene Zugänge
-- Bunker A
-- zweite Basis
-- Forschungsanlage
-- Versuchsperson/Widersprüche
-- militärische Spuren
-- gescheiterte Evakuierung
-- Siedlung
-- Verbündete
-- Helikopter/Freies Fliegen als getrennte Systeme
-- Vorbereitung auf die Sperrzone
-- Tschernobyl
-- scheinbarer Ursprung
-- Cliffhanger und anschließendes freies Spiel
-
-### SECRET-Missionen
-12 SECRET-Missionen mit jeweils 3 Stufen sind konzeptionell festgelegt. Sie schalten geheime Fähigkeiten frei, kosten keine Skillpunkte und bleiben bis zur Entdeckung verborgen.
-
-## Sarah – Storyfigur und Karma
-
-Sarah ist als wichtige wiederkehrende Figur vorgesehen.
-
-Bestätigte Richtung:
-- anfangs freundlich und hilfsbereit
-- der Spieler beeinflusst ihre Entwicklung über ein Karma-/Vertrauenssystem
-- Startwert: 50 %
-- **50–100 %:** Sarah bleibt Begleiterin
-- **unter 50 %:** neutraler/negativer Pfad
-- sehr niedriger Wert kann zur Trennung und späteren Konfrontation in Tschernobyl führen
-- kein zwingender Kampf gegen Sarah
-- Akten dürfen bewusst offenlassen, ob Sarah hinter den Vorgängen steckt oder selbst als Marionette benutzt wurde
-- die endgültige Bewertung bleibt beim Spieler
-- auf Leicht ist die Karmaanzeige sichtbar; negative Entscheidungen wirken abgeschwächt
-- auf höheren Schwierigkeitsstufen wird die Entwicklung vor allem über Dialoge, Körpersprache und Verhalten vermittelt
-
-### Negativer Sarah-Ausgang
-Status-Effekt **Gebrochen**:
-- zeitlich begrenzt
-- -20 % effektive maximale Haltbarkeit für Gegenstände mit Haltbarkeit
-- Gegenstände werden nicht dauerhaft beschädigt
-- aktueller Plan: 6 Ingame-Stunden = 90 Minuten aktive Spielzeit
-
-## Allgemeines Begleitersystem
-
-### Grundregel
-**Der Spieler bleibt immer die Hauptfigur. Begleiter unterstützen, ersetzen ihn aber nicht.**
-
-### Menschliche Begleiter
-- keine normalen Lebenspunkte
-- nicht dauerhaft tötbar
-- eigene Skillverwaltung
-- jeder Skill kann grundsätzlich bis Maximalstufe ausgebaut werden
-- aktuell 5 Skillstufen vorgesehen
-- aktive Begleiter benutzen die vom Spieler vergebenen Skills
-- aktive Begleiter: maximal **75 % effektive Skillwirkung**
-- nicht aktive Begleiter in der Siedlung: autonom und **100 % / Maximal-Skills**
-- maximaler späterer Squad-Rahmen: Spieler + bis zu 3 eigene Begleiter
-- im späteren Multiplayer besitzt jeder Spieler seine eigenen Begleiter
-- jeder Begleiter hört ausschließlich auf seinen Besitzer
-
-### Passive Hilfe
-Jeder Begleiter besitzt das 3-stufige Hilfesystem **Passive Hilfe**:
-1. subtiler Hinweis
-2. deutlicherer Hinweis
-3. starker Hinweis
-
-Der Begleiter löst die Aufgabe nie vollständig selbst.
-
-### Tierbegleiter / Hunde
-- eigenes System, getrennt von menschlichen Skillleisten
-- keine Lebenspunkte
-- keine Skillleiste
-- Fähigkeiten werden zufällig bestimmt
-- ein neuer Hund darf anfangs maximal 2 Fähigkeiten besitzen
-- erster Hund wird über Story freigeschaltet
-- späteres Zucht-/Kreuzungssystem vorgesehen
-- Passive Hilfe funktioniert nonverbal, z. B. Blick in die Richtung eines gesuchten Objekts
-
-**Noch offen:** genaue Squad-Zählung von Tierbegleitern gegenüber den 3 normalen Begleiterplätzen.
-
-## Datengetriebene Begleiter-KI
-
-Die Begleiter-KI soll nicht frei improvisieren, sondern innerhalb fester Datenbankregeln handeln.
-
-### Aktiver Begleiter
-Wenn kein expliziter Befehl vorliegt, darf die KI begrenzt eigenständig:
-- Besitzer folgen
-- Abstand halten und Kollisionen vermeiden
-- auf unmittelbare Gefahren reagieren
-- geeignete Gegner angreifen
-- Deckung/Position verbessern
-- warnen
-- Passive Hilfe geben
-- rollenbezogene kleine Unterstützungsaktionen ausführen
-
-Nicht erlaubt:
-- eigenmächtige Storyentscheidungen
-- geschützte Questgegenstände verwenden
-- wichtige Systeme ohne Freigabe aktivieren
-- große Ressourcenmengen ohne Erlaubnis verbrauchen
-- den Besitzer durch eine eigene Mission verlassen
-
-### Nicht aktiver menschlicher Begleiter
-In der Siedlung darf er innerhalb seiner Vorgaben autonom arbeiten:
-- Arbeitsstationen nutzen
-- fehlende Ressourcen erkennen
-- erlaubte Siedlungslager prüfen
-- benötigte Ressourcen selbst beschaffen
-- anschließend zur Aufgabe zurückkehren
-
-### Lagerberechtigungen
-Grundregel:
-- sämtliche privaten Lager des Spielers sind **verboten**
-- Siedlungslager sind standardmäßig nicht automatisch freigegeben
-- ein Siedlungslager kann ausdrücklich für NPCs freigegeben werden
-- Story-/Quest-/Geheimgegenstände bleiben geschützt
-
-Mögliche Lagerzustände:
-- Privat
-- Siedlung – gesperrt
-- Siedlung – für NPCs freigegeben
-
-### Arbeitsstatus und Rückkehrzeit
-Stationen/Begleiterverwaltung sollen den aktuellen autonomen Status zeigen, z. B.:
-
-> Bin unterwegs – Ressource X ist ausgegangen. Geschätzte Rückkehr: 00:07:45
-
-Die Rückkehrzeit soll dynamisch aus Weg, Gebiet, Bewegung und benötigter Sammelmenge berechnet werden.
-
-### KI-Fallback
-Die KI darf kleine Probleme selbst behandeln, z. B. Route neu berechnen oder eine erlaubte alternative Ressource suchen.
-
-Bei einem echten Hänger gilt jedoch:
-- Aufgabe einfrieren
-- keine Ressourcen weiter verbrauchen
-- Status **Fehler / hängt**
-- Spieler informieren
-- **kein automatischer harter Neustart**
-- nur der Spieler darf KI neu starten, Aufgabe abbrechen, zurückrufen oder erneut versuchen
-
-Damit bleibt die letztendliche Kontrolle beim Spieler.
-
-## Spätere Begleiter-DBs
-
-Vorgesehene Trennung:
-- `companions.json.db`
-- `companion_skills.json.db`
-- `companion_ai.json.db`
-- `companion_help.json.db`
-
-Die endgültige Aufteilung wird erst festgeschrieben, wenn alle offenen Begleiterregeln geklärt sind.
+| Begleiter/NPC-KI | Regeln weitgehend definiert | DBs + Laufzeitsystem offen |
 
 ## Aktueller Weltkarten- und Eventkarten-Stand
 
-### Gebietsdaten
+### Weltkarte
 
-Die alte große feste `switch(sceneName)`-Konfiguration in `AreaData.cs` soll nicht mehr die maßgebliche Quelle sein.
+Bestätigt und funktionsfähig:
+- 30 dauerhafte Maps + Weltkarte in den Build Settings
+- Hover und Auswahl der Marker
+- InfoPanel mit Gebietsinformationen
+- BETRETEN über bestehenden Reiseablauf
+- dynamische Eventmarker unter `MapData`
+- Convex-Hull-Positionierung innerhalb der nutzbaren Marker-Kontur
+- Sicherheitsabstände zu festen Markern und Außenkontur
+- Eventmarker behalten während ihrer Laufzeit ihre einmal gewählte Weltkartenposition
 
-Zielstruktur:
+### WorldMapExit.cs
+
+Der Map-Exit-Fehler wurde behoben.
+
+Frühere Ursache:
+- Prüfung auf den exakten Objektnamen `"Player"`
+
+Aktueller Stand:
+- primäre Erkennung über den Tag `Player`
+- zusätzlicher Fallback über `PlayerMovement` im Parent
+- funktioniert dadurch mit allen `Prefab_Player`-Instanzen
+- `Prefab_MapBoundsAndExits` wird auf allen Standardmaps zentral weiterverwendet
+- Korrektur wirkt damit automatisch auf alle Maps, die dieses Prefab verwenden
+
+### Dynamische EventMap
+
+Die gemeinsame Szene `EventMap` ist technisch bestätigt. Es wird **keine eigene Szene pro temporärem Event** benötigt.
+
+Aktueller Szenenaufbau:
 ```text
-areas.json.db
-↓
-AreaData.cs
-↓
-WorldMapUI / LootChestSpawnManager / weitere Systeme
+EventMap
+├── Main Camera
+├── Directional Light
+├── Prefab_Player
+├── EventManager
+├── EventSpawnRoot
+├── BorderRoot
+└── EventGround
 ```
 
-`AreaData.cs` dient damit als Vermittler:
-- `areas.json.db` laden
-- Gebiet nach Szene oder ID suchen
-- Daten in `AreaInfo` übersetzen
-- Daten an andere Systeme weiterreichen
+Bestätigt:
+- `EventGround` bleibt als feste technische Bodenbasis in der Szene
+- Eventgröße wird zur Laufzeit auf das ausgewählte Event angepasst
+- Spielerstart liegt standardmäßig bei `X=0, Y=1, Z=0`
+- `BorderRoot` erhält dynamisch den kompletten Randaufbau
+- grüner Rückkehrtrigger läuft auf **allen vier Seiten umlaufend**
+- rote physische Border / Runterfallschutz liegt außen herum
+- Rückkehr nutzt die gemeinsame `WorldMapExit`-Logik
+- `EventSpawnRoot` enthält dynamische Eventinhalte
 
-Vorhandene DB-Felder umfassen unter anderem:
-- id
-- name
-- scene
-- difficulty
-- difficultyColor
-- mainLoot
-- possibleLoot
-- permanent
-- storyLocked
-- enemySpawning
+### Erfolgreicher Mehrgrößen-Test
 
-Nicht vorhandene alte Felder werden nicht künstlich erfunden.
+Drei gleichzeitig aktive Testevents wurden erfolgreich geprüft:
 
-### WorldMapUI
+| Event | Größe |
+|---|---:|
+| Testevent 1 | 10 × 10 UE |
+| Testevent 2 | 15 × 20 UE |
+| Testevent 3 | 20 × 12 UE |
 
-Die bestehende Weltkartenlogik bleibt erhalten:
-- Hover
-- Hover-Label
-- Marker-Auswahl
-- InfoPanel rechts
-- Gebietsname
-- Schwierigkeit
-- Hauptbeute
-- mögliche Beute
-- BETRETEN-Button
-- `WorldMapMarker`
-- Pointer Enter / Exit / Click
+Bestätigtes Ergebnis:
+- dieselbe `EventMap` wurde für alle drei Events verwendet
+- `EventGround` wurde jeweils auf die passende Größe skaliert
+- Border und umlaufender Rückkehrtrigger passten sich der jeweiligen Größe an
+- Spielerstart blieb bei `(0, 1, 0)`
+- Rückkehr zur Weltkarte funktionierte
+- Eventmarker wurden danach wieder korrekt aufgebaut
+- die einmal festgelegten Eventpositionen bleiben erhalten
 
-Ablauf:
-```text
-Marker anklicken
-↓
-InfoPanel rechts
-↓
-Gebietsdaten anzeigen
-↓
-BETRETEN
-↓
-WorldMapTravel lädt Zielszene
-```
+Damit ist das zentrale Konzept **eine gemeinsame dynamisch skalierbare EventMap für unterschiedlich große temporäre Events** erfolgreich nachgewiesen.
 
-Der Markerklick reist nicht direkt. Marker bleiben sichtbar und anklickbar; spätere Sperren blockieren nur das tatsächliche Betreten.
+## Pflichtpunkte bis „vollständig spielbar“
 
-### WorldMapTravel
+Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewusst nicht enthalten.
 
-`WorldMapTravel.cs` bleibt absichtlich klein und benötigt keine eigenen Gebietsdaten. Die Zielszene kommt aus der DB über `AreaData` und `WorldMapUI`.
+### 1. Eventsystem produktionsreif machen
+- Testdaten aus `EventMapTest.cs` entfernen
+- echte Eventdaten aus `events.json.db` laden
+- Event-ID eindeutig bis in die `EventMap` transportieren
+- Größe, Dauer, Loot, Gegner, Ressourcen und Layout aus Daten lesen
+- Eventablauf und Entfernung sauber persistieren
+- Verhalten beim Ablaufen eines Events während der Spieler im Gebiet ist definieren
+- Eventzustand in Savegame integrieren
+- mehrere gleichzeitig aktive Events sauber verwalten
 
-### Dynamische Eventmarker
+### 2. Gebiets- und Spawnlogik abschließen
+- alle 30 dauerhaften Maps auf gemeinsame Area-/DB-Logik prüfen
+- Ressourcen-Spawning vollständig datengetrieben
+- Gegner-Spawning vollständig datengetrieben
+- Lootkisten-Spawning vollständig datengetrieben
+- getrennte Spawnzonen für Ressourcen, Gegner und Loot
+- Gebietsreset / erneute Zufallsverteilung beim erneuten Betreten
+- permanente Gebiete und storygebundene Orte korrekt von Zufallsreset ausnehmen
 
-Temporäre Eventkarten erzeugen ihren Marker selbst. Es gibt keinen dauerhaft vorbereiteten Eventmarker.
+### 3. Gegner- und Kampfsystem vollständig machen
+- `EnemySpawnManager.cs` produktionsreif
+- 53 Gegnerdaten tatsächlich anbinden
+- gemeinsame Gegnerbasis statt reiner DemoZombie-Sonderlogik
+- Nahkampf
+- Fernkampf
+- Schadensarten / Schwächen / Resistenzen
+- Tod, Loot und Respawnregeln
+- Bosslogik
+- Aggro-, Verfolgungs- und Rückkehrverhalten
 
-Aktueller Test:
-- gelber Stern
-- 40 × 40
-- langsame Rotation mit 15°/s
-- Marker wird unter `MapData` erzeugt
-- feste Gebietsmarker und Eventmarker verwenden damit dasselbe UI-Koordinatensystem
+### 4. Spieler-Survival vollständig verbinden
+- Leben
+- Hunger
+- Durst
+- Temperatur
+- Strahlung
+- Infektion
+- Status-Effekte
+- Kleidungsschutz
+- Tod und Leiche
+- Rückholtimer
+- spätere Keep-Inventory-Freischaltung
+- saubere Speicherung aller Werte
 
-Ablauf:
-```text
-Event aktiv
-↓
-freie Position suchen
-↓
-Eventmarker erzeugen
-↓
-Position reservieren
-↓
-Event läuft
-↓
-Marker bei Eventende entfernen
-```
+### 5. Inventar / Ausrüstung / Gegenstände
+- 10 Grundslots vollständig produktionsreif
+- Rucksackstufen
+- Main Hand / Second Hand
+- Ausrüstungsslots
+- Haltbarkeit
+- Stapellogik
+- Item-Nutzung
+- Containertransfer
+- Gewichts-/Bewegungseinfluss
+- komplette Item-DB-Anbindung
 
-### WorldMapEventPlacement.cs
+### 6. Crafting / Werkbänke / Produktion
+- Rezepte aus DB laden
+- Herstellungszeiten
+- Werkbankvoraussetzungen
+- Produktionswarteschlangen
+- Reparatur
+- Upgrades
+- Materialverbrauch
+- Offline-Fortschritt für geeignete Produktion
 
-Aktuell beste Lösung: **Convex Hull / Außenkontur der festen Gebietsmarker**.
+### 7. Basisbau
+- Rasterbau
+- 3×3-Grundraster
+- Wände / Türen / Böden / weitere Bauobjekte
+- Abriss mit 25 % Materialrückgabe
+- Bauobjekt-Upgrades
+- Lager-Upgrades
+- maximal vorgesehene Etagen
+- Hordenangriffe
+- Beschädigung / Reparatur der Basis
 
-Prüfung:
-- feste `Marker_*` sammeln
-- Außenkontur berechnen
-- Rasterpositionen testen
-- nur Positionen innerhalb der Außenkontur zulassen
-- Sicherheitsabstand zur Außenkante prüfen
-- Sicherheitsabstand zu normalen Markern prüfen
-- freie Eventposition speichern
+### 8. Progression
+- XP-Laufzeitsystem vollständig
+- Level 1–100
+- Level-Up-Belohnungen
+- Skillpunkte
+- Forschungspunkte
+- Level-Freischaltungen
+- Skill-Reset
+- Forschungsbaum anbinden
+- Story- und Levelvoraussetzungen gemeinsam prüfen
 
-Aktuelle Testwerte:
-- Grid Spacing = 50
-- Marker Safety Distance = 65
-- Hull Safety Distance = 35
-- Show Debug Positions = AUS
+### 9. Quest- und Storysystem
+- Quest-Datenbank fertigstellen
+- Hauptstory-Grundbogen technisch abbilden
+- Questzustände
+- Ziele
+- Fortschritt
+- Belohnungen
+- Voraussetzungen
+- Questbuch
+- SECRET-Missionen
+- Storyflags
+- verzweigte Entscheidungen / Sarah-Karma
 
-Letzter erfolgreicher Testpunkt:
-- Eventmarker ungefähr bei `(333.0, -396.0)`
-- Position sichtbar sinnvoll innerhalb der nutzbaren Weltkartenfläche
+### 10. Save-/Load-System produktionsreif
+- endgültige `.sgsave`-Struktur
+- bis zu 10 manuelle Slots
+- Autosave
+- Pflichtsave bei Gebietswechsel
+- Recovery-Save
+- Save-Versionierung
+- Migration
+- Events, Weltzustände, Quests, Basis, Inventar, NPCs und Progression vollständig speichern
+- Laden nach Absturz / fehlerhaften Saves robust behandeln
 
-Die Convex-Hull-Lösung wird jetzt zuerst über mehrere Play-Neustarts stabil getestet, bevor weitere Umbauten erfolgen.
+### 11. Händler / Economy / Shop
+- Händlerdaten
+- Kauf / Verkauf
+- Preise
+- Freischaltungen
+- Währungen / Tauschsystem
+- Shop-System
+- Balancing und Persistenz
 
-### EventMapTest.cs
+### 12. Begleiter / NPC-KI
+- Begleiter-DBs erstellen
+- Begleiter freischalten
+- aktiver Begleiter
+- Siedlungsbegleiter
+- Passive Hilfe
+- Lagerberechtigungen
+- autonome Aufgaben
+- Rückkehrzeiten
+- Fehler-/Hängerzustände
+- Skillverwaltung
+- Hunde als getrenntes Begleitersystem
 
-Aktuell:
-- wartet einen Frame auf `WorldMapEventPlacement`
-- holt eine freie Eventposition
-- reserviert sie
-- erzeugt den Stern
-- setzt Parent auf `MapData`
-- setzt 40 × 40
-- rotiert mit 15°/s
-- kann den Marker wieder entfernen
+### 13. Fahrzeuge / Weltreise
+- Fahrzeugfreischaltungen
+- Fahrzeugzustand
+- Fahrzeuglager
+- Geschwindigkeit / Reise
+- Reparatur
+- Kraftstoff bzw. vorgesehene Ressourcenlogik
+- Weltkartenintegration
+- spätere Luftfahrzeuge getrennt behandeln
 
-Die frühere Abhängigkeit von `placement.mapArea` wurde auf `placement.GetMarkerRoot()` korrigiert.
+### 14. Zeit / Events / Offline
+- zentrale Ingame-Uhr
+- 6 Echtzeitstunden = 24 Ingame-Stunden als Standard
+- Horde alle 24 Ingame-Stunden
+- Warnung 2 Ingame-Stunden vorher
+- tägliche Login-Belohnungen
+- 30-Tage-Kalender
+- temporäre Events
+- Offline-Fortschritt nur für erlaubte Systeme
 
-### Lootkisten
-
-Geplante Datenrichtung:
-```text
-areas.json.db
-↓
-AreaData
-↓
-LootChestSpawnManager
-
-loot.json.db
-↓
-DemoLootChest
-↓
-Kisteninhalt
-
-items.json.db
-↓
-Itemdefinitionen
-```
-
-Lootkisten erhalten eigene Spawnzonen und bleiben von Ressourcen- und Gegnerspawnzonen getrennt. Die Gebietsschwierigkeit wird nicht noch einmal im LootChestSpawnManager gepflegt.
+### 15. Funktions- und Integrationstests
+- alle 30 Standardmaps betreten und verlassen
+- sämtliche `Prefab_MapBoundsAndExits` prüfen
+- Runterfallschutz nach Abschluss unsichtbar schalten, Collider aktiv lassen
+- EventMap in mehreren Größen testen
+- Szenenwechsel mehrfach hintereinander testen
+- Save/Load über alle wichtigen Systemzustände testen
+- keine verlorenen Referenzen in Prefabs / Inspector
+- keine DB-IDs ohne gültige Referenz
+- keine Blocker, durch die ein Spielstand nicht weitergespielt werden kann
 
 ## Nächste Arbeitsschritte
 
-1. Convex-Hull-Eventpositionierung über 5–10 Play-Neustarts prüfen.
-2. Sicherstellen, dass der Stern nie außerhalb der brauchbaren Kartenfläche, auf einem normalen Marker oder zu dicht an einem Marker erscheint.
-3. Bei stabilem Ergebnis den dynamischen Eventmarker an die bestehende Hover-/Klick-/InfoPanel-Logik anbinden.
-4. Eventname und Eventdaten im rechten InfoPanel anzeigen.
-5. BETRETEN für Eventkarten über den bestehenden Reiseablauf anbinden.
-6. Danach echte Event-DB-/Dateianbindung umsetzen.
-7. Anschließend Lootkisten vollständig auf AreaData + Loot-DB + Item-DB umstellen.
-8. Parallel offene Datenbankwerte und Referenzprüfungen weiter abschließen.
+1. Erfolgreichen EventMap-Prototypen nicht weiter unnötig umbauen.
+2. Testevent-Datenstruktur in eine echte Event-ID-/Eventdaten-Pipeline überführen.
+3. `events.json.db` an den Eventmanager anbinden.
+4. Danach Gegner-, Ressourcen- und Loot-Spawns für Events anbinden.
+5. Anschließend die offenen Pflichtsysteme in der obigen Reihenfolge bis zur funktional vollständig spielbaren Fassung schließen.
