@@ -1,12 +1,12 @@
 # Projektfortschritt
 
-**Stand:** 06.10.2026
+**Stand:** 07.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
 ## Aktueller Schwerpunkt
 
-**Dynamische Eventgebiete stabilisieren und anschließend die noch fehlenden Kernsysteme für eine vollständig spielbare Fassung schließen.**
+**Ersten externen Testbuild vorbereiten: Hauptmenü/Pause-System abschließen, Save/Load absichern und den bestehenden Basis→Weltkarte→Gebiet-Gameplay-Loop testbar machen.**
 
 Aktuelle Architektur:
 ```text
@@ -38,6 +38,39 @@ Die Prozentwerte beziehen sich auf die erste vollständig spielbare Fassung. Gra
 | funktional spielbare Gesamtfassung ohne Grafik/Audio/Shader-Polish | **ca. 40 %** |
 
 Die Prozentwerte bleiben Näherungswerte. Viele Systeme sind bereits geplant oder prototypisch vorhanden, müssen aber noch vollständig miteinander verbunden, mit Inhalten gefüllt und getestet werden.
+
+
+## Stand bis zum ersten externen Testbuild
+
+Der erste Testbuild ist deutlich näher als die vollständig spielbare Gesamtfassung. Ziel des Testbuilds ist ausdrücklich **nicht**, bereits alle später geplanten Systeme zu enthalten, sondern einen stabilen zusammenhängenden Kernablauf für die Tester bereitzustellen.
+
+Aktuell bestätigt bzw. vorbereitet:
+- Hauptmenü mit eigenem Hintergrundbild
+- Neues Spiel / Spiel laden / Einstellungen / Beenden als Menüstruktur
+- Einstellungsoberfläche mit Grafikmodus, Auflösung, Vollbild und Lautstärkereglern
+- eigenes Pausemenü mit Fortsetzen, Speichern, Laden, Einstellungen, Hauptmenü und Beenden
+- globales `Prefab_PersistentPauseSystem` mit `DontDestroyOnLoad`
+- global abgesichertes `EventSystem`, damit die Pause-UI nach Szenenwechseln interaktiv bleibt
+- das globale Pause-System muss **nicht** in jede der 30 Maps einzeln eingebaut werden
+- Pause-Regel festgelegt: normales Gameplay steht; Produktionen und Events dürfen weiterlaufen
+- bei komplett geschlossenem Spiel laufen nur Events weiter
+- Hauptmenü-Musik ist vorbereitet/geplant und wird separat ergänzt
+- Weltkarte, Gebietswechsel und Standardmaps sind als technische Basis vorhanden
+
+### Noch zwingend vor dem ersten Testbuild
+
+1. globales Pause-System noch über mehrere echte Szenenwechsel gegenprüfen
+2. Save/Load für den Testablauf zuverlässig machen und gewünschten Speicherpfad finalisieren
+3. sicherstellen, dass Neues Spiel → Basis → Weltkarte → Testgebiet → Rückkehr ohne Blocker funktioniert
+4. mindestens einen einfachen Test-Gameplay-Loop bereitstellen: sammeln / Inventar / einfache Herstellung oder vergleichbare Kernaktion
+5. mindestens eine sehr einfache Testmission integrieren, damit Missionsfortschritt geprüft werden kann
+6. Fehler in der Console auf echte Blocker reduzieren; bekannte Entwicklungswarnungen getrennt dokumentieren
+7. Windows-Testbuild erstellen und auf einem zweiten System bzw. durch Tester starten lassen
+8. Tester-Checkliste für Menü, Pause, Szenenwechsel, Speichern/Laden und Kern-Gameplay mitgeben
+
+**Geschätzter Stand bis zum ersten sinnvollen Tester-Build: ca. 75–80 %.**
+
+Die noch fehlenden ca. 20–25 % betreffen vor allem Integration und Absicherung, nicht den Aufbau aller späteren Spielsysteme. Der Gesamtstand bis zur vollständig spielbaren Fassung bleibt davon getrennt.
 
 ## Datenbankstatus
 
@@ -309,8 +342,17 @@ Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewus
 
 ## Nächste Arbeitsschritte
 
-1. Erfolgreichen EventMap-Prototypen nicht weiter unnötig umbauen.
-2. Testevent-Datenstruktur in eine echte Event-ID-/Eventdaten-Pipeline überführen.
-3. `events.json.db` an den Eventmanager anbinden.
-4. Danach Gegner-, Ressourcen- und Loot-Spawns für Events anbinden.
-5. Anschließend die offenen Pflichtsysteme in der obigen Reihenfolge bis zur funktional vollständig spielbaren Fassung schließen.
+### Kurzfristig: erster Tester-Build
+1. globales Pause-System über mehrere echte Spielszenen testen
+2. Save/Load und finalen Speicherpfad absichern
+3. Basis → Weltkarte → Gebiet → Rückkehr als vollständigen Testpfad prüfen
+4. einfachen Sammel-/Inventar-/Herstellungsablauf und eine simple Testmission bereitstellen
+5. Windows-Testbuild erzeugen und Tester-Checkliste mitgeben
+6. Hauptmenü-Musik ergänzen, sobald die Audiodatei vorliegt
+
+### Danach: weitere Entwicklung
+1. erfolgreichen EventMap-Prototypen nicht unnötig umbauen
+2. Testevent-Datenstruktur in eine echte Event-ID-/Eventdaten-Pipeline überführen
+3. `events.json.db` an den Eventmanager anbinden
+4. danach Gegner-, Ressourcen- und Loot-Spawns für Events anbinden
+5. anschließend die offenen Pflichtsysteme in der obigen Reihenfolge bis zur funktional vollständig spielbaren Fassung schließen
