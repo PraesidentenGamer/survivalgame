@@ -1,10 +1,10 @@
 # Entwicklungsstand
 
-**Stand:** 06.10.2026
+**Stand:** 07.10.2026
 
 ## Aktuelle Entwicklungsphase
 
-Die grundlegende Planung der Pflichtsysteme ist weit fortgeschritten. Der aktuelle technische Schwerpunkt liegt auf der **datengetriebenen Weltkarte, den Gebietssystemen und der dynamischen EventMap**.
+Die grundlegende Planung der Pflichtsysteme ist weit fortgeschritten. Der aktuelle kurzfristige Schwerpunkt liegt auf dem **ersten externen Testbuild**; parallel bleiben die datengetriebene Weltkarte, Gebietssysteme und die dynamische EventMap die technische Basis.
 
 Die maßgebliche Datenrichtung lautet:
 
@@ -27,6 +27,31 @@ Grundregel:
 **`.json.db` = strukturierte Spielinhalte und Balance im Ordner `database`**  
 **JSON = Einstellungen/Config**  
 **.sgsave = Spielstand**
+
+
+## Hauptmenü und globales Pause-System
+
+Für den ersten Testbuild wurde der Menü-/Pause-Bereich deutlich erweitert.
+
+Bestätigter Stand:
+- Hauptmenü mit eigenem Hintergrundbild
+- Menüstruktur für Neues Spiel, Spiel laden, Einstellungen und Beenden
+- Einstellungsoberfläche für Grafikmodus, Auflösung, Vollbild sowie Lautstärke
+- Pausemenü mit Fortsetzen, Speichern, Laden, Einstellungen, Hauptmenü und Beenden
+- `Prefab_PersistentPauseSystem` bündelt `Canvas_PauseMenu` und `PauseMenuManager`
+- `PersistentPauseSystem.cs` hält das System per `DontDestroyOnLoad` über Szenenwechsel hinweg aktiv
+- nur eine globale Instanz ist vorgesehen
+- das Pause-System muss dadurch nicht manuell in alle 30 Maps eingebaut werden
+- ein global abgesichertes `EventSystem` stellt die Interaktion der Pause-Buttons nach Szenenwechseln sicher
+- vorhandene Szenen-`EventSystem`-Instanzen werden berücksichtigt
+
+Festgelegte Pause-Regel:
+- normales Gameplay pausiert vollständig
+- Produktionen dürfen während der Pause weiterlaufen
+- Events dürfen während der Pause weiterlaufen
+- bei komplett geschlossenem Spiel laufen nur Events weiter
+
+Die Ausnahmen Produktion/Events müssen in den jeweiligen Laufzeitsystemen ausdrücklich zeitunabhängig von `Time.timeScale` umgesetzt werden.
 
 ## Weltkarte und Standardmaps
 
@@ -171,6 +196,20 @@ Noch funktional zu schließen sind insbesondere:
 15. vollständige Integrations- und Referenztests
 
 Die ausführliche Checkliste wird in [FORTSCHRITT.md](FORTSCHRITT.md) gepflegt.
+
+## Erster Tester-Build
+
+Für den ersten externen Testbuild wird aktuell ein wesentlich kleinerer Pflichtumfang angesetzt als für die vollständige Spielfassung.
+
+Noch offen sind vor allem:
+- Pause-System über mehrere echte Szenenwechsel gegenprüfen
+- Save/Load und finalen Speicherpfad absichern
+- kompletten Testpfad Hauptmenü → Basis → Weltkarte → Gebiet → Rückkehr prüfen
+- einfachen Kern-Gameplay-Loop und eine simple Testmission bereitstellen
+- Windows-Testbuild erzeugen und Tester-Checkliste erstellen
+- Hauptmenü-Musik ergänzen, sobald die Datei vorliegt
+
+**Geschätzter Stand bis zum ersten sinnvollen externen Testbuild: ca. 75–80 %.**
 
 ## Aktuelle Fortschrittseinschätzung
 
