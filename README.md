@@ -12,7 +12,7 @@ Den ausführlichen Entwicklungsstand findest du hier:
 
 ## Aktueller Schwerpunkt
 
-Der aktuelle Schwerpunkt liegt auf der **datengetriebenen Weltkarte und der dynamischen EventMap**.
+Der kurzfristige Schwerpunkt liegt auf dem **ersten externen Testbuild**. Die datengetriebene Weltkarte und die dynamische EventMap bleiben dabei die technische Basis.
 
 Aktuelle Datenrichtung:
 
@@ -51,6 +51,24 @@ Bereits vorhanden bzw. als Prototyp bestätigt sind unter anderem:
 - Testzombie
 - GameManager
 
+
+## Neu: Hauptmenü und globales Pause-System
+
+Für den ersten Testbuild sind jetzt zusätzlich vorhanden:
+- Hauptmenü mit eigenem Hintergrundbild
+- Einstellungen für Grafikmodus, Auflösung, Vollbild und Lautstärke
+- Pausemenü mit Fortsetzen, Speichern, Laden, Einstellungen, Hauptmenü und Beenden
+- globales `Prefab_PersistentPauseSystem` mit `DontDestroyOnLoad`
+- global abgesichertes `EventSystem` für funktionierende UI-Interaktion nach Szenenwechseln
+- keine manuelle Pause-System-Kopie in allen 30 Maps erforderlich
+
+Pause-Regel:
+- Gameplay steht
+- Produktionen und Events dürfen während der Pause weiterlaufen
+- bei komplett geschlossenem Spiel laufen nur Events weiter
+
+**Geschätzter Stand bis zum ersten sinnvollen externen Testbuild: ca. 75–80 %.**
+
 ## Neu bestätigt: dynamische EventMap
 
 Eine einzige gemeinsame `EventMap`-Szene kann unterschiedlich große temporäre Events darstellen.
@@ -85,6 +103,15 @@ Dadurch funktioniert der Exit mit allen `Prefab_Player`-Instanzen und zentral au
 
 ## Nächster Entwicklungsblock
 
+### Bis zum ersten Tester-Build
+1. globales Pause-System über mehrere echte Spielszenen gegenprüfen
+2. Save/Load und finalen Speicherpfad absichern
+3. vollständigen Testpfad Basis → Weltkarte → Gebiet → Rückkehr prüfen
+4. einfachen Sammel-/Inventar-/Herstellungsablauf und eine simple Testmission bereitstellen
+5. Windows-Testbuild und Tester-Checkliste erstellen
+6. Hauptmenü-Musik ergänzen
+
+### Danach
 1. Event-Testdaten aus `EventMapTest.cs` herauslösen
 2. `events.json.db` an den Eventmanager anbinden
 3. Event-ID, Größe, Dauer, Loot, Gegner, Ressourcen und Layout aus DB laden
