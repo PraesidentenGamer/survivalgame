@@ -1,0 +1,302 @@
+Remnants of Tomorrow – Horrorfiguren und Horror-/Gruseleffekt-System
+Stand: 08.10.2026
+
+STATUS
+------
+Die folgenden Horrorfiguren und die dazugehörige Grundlogik gelten als fest übernommene Planung.
+Sie werden vorerst nur dokumentiert und noch nicht in die Datenbank oder in Unity eingebaut.
+
+GRUNDREGEL HORROR-/GRUSELEFFEKTE
+--------------------------------
+Option:
+Horror-/Gruseleffekte = AN / AUS
+
+Horror-/Gruseleffekte AN:
+- Spezielle Horrorfiguren und Mutationen werden mit ihrer vorgesehenen Darstellung verwendet.
+
+Horror-/Gruseleffekte AUS:
+- Statt der Horrorfigur erscheint ein normalerer Zombie bzw. normaler Gegner.
+- Der Ersatzgegner übernimmt 1:1 alle spielerischen Eigenschaften der ursprünglichen Horrorfigur:
+  - Lebenspunkte
+  - Schaden
+  - Geschwindigkeit
+  - Spezialfähigkeiten
+  - Resistenzen
+  - Schwächen
+  - Loot
+  - Spawnchance
+  - Spawnregeln
+  - Boss-/Elite-Status
+  - Questfunktion
+  - Eventfunktion
+  - Storyfunktion
+
+Damit verändert die Option nur die Darstellung und nicht das Balancing oder Gameplay.
+
+Technische Planungsregel:
+Jede Horrorfigur erhält später ein Feld:
+Ersatzgegner_HorrorAus
+
+GEGNERKATEGORIEN
+----------------
+- Normal
+- Spezial
+- Elite
+- Boss
+- Event/Story
+
+HORRORFIGUREN
+-------------
+
+1. Der Beobachter
+Kategorie: Spezial
+Gebiete: Wald, Ruinen, Stadt
+Grundidee: Beobachtet den Spieler zunächst lange aus der Distanz, verschwindet bei direkter Annäherung und greift erst später an.
+Ersatz bei Horror AUS: Schneller Elite-Zombie mit identischem Verhalten.
+
+2. Der Näher
+Kategorie: Elite
+Gebiete: Krankenhaus, Forschung, verlassene Einrichtung
+Grundidee: Lange Arme, hohe Nahkampfreichweite und Möglichkeit, den Spieler kurz festzuhalten.
+Ersatz bei Horror AUS: Großer Elite-Zombie.
+
+3. Der Grubenmann
+Kategorie: Spezial
+Gebiete: Minen, Bunker
+Grundidee: Fast blind, reagiert stark auf Geräusche und ist bei lauten Aktionen besonders gefährlich.
+Ersatz bei Horror AUS: Blinder Minen-Zombie mit identischen Hörwerten.
+
+4. Der Aschemensch
+Kategorie: Spezial
+Gebiete: Tschernobyl, verbrannte Gebiete
+Grundidee: In Rauch und Asche schwer zu erkennen, hohe Feuerresistenz.
+Ersatz bei Horror AUS: Verbrannter Zombie.
+
+5. Die Mutter
+Kategorie: Boss/Elite
+Gebiete: Brutstätte, Forschung, Event
+Grundidee: Beschwört oder schützt kleinere Gegner.
+Ersatz bei Horror AUS: Großer Mutter-Zombie mit identischer Beschwörungsmechanik.
+
+6. Der Sammler
+Kategorie: Elite
+Gebiete: Ruinen, Stadt
+Grundidee: Trägt Beute mit sich, sammelt Gegenstände vom Boden und kann besonders wertvollen Loot fallen lassen.
+Ersatz bei Horror AUS: Plünderer-Zombie.
+
+7. Der Gepanzerte
+Kategorie: Elite
+Gebiete: Militärstützpunkt, Bunker
+Grundidee: Hohe Rüstung, langsam, stark gegen normalen Schaden.
+Ersatz bei Horror AUS: Militär-Zombie in Schutzkleidung.
+
+8. Der Kriecher
+Kategorie: Spezial
+Gebiete: Bunker, Gebäude
+Grundidee: Bewegt sich niedrig, schnell und durch enge Räume.
+Ersatz bei Horror AUS: Schneller Kriech-Zombie.
+
+9. Der Funker
+Kategorie: Spezial
+Gebiete: Funkanlagen, Militär, Event
+Grundidee: Stört HUD oder Funksignale in seiner Nähe und kann andere Gegner anlocken.
+Ersatz bei Horror AUS: Funk-Zombie.
+
+10. Der Chirurg
+Kategorie: Elite
+Gebiete: Medizin, Forschung
+Grundidee: Kurze schnelle Angriffsserien und Blutungs- bzw. Wundeffekt.
+Ersatz bei Horror AUS: Medizinischer Elite-Zombie.
+
+11. Der Hohle
+Kategorie: Normal/Spezial
+Gebiete: Städte, Häuser
+Grundidee: Sehr schnell, wenig Leben, auffällige Atem- und Ortungsgeräusche.
+Ersatz bei Horror AUS: Dünner Schnell-Zombie.
+
+12. Der Wächter
+Kategorie: Elite
+Gebiete: Forschung, Bunker, Storyorte
+Grundidee: Verlässt seinen Wachbereich kaum, ist dort aber sehr stark.
+Ersatz bei Horror AUS: Schwerer Wach-Zombie.
+
+13. Subjekt Null
+Kategorie: Boss/Spezial
+Gebiete: Forschung, Tschernobyl
+Grundidee: Extrem selten, mehrere Phasen oder unterschiedliche Angriffsmodi.
+Ersatz bei Horror AUS: Besonders starker Mutanten-Zombie ohne Horroroptik.
+
+14. Der Flüsterer
+Kategorie: Spezial
+Gebiete: Wald, Nebel, Nacht
+Grundidee: Erzeugt akustische Täuschungen und kann seine Position schwer erkennbar machen.
+Ersatz bei Horror AUS: Normaler Zombie mit derselben Tarn- und Audio-Mechanik.
+
+15. Der Blinde
+Kategorie: Elite
+Gebiete: Bunker, Minen
+Grundidee: Kein Sichtsystem, extrem empfindliches Hörsystem, hoher Nahkampfschaden.
+Ersatz bei Horror AUS: Normaler blinder Zombie.
+
+16. Der Schleifer
+Kategorie: Spezial
+Gebiete: Industrie, Tunnel
+Grundidee: Langsam, aber sehr hoher Schaden; kündigt sich über Schleifgeräusche an.
+Ersatz bei Horror AUS: Schwerer Industrie-Zombie.
+
+17. Der Träger
+Kategorie: Elite
+Gebiete: Verseuchte Zonen
+Grundidee: Trägt eine infektiöse Masse und erzeugt beim Tod kurzzeitig eine Gefahrenzone.
+Ersatz bei Horror AUS: Verseuchter Zombie.
+
+18. Der Aufgeblähte
+Kategorie: Elite
+Gebiete: Sumpf, Forschung
+Grundidee: Langsam, hohe Lebenspunkte, kann beim Tod einen toxischen Bereich erzeugen.
+Ersatz bei Horror AUS: Großer aufgeblähter Zombie.
+
+19. Der Sporenwirt
+Kategorie: Spezial
+Gebiete: Sumpf, Forschung
+Grundidee: Verteilt Sporenwolken und erhöht die Infektionsgefahr.
+Ersatz bei Horror AUS: Infizierter Zombie.
+
+20. Der Frostbeißer
+Kategorie: Spezial
+Gebiete: Frostgebiet, Schneefeld
+Grundidee: Kälteresistenz und Fähigkeit, die Bewegung des Spielers zu verlangsamen.
+Ersatz bei Horror AUS: Gefrorener Zombie.
+
+21. Der Strahler
+Kategorie: Spezial
+Gebiete: Tschernobyl, Forschungsanlage
+Grundidee: Erhöht die lokale Strahlungsbelastung.
+Ersatz bei Horror AUS: Strahlenschutz-Zombie mit identischem Effekt.
+
+22. Der Springer
+Kategorie: Spezial
+Gebiete: Stadt, Ruinen
+Grundidee: Kann Hindernisse überspringen und Distanz sehr schnell schließen.
+Ersatz bei Horror AUS: Agiler Zombie.
+
+23. Der Schreier
+Kategorie: Spezial
+Gebiete: Verschiedene
+Grundidee: Ruft weitere Gegner herbei, wenn er nicht schnell ausgeschaltet wird.
+Ersatz bei Horror AUS: Schreier-Zombie.
+
+24. Der Jäger
+Kategorie: Elite
+Gebiete: Wald, Nacht
+Grundidee: Verfolgt den Spieler lange und verliert ihn nur schwer.
+Ersatz bei Horror AUS: Schneller Jagd-Zombie.
+
+25. Der Sucher
+Kategorie: Spezial
+Gebiete: Event, Story
+Grundidee: Reagiert besonders auf Lichtquellen oder aktive Technik.
+Ersatz bei Horror AUS: Normaler Zombie mit identischer Wahrnehmungslogik.
+
+26. Der Schatten
+Kategorie: Spezial
+Gebiete: Nacht, Bunker, Stromausfall
+Grundidee: In Dunkelheit sehr schwer sichtbar, bei Licht deutlich schwächer.
+Ersatz bei Horror AUS: Dunkler Zombie mit gleichem Lichtsystem.
+
+27. Der Gefesselte
+Kategorie: Spezial
+Gebiete: Einrichtung, Labor
+Grundidee: Eingeschränkte Bewegung, dafür sehr starke kurze Angriffe.
+Ersatz bei Horror AUS: Normaler Zombie mit reduzierter Bewegung und hohem Schaden.
+
+28. Der Verwachsene
+Kategorie: Elite
+Gebiete: Forschung, Tschernobyl
+Grundidee: Hohe Rüstung an bestimmten Körperbereichen; verwundbare Stellen müssen gezielt ausgenutzt werden.
+Ersatz bei Horror AUS: Gepanzerter Mutanten-Zombie.
+
+29. Der Schwarmwirt
+Kategorie: Elite
+Gebiete: Sumpf, Forschung
+Grundidee: Setzt kleinere Kreaturen oder Insekten frei.
+Ersatz bei Horror AUS: Normaler Zombie, der beim Tod kleinere Gegner spawnt.
+
+30. Der Eremit
+Kategorie: Spezial
+Gebiete: Abgelegene Gebiete
+Grundidee: Erscheint allein, sehr selten, hoher Loot, sehr hohe Gefahr.
+Ersatz bei Horror AUS: Seltener Elite-Zombie.
+
+31. Der Signalgeber
+Kategorie: Spezial
+Gebiete: Funk, Event
+Grundidee: Sendet ein Signal, durch das nach einiger Zeit Verstärkung erscheint.
+Ersatz bei Horror AUS: Funk-Zombie mit Verstärkungsruf.
+
+32. Der Pförtner
+Kategorie: Elite
+Gebiete: Bunker, Einrichtung
+Grundidee: Bewacht Türen oder Übergänge und muss besiegt werden, um weiterzukommen.
+Ersatz bei Horror AUS: Wach-Zombie.
+
+33. Der Rufer
+Kategorie: Spezial
+Gebiete: Stadt, Wald
+Grundidee: Erzeugt falsche menschliche Rufe, um den Spieler anzulocken.
+Ersatz bei Horror AUS: Normaler Zombie mit Lockrufmechanik.
+
+34. Der Nachahmer
+Kategorie: Spezial
+Gebiete: Horror, Event
+Grundidee: Imitiert einfache Geräusche oder Bewegungen aus der Umgebung.
+Ersatz bei Horror AUS: Normaler Zombie mit identischer Täuschungslogik.
+
+35. Der Gebrochene
+Kategorie: Elite
+Gebiete: Storygebiet
+Grundidee: Unregelmäßige Bewegung und schwer vorhersehbare Angriffe.
+Ersatz bei Horror AUS: Elite-Zombie mit gleichem Angriffsmuster.
+
+36. Der Hüter
+Kategorie: Boss
+Gebiete: Spezielle Storyorte
+Grundidee: Hoher Schutz, bewacht ein bestimmtes Objekt oder Gebiet, mehrere Kampfphasen möglich.
+Ersatz bei Horror AUS: Schwerer Boss-Zombie.
+
+37. Der Parasitenwirt
+Kategorie: Elite
+Gebiete: Forschung, Sumpf
+Grundidee: Kann nach dem Tod einen zweiten kleineren Gegner freisetzen.
+Ersatz bei Horror AUS: Normaler Zombie mit Zweitphase.
+
+38. Der Verbrannte Soldat
+Kategorie: Elite
+Gebiete: Militär, Tschernobyl
+Grundidee: Hohe Feuerresistenz, mittlere Rüstung, langsam, aber gefährlich.
+Ersatz bei Horror AUS: Militär-Zombie.
+
+39. Der Verseuchte Sanitäter
+Kategorie: Spezial
+Gebiete: Medizin, Militär
+Grundidee: Kann andere Gegner leicht regenerieren oder stärken.
+Ersatz bei Horror AUS: Sanitäter-Zombie.
+
+40. Der Techniker
+Kategorie: Spezial
+Gebiete: Industrie, Forschung
+Grundidee: Kann Stromsysteme oder Türen beeinflussen.
+Ersatz bei Horror AUS: Technik-Zombie mit gleicher Funktion.
+
+HINWEIS
+-------
+Diese Datei dient vorerst ausschließlich als Planungsdokument.
+Es erfolgt noch keine automatische Übernahme in:
+- enemies.json.db
+- events.json.db
+- Unity
+- Prefabs
+- Spawnmanager
+- Story-/Questdatenbanken
+
+Die technische Umsetzung erfolgt später separat.
