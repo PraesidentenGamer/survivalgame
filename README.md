@@ -160,3 +160,16 @@ Die funktional spielbare Fassung ohne finales Grafik-/Audio-/Shader-Polishing li
 Für das tatsächlich endgültige Spiel inklusive vollständiger Systeme, Story, Quests, Karteninhalte, Gegner, Crafting/Produktion, Basisbau, Progression, Händler, Begleiter, Fahrzeuge, Events, Grafik, Modelle, Texturen, Animationen, Musik, Soundeffekte, Balance, Optimierung und abschließender Tests wird der aktuelle Gesamtstand auf ungefähr **30 %** geschätzt.
 
 **Damit fehlen bis zum endgültigen Spiel noch ungefähr 70 %.**
+
+## Aktuelle Planungsdokumente
+
+Zusätzlich dokumentiert:
+- `docs/Remnants_of_Tomorrow_Siedlungsgebaeude_Planungsstand.txt` – aktueller vollständiger Siedlungsgebäude- und Ausbauplan
+- `docs/Remnants_of_Tomorrow_Horrorfiguren_Planung.txt` – Horrorfiguren sowie Regel für abschaltbare Horror-/Gruseleffekte
+
+Kurzregeln aus der neuen Planung:
+- Siedlungsgebäude maximal Stufe 3, Ausbau pro Stufe maximal 30 Minuten
+- Expeditionen ausschließlich über die Siedlung mit eigenem Expeditionsfahrzeug
+- Horror-/Gruseleffekte optional; Ersatzgegner übernehmen sämtliche Gameplay-Eigenschaften 1:1
+- jeder Boss hat genau eine Kampfphase
+- Hauptstory Pflicht, Nebenstory/Nebenquests/SECRET optional
