@@ -1,6 +1,6 @@
 # Projektfortschritt
 
-**Stand:** 08.10.2026
+**Stand:** 09.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
@@ -194,6 +194,26 @@ Bestätigtes Ergebnis:
 - die einmal festgelegten Eventpositionen bleiben erhalten
 
 Damit ist das zentrale Konzept **eine gemeinsame dynamisch skalierbare EventMap für unterschiedlich große temporäre Events** erfolgreich nachgewiesen.
+
+
+## Neue Planungsstände: Siedlung, Horror und Bosse
+
+Neu festgelegt bzw. als Planungsgrundlage bestätigt:
+- Siedlungsgebäude werden bis maximal Stufe 3 ausgebaut.
+- Jede einzelne Ausbauzeit bleibt bei maximal 30 Minuten.
+- Grundsätzlich reicht ein Hauptmodell pro Gebäude; Bau-/Ausbauzustände können über Baustellenelemente dargestellt werden.
+- Siedlung erhält einen geplanten Bewegungsbonus von ca. +25 %.
+- Expeditionen sind ausschließlich über die Siedlung möglich und benötigen ein eigenes Expeditionsfahrzeug sowie mindestens Stufe 2 bei Funk-/Expeditionszentrum und Fahrzeugdepot.
+- Strom/Wasser werden getrennt verwaltet; bei Energiemangel ist ein Notmodus statt vollständigem Zusammenbruch vorgesehen.
+- Wasserkraftwerk ist aktuell nicht fest eingeplant; Generatoren bilden die Grundversorgung, Solar kann ergänzen.
+- normale Begleit-/Zuchthunde bleiben an der Spielerbasis; Wachhunde können ab Verteidigungszentrum Stufe 2 in der Siedlung eingesetzt werden.
+- Horror-/Gruseleffekte sind optional abschaltbar. Bei deaktivierter Darstellung erscheinen normale Ersatzgegner, die sämtliche spielerischen Eigenschaften 1:1 übernehmen.
+- Boss-Grundregel: jeder Boss besitzt genau eine Kampfphase.
+- Hauptstory ist Pflicht; Nebenstory, Nebenquests und SECRET-Inhalte sind optional. Nebenquests dürfen ausdrücklich als Zeitvertreib dienen.
+
+Die vollständigen Planungsstände liegen zusätzlich in:
+- `docs/Remnants_of_Tomorrow_Siedlungsgebaeude_Planungsstand.txt`
+- `docs/Remnants_of_Tomorrow_Horrorfiguren_Planung.txt`
 
 ## Pflichtpunkte bis „vollständig spielbar“
 
