@@ -1,6 +1,6 @@
 # Entwicklungsstand
 
-**Stand:** 08.10.2026
+**Stand:** 09.10.2026
 
 ## Aktuelle Entwicklungsphase
 
@@ -247,3 +247,26 @@ Ohne Grafik, Audio, Shader und finales optisches Polishing:
 **Noch offen bis zum endgültigen Spiel: ca. 70 %.** Der größte Rest liegt in der vollständigen Umsetzung und Verbindung der noch offenen Systeme sowie in Story/Quests, Kartenbefüllung, Grafik, Audio, Animationen, Balance, Optimierung und abschließender Qualitätssicherung.
 
 Die Werte sind bewusst Näherungswerte und werden nach größeren abgeschlossenen Systemblöcken neu bewertet.
+
+## Planungsstand Siedlung und Horror
+
+Die Siedlungsplanung wurde deutlich konkretisiert. Der aktuelle Gebäudekern umfasst 14 Hauptbereiche: Zentrale/Verwaltung, Medizinzentrum, Technikzentrum, Markt, Zentrallager/Depot, Funk- und Expeditionszentrum, Forschungszentrum, Versorgungszentrum, Verteidigungszentrum, Industriezentrum, Wohnbereich, Landwirtschaft/Gewächshaus, Fahrzeugdepot und Gemeinschaftshaus.
+
+Verbindliche Planungsregeln:
+- Gebäude maximal Stufe 3
+- Ausbauzeit pro Stufe maximal 30 Minuten
+- ein Hauptmodell pro Gebäude genügt; Baufortschritt kann über Gerüste/Materialstapel/etc. gezeigt werden
+- Fach-NPCs benötigen Wohnraum plus passendes Gebäude in der nötigen Stufe
+- Expeditionen nur in der Siedlung und nur mit eigenem Expeditionsfahrzeug
+- geplantes Siedlungs-Bewegungstempo ca. +25 %
+- Strom und Wasser getrennt; Energiemangel führt in einen Notmodus
+- Generatoren als Grundversorgung, Solaranlage später ergänzend; Wasserkraftwerk derzeit nur optionale Idee
+- Wachhunde gehören funktional zum Verteidigungszentrum, normale Hunde bleiben an der Spielerbasis
+
+Zusätzlich wurde das Horror-/Gruselsystem geplant:
+- optionale Abschaltung der Horror-/Gruseleffekte
+- normale Ersatzgegner übernehmen bei deaktivierter Darstellung 1:1 Lebenspunkte, Schaden, Geschwindigkeit, Fähigkeiten, Resistenzen/Schwächen, Loot, Spawnregeln sowie Quest-/Event-/Storyfunktion
+- Gegnerkategorien: Normal, Spezial, Elite, Boss, Event/Story
+- Bossregel: genau eine Kampfphase pro Boss
+
+Die vollständigen Detailplanungen liegen in den TXT-Dateien unter `docs/`.
