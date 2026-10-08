@@ -1,0 +1,552 @@
+Remnants of Tomorrow – Siedlungsgebäude Planungsstand
+Stand: 09.10.2026
+
+ALLGEMEINE GRUNDREGELN
+-----------------------
+- Die Siedlung ist ein eigener großer Funktionsbereich und wird über die Story freigeschaltet.
+- Hauptstory = Pflicht.
+- Nebenstory = optional.
+- Nebenquests = optional und können ausdrücklich als Zeitvertreib dienen.
+- SECRET-Inhalte = optional.
+- Optionale Inhalte dürfen den Abschluss der Hauptstory nicht blockieren.
+- Die Siedlung nutzt ein eigenes Ausbau-/Gebäudesystem.
+- Siedlungsgebäude sind bis maximal Stufe 3 ausbaubar.
+- Jede Ausbaustufe besitzt eine Ausbauzeit.
+- Keine einzelne Ausbauzeit darf 30 Minuten überschreiten.
+- Richtwert:
+  - Stufe 1 bauen: ca. 1–10 Minuten
+  - Stufe 1 -> 2: ca. 10–20 Minuten
+  - Stufe 2 -> 3: ca. 20–30 Minuten
+- Grundsätzlich reicht ein Hauptmodell pro Gebäude.
+- Während Bau oder Ausbau können Baustellenelemente wie Gerüste, Materialstapel, Werkzeugkisten, Absperrungen oder Baustellenlampen eingeblendet werden.
+- Unterschiedliche Gebäudemodelle pro Stufe sind nicht verpflichtend.
+- Wichtige Fach-NPCs benötigen:
+  1. ausreichend Wohnraum
+  2. das passende Funktionsgebäude in der erforderlichen Stufe
+- Innerhalb der Siedlung soll der Spieler etwa +25 % Bewegungstempo erhalten.
+- Außerhalb der Siedlung gilt wieder das normale Bewegungstempo.
+- Die technische Umsetzung des Bewegungstempo-Bonus erfolgt später über die Player-/Bewegungslogik.
+
+1. ZENTRALE / VERWALTUNG
+------------------------
+Stufe 1 – Verwaltungsraum
+- grundlegende Siedlungsübersicht
+- aktuelle Bewohnerzahl
+- aktueller Strom-/Wasserstatus
+- einfache Bau-/Ausbauübersicht
+- kleinere Verwaltungsaufgaben
+- noch kein besonderer Leiter nötig
+
+Stufe 2 – Siedlungsverwaltung
+- Verwalter bzw. Siedlungsleiter darf einziehen
+- detailliertere Übersicht über Gebäude und Bewohner
+- Ausbauaufträge zentral einsehbar
+- erste Prioritäten für Versorgung, Bau und Verteidigung festlegbar
+- zusätzliche Verwaltungs-/Nebenquests
+
+Stufe 3 – Zentrale
+- vollständige Siedlungsübersicht
+- alle wichtigen Gebäude- und Versorgungsdaten
+- Bewohner-, Arbeits- und Verteidigungsübersicht
+- größere Siedlungsentscheidungen
+- zentrale Verwaltung von Ausbauprojekten
+- mögliche Komfort-Schnellzugriffe auf wichtige Unterbereiche
+
+Zusatzregeln:
+- Die Zentrale bündelt Informationen und Verwaltung.
+- Sie steuert nicht automatisch sämtliche Systeme.
+- Der Spieler kann weiterhin direkt mit Gebäuden und NPCs interagieren.
+- Stufe 3 darf keine Storyvoraussetzungen umgehen.
+
+2. MEDIZINZENTRUM
+-----------------
+Bündelt Krankenhaus, Quarantäne und medizinisches Labor.
+
+Stufe 1 – Erste Hilfe
+- einfache medizinische Versorgung
+- Verbände und grundlegende Behandlung
+- Sanitäter oder einfacher Helfer möglich
+- noch kein fest eingezogener Arzt erforderlich
+
+Stufe 2 – Medizinische Station
+- Arzt darf in die Siedlung einziehen
+- Behandlung von Infektion und Strahlung
+- bessere Heilung
+- zusätzliche medizinische Nebenquests
+
+Stufe 3 – Medizinzentrum
+- Spezialbehandlungen
+- medizinische Forschung
+- Quarantänebereich
+- bessere Medikamente
+- zusätzliche medizinische NPCs möglich
+- Spezialarzt/Forscher möglich
+
+3. TECHNIKZENTRUM
+-----------------
+Bündelt Werkstatt, große Werkhalle, Reparatur und Teile des Recyclingbereichs.
+
+Stufe 1 – Werkstatt
+- einfache Reparaturen
+- normale Werkzeuge und Maschinen
+- kleinere technische Aufgaben
+- einfacher Mechaniker/Helfer kann dort arbeiten
+- noch keine großen Fahrzeug- oder Elektronikarbeiten
+
+Stufe 2 – Technikwerkstatt
+- Mechaniker darf fest einziehen
+- Fahrzeugreparaturen
+- bessere Maschinenwartung
+- Elektronikreparaturen
+- Generatoren, Funkgeräte und technische Anlagen
+- zusätzliche technische Nebenquests
+- bessere Ersatzteilproduktion
+
+Stufe 3 – Technikzentrum
+- Ingenieur oder Spezialtechniker darf einziehen
+- schwere Maschinen
+- komplexe Fahrzeugtechnik
+- fortgeschrittene Elektronik
+- große Reparaturen
+- technische Siedlungsprojekte
+- mögliche High-End-Komponenten
+
+4. MARKT
+--------
+Stufe 1 – Kleiner Markt
+- 1–2 einfache Händlerplätze
+- Grundwaren
+- Nahrung, einfache Materialien, Standardausrüstung
+- kleinere Tauschgeschäfte
+- normaler Händler kann einziehen
+
+Stufe 2 – Handelsplatz
+- mehrere Händlerplätze
+- spezialisierte Händler möglich
+- z. B. Medizin, Ausrüstung, Schrott
+- bessere Warenqualität
+- Händlerrotationen
+- erste seltene Angebote
+- Schwarzhändler kann unter bestimmten Bedingungen auftauchen
+
+Stufe 3 – Großer Markt
+- volle Händlerauswahl
+- seltene und hochwertige Waren
+- besondere Rotationen
+- spezielle Eventwaren
+- bessere Tauschkurse möglich
+- Marktleiter kann einziehen
+- Händlergilde bzw. größere Handelsgruppe kann vertreten sein
+
+5. ZENTRALLAGER / DEPOT
+-----------------------
+Stufe 1 – Lagerhaus
+- grundlegende zentrale Lagerung
+- normale Ressourcen und Materialien
+- einfache Sortierung
+- Lagerarbeiter kann dort arbeiten
+- begrenzte Kapazität
+
+Stufe 2 – Großlager
+- deutlich mehr Lagerkapazität
+- getrennte Bereiche für Ressourcen, Bauteile, Medizin, Nahrung und Ausrüstung
+- Lagermeister kann einziehen
+- bessere Sortierung und Verwaltung
+- ausgewählte Siedlungssysteme können später mit ausdrücklicher Freigabe auf Bestände zugreifen
+
+Stufe 3 – Zentrales Depot
+- sehr hohe Lagerkapazität
+- vollständige Materialverwaltung der Siedlung
+- spezielle Lagerbereiche für seltene/wertvolle Gegenstände
+- Versorgung von Produktion, Bau und Expeditionen aus zentralem Bestand möglich
+- Lagermeister erhält zusätzliche Verwaltungsfunktionen
+- mögliches Reservelager für Notfälle/Hordenangriffe
+
+Zusatzregeln:
+- Der Spieler darf selbst auf das Zentrallager zugreifen.
+- NPCs dürfen nicht eigenständig beliebig Gegenstände herausnehmen.
+- Zugriffe anderer Systeme erfolgen nur mit ausdrücklicher Berechtigung.
+
+6. FUNK- UND EXPEDITIONSZENTRUM
+-------------------------------
+Expeditionen sind ausschließlich über die Siedlung möglich.
+
+Stufe 1 – Funkstation
+- einfache Funkverbindung
+- Notrufe empfangen
+- Hinweise auf Events und besondere Signale
+- Funker kann dort arbeiten
+- einfache Funkquests
+- noch keine Expeditionen
+
+Stufe 2 – Funk- und Expeditionszentrum
+- Funker darf fest einziehen
+- Expeditionen werden grundsätzlich freigeschaltet
+- kleine Expeditionen möglich
+- mehr Funkkanäle und seltenere Signale
+- bessere Informationen zu Gebieten/Ereignissen
+- gezielte Bergungs- oder Suchmissionen möglich
+
+Stufe 3 – Expeditionszentrale
+- größere und längere Expeditionen
+- mehrere/umfangreichere Expeditionsteams möglich
+- Expeditionsleiter kann einziehen
+- seltene Langstrecken-Funksignale
+- besondere Koordinaten oder versteckte Orte können entdeckt werden
+- seltene Spezialexpeditionen
+- höhere Chance auf besondere Funde
+- mögliche Verbindung zu späteren Story-/Updategebieten
+
+Feste Expeditionsregeln:
+- Expeditionen nur in der Siedlung.
+- Keine Expeditionen von Spielerbasis, zweiter Basis oder direkt von der Weltkarte.
+- Voraussetzungen:
+  - Funk-/Expeditionszentrum mindestens Stufe 2
+  - Fahrzeugdepot mindestens Stufe 2
+  - eigenes Expeditionsfahrzeug vorhanden
+- Ohne Expeditionsfahrzeug keine Expedition.
+- Expeditionen können zeitbasiert laufen.
+- NPCs/Söldner, Ausrüstung und Ressourcen können je nach Expedition nötig sein.
+- Erfolg, Teilerfolg und Fehlschlag sind möglich.
+- Ein Fehlschlag löscht wichtige einzigartige NPCs nicht automatisch dauerhaft, sofern später nichts anderes ausdrücklich festgelegt wird.
+
+7. FORSCHUNGSZENTRUM
+--------------------
+Stufe 1 – Forschungsstation
+- einfache Analyse von Proben
+- grundlegende Forschungsaufträge
+- erste kleine Technologie-/Wissensfreischaltungen
+- einfacher Forscher kann dort arbeiten
+- noch keine komplexen Spezialprojekte
+
+Stufe 2 – Forschungszentrum
+- Forschungsleiter darf einziehen
+- bessere Analyse von Infektion, Strahlung und Mutationen
+- zusätzliche Forschungsprojekte
+- neue technische oder medizinische Freischaltungen
+- Untersuchung seltener Materialien und besonderer Gegnerproben
+- anspruchsvollere Forschungsquests
+
+Stufe 3 – Hochsicherheitsforschung
+- komplexe Spezialforschung
+- Analyse besonders gefährlicher Proben
+- Untersuchung von Tschernobyl-, Bunker- und Bossmaterialien
+- seltene High-End-Freischaltungen
+- zusätzliche Spezialisten möglich
+- größere Story- und SECRET-Forschungsprojekte
+- spezielle Sicherheitsbereiche für gefährliche Proben
+
+Zusatzregeln:
+- Forschung darf Storyfreischaltungen nicht umgehen.
+- Medizinzentrum = Behandlung/Versorgung.
+- Forschungszentrum = Analyse, Wissen, Technologien, Forschungsfortschritt.
+
+8. VERSORGUNGSZENTRUM
+---------------------
+Verwaltet Strom und Wasser gemeinsam, aber als getrennte Werte.
+
+Stufe 1 – Grundversorgung
+- einfache Stromversorgung
+- einfache Wasserversorgung
+- kleiner Generator
+- einfache Wasseraufbereitung
+- begrenzte Kapazität
+- technischer Helfer kann dort arbeiten
+
+Stufe 2 – Versorgungsstation
+- Techniker darf fest einziehen
+- höhere Strom- und Wasserkapazität
+- stabilere Versorgung mehrerer Gebäude
+- bessere Wasseraufbereitung
+- zusätzliche Generator-/Speichertechnik
+- größere technische Versorgungsquests
+
+Stufe 3 – Zentrales Versorgungszentrum
+- vollständige Versorgung der ausgebauten Siedlung
+- große Wasseraufbereitung
+- größere Stromerzeugung und Speicherkapazität
+- Solaranlage kann eingebunden werden
+- Dieselgenerator als Reserve möglich
+- Ingenieur oder Versorgungsspezialist kann einziehen
+- wichtige Systeme können dauerhaft stabil versorgt werden
+
+Strom-/Wasserregeln:
+- Strom und Wasser bleiben getrennte Werte.
+- Beispiel:
+  Strom 80 / 120
+  Wasser 65 / 100
+- Gebäude können getrennten Strom- und Wasserbedarf haben.
+- Bei Energiemangel kein vollständiger Zusammenbruch.
+- Stattdessen dauerhafter Notmodus.
+- Im Notmodus bleiben wichtige Grundfunktionen bevorzugt aktiv:
+  - Medizinzentrum
+  - Funk
+  - Wasser
+  - Verteidigung
+  - Grundbeleuchtung
+  - Verwaltung
+- weniger wichtige Verbraucher können gedrosselt oder deaktiviert werden.
+- Siedlungs-NPCs dürfen eingeschränkt selbstständig bei Versorgung/Brennstoffbeschaffung helfen.
+- Wasserkraftwerk ist aktuell NICHT fest eingeplant.
+- Wasserkraftwerk bleibt höchstens als mögliche spätere Idee.
+- Generatoren sind aktuell Grundversorgung.
+- Solaranlage kann später ergänzen.
+
+9. VERTEIDIGUNGSZENTRUM
+-----------------------
+Stufe 1 – Wachposten
+- grundlegende Bewachung
+- einfache Wachen stationierbar
+- Zugangskontrolle
+- kleinere Verteidigungsaufgaben
+- einfache Waffen-/Ausrüstungslagerung für Wachen
+
+Stufe 2 – Verteidigungsstation
+- Wachkommandant darf einziehen
+- mehr Wachen gleichzeitig einsetzbar
+- bessere Ausrüstung
+- Söldner können für bestimmte Aufgaben angeheuert werden
+- Verteidigungsquests und Eskorten
+- bessere Organisation bei Angriffen
+- zusätzliche Wachpunkte
+- erste Wachhunde können eingesetzt werden
+
+Stufe 3 – Verteidigungszentrum
+- volle Koordination der Siedlungsverteidigung
+- Verteidigungsleiter/erfahrener Offizier kann einziehen
+- größere Zahl an Wachen und Söldnern
+- bessere Ausrüstung und schwere Verteidigungsmittel
+- Vorbereitung auf größere Angriffe
+- Verteidigungspläne und Alarmstufen
+- spezielle Kampf-/Sicherheitsmissionen
+- mehrere bzw. bessere Wachhund-Posten möglich
+
+Zusatzregeln:
+- normale Begleit-/Zuchthunde gehören an die Spielerbasis.
+- Siedlung bekommt kein allgemeines Hundegebäude.
+- Wachhunde sind Ausnahme und gehören funktional zum Verteidigungszentrum.
+- Wachen/Söldner dürfen nicht eigenständig Lager plündern oder Materialien verbrauchen, sofern kein System ausdrücklich dafür freigegeben ist.
+
+10. INDUSTRIEZENTRUM
+--------------------
+Stufe 1 – Industriehalle
+- einfache Erz- und Materialverarbeitung
+- Grundmaschinen für Metall, Stein und größere Baustoffe
+- kleinere industrielle Aufträge
+- einfacher Arbeiter/Techniker kann eingesetzt werden
+- begrenzte Produktionskapazität
+- einfache Zerlegung normaler Gegenstände
+
+Stufe 2 – Industriezentrum
+- Industriespezialist oder Werkstattleiter darf einziehen
+- größere Verarbeitung von Eisen, Stahl und anderen Werkstoffen
+- zusätzliche Maschinen
+- höhere Produktionsmengen
+- Verarbeitung seltenerer Materialien
+- zusätzliche Industrie-/Beschaffungsquests
+- bessere Recyclingquote
+- mehr Gegenstandskategorien zerlegbar
+
+Stufe 3 – Schwerindustrie
+- große Produktionskapazität
+- fortgeschrittene Metall- und Bauteilverarbeitung
+- schwere Maschinen
+- seltene High-End-Komponenten
+- Versorgung größerer Bau-, Fahrzeug- und Siedlungsprojekte
+- zusätzliche Spezialisten möglich
+- hochwertige Rückgewinnung
+- komplexere Bauteile und seltenere Materialien
+- größere Mengen gleichzeitig verarbeitbar
+
+Recyclingregeln:
+- Recycling ist ins Industriezentrum integriert.
+- Kein separates Recyclinggebäude.
+- Recycling gibt niemals 100 % der ursprünglichen Materialien zurück.
+- Rückgewinnung kann teilweise zufällig sein.
+- Story-/Questgegenstände und einzigartige Gegenstände dürfen nicht versehentlich recycelt werden.
+
+11. WOHNBEREICH
+---------------
+Stufe 1 – Unterkünfte
+- einfache Schlafplätze
+- geringe Bewohnerkapazität
+- einfache Betten und grundlegende Versorgung
+- normale Überlebende können einziehen
+
+Stufe 2 – Wohnbereich
+- deutlich mehr Bewohnerplätze
+- bessere Unterkünfte
+- mehrere Bewohnergruppen möglich
+- bestimmte Fach-NPCs können bei erfüllten Zusatzbedingungen einziehen
+- kleine Gemeinschaftsflächen
+- Zufriedenheit/Moral kann verbessert werden
+
+Stufe 3 – Siedlungsquartier
+- höchste Bewohnerkapazität
+- bessere Wohnqualität
+- zusätzliche Gemeinschaftsbereiche
+- mehr Spezial-NPCs können dauerhaft leben
+- mögliche Boni auf Bewohnerzufriedenheit oder Arbeitsleistung
+
+Fach-NPC-Regel:
+- Fach-NPC braucht Wohnplatz UND passendes Funktionsgebäude in nötiger Stufe.
+- Beispiel Arzt:
+  - genug Wohnraum
+  - Medizinzentrum mindestens Stufe 2
+
+12. LANDWIRTSCHAFT / GEWÄCHSHAUS
+--------------------------------
+Stufe 1 – Anbaufläche
+- einfache Felder
+- Grundnahrung und einfache Pflanzen
+- kleiner Wasserverbrauch
+- Gärtner/Bauer kann dort arbeiten
+- begrenzte Produktion
+
+Stufe 2 – Landwirtschaft
+- Landwirt/Gärtner darf fest einziehen
+- größere Anbauflächen
+- mehr Pflanzenarten
+- höhere Erträge
+- erste spezialisierte Nutzpflanzen
+- bessere Versorgung der Siedlung
+- Landwirtschafts-/Beschaffungsquests
+
+Stufe 3 – Gewächshaus
+- ganzjährige Produktion
+- seltenere/empfindlichere Pflanzen
+- höhere Erträge
+- bessere Ausnutzung von Wasser und Fläche
+- Spezialpflanzen für Medizin, Forschung oder besondere Rezepte
+- weiterer Spezialist möglich
+
+Zusatzregeln:
+- Landwirtschaft verbraucht Wasser.
+- Ab Stufe 2 eventuell zusätzlicher Strombedarf.
+- Stufe 3 benötigt Strom für Beleuchtung, Pumpen oder Klimaregelung.
+- Produktion läuft zeitbasiert.
+- Nahrung verdirbt nicht.
+- Keine Erzeugung aus dem Nichts: Saatgut/Pflanzen/Ausgangsmaterialien müssen vorhanden sein.
+
+13. FAHRZEUGDEPOT
+-----------------
+Stufe 1 – Garage
+- wenige Stellplätze
+- einfache Reparaturen
+- kleinere Fahrzeuge verwalten
+- Grundwartung
+- Mechaniker kann dort arbeiten
+- noch kein Expeditionsfahrzeug
+
+Stufe 2 – Fahrzeugdepot
+- mehr Stellplätze
+- bessere Reparaturen
+- größere Fahrzeuge verwaltbar
+- Expeditionsfahrzeug wird unterstützt
+- Ersatzteile und Fahrzeugkomponenten können gelagert werden
+- spezielle Fahrzeugquests möglich
+
+Stufe 3 – Großes Fahrzeugdepot
+- höchste Stellplatzkapazität
+- schwere Fahrzeuge
+- komplexe Reparaturen
+- bessere Wartung
+- Fahrzeug-Upgrades
+- Expeditionsfahrzeug vollständig nutzbar
+- Fahrzeugmeister/Spezialmechaniker möglich
+
+Zusatzregeln:
+- Fahrzeugdepot ist speziell für die Siedlung.
+- Es ersetzt nicht automatisch die Fahrzeugwerkstatt der Spielerbasis.
+- Fahrzeugkraftstoff wird getrennt vom Energie-/Generatorbrennstoff verwaltet.
+- Kein eigenes Treibstoffgebäude nötig.
+
+14. GEMEINSCHAFTSHAUS
+---------------------
+Stufe 1 – Treffpunkt
+- einfacher Aufenthaltsraum
+- Bewohner können sich treffen
+- kleine Nebenquests oder Gespräche
+- keine Fach-NPCs nötig
+
+Stufe 2 – Gemeinschaftshaus
+- größere Aufenthaltsfläche
+- Versammlungen
+- kleine Veranstaltungen
+- mehr Nebenquests und Bewohnerdialoge
+- mögliche kleine Boni auf Zufriedenheit/Moral
+
+Stufe 3 – Siedlungszentrum für Gemeinschaft
+- größere Versammlungen
+- besondere Bewohner-/Fraktionsereignisse
+- zusätzliche Nebenstorys
+- mögliche kleine Feste oder zeitlich begrenzte Siedlungsereignisse
+- stärkere Moral-/Zufriedenheitsboni
+
+Zusatzregeln:
+- Keine zwingenden Hauptstoryfunktionen.
+- Schwerpunkt:
+  - Atmosphäre
+  - Bewohner
+  - Nebenstory
+  - kleinere Ereignisse
+  - Moral/Zufriedenheit
+  - Zeitvertreib
+
+INTEGRIERTE FUNKTIONEN STATT EIGENER GEBÄUDE
+--------------------------------------------
+Training:
+- Kampf-/Wach-/Söldnertraining -> Verteidigungszentrum
+- allgemeine Schulungen/Bewohnertraining -> Gemeinschaftshaus
+
+Archiv / Information:
+- Siedlungsdaten -> Zentrale / Verwaltung
+- Forschungsakten -> Forschungszentrum
+- Funkinformationen -> Funk- und Expeditionszentrum
+- kein eigenes Archivgebäude
+
+Recycling:
+- ins Industriezentrum integriert
+- kein eigenes Recyclinggebäude
+
+Treibstoff / Energie:
+- Generatorbrennstoff -> Versorgungszentrum
+- Fahrzeugkraftstoff -> Fahrzeugdepot
+- getrennte Lagerbestände
+- kein eigenes Treibstoffgebäude
+
+Hunde:
+- normale Begleit-/Zuchthunde -> Spielerbasis
+- Wachhunde -> Verteidigungszentrum
+- kein eigenes allgemeines Hundegebäude in der Siedlung
+
+AKTUELLER GEBÄUDEKERN
+---------------------
+1. Zentrale / Verwaltung
+2. Medizinzentrum
+3. Technikzentrum
+4. Markt
+5. Zentrallager / Depot
+6. Funk- und Expeditionszentrum
+7. Forschungszentrum
+8. Versorgungszentrum
+9. Verteidigungszentrum
+10. Industriezentrum
+11. Wohnbereich
+12. Landwirtschaft / Gewächshaus
+13. Fahrzeugdepot
+14. Gemeinschaftshaus
+
+STATUS
+------
+Dieser Stand ist reine Planung.
+
+Noch NICHT automatisch umgesetzt in:
+- Unity
+- C#-Skripten
+- Datenbanken
+- Prefabs
+- Save-System
+- NPC-System
+- Bau-/Upgrade-System
+- Spawn-System
