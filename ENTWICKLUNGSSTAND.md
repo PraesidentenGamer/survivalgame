@@ -1,6 +1,6 @@
 # Entwicklungsstand
 
-**Stand:** 07.10.2026
+**Stand:** 08.10.2026
 
 ## Aktuelle Entwicklungsphase
 
@@ -52,6 +52,19 @@ Festgelegte Pause-Regel:
 - bei komplett geschlossenem Spiel laufen nur Events weiter
 
 Die Ausnahmen Produktion/Events müssen in den jeweiligen Laufzeitsystemen ausdrücklich zeitunabhängig von `Time.timeScale` umgesetzt werden.
+
+
+## Musik und Audio-Struktur
+
+Die Musikstruktur wurde vorbereitet:
+- gemeinsames `Prefab_IngameMusik`
+- Hauptmenü-Musik eingebunden und funktionierend
+- Weltkartenmusik als eigener Bereich
+- `music/Feste_Gebiete` mit getrennten Ordnern für die 30 festen Gebiete
+- `Test_Kiefernwald_v01` bleibt ausgeschlossen
+- `EventMap` verwendet unabhängig vom konkreten Event eine gemeinsame Eventmusik
+- Musik wird als `.ogg` organisiert
+- weitere Titel werden schrittweise generiert und ergänzt
 
 ## Weltkarte und Standardmaps
 
@@ -197,19 +210,26 @@ Noch funktional zu schließen sind insbesondere:
 
 Die ausführliche Checkliste wird in [FORTSCHRITT.md](FORTSCHRITT.md) gepflegt.
 
+
+## Windows-Testbuild und Datenbanken
+
+Ein erster Windows-x86_64-Build wurde erzeugt. Dabei wurde ein echter Buildfehler gefunden: Die externen `.json.db`-Datenbanken wurden nicht automatisch mit ausgeliefert.
+
+Aktueller Lösungsstand:
+- `Assets/StreamingAssets/database` wurde als Build-Datenbankpfad vorbereitet
+- `AreaData.cs` verwendet primär `Application.streamingAssetsPath/database/areas.json.db`
+- ältere Projekt-/Buildpfade bleiben vorerst nur als Fallback erhalten
+- der nächste Build muss prüfen, ob die Datenbanken nun unter `<Spiel>_Data/StreamingAssets/database` enthalten und erreichbar sind
+
 ## Erster Tester-Build
 
-Für den ersten externen Testbuild wird aktuell ein wesentlich kleinerer Pflichtumfang angesetzt als für die vollständige Spielfassung.
+Der erste externe Build soll gezielt den vorhandenen Kern prüfen, nicht bereits alle späteren Spielsysteme enthalten.
 
-Noch offen sind vor allem:
-- Pause-System über mehrere echte Szenenwechsel gegenprüfen
-- Save/Load und finalen Speicherpfad absichern
-- kompletten Testpfad Hauptmenü → Basis → Weltkarte → Gebiet → Rückkehr prüfen
-- einfachen Kern-Gameplay-Loop und eine simple Testmission bereitstellen
-- Windows-Testbuild erzeugen und Tester-Checkliste erstellen
-- Hauptmenü-Musik ergänzen, sobald die Datei vorliegt
+Vorhanden bzw. testbar vorgesehen sind insbesondere Hauptmenü, Einstellungen, Pausemenü, Inventar, Sammeln, Loot, vorhandener Kampfstand, Basis, Weltkarte, Gebietswechsel, EventMap und Save/Load-Prototyp.
 
-**Geschätzter Stand bis zum ersten sinnvollen externen Testbuild: ca. 75–80 %.**
+Der Windows-Build wurde bereits grundsätzlich erzeugt. Vor der Ausgabe an die Tester fehlt im Wesentlichen nur noch der erneute Build mit korrekt ausgelieferten Datenbanken und ein kurzer Start-/DB-Zugriffstest.
+
+**Geschätzter Stand bis zum ersten auslieferbaren externen Testbuild: ca. 95 %.**
 
 ## Aktuelle Fortschrittseinschätzung
 
@@ -222,5 +242,8 @@ Ohne Grafik, Audio, Shader und finales optisches Polishing:
 - Eventkarten-Grundsystem: ca. 65 %
 - eigentliche Gameplay-Inhalte / Kartenbefüllung: ca. 20 %
 - funktional spielbare Gesamtfassung: ca. 40 %
+- endgültiges Spiel inklusive vollständiger Inhalte, Grafik, Audio und Polishing: **ca. 30 %**
+
+**Noch offen bis zum endgültigen Spiel: ca. 70 %.** Der größte Rest liegt in der vollständigen Umsetzung und Verbindung der noch offenen Systeme sowie in Story/Quests, Kartenbefüllung, Grafik, Audio, Animationen, Balance, Optimierung und abschließender Qualitätssicherung.
 
 Die Werte sind bewusst Näherungswerte und werden nach größeren abgeschlossenen Systemblöcken neu bewertet.
