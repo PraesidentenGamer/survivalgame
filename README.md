@@ -12,7 +12,7 @@ Den ausführlichen Entwicklungsstand findest du hier:
 
 ## Aktueller Schwerpunkt
 
-Der kurzfristige Schwerpunkt liegt auf dem **ersten externen Testbuild**. Die datengetriebene Weltkarte und die dynamische EventMap bleiben dabei die technische Basis.
+Der kurzfristige Schwerpunkt liegt auf der **Ausgabe des ersten externen Testbuilds**. Der Windows-Build ist grundsätzlich möglich; aktuell wird noch die sichere Mitlieferung der externen Datenbanken über `StreamingAssets` abgeschlossen.
 
 Aktuelle Datenrichtung:
 
@@ -67,7 +67,19 @@ Pause-Regel:
 - Produktionen und Events dürfen während der Pause weiterlaufen
 - bei komplett geschlossenem Spiel laufen nur Events weiter
 
-**Geschätzter Stand bis zum ersten sinnvollen externen Testbuild: ca. 75–80 %.**
+**Geschätzter Stand bis zum ersten auslieferbaren externen Testbuild: ca. 95 %.**
+
+
+## Musikstruktur
+
+Aktuell vorbereitet:
+- `Prefab_IngameMusik`
+- funktionierende Hauptmenü-Musik
+- eigener Bereich für Weltkartenmusik
+- je ein Musikordner für die 30 festen Gebiete unter `music/Feste_Gebiete`
+- gemeinsame Musik für die `EventMap`, unabhängig vom jeweiligen temporären Event
+- `Test_Kiefernwald_v01` ist ausgeschlossen
+- Musikdateien werden als `.ogg` organisiert
 
 ## Neu bestätigt: dynamische EventMap
 
@@ -104,12 +116,10 @@ Dadurch funktioniert der Exit mit allen `Prefab_Player`-Instanzen und zentral au
 ## Nächster Entwicklungsblock
 
 ### Bis zum ersten Tester-Build
-1. globales Pause-System über mehrere echte Spielszenen gegenprüfen
-2. Save/Load und finalen Speicherpfad absichern
-3. vollständigen Testpfad Basis → Weltkarte → Gebiet → Rückkehr prüfen
-4. einfachen Sammel-/Inventar-/Herstellungsablauf und eine simple Testmission bereitstellen
-5. Windows-Testbuild und Tester-Checkliste erstellen
-6. Hauptmenü-Musik ergänzen
+1. Datenbanken über `StreamingAssets/database` vollständig mitliefern
+2. Windows-x86_64-Build neu erzeugen
+3. Start und Datenbankzugriff kurz prüfen
+4. Build-Ordner zusammen mit der Tester-Prüfliste verteilen
 
 ### Danach
 1. Event-Testdaten aus `EventMapTest.cs` herauslösen
@@ -142,3 +152,11 @@ Die noch nötigen Kernblöcke sind insbesondere:
 Aktuell geschätzter Stand der **funktional spielbaren Fassung ohne Grafik/Audio/Shader-Polish: ca. 40 %**.
 
 Details: [FORTSCHRITT.md](FORTSCHRITT.md)
+
+## Ziel „endgültiges Spiel“
+
+Die funktional spielbare Fassung ohne finales Grafik-/Audio-/Shader-Polishing liegt weiterhin bei ungefähr **40 %**.
+
+Für das tatsächlich endgültige Spiel inklusive vollständiger Systeme, Story, Quests, Karteninhalte, Gegner, Crafting/Produktion, Basisbau, Progression, Händler, Begleiter, Fahrzeuge, Events, Grafik, Modelle, Texturen, Animationen, Musik, Soundeffekte, Balance, Optimierung und abschließender Tests wird der aktuelle Gesamtstand auf ungefähr **30 %** geschätzt.
+
+**Damit fehlen bis zum endgültigen Spiel noch ungefähr 70 %.**
