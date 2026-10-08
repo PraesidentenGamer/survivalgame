@@ -1,12 +1,12 @@
 # Projektfortschritt
 
-**Stand:** 07.10.2026
+**Stand:** 08.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
 ## Aktueller Schwerpunkt
 
-**Ersten externen Testbuild vorbereiten: Hauptmenü/Pause-System abschließen, Save/Load absichern und den bestehenden Basis→Weltkarte→Gebiet-Gameplay-Loop testbar machen.**
+**Ersten externen Testbuild fertigstellen und danach die noch fehlenden Kern-, Inhalts- und Produktionssysteme bis zum endgültigen Spiel schließen.**
 
 Aktuelle Architektur:
 ```text
@@ -36,41 +36,51 @@ Die Prozentwerte beziehen sich auf die erste vollständig spielbare Fassung. Gra
 | Eventkarten-Grundsystem | ca. 65 % |
 | eigentliche Gameplay-Inhalte / Kartenbefüllung | ca. 20 % |
 | funktional spielbare Gesamtfassung ohne Grafik/Audio/Shader-Polish | **ca. 40 %** |
+| endgültiges Spiel inkl. vollständiger Systeme, Inhalte, Story, Kartenbefüllung, Grafik, Audio und Polishing | **ca. 30 %** |
 
 Die Prozentwerte bleiben Näherungswerte. Viele Systeme sind bereits geplant oder prototypisch vorhanden, müssen aber noch vollständig miteinander verbunden, mit Inhalten gefüllt und getestet werden.
 
 
+
+## Fortschritt bis zum endgültigen Spiel
+
+Die bisherige 40-%-Angabe bezieht sich ausdrücklich auf eine funktional spielbare Gesamtfassung **ohne** finales Grafik-, Audio-, Shader- und Inhalts-Polishing. Für das tatsächlich endgültige Spiel muss zusätzlich der komplette geplante Inhalt umgesetzt und ausproduziert werden.
+
+Aktuelle Gesamtschätzung:
+
+- **Endgültiges Spiel: ca. 30 % fertig**
+- **Noch offen: ca. 70 %**
+
+Diese 70 % bestehen nicht nur aus Programmierung. Ein großer Anteil entfällt auf die vollständige Kartenbefüllung, Hauptstory und Quests, Gegner-/Kampfinhalte, Basisbau, Crafting/Produktion, Progression, Händler/Economy, Begleiter/NPCs, Fahrzeuge, Events, finale Spielbalance, vollständige Musik, Soundeffekte, Modelle, Texturen, Animationen, Beleuchtung, Effekte, Benutzeroberfläche, Optimierung und abschließende Tests.
+
+Die Schätzung ist deshalb bewusst deutlich niedriger als der Stand des ersten Tester-Builds: Der Tester-Build prüft nur den bereits vorhandenen Spielkern, während das endgültige Spiel den vollständigen geplanten Umfang enthalten soll.
+
 ## Stand bis zum ersten externen Testbuild
 
-Der erste Testbuild ist deutlich näher als die vollständig spielbare Gesamtfassung. Ziel des Testbuilds ist ausdrücklich **nicht**, bereits alle später geplanten Systeme zu enthalten, sondern einen stabilen zusammenhängenden Kernablauf für die Tester bereitzustellen.
+Der erste Testbuild dient der Prüfung des bereits vorhandenen Spielkerns. Crafting und andere große spätere Systeme sind dafür noch nicht Voraussetzung.
 
-Aktuell bestätigt bzw. vorbereitet:
-- Hauptmenü mit eigenem Hintergrundbild
-- Neues Spiel / Spiel laden / Einstellungen / Beenden als Menüstruktur
-- Einstellungsoberfläche mit Grafikmodus, Auflösung, Vollbild und Lautstärkereglern
-- eigenes Pausemenü mit Fortsetzen, Speichern, Laden, Einstellungen, Hauptmenü und Beenden
-- globales `Prefab_PersistentPauseSystem` mit `DontDestroyOnLoad`
-- global abgesichertes `EventSystem`, damit die Pause-UI nach Szenenwechseln interaktiv bleibt
-- das globale Pause-System muss **nicht** in jede der 30 Maps einzeln eingebaut werden
-- Pause-Regel festgelegt: normales Gameplay steht; Produktionen und Events dürfen weiterlaufen
-- bei komplett geschlossenem Spiel laufen nur Events weiter
-- Hauptmenü-Musik ist vorbereitet/geplant und wird separat ergänzt
-- Weltkarte, Gebietswechsel und Standardmaps sind als technische Basis vorhanden
+Aktuell vorhanden bzw. vorbereitet:
+- Hauptmenü mit Hintergrundbild und funktionierender Hauptmenü-Musik
+- Neues Spiel / Spiel laden / Einstellungen / Beenden
+- globales Pause-System mit `DontDestroyOnLoad` und persistent abgesichertem `EventSystem`
+- Pause-System muss nicht in jede der 30 Maps einzeln eingebaut werden
+- Inventar öffnen/schließen über `I`
+- Basis, Weltkarte und feste Gebiete als Testpfad
+- Sammeln, Loot und vorhandener Inventar-/Kampfstand als Kernfunktionen
+- dynamische EventMap als vorhandener Testbereich
+- Windows-x86_64-Build wurde bereits erzeugt
+- Tester-Prüfliste wurde erstellt; sie weist ausdrücklich auf Platzhaltergrafik und die vorläufig unterstützte CPU-Luftkühlung hin
+- erster Build zeigte, dass die externen Datenbanken nicht mit ausgeliefert wurden; `StreamingAssets/database` wurde dafür vorbereitet und `AreaData.cs` auf `Application.streamingAssetsPath` umgestellt
 
-### Noch zwingend vor dem ersten Testbuild
+### Noch vor der Ausgabe an Tester
 
-1. globales Pause-System noch über mehrere echte Szenenwechsel gegenprüfen
-2. Save/Load für den Testablauf zuverlässig machen und gewünschten Speicherpfad finalisieren
-3. sicherstellen, dass Neues Spiel → Basis → Weltkarte → Testgebiet → Rückkehr ohne Blocker funktioniert
-4. mindestens einen einfachen Test-Gameplay-Loop bereitstellen: sammeln / Inventar / einfache Herstellung oder vergleichbare Kernaktion
-5. mindestens eine sehr einfache Testmission integrieren, damit Missionsfortschritt geprüft werden kann
-6. Fehler in der Console auf echte Blocker reduzieren; bekannte Entwicklungswarnungen getrennt dokumentieren
-7. Windows-Testbuild erstellen und auf einem zweiten System bzw. durch Tester starten lassen
-8. Tester-Checkliste für Menü, Pause, Szenenwechsel, Speichern/Laden und Kern-Gameplay mitgeben
+1. neuen Windows-Build mit enthaltenem `StreamingAssets/database` erzeugen
+2. kurz prüfen, ob der Build die Gebietsdatenbank tatsächlich findet und bis in den Kern-Gameplay-Loop startet
+3. kompletten Build-Ordner zusammen mit der Tester-Prüfliste verteilen
 
-**Geschätzter Stand bis zum ersten sinnvollen Tester-Build: ca. 75–80 %.**
+Die eigentliche breite Funktionsprüfung übernehmen anschließend die Tester anhand der Prüfliste.
 
-Die noch fehlenden ca. 20–25 % betreffen vor allem Integration und Absicherung, nicht den Aufbau aller späteren Spielsysteme. Der Gesamtstand bis zur vollständig spielbaren Fassung bleibt davon getrennt.
+**Geschätzter Stand bis zum ersten auslieferbaren Tester-Build: ca. 95 %.**
 
 ## Datenbankstatus
 
@@ -95,6 +105,20 @@ Die noch fehlenden ca. 20–25 % betreffen vor allem Integration und Absicherung
 | Händler | noch nicht gebaut | offen |
 | Economy | noch nicht gebaut | offen |
 | Begleiter/NPC-KI | Regeln weitgehend definiert | DBs + Laufzeitsystem offen |
+
+
+## Musiksystem
+
+Aktueller Stand:
+- `Prefab_IngameMusik` ist als gemeinsame Musikstruktur vorbereitet
+- Hauptmenü-Musik ist eingebunden und funktioniert
+- Weltkartenmusik ist vorgesehen
+- Musikdateien werden als `.ogg` organisiert
+- für die 30 festen Gebiete existiert unter `music/Feste_Gebiete` je Gebiet ein eigener Ordner
+- `Test_Kiefernwald_v01` ist ausdrücklich von der festen Musikstruktur ausgeschlossen
+- `EventMap` erhält eine gemeinsame Eventmusik unabhängig vom konkreten temporären Event; dadurch ist keine eigene Musiklogik pro Event nötig
+- pro Gebiet können mehrere Titel/Varianten abgelegt und später ausgetauscht werden
+- weitere Gebietstitel werden schrittweise generiert und eingepflegt
 
 ## Aktueller Weltkarten- und Eventkarten-Stand
 
@@ -343,12 +367,11 @@ Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewus
 ## Nächste Arbeitsschritte
 
 ### Kurzfristig: erster Tester-Build
-1. globales Pause-System über mehrere echte Spielszenen testen
-2. Save/Load und finalen Speicherpfad absichern
-3. Basis → Weltkarte → Gebiet → Rückkehr als vollständigen Testpfad prüfen
-4. einfachen Sammel-/Inventar-/Herstellungsablauf und eine simple Testmission bereitstellen
-5. Windows-Testbuild erzeugen und Tester-Checkliste mitgeben
-6. Hauptmenü-Musik ergänzen, sobald die Audiodatei vorliegt
+1. Datenbanken vollständig über `StreamingAssets/database` mitliefern
+2. Windows-x86_64-Testbuild neu erzeugen
+3. Start und DB-Zugriff kurz gegenprüfen
+4. kompletten Build-Ordner plus Tester-Prüfliste verteilen
+5. Rückmeldungen der Tester sammeln und Blocker beheben
 
 ### Danach: weitere Entwicklung
 1. erfolgreichen EventMap-Prototypen nicht unnötig umbauen
