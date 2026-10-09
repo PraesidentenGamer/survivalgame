@@ -1,5 +1,5 @@
 Remnants of Tomorrow – Fahrzeuge Planungsstand
-Stand: 09.10.2026
+Stand: 10.10.2026
 
 STATUS
 ------
@@ -121,9 +121,9 @@ LSD Labor
 
 BEGLEITER UND SITZPLÄTZE
 ------------------------
-- Maximal 3 aktive Begleiter.
+- Maximal 3 aktive menschliche Begleiter, zusätzlich 1 Hund.
 - Aktive Begleiter nutzen automatisch freie Passagierplätze.
-- Motorrad kann nur einen Begleiter mitnehmen.
+- Motorrad: 1 menschlicher Passagier ODER 1 Hund; größere Fahrzeuge: Hund beansprucht keinen menschlichen Passagiersitz.
 - Zusätzliche freie Sitze können für Missions-NPCs verwendet werden.
 - Die Struktur soll später auch freie Passagierplätze für möglichen Multiplayer unterstützen.
 
@@ -473,11 +473,216 @@ FAHRZEUGLACKIERUNG
 
 Die gleichen Sprühdosen dürfen auch für andere dafür vorgesehene färbbare Objekte verwendet werden.
 
-NOCH OFFEN
-----------
+ÄLTERE OFFENE PUNKTE – TEILWEISE DURCH DEN FOLGENDEN NACHTRAG ERSETZT
+-------------------------------------------------------------------
 - genauer Story-/Questablauf für jede Fahrzeugfreischaltung
 - exakter Bergungs-/Transportablauf eines gefundenen Wracks zur Hauptbasis
 - endgültige Montage-Minispiel-UI und konkrete Einbauzonen pro Fahrzeug
 - Kollisionsschaden gegen Bäume, Felsen, Mauern und andere Hindernisse
 - genaue Fahrzeugmodelle, Animationen, Sounds und finale Grafik
 - technische Umsetzung/DB-Migration der aktuell veralteten vehicle-Datenbank auf diese Regeln
+
+
+==============================================================================
+NACHTRAG VOM 10.10.2026 – FAHRZEUG-FUNKTIONSPLANUNG ABGESCHLOSSEN
+==============================================================================
+
+GELTUNG
+-------
+Die FUNKTIONSPLANUNG ist abgeschlossen. Die folgenden späteren Bestätigungen
+ersetzen bei Abweichungen ältere Textstellen oder DB-Werte, ohne die sonstigen
+Fahrzeug-Fixwerte, Reparaturteillisten, Rezepte oder Gegner-Matrizen zu ändern.
+Planung ist nicht technische Fertigstellung: Unity-Skripte, UI, DB-Migration
+und Tests sind weiterhin Entwicklungsaufgaben.
+
+BEGLEITER / INSASSEN / STANDORT
+------------------------------
+- Maximal 3 aktive MENSCHLICHE Begleiter PLUS 1 Hund.
+- Motorradpassagier: entweder 1 Mensch oder 1 Hund.
+- In größeren Fahrzeugen zählt der Hund nicht als menschlicher Sitzplatz.
+- Aktive Begleiter ohne Platz erreichen nach erfolgreicher Weltkartenreise
+  sicher das Ziel; bei Abbruch den Ursprung. Begleiter mit Wartebefehl
+  bleiben am angewiesenen Standort.
+- Beim Aussteigen verlassen aktive Begleiter standardmäßig das Fahrzeug,
+  sofern sie nicht ausdrücklich im Fahrzeug warten sollen.
+- Weltkartenübersicht über Standort und Wartestatus der Begleiter ist
+  optional ein-/ausblendbar und spielstandbezogen gespeichert.
+- Sichere Ein-/Ausstiegspositionen berücksichtigen Kollisionen,
+  Ausweichseite, mehrere Insassen und Hund. Aussteigen erst bei Stillstand.
+
+SCHADENSSCHUTZ / BEDIENBARKEIT
+-----------------------------
+- Ohne physische Anwesenheit des SPIELERS im Fahrzeug ist es gegen
+  sämtliche Gegner- und Umweltschäden geschützt; Begleiterinsassen
+  allein ändern das nicht.
+- Bei leerem Tank ODER Resthaltbarkeit von höchstens 10 % dürfen
+  Gegner das Fahrzeug auch bei anwesendem Spieler nicht beschädigen.
+  Der Spieler ist dadurch NICHT automatisch gegen Angriffe geschützt.
+- Leerer Tank: Fahrzeug stoppt, bleibt am Ort; keine automatische
+  Bergung, Ein-/Aussteigen und Lagerzugriff bleiben verfügbar.
+- Resthaltbarkeit > 0 und <= 10 %: ebenfalls fahruntüchtig am Ort.
+  Erst bei > 10 % Haltbarkeit und genügend Treibstoff wieder fahrbereit.
+- Bei exakt 0 Haltbarkeit: automatische Rückholung zur Hauptbasis mit
+  UNVERÄNDERTEM Tank, Lager, Lackierung und Besitz; Zugang zum Lager
+  auch dort bei 0 %, Generalreparatur ausschließlich Hauptbasis.
+- Warnstufe Haltbarkeit bei <= 20 %, Fahruntüchtigkeit bei <= 10 %.
+- Fahrzeugstatus mit Tank, Haltbarkeit und Warnungen während Nutzung
+  jederzeit sichtbar und nicht ausblendbar.
+- Aussteigen: vollständiger Stillstand, Motor aus, Parkbremse automatisch;
+  Fahrzeug verbleibt an Koordinaten; kein Verbrauch im Stand.
+- Fahrzeuglager auch vom Sitz aus bei Stillstand nutzbar; solange offen
+  darf nicht losgefahren werden.
+- "Fahrzeug befreien": nach Bestätigung auf nahe kollisionsfreie Stelle
+  versetzen, nicht durch Sperren/über Hindernisse, kein Basis-Transport,
+  Zustand und Insassen bleiben unverändert; Fahruntüchtigkeit bleibt.
+
+BERGUNG / GARAGE / MONTAGE / REPARATUR
+-------------------------------------
+- Einzigartiger unzerstörbarer Bergungs-Lkw an Hauptbasis, nur EIN
+  Bergungsauftrag parallel, mit je nach Wrack erforderlichen Vorarbeiten
+  und Reise-/Lade-/Rückkehrzeit. Timer pausieren bei komplett geschlossenem
+  Spiel. 24 Ingame-Stunden entsprechen 6 realen Stunden.
+- Hauptbasis: acht feste Stellplätze für normale Fahrzeuge und ein Platz
+  für den Bergungs-Lkw; mehrere angefangene Wracks dürfen warten.
+  Fahrzeugmontage und Reparaturwerkstatt sind separate Stationen.
+- Jede korrekt montierte Komponente des Erstaufbau-Minispiels wird
+  dauerhaft gespeichert. Nach Fertigstellung: 100 % Haltbarkeit,
+  leeres Lager, Kraftstoff für einen Verbrauchsblock, KEIN voller Tank.
+- Reparaturen bei 1–99 % auch außerhalb der Basis möglich, Spieler
+  physisch vor Ort, Fahrzeug steht, Werkzeug erforderlich (nicht
+  verbraucht), Materialien aus zulässigen erreichbaren Quellen
+  kombinierbar. Proportionale Teilemenge jeweils aufrunden.
+- Vor MANUELLER Reparatur ausdrückliche "Bestätigen"/"Abbrechen"-Abfrage.
+  Unterbrechbar/fortsetzbar; bei Angriff auf Spieler Pause der
+  Feldreparatur. Eingebaute Teile/erledigter Fortschritt bleiben.
+- Zeit einer vollen Reparatur: Motorrad 30 s, Jeep 60 s,
+  gepanzertes Auto 90 s, Panzer 180 s, Luftkissenboot 60 s,
+  Schnellboot 90 s, Helikopter 120 s, LSD Labor 240 s.
+  Teilreparaturen anteilig.
+- 0-%-Generalreparatur: volle vorstehende Materialliste der
+  Hauptbasis-Werkstatt, kein zusätzlicher Strafaufschlag.
+- Ein aktiver Werkstatt-Reparaturplatz; vom Spieler umsortierbare
+  Warteschlange. Aufträge nach Bestätigung automatisch nacheinander.
+  Materialmangel: "Wartet auf Material", nächste ausführbare Reparatur
+  möglich; später Wiederaufnahme mit erhaltenem Fortschritt.
+- Reparatur darf im laufenden Spiel ohne Spieler an Basis weitergehen,
+  beim vollständigen Schließen pausieren. Horde beschädigt die
+  Hauptbasis nur, wenn Spieler DORT ist; sonst greift sie den Spieler
+  und lässt Basis in Ruhe. Werkstatt arbeitet bei Horde weiter,
+  solange funktionsfähig. Nur bei TOTALAUSFALL unterbrechen; danach
+  automatisch fortsetzen ohne Verlust von Teilen oder Fortschritt.
+
+TANKSTELLEN / TANKAUTOMATIK
+--------------------------
+- Hauptbasis und Siedlung haben getrennte Tankstellenbestände.
+  Je 50.000 normale Kapazität; max. 100 Einheiten bewusste
+  Überfüllung (= 50.100) nach gesonderter Warnung und Bestätigung,
+  ohne technische Schäden.
+- Jede MANUELLE Treibstoffbewegung (Einlagern, Entnehmen, Betanken)
+  benötigt Vorschau und aktive "Bestätigen"-Taste; Abbruch jederzeit,
+  KEINE Vorabbuchung. Kraftstoff als Stapel bis 100 Einheiten.
+- Spieler bestimmt Quellen und Mengen frei: verfügbare lokale
+  Tankstelle, erreichbares Fahrzeuglager, Inventar, auch kombiniert;
+  keine erzwungene Reihenfolge. Außerhalb eines Standorts keine
+  Fernentnahme aus Standortlagern oder Tankstellen.
+- Befüllen dauert 1 s je 10 Einheiten, mindestens 2 s; währenddessen
+  nicht fahrbereit. Abbruch bewahrt bereits eingefüllte Mengen;
+  Rest bleibt an Quelle.
+- Eine Tankposition pro Tankstelle; Spieler ordnet die Warteschlange.
+  Bestätigte Aufträge arbeiten nacheinander, bei Materialmangel
+  "Wartet auf Treibstoff". Pause wenn Spiel ganz geschlossen.
+- Automatisches Betanken pro Fahrzeug optional, Startschwelle,
+  Zielmenge (Standard = voll) und Quellenordnung frei einstellbar.
+  Bestätigung für Aktivierung/Änderung, nicht jeden Zyklus.
+- Wenn SPIELER ABWESEND: Tankautomatik darf nur lokale Tankstelle
+  oder ausdrücklich freigegebenes Lager DIESES Fahrzeugs nutzen;
+  das mitgeführte Spielerinventar niemals.
+- Je Standort optionale, standardmäßig deaktivierte Mindestreserve,
+  getrennt einstellbar; Automatik greift nie in Reserve ein.
+  Manuelle Entnahme/Betankung darf sie nur nach Bestätigung nutzen.
+- Weltkarte: Tankstellen-Vorräte optional sichtbar; Tankstellenmarker
+  immer sichtbar. Warnung > 5000: ausreichend; <= 5000: niedrig;
+  <= 1000: fast leer; 0: leer. Warngrenzen niedrig/fast leer
+  konfigurierbar; Hinweise nur bei Wechsel auf neue Warnstufe,
+  auch außerhalb der Weltkarte. Vorratsanzeige und Mitteilungen
+  unabhängig voneinander deaktivierbar.
+- Fahrzeug-Tankstatus: > 20 % normal, > 10 bis 20 % niedrig,
+  > 0 bis 10 % fast leer, 0 leer.
+- Vor Weltkartenreise MUSS Reichweite geprüft werden; ungenügender
+  Tank blockiert Reisebeginn, anders als optionale Ausrüstungsliste.
+
+FAHRZEUGLAGER / SCHUTZ
+---------------------
+- Direkte Transporte zwischen nah beieinander stehenden Fahrzeugen
+  derselben Karte, sowie in Standortlager und zurück, wenn das
+  Fahrzeug tatsächlich an Hauptbasis/Siedlung steht.
+- Einzelne Stacks, Teilmengen, alles Geeignete. Kapazitätsvorschau,
+  Bestätigung, automatisches Stapeln nach Gegenstand und Status,
+  bei Platzmangel nur maximal passende Menge; kein Warenverlust.
+- Lager der Basis und Siedlung bleiben voneinander getrennt.
+- Beliebige Gegenstände/Stacks oder Teilmengen als GESCHÜTZT
+  markierbar. Teilmengen-Schutz spaltet Stack in zwei, braucht
+  zusätzlichen freien Slot, sonst bleibt ursprünglicher Stack.
+- Geschützt und ungeschützt werden beim Sortieren nie zusammengeführt;
+  nach Entfernen der Markierung wieder zusammenführbar.
+- "Alles entladen" und sämtliche automatischen Entnahme-/Verbrauchs-
+  systeme (auch Reparatur- und Tankautomatik) überspringen Schutzgut.
+  Spieler kann geschützt markierte Dinge MANUELL nach Bestätigung
+  jederzeit nutzen.
+- Manuelle Schaltfläche "Lager sortieren" nach DB-Kategorien.
+  Textsuche, Kategoriefilter und "Alle anzeigen"; keine Veränderung
+  der Vorräte durch Anzeige/Filter.
+- Optional je Fahrzeug Lagerwarnung ab 80 % belegten Slots und
+  bei 100 %, nur beim erstmaligen Erreichen einer neuen Warnstufe.
+  Auch bei 100 % belegten Slots können bestehende Stacks noch
+  befüllt werden, wenn deren Maximalmenge nicht erreicht ist.
+- Am stehenden Fahrzeug Medizin, Wasser, Nahrung und andere dafür
+  geeignete Verbrauchsgüter direkt aus dem Lager benutzen, ohne
+  vorherige Entnahme ins Spielerinventar; Schutzmengen bestätigt
+  manuell nutzbar. Werkbank-Crafting bleibt werkbankpflichtig.
+- Bei leerem Tank, <= 10 % Haltbarkeit und nach 0-%-Rücktransport
+  in Hauptbasis bleibt Lager vollständig zugänglich.
+
+BELADELISTEN / WELTKARTENÜBERSICHT
+----------------------------------
+- Unbegrenzt viele benannte Beladelisten PRO Fahrzeug, jederzeit
+  bearbeitbar, kopierbar, zwischen Fahrzeugen übertragbar, löschbar.
+- Beladeliste enthält je Item gewünschte Gesamtmenge UND
+  gewünschte geschützte Teilmenge. Vorhandene Inhalte/
+  Schutzmarkierungen werden angerechnet, nicht ungefragt entsperrt.
+  Fehlmengen sichtbar; freie Slots/Stacks vor Bestätigung prüfen.
+  Nur tatsächlich vorhandene/mögliche Mengen transferieren.
+- Optionale Ausrüstungsprüfung je Fahrzeug vor Weltkartenreise:
+  ausgewählte Beladeliste auf Soll/Ist prüfen; Geschütztes zählt
+  zum Bestand. Fehlmengen warnen, blockieren Reise NIEMALS.
+- Weltkarte: optional standortunabhängige READ-ONLY-Anzeige jedes
+  freigeschalteten Fahrzeuglagers (Mengen, Schutz, Slots, Ort).
+  Über Weltkarte niemals Items entnehmen, verwenden oder transferieren.
+
+SICHERHEIT / PERSISTENZ
+----------------------
+- Manuelle Bestandstransaktionen ausschließlich nach
+  ausdrücklichem "Bestätigen" und jederzeit abbrechbar.
+- Jede Transaktion atomar: erst validieren, dann gemeinsam
+  wirksam werden lassen; bei Fehler Ursprung UND Ziel unverändert.
+  Gegenstände dürfen bei Absturz, Speicherfehler oder
+  Kapazitätsmangel weder verloren noch dupliziert werden.
+- Individuelle Fahrzeugpositionen, Zustand, Freischaltungen,
+  Inventare, Schutzmengen, Listen, Aufträge, Reparatur-/Montage-
+  Fortschritt, Treibstoffbestände/Reserven, Warnungs- und
+  Anzeigepräferenzen in .rotsave speichern, .sgsave als Reserve.
+  Maximal 5 manuelle Slots; statische Defaults/Kategorien in
+  JSON-Datenbanken, Geschäftslogik in C#.
+- Vollständige Umsetzung braucht transaktionssichere
+  Speicherstrategie, Migrations- und Wiederherstellungstests.
+
+AB HIER KEINE WEITEREN IDEENRUNDEN – TECHNISCHER NÄCHSTER BLOCK
+--------------------------------------------------------------
+- Alten Fahrzeug-DB-Stand auf freigegebene Werte migrieren,
+  Datenstruktur und Validierung prüfen.
+- C#-Skripte, UI, Prefabs, Spielstandverwaltung, Reisefunktionen,
+  Tankstellen, Werkstatt, Fahrzeuglager und Begleiteranbindung
+  implementieren und unter Unity 2017.2.5f1 testen.
+- Storyquests, Montagezonen, Animationen, Kollisionen, Modelle,
+  Geräusche und konkretes Kartenverhalten als Inhalte ergänzen,
+  ohne bereits entschiedene Grundmechaniken erneut zu planen.
