@@ -1,6 +1,6 @@
 # Entwicklungsstand
 
-**Stand:** 09.10.2026
+**Stand:** 10.10.2026
 
 ## Aktuelle Entwicklungsphase
 
@@ -340,3 +340,24 @@ Noch offen:
 - finale Montage-Minispiel-UI
 - Kollisionsschaden gegen Umweltobjekte
 - technische Umsetzung und Migration der alten Fahrzeug-DB
+
+
+## Ergänzung 10.10.2026 – Ende des Fahrzeug-Planungsblocks
+
+Die Fahrzeug-Funktionsplanung ist abgeschlossen. Verbindliches,
+aktualisiertes Referenzdokument:
+[docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt](docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt).
+Enthalten: Bergung, Stellplätze, Begleiter, Schutz, Fahruntüchtigkeit,
+Tanken/Tankstellen, Warteschlangen, Reparatur, Fahrzeuglager,
+Schutzmengen, Beladelisten, Weltkartenübersichten, atomare Transaktionen,
+Befreiung sowie sicheres Ein-/Aussteigen.
+
+**Technisch weiter offen:** Konvertierung der bisherigen Fahrzeug-DB,
+C#-Umsetzung, Prefabs/UI, Weltkarten- und Speichersystemintegration,
+Material-/Modell-/Questanbindung sowie Tests.
+
+Der Abschluss der Planung darf nicht mit einer fertigen Fahrzeug-
+implementation oder erfolgreichem Test verwechselt werden. Die
+bisherigen Schätzungen von ca. 40 % funktionaler und ca. 30 %
+endgültiger Gesamtfertigstellung bleiben vorläufig unverändert.
+Primärer Save-Dateityp ist .rotsave; .sgsave bleibt Fallback.
