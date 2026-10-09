@@ -219,3 +219,19 @@ Die Namen und Jonas-Details wurden aus der übergebenen lokalen Projektdatei
 übernommen. Die zusätzlichen älteren Projektregeln wurden separat erhalten.
 Nichts davon ist durch dieses Dokument automatisch als technisch umgesetzt
 oder getestet anzusehen.
+
+
+AKTUALISIERUNG 10.10.2026 – VERBINDLICHE BEGLEITER-/FAHRZEUGREGEL
+------------------------------------------------------------------
+- Maximal 3 aktive MENSCHLICHE Begleiter plus 1 zusätzlicher Hund.
+  Die frühere Frage, ob der Hund zum Dreierlimit zählt, ist GEKLÄRT.
+- Motorrad: ein Platz für entweder Mensch oder Hund.
+- Größere Fahrzeuge: Hund benötigt keinen menschlichen Passagiersitz.
+- Aktiv folgende Begleiter ohne freien Platz erreichen nach
+  erfolgreicher Weltkartenreise sicher das Ziel; bei Abbruch Ursprung.
+  Ausdrücklich wartende Begleiter bleiben am bisherigen Standort.
+- Beim Aussteigen steigen Begleiter regulär mit aus; ausdrücklich
+  befohlene Mensch-/Hund-Begleiter dürfen im Fahrzeug warten.
+- Diese Entscheidungen ersetzen ältere als OFFEN markierte Aussagen
+  derselben Themen; Sarahs genaue Einordnung bleibt weiter offen.
+- Nur Planung dokumentiert, keine neue technische Implementation.
