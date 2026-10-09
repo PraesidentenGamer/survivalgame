@@ -1,6 +1,6 @@
 # Projektfortschritt
 
-**Stand:** 09.10.2026
+**Stand:** 10.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
@@ -478,3 +478,38 @@ Noch offen:
 - finale Montage-Minispiel-UI und Einbauzonen
 - Kollisionsschaden gegen Umweltobjekte
 - technische Migration der veralteten Fahrzeug-DB
+
+
+## Update 10.10.2026 – Fahrzeugplanung abgeschlossen
+
+**Planungsstatus Fahrzeugfunktionen: abgeschlossen.** Der Detailstand wurde
+in [docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt](docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt)
+um alle neu bestätigten Regeln ergänzt.
+
+- Acht Fahrzeugtypen mit festen Werten, plus unzerstörbarer Bergungs-Lkw.
+- 3 menschliche Begleiter plus Hund; Sitz- und Reiseregeln bestätigt.
+- Fahrzeugschutz je nach Spieleranwesenheit, Tank und Haltbarkeit.
+- Bergungszeiten, Montage, Feld-/Werkstattreparatur und Warteschlangen.
+- Zwei eigenständige Tankstellen, Vorratsgrenzen, Reserve, Betankungs-
+  automatik und Warnmeldungen.
+- Fahrzeuglager mit direkten Transfers, Schutzmengen, Sortierung,
+  Filtern, Beladelisten, Standort-Beladung und Leseansicht Weltkarte.
+- Bestätigungsdialoge und atomare, absturzsichere Bestandstransaktionen.
+- Sichere Ein-/Ausstiegsplätze und Befreiung feststeckender Fahrzeuge.
+
+**Realisierungsstatus:** Diese Planung ist noch NICHT gleichbedeutend mit
+fertigen oder getesteten Unity-Skripten. Fahrzeug-DB-Migration,
+C#-Logik, UI, Prefabs, Weltkartenintegration und Tests sind weiterhin
+offene Entwicklungsarbeit. Es liegen in diesem Dokument keine
+Testergebnisse vor, die eine vollständige Fahrzeugimplementation belegen.
+
+**Gesamtfortschritt:** Die bisherigen Schätzungen gelten vorläufig
+weiter (funktionsfähige Fassung ohne Grafik-/Audio-Polish ca. 40 %,
+endgültiges Spiel ca. 30 %). Allein durch Dokumentation erhöht sich
+kein belegbarer Implementierungsfortschritt.
+
+**Nächster technischer Schritt:** existierende vehicle-JSON-Datenbanken
+mit den freigegebenen Fahrzeugwerten abgleichen, Datenvalidierung und
+Save-Strukturen prüfen, danach Fahrzeug-Kernlogik mit Unity 2017.2.5f1
+umsetzen und testen. Die bereits vorbereiteten Tester-Systeme dabei
+nicht unnötig verändern.
