@@ -1,0 +1,483 @@
+Remnants of Tomorrow – Fahrzeuge Planungsstand
+Stand: 09.10.2026
+
+STATUS
+------
+Diese Datei fasst den aktuell bestätigten Fahrzeug-Planungsstand zusammen.
+Spätere ausdrücklich bestätigte Entscheidungen ersetzen ältere Vorschläge und ältere Fahrzeug-DB-Werte.
+
+GRUNDREGELN
+-----------
+- Aktuelle Fahrzeugreihenfolge:
+  Motorrad -> Jeep -> Gepanzertes Auto -> Panzer -> Luftkissenboot -> Schnellboot -> Helikopter -> LSD Labor
+- Jedes Fahrzeug kann vorerst nur 1x besessen werden.
+- Fahrzeuge selbst besitzen keine Level.
+- Fahrzeuge werden über Story/Quest freigeschaltet; kein zusätzliches Spielerlevel ist Voraussetzung.
+- Fahrzeuge besitzen keine aufwertbaren Fahrzeugstufen.
+- Keine Motor-, Geschwindigkeits-, Panzerungs-, Tank-, Haltbarkeits- oder sonstigen Statistik-Upgrades.
+- Reparaturen stellen ausschließlich den vorgesehenen Originalzustand wieder her.
+- Fahrzeuglackierungen sind rein kosmetisch und verändern keine Gameplaywerte.
+- Fahrzeuge können nicht dauerhaft verloren gehen.
+
+FUND, BERGUNG UND ERSTAUFBAU
+----------------------------
+- Die meisten Fahrzeuge werden zunächst als Schrotthaufen/Fahrzeugwrack gefunden.
+- Das gefundene Wrack muss in die Hauptbasis gebracht werden.
+- Der genaue technische Bergungs-/Transportablauf ist noch nicht final festgelegt.
+- In der Hauptbasis wird das Fahrzeug aus den benötigten Teilen wieder aufgebaut.
+- Der Erstaufbau ist als Montage-Minispiel vorgesehen.
+- Der Spieler soll selbst herausfinden, welches Teil ungefähr wohin gehört.
+- Das Spiel zeigt nur grobe Einbauzonen bzw. grobe Plätze.
+- Richtig eingesetzte Teile rasten ein.
+- Bei falscher Zuordnung geht kein Teil verloren.
+- Der Aufbau besitzt kein Zeitlimit.
+- Der Spieler muss das Fahrzeug nicht in einer Sitzung fertigstellen.
+- Jedes korrekt montierte Teil und jeder erreichte Baufortschritt werden dauerhaft gespeichert.
+- Fehlende Teile können später hergestellt oder gefunden werden.
+- Nach Verlassen, Gebietswechsel, Spielende oder Tod beginnt der Fahrzeugaufbau niemals wieder bei 0.
+- Bis alle Pflichtteile eingebaut sind, bleibt das Fahrzeug nicht fahrbereit.
+
+FAHRZEUGDATEN
+-------------
+Motorrad
+- Lager: 8 Slots
+- Sitzplätze: 1 Fahrer + 1 Passagier
+- Schutz des Spielers: 0 %
+- Haltbarkeit: 100
+- Tank: 100 Treibstoffpunkte
+- Verbrauch: 5 Punkte pro angefangene 10 Minuten aktive Fahrt/Reise
+- interne Fahrgeschwindigkeit: 80
+- Weltkarten-Zeitreduktion: 50 %
+
+Jeep
+- Lager: 24 Slots
+- Sitzplätze: 1 Fahrer + 3 Passagiere
+- Schutz des Spielers: 20 %
+- Haltbarkeit: 300
+- Tank: 180
+- Verbrauch: 8
+- interne Fahrgeschwindigkeit: 65
+- Weltkarten-Zeitreduktion: 45 %
+
+Gepanzertes Auto
+- Lager: 20 Slots
+- Sitzplätze: 1 Fahrer + 3 Passagiere
+- Schutz des Spielers: 60 %
+- Haltbarkeit: 700
+- Tank: 220
+- Verbrauch: 12
+- interne Fahrgeschwindigkeit: 55
+- Weltkarten-Zeitreduktion: 40 %
+
+Panzer
+- Lager: 12 Slots
+- Sitzplätze: 1 Fahrer + 3 Passagiere
+- Schutz des Spielers: 90 %
+- Haltbarkeit: 3000
+- Tank: 400
+- Verbrauch: 25
+- interne Fahrgeschwindigkeit: 35
+- Weltkarten-Zeitreduktion: 25 %
+
+Luftkissenboot
+- Lager: 20 Slots
+- Sitzplätze: 1 Fahrer + 3 Passagiere
+- Schutz des Spielers: 10 %
+- Haltbarkeit: 350
+- Tank: 180
+- Verbrauch: 10
+- interne Fahrgeschwindigkeit: 60
+- Weltkarten-Zeitreduktion: 40 %
+
+Schnellboot
+- Lager: 28 Slots
+- Sitzplätze: 1 Fahrer + 5 Passagiere
+- Schutz des Spielers: 15 %
+- Haltbarkeit: 450
+- Tank: 250
+- Verbrauch: 14
+- interne Fahrgeschwindigkeit: 90
+- Weltkarten-Zeitreduktion: 60 %
+
+Helikopter
+- Lager: 32 Slots
+- Sitzplätze: 1 Pilot + 4 Passagiere
+- Schutz des Spielers: 30 %
+- Haltbarkeit: 800
+- Tank: 300
+- Verbrauch: 20
+- interne Fluggeschwindigkeit: 120
+- Weltkarten-Zeitreduktion: 75 %
+
+LSD Labor
+- Lager: 40 Slots
+- Sitzplätze: 1 Fahrer + 5 Passagiere
+- Schutz des Spielers: 100 %
+- Haltbarkeit: 4000
+- Tank: 500
+- Verbrauch: 30
+- interne Fahrgeschwindigkeit: 45
+- Weltkarten-Zeitreduktion: 35 %
+
+BEGLEITER UND SITZPLÄTZE
+------------------------
+- Maximal 3 aktive Begleiter.
+- Aktive Begleiter nutzen automatisch freie Passagierplätze.
+- Motorrad kann nur einen Begleiter mitnehmen.
+- Zusätzliche freie Sitze können für Missions-NPCs verwendet werden.
+- Die Struktur soll später auch freie Passagierplätze für möglichen Multiplayer unterstützen.
+
+TREIBSTOFF
+----------
+- Treibstoff wird in abstrakten ganzen Punkten/Einheiten gerechnet, nicht in Litern pro Kilometer.
+- Kein Treibstoffverbrauch im Stand.
+- Lokale Fahrt und Weltkartenreise verwenden dieselbe Grundlogik.
+- Auf der Weltkarte wird pro angefangene 10 Minuten tatsächlicher Fahrzeug-Reisezeit ein Verbrauchsblock berechnet.
+- Beispiel: 60 Minuten Gehzeit, Helikopter -75 % = 15 Minuten Fahrzeugzeit = 2 angefangene 10-Minuten-Blöcke = 40 Treibstoffpunkte.
+- Wird eine Weltkartenreise abgebrochen, kehrt der Spieler zum Ausgangspunkt zurück und der für diese Reise abgezogene Treibstoff wird vollständig zurückerstattet.
+- Überfahren eines Gegners verursacht keinen zusätzlichen Treibstoffverbrauch.
+
+WELTKARTENREISE
+---------------
+- Gehzeit und Fahrzeug-Reisezeit dürfen niemals über 60 Minuten liegen.
+- Die Gehzeit ist die Distanz-Basiszeit.
+- Fahrzeuge reduzieren diese Basiszeit entsprechend ihrem Fahrzeugwert.
+- Hunger und Durst sind während der Weltkartenreise pausiert.
+- Reise kann abgebrochen werden; Rückkehr zum Ausgangspunkt.
+- Wasserziele benötigen ein geeignetes Wasserfahrzeug.
+- Reiseweg wird als gestrichelte Linie dargestellt.
+- Zeitformat: HH:MM:SS.
+- Gehbewegung auf der Weltkarte wird animiert.
+
+GELÄNDETAUGLICHKEIT
+-------------------
+Motorrad:
+- Straße: ja
+- Feldweg: ja
+- unebenes Gelände: eingeschränkt
+- Schlamm: eingeschränkt
+- Schnee: eingeschränkt
+- Wasser: nein
+
+Jeep:
+- Straße: ja
+- Feldweg: ja
+- unebenes Gelände: ja
+- Schlamm: ja
+- Schnee: ja
+- Wasser: nein
+
+Gepanzertes Auto:
+- Straße: ja
+- Feldweg: ja
+- unebenes Gelände: eingeschränkt
+- Schlamm: eingeschränkt
+- Schnee: eingeschränkt
+- Wasser: nein
+
+Panzer:
+- Straße: ja
+- Feldweg: ja
+- unebenes Gelände: ja
+- Schlamm: ja
+- Schnee: ja
+- Wasser: nein
+
+Luftkissenboot:
+- Straße: eingeschränkt
+- Feldweg: eingeschränkt
+- unebenes Gelände: nein
+- Schlamm: ja
+- Schnee: eingeschränkt
+- Wasser: ja
+
+Schnellboot:
+- nur geeignetes Wasser
+
+Helikopter:
+- Untergrund wird im Flug ignoriert.
+- Zum Landen wird eine ausreichend freie geeignete Fläche benötigt.
+
+LSD Labor:
+- Straße: ja
+- Feldweg: ja
+- unebenes Gelände: ja
+- Schlamm: eingeschränkt
+- Schnee: ja
+- Wasser: nein
+
+Zusatz:
+- Fahrzeugabmessungen bleiben relevant.
+- Ein großes Fahrzeug passt nicht automatisch durch enge Wege, nur weil der Geländetyp grundsätzlich befahrbar ist.
+- Panzer ist das geländegängigste Bodenfahrzeug.
+- Jeep ist der normale Land-Allrounder.
+
+HALTBARKEIT UND 0-PUNKTE-REGEL
+------------------------------
+- Kein Fahrzeug wird dauerhaft zerstört oder gelöscht.
+- Bei 0 Haltbarkeit wird das Fahrzeug sofort in die Hauptbasis zurückgesetzt.
+- Das komplette Fahrzeuglager bleibt erhalten.
+- Treibstoff bleibt erhalten.
+- Eigentum/Freischaltung bleibt erhalten.
+- Das Fahrzeug steht mit 0 Haltbarkeit an der Basis und kann erst nach Reparatur wieder genutzt werden.
+- Keine Gegenstände oder Fahrzeugteile gehen durch den 0-Punkte-Rücktransport verloren.
+
+SCHUTZ VOR EINMALIGER TOTALZERSTÖRUNG
+-------------------------------------
+- Kein Gegner, Boss, Elitegegner, Spezialangriff oder keine Explosion darf ein Fahrzeug aus voller Haltbarkeit mit einem einzigen Treffer direkt auf 0 setzen.
+- Mehrere Treffer/Kollisionen dürfen das Fahrzeug normal auf 0 bringen.
+- Bereits beschädigte Fahrzeuge können entsprechend schneller auf 0 fallen.
+- Diese Regel soll später zentral in der Fahrzeug-Schadenslogik abgesichert werden.
+
+TOD DES SPIELERS AUSSERHALB DES FAHRZEUGS
+-----------------------------------------
+Nach dem Tod außerhalb des Fahrzeugs gibt es zwei Möglichkeiten:
+
+1. Fahrzeug am Todesort stehen lassen
+- Zustand bleibt exakt erhalten: Haltbarkeit, Treibstoff und Lager.
+- Solange der Spieler tot/abwesend ist, dürfen Gegner das abgestellte Fahrzeug nicht angreifen, anvisieren oder beschädigen.
+- Bei Rückkehr und erneuter Nutzung gelten wieder die normalen Fahrzeugregeln.
+
+2. Fahrzeug zur Hauptbasis schicken
+- sofortiger Rücktransport zur Hauptbasis
+- komplettes Lager bleibt erhalten
+- Haltbarkeit bleibt erhalten
+- Treibstoff bleibt erhalten
+- kein Treibstoffverbrauch für diesen Rücktransport
+
+Ausnahme:
+- Bei 0 Haltbarkeit erfolgt der Rücktransport immer automatisch.
+
+REPARATURSYSTEM
+---------------
+- 1-99 % Haltbarkeit: normale proportionale Reparatur.
+- Teilreparatur ist erlaubt; der Spieler muss nicht zwingend bis 100 % reparieren.
+- Materialmengen werden bei anteiliger Berechnung immer auf ganze Einheiten aufgerundet.
+- Fahrzeugwerkzeug ist Voraussetzung und wird nicht verbraucht.
+- Treibstoff bleibt bei Reparaturen erhalten.
+- Fahrzeuglager muss für Reparaturen nicht geleert werden.
+- Reparatur verbessert keine Fahrzeugwerte.
+- Bei 0 % ist eine vollständige Generalreparatur/Neuaufarbeitung an der Hauptbasis erforderlich.
+- 0 % verlangt die vollständige definierte Teileliste für 0 -> 100 %, aber keinen zusätzlichen prozentualen Strafaufschlag.
+
+Vollständige 0-%-Reparatur:
+
+Motorrad
+- Fahrzeugteil 8
+- Motorteil 5
+- Reifen 2
+- Fahrzeugbatterie 1
+- Lager 4
+- Ersatzteil 3
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Jeep
+- Fahrzeugteil 16
+- Motorteil 8
+- Reifen 4
+- Fahrzeugbatterie 1
+- Lager 8
+- Ersatzteil 6
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Gepanzertes Auto
+- Fahrzeugteil 28
+- Motorteil 12
+- Reifen 4
+- Fahrzeugbatterie 1
+- Lager 12
+- Ersatzteil 10
+- Stahlplatte 10
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Panzer
+- Fahrzeugteil 50
+- Motorteil 20
+- Hochleistungsmotor 1
+- Fahrzeugbatterie 2
+- Lager 20
+- Ersatzteil 20
+- Stahlplatte 20
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Luftkissenboot
+- Fahrzeugteil 20
+- Motorteil 10
+- Bootsteil 12
+- Fahrzeugbatterie 1
+- Lager 8
+- Ersatzteil 8
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Schnellboot
+- Fahrzeugteil 24
+- Motorteil 12
+- Bootsteil 16
+- Fahrzeugbatterie 1
+- Lager 10
+- Ersatzteil 10
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+Helikopter
+- Fahrzeugteil 30
+- Motorteil 16
+- Hochleistungsmotor 1
+- Fahrzeugbatterie 2
+- Lager 12
+- Ersatzteil 14
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+LSD Labor
+- Fahrzeugteil 60
+- Motorteil 25
+- Hochleistungsmotor 2
+- Fahrzeugbatterie 3
+- Lager 24
+- Ersatzteil 25
+- Stahlplatte 30
+- Fahrzeugwerkzeug 1 erforderlich, nicht verbraucht
+
+ÜBERFAHREN VON GEGNERN
+-----------------------
+Nur folgende Fahrzeuge dürfen geeignete Gegner überfahren:
+- Jeep
+- Gepanzertes Auto
+- Panzer
+- LSD Labor
+
+Nicht dafür vorgesehen:
+- Motorrad
+- Luftkissenboot
+- Schnellboot
+- Helikopter
+
+Grundregeln:
+- Nicht jeder Gegner kann überfahren werden.
+- Nicht überfahrbare Gegner werden nicht durchfahren/phasen nicht durch das Fahrzeug.
+- Kollision kann das Fahrzeug abbremsen oder stoppen.
+- Je schwerer der Gegner, desto stärker die Brems-/Stopwirkung.
+- Sehr schwere Gegner, Eliten oder Bosse können dem Fahrzeug bei einer Kollision Schaden zufügen.
+- Bosse und Storybosse können niemals durch Überfahren normal beschädigt oder getötet werden.
+- Gefährliche Spezialgegner können beim Überfahren ihre Todeseffekte auslösen.
+- Erfolgreiches Überfahren zählt als normaler Kill für XP, Quests und Statistik.
+- Kein zusätzlicher Treibstoffverbrauch.
+
+Bestätigte Überfahrbarkeit:
+
+Normale Gegner
+- Schwacher Zombie: Jeep/GA/Panzer/LSD ja
+- Normaler Zombie: Jeep/GA/Panzer/LSD ja
+- Verfallener Zombie: Jeep/GA/Panzer/LSD ja
+- Kriecher: Jeep/GA/Panzer/LSD ja
+- Läufer: Jeep/GA/Panzer/LSD ja
+- Aggressiver Läufer: Jeep/GA/Panzer/LSD ja
+- Ehemaliger Soldat: Jeep nein, GA/Panzer/LSD ja
+- Schwerer Zombie: nur Panzer/LSD
+- Fetter Zombie: nur Panzer/LSD
+
+Spezialgegner
+- Gepanzerter Soldatenzombie: GA/Panzer/LSD
+- Ehemalige Bereitschaftseinheit: Panzer/LSD
+- Schutzanzug-Zombie: alle vier
+- Verstrahlter Zombie: alle vier
+- Stark verstrahlter Zombie: GA/Panzer/LSD
+- Infizierter Zombie: alle vier
+- Hochinfizierter Zombie: GA/Panzer/LSD
+- Giftiger Zombie: alle vier
+- Giftspucker: alle vier
+- Säurespucker: alle vier
+- Schreier: alle vier
+- Verseuchter Schreier: alle vier
+- Explosiver Zombie: alle vier; bei Jeep/GA gefährlicher Todeseffekt
+- Gasgefüllter Zombie: alle vier; bei Jeep/GA gefährlicher Todeseffekt
+- Brennender Zombie: GA/Panzer/LSD
+- Gefrorener Zombie: GA/Panzer/LSD
+- Elektrozombie: GA/Panzer/LSD; bei GA gefährlich
+- Hinterhalt-Zombie: alle vier
+- Nachtjäger: GA/Panzer/LSD
+- Verseuchter Nachtjäger: Panzer/LSD
+
+Mutationen/Eliten
+- Mutierter Kriecher: GA/Panzer/LSD
+- Mutierter Jäger: Panzer/LSD
+- Mutierter Brecher: Panzer/LSD
+- Mutierter Tank: nur LSD
+- Strahlenmutant: Panzer/LSD
+- Laborversuch: Panzer/LSD
+- Fehlgeschlagenes Experiment: nur LSD
+- Elite-Zombie: Panzer/LSD
+- Elite-Mutant: nur LSD
+- Bunker-Wächter: Panzer/LSD
+- Reaktor-Wächter: nur LSD
+
+Menschliche Gegner
+- Bandit Nahkampf: alle vier
+- Bandit Fernkampf: alle vier
+- Bandit Schwer: GA/Panzer/LSD
+- Bandit Scharfschütze: alle vier
+- Plünderer: alle vier
+- Plünderer-Anführer: GA/Panzer/LSD
+- Söldner: GA/Panzer/LSD
+- Schwerer Söldner: Panzer/LSD
+
+ÜBERFAHR-SCHADEN AN FAHRZEUGHALTBARKEIT
+-----------------------------------------
+Erfolgreiches Überfahren kann Fahrzeughaltbarkeit kosten:
+- leichter normaler Gegner: 0
+- normaler Gegner: 1
+- schwerer normaler Gegner: 3
+- leichter Spezialgegner: 2
+- schwerer Spezialgegner: 5
+- Mutation: 8
+- Elite: 12
+- sehr schwere Mutation/Elite: 20
+- Boss/Storyboss: nicht überfahrbar
+
+Gefährliche Todeseffekte können zusätzlichen Schaden oder Statuswirkungen verursachen.
+
+FAHRZEUGLACKIERUNG
+------------------
+- Lackierung ist optional.
+- Auswahl aus 12 festgelegten Farben.
+- 1 Sprühdose lackiert genau 1 komplettes Fahrzeug, unabhängig von dessen Größe.
+- Jede neue Umlackierung kostet wieder 1 passende Sprühdose.
+- Die Lackierung verändert keine Fahrzeugwerte.
+- Die gewählte Farbe wird dauerhaft gespeichert.
+- Reparatur, 0 Haltbarkeit oder Rücktransport ändern die Farbe nicht.
+
+12 Farben und Rezepte für jeweils 1 Sprühdose:
+1. Weiß
+   2 Metallreste + 1 Lösungsmittel + 1 weißes Pigment
+2. Schwarz
+   2 Metallreste + 1 Lösungsmittel + 1 schwarzes Pigment
+3. Rot
+   2 Metallreste + 1 Lösungsmittel + 1 rotes Pigment
+4. Gelb
+   2 Metallreste + 1 Lösungsmittel + 1 gelbes Pigment
+5. Blau
+   2 Metallreste + 1 Lösungsmittel + 1 blaues Pigment
+6. Grün
+   2 Metallreste + 1 Lösungsmittel + 1 grünes Pigment
+7. Braun
+   2 Metallreste + 1 Lösungsmittel + 1 braunes Pigment
+8. Grau
+   2 Metallreste + 1 Lösungsmittel + 1 weißes Pigment + 1 schwarzes Pigment
+9. Orange
+   2 Metallreste + 1 Lösungsmittel + 1 rotes Pigment + 1 gelbes Pigment
+10. Türkis
+    2 Metallreste + 1 Lösungsmittel + 1 blaues Pigment + 1 grünes Pigment
+11. Violett
+    2 Metallreste + 1 Lösungsmittel + 1 rotes Pigment + 1 blaues Pigment
+12. Rosa
+    2 Metallreste + 1 Lösungsmittel + 1 rotes Pigment + 1 weißes Pigment
+
+Die gleichen Sprühdosen dürfen auch für andere dafür vorgesehene färbbare Objekte verwendet werden.
+
+NOCH OFFEN
+----------
+- genauer Story-/Questablauf für jede Fahrzeugfreischaltung
+- exakter Bergungs-/Transportablauf eines gefundenen Wracks zur Hauptbasis
+- endgültige Montage-Minispiel-UI und konkrete Einbauzonen pro Fahrzeug
+- Kollisionsschaden gegen Bäume, Felsen, Mauern und andere Hindernisse
+- genaue Fahrzeugmodelle, Animationen, Sounds und finale Grafik
+- technische Umsetzung/DB-Migration der aktuell veralteten vehicle-Datenbank auf diese Regeln
