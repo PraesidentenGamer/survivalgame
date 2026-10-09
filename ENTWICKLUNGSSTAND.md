@@ -305,3 +305,38 @@ Noch zu planen:
 - Spawnabstände/Spawnvalidierung
 - Horde-Warn-UI
 - DB- und Save/Load-Anbindung
+
+
+## Fahrzeuge – neuer verbindlicher Planungsstand
+
+Der Fahrzeugblock wurde am 09.10.2026 deutlich konkretisiert.
+
+Bestätigt:
+- 8 Fahrzeuge in fester Progressionsreihenfolge: Motorrad, Jeep, gepanzertes Auto, Panzer, Luftkissenboot, Schnellboot, Helikopter, LSD Labor.
+- jedes Fahrzeug vorerst nur einmal
+- keine Fahrzeuglevel und keine Statistik-Upgrades
+- Freischaltung ausschließlich über Story/Quest
+- die meisten Fahrzeuge werden als Wrack gefunden und in der Hauptbasis wieder aufgebaut
+- Erstaufbau als speicherbares Montage-Minispiel mit groben Einbauzonen
+- bereits montierte Teile bleiben dauerhaft montiert; fehlende Teile können später beschafft werden
+- feste Lager-, Sitzplatz-, Schutz-, Haltbarkeits-, Treibstoff- und Geschwindigkeitswerte
+- Weltkartenreise mit maximal 60 Minuten und blockweisem Treibstoffverbrauch
+- feste Geländetauglichkeit je Fahrzeug
+- automatische Rückkehr zur Hauptbasis bei 0 Haltbarkeit, ohne Verlust von Lagerinhalt oder Treibstoff
+- Schutz vor direkter Totalzerstörung eines voll intakten Fahrzeugs durch nur einen Treffer
+- festgelegtes Verhalten bei Tod des Spielers außerhalb des Fahrzeugs
+- vollständige Reparaturregeln und 0-%-Teilelisten
+- Überfahrregeln inklusive Gegner-Matrix und Haltbarkeitskosten
+- Bosse/Storybosse niemals normal überfahrbar
+- optionale Lackierung mit 12 festgelegten Farben und festen Sprühdosen-Rezepten
+- eine Sprühdose lackiert ein komplettes Fahrzeug unabhängig von dessen Größe
+
+Der vollständige Detailstand liegt in:
+- `docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt`
+
+Noch offen:
+- konkrete Story-/Questabläufe pro Fahrzeug
+- exakter Wrack-Bergungsablauf
+- finale Montage-Minispiel-UI
+- Kollisionsschaden gegen Umweltobjekte
+- technische Umsetzung und Migration der alten Fahrzeug-DB
