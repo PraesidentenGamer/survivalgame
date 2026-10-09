@@ -270,3 +270,38 @@ Zusätzlich wurde das Horror-/Gruselsystem geplant:
 - Bossregel: genau eine Kampfphase pro Boss
 
 Die vollständigen Detailplanungen liegen in den TXT-Dateien unter `docs/`.
+
+
+## Spielerbasis und Horden – neuer verbindlicher Planungsstand
+
+Der Basis-/Hordenblock wurde weiter konkretisiert.
+
+Bestätigt:
+- 8 reguläre Baustufen bis Eisen.
+- Boden ist für Gegner unzerstörbar; Wand > Tür > Fenster bei den HP.
+- Stufe 8 erreicht 6000 HP Wand / 4800 HP Tür / 3600 HP Fenster.
+- Bau- und Upgrade-Kosten für alle 8 Baustufen sind festgelegt.
+- Basisreparatur wird proportional zum fehlenden HP-Anteil berechnet; 0->100 % kostet 50 % der Kosten der aktuellen Baustufe.
+- Batteriebank: leeres Grundobjekt mit 6 Slots; Batterien separat einsetzbar und wiederaufladbar.
+- Wassertanks und Pumpen bleiben Siedlungsobjekte.
+- Standardhorden enthalten ausschließlich normale Gegner.
+- Horde 1 = 10 leichte Gegner.
+- Horde 2 = 25 Gegner insgesamt, zufällig aus leicht/mittel.
+- Horde 3 = 50 Gegner insgesamt, zufällig aus leicht/mittel/schwer.
+- Hordenstufe wird zufällig gewählt; Gesamtzahl der gewählten Stufe bleibt fix.
+- kein sichtbares Hordengebiet auf der Weltkarte; interner Ablauf.
+- zufällige Angriffsrichtung Nord/Süd/Ost/West.
+- gesamte Horde erscheint gleichzeitig, keine Wellen.
+- außerhalb der Basis wird direkt der Spieler angegriffen; innerhalb der Basis die Basis als Weg zum Spieler.
+- Tod des Spielers beendet den laufenden Hordenangriff sofort.
+- bereits verursachter Schaden bleibt bestehen.
+
+Der vollständige Detailstand liegt in:
+- `docs/Remnants_of_Tomorrow_Basis_Horden_Planungsstand.txt`
+
+Noch zu planen:
+- Bau-Schadenswerte normaler Gegner
+- Zuordnung normaler Gegner zu leicht/mittel/schwer
+- Spawnabstände/Spawnvalidierung
+- Horde-Warn-UI
+- DB- und Save/Load-Anbindung
