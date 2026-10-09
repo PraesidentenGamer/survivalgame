@@ -399,3 +399,40 @@ Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewus
 3. `events.json.db` an den Eventmanager anbinden
 4. danach Gegner-, Ressourcen- und Loot-Spawns für Events anbinden
 5. anschließend die offenen Pflichtsysteme in der obigen Reihenfolge bis zur funktional vollständig spielbaren Fassung schließen
+
+
+## Update 09.10.2026 – Spielerbasis und Horden
+
+Neu festgelegt:
+- 8 reguläre Baustufen für Boden, Wand, Tür und Fenster: Holz, Pressholz, verstärktes Holz, Bruchstein, Ziegelstein, Steinmauer, verstärkte Stein-/Metallkonstruktion, Eisen.
+- Boden kann durch Gegner/Horden nicht zerstört werden und ist nur durch Spielerabriss entfernbar.
+- HP-Reihenfolge je Stufe: Wand > Tür > Fenster.
+- neue HP-Kurve bis Stufe 8: Wand 6000 / Tür 4800 / Fenster 3600.
+- Bau-/Upgrade-Kosten für alle 8 Baustufen festgelegt.
+- Reparaturkosten: vollständige Reparatur kostet 50 % der Bau-/Upgrade-Kosten der aktuellen Stufe; Teilreparatur proportional.
+- Lagerung bleibt vollständig über Kisten/Truhen; keine separaten Waffen-/Medizin-/Materialschränke als eigenes Lagersystem.
+- Batteriesystem besteht aus leerer Batteriebank mit 6 Slots plus separaten Batterien; eingesetzte Batterien sind wiederaufladbar.
+- Wassertanks und Pumpen gehören ausschließlich zur Siedlung, nicht zur normalen Spielerbasis.
+- Horden bestehen nur aus normalen Gegnern:
+  - Horde 1: insgesamt 10 leichte Gegner
+  - Horde 2: insgesamt 25 Gegner, zufällige Mischung leicht/mittel
+  - Horde 3: insgesamt 50 Gegner, zufällige Mischung leicht/mittel/schwer
+- die Gesamtzahl je Hordenstufe bleibt fest; nur die Anteile der erlaubten Klassen werden zufällig bestimmt.
+- keine Spezialgegner, Mini-Bosse oder Bosse in Standardhorden.
+- Horde wird intern ausgelöst, ohne eigenes Hordengebiet auf der Weltkarte.
+- Angriffsrichtung zufällig Nord/Süd/Ost/West.
+- komplette Horde spawnt auf einmal, keine Wellen.
+- Spieler außerhalb der Basis: Horde greift direkt den Spieler an.
+- Spieler innerhalb der Basis: Horde greift die Basis an, um zum Spieler zu gelangen.
+- stirbt der Spieler während des Hordenangriffs, wird der Angriff sofort beendet; bereits verursachter Basisschaden bleibt bestehen.
+
+Detailstand:
+- `docs/Remnants_of_Tomorrow_Basis_Horden_Planungsstand.txt`
+
+### Noch offen in diesem Planungsblock
+- exakte Bau-Schadenswerte der normalen Gegnerklassen
+- finale Zuordnung der 53 Gegner zu leicht/mittel/schwer für Horden
+- Spawnabstand und technische Spawnpunkt-Prüfung
+- Warnanzeige/UI für die 2-Ingame-Stunden-Hordenwarnung
+- Hordenstatus in Save/Load
+- DB-Struktur für Baustufen, HP, Kosten, Reparatur und Hordenregeln
