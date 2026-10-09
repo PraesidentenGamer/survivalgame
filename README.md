@@ -181,3 +181,15 @@ Kurzregeln aus der neuen Planung:
 - jedes Fahrzeug vorerst nur 1x
 - keine Fahrzeug-Upgrades; feste Endwerte pro Fahrzeug
 - 12 festgelegte Fahrzeugfarben mit festen Sprühdosen-Rezepten
+
+
+## Stand 10.10.2026 – Fahrzeug-Funktionsplanung abgeschlossen
+
+Die verbindlichen Regeln für die acht regulären Fahrzeuge sowie
+Bergungs-Lkw, Treibstoff/Tankstellen, Reparaturen, Lager,
+Begleitertransport, Weltkartenreisen und Sicherheitsfunktionen sind
+dokumentiert:
+[**Fahrzeug-Planungsstand**](docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt).
+Die Umsetzung in Unity, Datenbankmigration und Tests folgen noch.
+Die zuletzt dokumentierten Fortschritts-Schätzwerte sind keine
+bestätigten Ergebnisse neuer Fahrzeugtests.
