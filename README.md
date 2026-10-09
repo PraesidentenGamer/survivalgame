@@ -166,6 +166,8 @@ Für das tatsächlich endgültige Spiel inklusive vollständiger Systeme, Story,
 Zusätzlich dokumentiert:
 - `docs/Remnants_of_Tomorrow_Siedlungsgebaeude_Planungsstand.txt` – aktueller vollständiger Siedlungsgebäude- und Ausbauplan
 - `docs/Remnants_of_Tomorrow_Horrorfiguren_Planung.txt` – Horrorfiguren sowie Regel für abschaltbare Horror-/Gruseleffekte
+- `docs/Remnants_of_Tomorrow_Basis_Horden_Planungsstand.txt` – aktueller Basis- und Hordenplan
+- `docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt` – aktueller vollständiger Fahrzeugplan inklusive Fund/Bergung, Wiederaufbau, Treibstoff, Reise, Reparatur, Überfahren, Lackierung und Farb-Rezepten
 
 Kurzregeln aus der neuen Planung:
 - Siedlungsgebäude maximal Stufe 3, Ausbau pro Stufe maximal 30 Minuten
@@ -173,3 +175,8 @@ Kurzregeln aus der neuen Planung:
 - Horror-/Gruseleffekte optional; Ersatzgegner übernehmen sämtliche Gameplay-Eigenschaften 1:1
 - jeder Boss hat genau eine Kampfphase
 - Hauptstory Pflicht, Nebenstory/Nebenquests/SECRET optional
+- Fahrzeuge werden überwiegend als Wracks gefunden und später in der Hauptbasis wieder aufgebaut
+- Fahrzeugaufbau kann unterbrochen werden; jeder korrekt montierte Schritt wird dauerhaft gespeichert
+- jedes Fahrzeug vorerst nur 1x
+- keine Fahrzeug-Upgrades; feste Endwerte pro Fahrzeug
+- 12 festgelegte Fahrzeugfarben mit festen Sprühdosen-Rezepten
