@@ -1,0 +1,263 @@
+Remnants of Tomorrow – Spielerbasis und Horden – Planungsstand
+Stand: 09.10.2026
+
+Diese Datei fasst die aktuell bestätigten Regeln für Spielerbasis, Basisbau, Energieversorgung, Basisobjekte und Horden zusammen. Spätere ausdrücklich bestätigte Entscheidungen ersetzen ältere Vorschläge.
+
+============================================================
+1. BASISBAU – GRUNDREGELN
+============================================================
+
+- Boden, Wände, Türen und Fenster orientieren sich beim Grundprinzip an klassischen LDOE-Bauteilen.
+- Es gibt 8 reguläre Baustufen.
+- Rasterbasiertes Bauen; Grundraster 3x3.
+- Die normale Spielerbasis besitzt keine klassische äußere Festungsmauer als eigenes System.
+- Boden kann durch Gegner/Horden nicht zerstört werden.
+- Boden kann nur vom Spieler selbst abgerissen werden.
+- Wand ist innerhalb derselben Baustufe immer das stärkste zerstörbare Bauteil.
+- Danach folgt Tür.
+- Fenster hat innerhalb derselben Baustufe die niedrigsten HP.
+- Upgrade auf eine höhere Baustufe setzt das Bauteil auf die vollen HP der neuen Stufe.
+- Abriss gibt 25 % der Materialien der aktuell verbauten Baustufe zurück.
+- Rückgabemengen werden auf ganze Ressourcen aufgerundet.
+- Frühere Baustufen sind für die Abrissrückgabe unerheblich.
+
+Baustufen:
+1. Holz
+2. Pressholz
+3. Verstärktes Holz
+4. Bruchstein
+5. Ziegelstein
+6. Steinmauer
+7. Verstärkte Stein-/Metallkonstruktion
+8. Eisen
+
+============================================================
+2. BAUTEIL-HP
+============================================================
+
+Boden:
+- nicht durch Gegner zerstörbar
+- keine normalen Kampf-HP erforderlich
+
+Wand / Tür / Fenster:
+Stufe 1: Wand 6 / Tür 5 / Fenster 4
+Stufe 2: Wand 30 / Tür 24 / Fenster 18
+Stufe 3: Wand 100 / Tür 80 / Fenster 60
+Stufe 4: Wand 300 / Tür 240 / Fenster 180
+Stufe 5: Wand 750 / Tür 600 / Fenster 450
+Stufe 6: Wand 1500 / Tür 1200 / Fenster 900
+Stufe 7: Wand 3000 / Tür 2400 / Fenster 1800
+Stufe 8: Wand 6000 / Tür 4800 / Fenster 3600
+
+============================================================
+3. BAUKOSTEN JE STUFE
+============================================================
+
+Die Kosten gelten für den Bau bzw. das Upgrade auf die jeweilige Stufe.
+
+Stufe 1 – Holz
+- Boden: 1 Holz
+- Wand: 1 Holz
+- Tür: 1 Holz
+- Fenster: 1 Holz
+
+Stufe 2 – Pressholz
+- Boden: 3 Holz + 2 Bretter
+- Wand: 4 Holz + 3 Bretter
+- Tür: 3 Holz + 3 Bretter
+- Fenster: 3 Holz + 2 Bretter
+
+Stufe 3 – Verstärktes Holz
+- Boden: 6 Bretter + 2 Balken
+- Wand: 8 Bretter + 4 Balken
+- Tür: 6 Bretter + 3 Balken
+- Fenster: 5 Bretter + 2 Balken
+
+Stufe 4 – Bruchstein
+- Boden: 10 Stein + 4 Mörtel
+- Wand: 15 Stein + 6 Mörtel
+- Tür: 12 Stein + 5 Mörtel
+- Fenster: 10 Stein + 4 Mörtel
+
+Stufe 5 – Ziegelstein
+- Boden: 12 Ziegel + 6 Mörtel
+- Wand: 18 Ziegel + 8 Mörtel
+- Tür: 15 Ziegel + 7 Mörtel
+- Fenster: 12 Ziegel + 5 Mörtel
+
+Stufe 6 – Steinmauer
+- Boden: 15 Steinblöcke + 8 Beton
+- Wand: 20 Steinblöcke + 10 Beton
+- Tür: 16 Steinblöcke + 8 Beton
+- Fenster: 14 Steinblöcke + 6 Beton
+
+Stufe 7 – Verstärkte Stein-/Metallkonstruktion
+- Boden: 15 verstärkter Beton + 8 Stahlplatten
+- Wand: 20 verstärkter Beton + 12 Stahlplatten
+- Tür: 16 verstärkter Beton + 10 Stahlplatten
+- Fenster: 12 verstärkter Beton + 8 Stahlplatten
+
+Stufe 8 – Eisen
+- Boden: 20 Eisenplatten + 10 Stahlplatten
+- Wand: 25 Eisenplatten + 15 Stahlplatten
+- Tür: 20 Eisenplatten + 12 Stahlplatten
+- Fenster: 15 Eisenplatten + 10 Stahlplatten
+
+Upgrades bauen aufeinander auf; keine direkte Sprungaufrüstung von Stufe 1 auf Stufe 8.
+
+============================================================
+4. REPARATUR DER BASIS
+============================================================
+
+- Reparierbar: Wand, Tür, Fenster.
+- Boden benötigt keine Schadensreparatur.
+- Reparaturkosten richten sich nach der aktuellen Baustufe.
+- Eine vollständige Reparatur von 0 % auf 100 % kostet 50 % der Bau-/Upgrade-Kosten der aktuellen Stufe.
+- Teilreparaturen werden proportional berechnet.
+- Materialmengen werden auf ganze Einheiten aufgerundet.
+- Reparatur erfolgt direkt am beschädigten Bauteil.
+- Reparatur kann niemals über die normalen Max-HP hinausgehen.
+
+============================================================
+5. LAGERUNG UND BASISOBJEKTE
+============================================================
+
+- Gegenstände und Ressourcen werden grundsätzlich in Kisten/Truhen gelagert.
+- Keine getrennten Waffenschränke, Medizinschränke, Kleiderschränke oder Materiallager als eigenes Lagersystem.
+- Kleine Kisten starten mit 10 Slots und können bis maximal 100 Slots ausgebaut werden.
+- Grundobjekte/Funktionsobjekte werden beim Umbau aufgenommen/eingelagert und später neu platziert, statt wie normale Bauteile zerstört zu werden.
+- Der kaputte Start-Pickup bleibt dauerhaft an seinem festen Platz und behält sein Mini-Lager.
+
+Komfortobjekte:
+- Bett
+- Sitzgelegenheiten
+- Tisch
+- normales Radio
+- dekorative Schränke/Regale ohne Lagerfunktion
+- weitere Dekoration wie Lampen, Bilder, Pflanzen, Teppiche
+
+Komfortobjekte benötigen grundsätzlich kein eigenes Ausbaustufensystem.
+
+Besondere spätere Basisobjekte:
+- Forschungs-Terminal
+- Story-Funkgerät / Spezialempfänger
+- Analysegerät
+- weitere technische Spezialobjekte nur bei echtem spielerischem Nutzen
+
+============================================================
+6. BASISBELEUCHTUNG
+============================================================
+
+- einfache Lampe: Stufe 1
+- stärkere Innenbeleuchtung: Stufe 2
+- Außenbeleuchtung: Stufe 2–3
+- Bewegungs-/Sensorlicht: Stufe 3
+- Notbeleuchtung: Stufe 3 mit kleinem eigenem Puffer
+- Beleuchtung hängt am Basis-Stromnetz.
+- Lampen/Räume/Gruppen können schaltbar sein.
+- Maximalstufe der Beleuchtung: 3.
+
+============================================================
+7. ENERGIENETZ DER SPIELERBASIS
+============================================================
+
+- Energiequellen können vom Spieler frei priorisiert werden.
+- Beispiel: Solar -> Wasserkraft -> Diesel.
+- Reicht Quelle 1 nicht aus, liefert Quelle 2 nur den fehlenden Anteil.
+- Automatische Rückkehr zur höher priorisierten Quelle, sobald diese wieder ausreichend verfügbar ist.
+- Verbraucher können ebenfalls priorisiert werden.
+- Strommangel pausiert betroffene Maschinen, ohne eingesetzte Materialien zu verlieren.
+
+Batteriesystem:
+1. Leere Batteriebank mit 6 Slots.
+2. Passende Batterie als separates Item.
+
+- Batteriebank besitzt ohne eingesetzte Batterien keine nutzbare Speicherkapazität.
+- 0 bis 6 Batterien können eingesetzt werden.
+- Gesamtkapazität ergibt sich aus den eingesetzten Batterien.
+- Die Batterien in der Batteriebank können über das Stromnetz wieder aufgeladen werden.
+- Überschüssige Energie kann zum Laden verwendet werden.
+
+Wassertanks und Pumpen gehören NICHT zur normalen Spielerbasis.
+Sie sind ausschließlich Teil der Siedlung.
+
+============================================================
+8. HORDEN – GRUNDREGEL
+============================================================
+
+- Alle 24 Ingame-Stunden findet ein Hordenangriff statt.
+- 2 Ingame-Stunden vorher erfolgt eine Warnung.
+- Es gibt 3 Hordenstufen.
+- Welche Hordenstufe kommt, wird zufällig bestimmt.
+- Jede Hordenstufe hat eine feste Gesamtzahl an Gegnern.
+- Nur normale Gegner; keine Spezialgegner, keine Mini-Bosse, keine Bosse.
+- Die Anteile der erlaubten normalen Gegnerklassen werden bei jedem Angriff zufällig gemischt.
+- Die Gesamtgegnerzahl der gewählten Hordenstufe bleibt dabei immer unverändert.
+
+Horde 1:
+- insgesamt 10 Gegner
+- ausschließlich leichte normale Gegner
+
+Horde 2:
+- insgesamt 25 Gegner
+- zufällige Mischung aus leichten und mittleren normalen Gegnern
+
+Horde 3:
+- insgesamt 50 Gegner
+- zufällige Mischung aus leichten, mittleren und schweren normalen Gegnern
+
+Beispiel:
+Horde 3 kann einmal 28 leicht / 14 mittel / 8 schwer enthalten und bei einem anderen Angriff eine andere zufällige Verteilung. Die Summe bleibt immer 50.
+
+============================================================
+9. HORDEN – ANGRIFFSLOGIK
+============================================================
+
+Spieler außerhalb der Basis:
+- Horde greift direkt den Spieler an.
+
+Spieler innerhalb der Basis:
+- Horde greift die Basis an, um zum Spieler zu gelangen.
+- Fenster sind der schwächste reguläre Durchbruchspunkt.
+- Türen sind stärker als Fenster.
+- Wände sind am stärksten.
+
+Tod des Spielers:
+- Stirbt der Spieler während eines laufenden Hordenangriffs, endet die Horde SOFORT.
+- Die Todesursache ist dabei egal.
+- Noch lebende Hordengegner werden aus dem Angriff entfernt.
+- Es spawnen keine weiteren Gegner dieser Horde.
+- Bereits verursachter Schaden an der Basis bleibt bestehen.
+- Danach greift der normale Todes-/Leichenmechanismus.
+
+Diese Regel ist bewusst spielerfreundlicher als das Vergleichssystem aus LDOE. Remnants of Tomorrow besitzt bereits andere harte Inhalte wie rote/dunkelrote Gebiete, Anomalien, stärkere Gegner, Strahlung, Infektion, Bunker und Bosse.
+
+============================================================
+10. HORDEN – SPAWNABLAUF
+============================================================
+
+- Kein eigenes sichtbares Hordengebiet auf der Weltkarte.
+- Kein eigener sichtbarer Hordenspawner als separates Gebiet.
+- Die Horde wird intern ausgelöst.
+- Angriffsrichtung wird zufällig gewählt: Nord, Süd, Ost oder West.
+- Die komplette Horde erscheint sofort.
+- Keine Wellen und keine Abschnitte.
+- Gegner spawnen außerhalb der eigentlichen Basisfläche auf der gewählten Seite.
+- Danach bewegen sie sich in Richtung Spieler bzw. Basis.
+- Horde endet, wenn alle Gegner besiegt sind oder der Spieler während des Angriffs stirbt.
+
+============================================================
+11. NOCH OFFEN – BASIS/HORDE
+============================================================
+
+Noch zu planen bzw. zu finalisieren:
+- exakte Schadenswerte normaler Gegner gegen Wand/Tür/Fenster
+- konkrete Zuordnung vorhandener normaler Gegnertypen zu leicht/mittel/schwer
+- Spawnabstand der Horde zur Basisgrenze
+- Verhalten bei blockierten Spawnpunkten
+- technische Erkennung: Spieler innerhalb/außerhalb der Basis
+- Warnanzeige/UI zwei Ingame-Stunden vor Angriff
+- Anzeige der zufällig gewählten Hordenstufe vor oder erst beim Angriff
+- genaue Reparaturbedienung im UI
+- Datenbankstruktur für Baustufen, HP, Kosten und Hordenregeln
+- Save/Load der laufenden Horden- und Basiszustände
