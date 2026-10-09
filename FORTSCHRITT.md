@@ -95,7 +95,7 @@ Die eigentliche breite Funktionsprüfung übernehmen anschließend die Tester an
 | Items | integriert, 326 historische Slots + Systemitems | Referenz-/Qualitätsprüfung |
 | Ressourcen | strukturell fertig | Restwerte schließen |
 | Loot | strukturell fertig | Restwerte schließen |
-| Fahrzeuge | strukturell fertig | Restwerte schließen |
+| Fahrzeuge | Planung stark konkretisiert | DB-Migration + Laufzeitsystem offen |
 | Events | strukturell vorbereitet | echte Laufzeitanbindung |
 | Einstellungen | strukturell fertig | Restwerte schließen |
 | Progression/XP | vollständig erzeugt | Qualitäts-/Referenzprüfung |
@@ -354,14 +354,21 @@ Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewus
 - Hunde als getrenntes Begleitersystem
 
 ### 13. Fahrzeuge / Weltreise
-- Fahrzeugfreischaltungen
-- Fahrzeugzustand
-- Fahrzeuglager
-- Geschwindigkeit / Reise
-- Reparatur
-- Kraftstoff bzw. vorgesehene Ressourcenlogik
-- Weltkartenintegration
-- spätere Luftfahrzeuge getrennt behandeln
+- Story-/Quest-Freischaltungen konkretisieren
+- Fahrzeugwracks finden und zur Hauptbasis bergen
+- gespeichertes Montage-Minispiel für den Erstaufbau
+- Fahrzeugzustand und genau ein Exemplar je Fahrzeug
+- feste Fahrzeuglager, Sitzplätze, Schutzwerte und Haltbarkeit
+- feste Geschwindigkeiten und Weltkarten-Zeitreduktionen
+- Treibstoffpunkte und Verbrauch pro angefangenen 10-Minuten-Block
+- proportionale Reparatur 1–99 % und Generalreparatur bei 0 %
+- automatischer Rücktransport bei 0 Haltbarkeit
+- Tod außerhalb des Fahrzeugs: stehen lassen oder zur Basis schicken
+- Überfahrregeln und Haltbarkeitskosten anbinden
+- Gelände- und Größenbeschränkungen umsetzen
+- optionale Fahrzeuglackierung mit 12 festgelegten Sprühdosen-Farben
+- Weltkartenintegration und Save/Load vollständig anbinden
+- alte Fahrzeug-DB auf den neuen bestätigten Planungsstand migrieren
 
 ### 14. Zeit / Events / Offline
 - zentrale Ingame-Uhr
@@ -436,3 +443,38 @@ Detailstand:
 - Warnanzeige/UI für die 2-Ingame-Stunden-Hordenwarnung
 - Hordenstatus in Save/Load
 - DB-Struktur für Baustufen, HP, Kosten, Reparatur und Hordenregeln
+
+
+## Update 09.10.2026 – Fahrzeuge
+
+Der Fahrzeugblock wurde weitgehend konkretisiert und in einer eigenen Referenzdatei dokumentiert.
+
+Neu festgelegt:
+- Reihenfolge: Motorrad -> Jeep -> Gepanzertes Auto -> Panzer -> Luftkissenboot -> Schnellboot -> Helikopter -> LSD Labor.
+- Jedes Fahrzeug kann vorerst nur einmal besessen werden.
+- Fahrzeuge haben keine Level und keine aufwertbaren Statistikstufen.
+- Freischaltung über Story/Quest, nicht über Spielerlevel.
+- Die meisten Fahrzeuge werden als Wrack/Schrotthaufen gefunden und in der Hauptbasis wieder aufgebaut.
+- Erstaufbau als Montage-Minispiel mit groben Einbauzonen; der Spieler muss passende Teile selbst zuordnen.
+- Montagefortschritt wird nach jedem korrekt montierten Teil dauerhaft gespeichert.
+- Fehlende Teile dürfen später gefunden oder hergestellt werden; kein Neustart bei 0.
+- Lager, Sitzplätze, Schutz, Haltbarkeit, Tank, Verbrauch, interne Geschwindigkeit und Weltkarten-Zeitreduktion sind für alle 8 Fahrzeuge festgelegt.
+- Weltkartenreisen: maximal 60 Minuten, Treibstoffverbrauch pro angefangenen 10-Minuten-Block der tatsächlichen Fahrzeugreise.
+- Geländetauglichkeit der Fahrzeuge wurde festgelegt.
+- Bei 0 Haltbarkeit wird das Fahrzeug mit Lagerinhalt und Treibstoff zur Hauptbasis zurückgesetzt und bleibt bis zur Reparatur unbenutzbar.
+- Kein einzelner Treffer darf ein voll intaktes Fahrzeug direkt auf 0 setzen.
+- Tod außerhalb des Fahrzeugs: Fahrzeug am Todesort geschützt stehen lassen oder ohne Treibstoffkosten zur Hauptbasis schicken.
+- Reparaturregeln und vollständige 0-%-Teilelisten für alle Fahrzeuge festgelegt.
+- Überfahren ist nur mit Jeep, gepanzertem Auto, Panzer und LSD Labor möglich; Gegner-Matrix und Haltbarkeitskosten sind festgelegt.
+- Boss-/Storyboss-Regel: niemals normal durch Überfahren beschädigbar.
+- Lackierung optional; 12 Farben mit festen Sprühdosen-Rezepten; 1 Sprühdose färbt 1 komplettes Fahrzeug.
+
+Detailstand:
+- `docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt`
+
+Noch offen:
+- konkrete Story-/Questabläufe pro Fahrzeug
+- exakter Bergungs-/Transportablauf eines Wracks zur Hauptbasis
+- finale Montage-Minispiel-UI und Einbauzonen
+- Kollisionsschaden gegen Umweltobjekte
+- technische Migration der veralteten Fahrzeug-DB
