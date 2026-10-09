@@ -168,6 +168,7 @@ Zusätzlich dokumentiert:
 - `docs/Remnants_of_Tomorrow_Horrorfiguren_Planung.txt` – Horrorfiguren sowie Regel für abschaltbare Horror-/Gruseleffekte
 - `docs/Remnants_of_Tomorrow_Basis_Horden_Planungsstand.txt` – aktueller Basis- und Hordenplan
 - `docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt` – aktueller vollständiger Fahrzeugplan inklusive Fund/Bergung, Wiederaufbau, Treibstoff, Reise, Reparatur, Überfahren, Lackierung und Farb-Rezepten
+- `docs/Remnants_of_Tomorrow_Begleiter_Planungsstand.txt` – Begleiter, Sarah, Hunde, Passive Hilfe, Begleiter-KI und Siedlungs-NPCs; bestätigte Regeln und offene Punkte
 
 Kurzregeln aus der neuen Planung:
 - Siedlungsgebäude maximal Stufe 3, Ausbau pro Stufe maximal 30 Minuten
