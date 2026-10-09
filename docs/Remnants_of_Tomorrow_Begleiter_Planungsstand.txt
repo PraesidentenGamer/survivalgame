@@ -1,138 +1,221 @@
 Remnants of Tomorrow (RoT) – Begleiter, Hunde und NPC-KI
-Planungsstand: 09.10.2026
-===============================================
+Planungsstand: 09.10.2026 (mit Abgleich der vom Benutzer bereitgestellten Begleiterdatei)
+===========================================================================================
 
-WICHTIG
--------
-Dieses Dokument beschreibt die bislang geplanten und bestätigten Regeln.
-Es ist keine Aussage darüber, welche Systeme bereits technisch implementiert sind.
-Noch offene Details werden ausdrücklich als OFFEN gekennzeichnet.
-Das abgeschlossene Testersystem bleibt vollständig unangetastet.
-
-1. BEGLEITER-GRUNDREGELN
-------------------------
-- Pro Spieler sind höchstens 3 aktive menschliche/gewöhnliche Begleiter vorgesehen.
-- Zusätzlich ist maximal 1 aktiver Hund vorgesehen.
-- Die Gruppe besteht damit aus Spieler + bis zu 3 menschlichen Begleitern + 1 Hund.
-- Aktive Begleiter gehören ausschließlich ihrem jeweiligen Spieler.
-- Im späteren Mehrspielerbetrieb hat jeder Spieler seine eigene Begleitergruppe.
-- Fremde Spieler dürfen Begleiter anderer Spieler nicht steuern, umkommandieren oder deren Skills verändern.
-- Aktive Begleiter dürfen in begrenztem Umfang eigenständig auf Situationen reagieren, wenn kein ausdrücklicher Spielerbefehl vorliegt.
-- Der Spieler bleibt die Hauptfigur und muss selbst handeln; Begleiter dürfen Aufgaben und Rätsel nicht vollständig für ihn erledigen.
-
-2. MENSCHLICHE BEGLEITER
-------------------------
-- Menschliche Begleiter besitzen individuelle, verbesserbare Fähigkeiten/Skills.
-- Aktive Begleiter dürfen maximal 75 % der vorgesehenen effektiven Leistung erbringen.
-- Nicht aktive menschliche Begleiter bzw. dafür vorgesehene NPCs in der Siedlung dürfen bei ihren Aufgaben mit 100 % Leistung arbeiten.
-- Diese Begrenzung verhindert, dass aktive Begleiter den Spieler ersetzen.
-- Wichtige menschliche Storybegleiter haben keine normalen Lebenspunkte; sie sind nicht regulär verwundbar oder dauerhaft tötbar.
-- Welche Schutz- und Lebensregeln für gewöhnliche Söldner gelten, ist noch OFFEN.
-- Konkrete Werte, Rollen, Skills und weiterer namentlich benannter Begleiter sind noch OFFEN.
-
-3. SARAH (STORYBEGLEITERIN)
+QUELLEN UND VERBINDLICHKEIT
 ---------------------------
-- Sarah ist bislang die konkret benannte menschliche Storybegleiterin.
-- Sie erscheint zunächst freundlich und hilfsbereit.
-- Zwei mögliche Storyentwicklungen sind vorgesehen:
-  a) ehrlich und dauerhaft unterstützend;
-  b) sie weiß deutlich mehr über die Ereignisse, als zunächst erkennbar ist.
-- Die Entwicklung hängt mit Spielerentscheidungen und einem Karma-/Vertrauenssystem zusammen.
-- Ab 50 % Vertrauen/Karma bleibt Sarah als Begleiterin erhalten.
-- Unterhalb dieser Grenze ist ein neutraler bzw. negativer Storypfad möglich.
-- Der negative Pfad kann nach Tschernobyl führen, ohne einen Bosskampf zwingend vorauszusetzen.
-- Offen bleibt, ob Sarah für die Katastrophe verantwortlich ist oder selbst benutzt wurde.
-- Als Storybegleiterin hat Sarah keine normalen Lebenspunkte, ist unverwundbar und stirbt nicht.
-- Ihre Fähigkeiten bleiben ausgewogen und können verbessert werden.
-- Konkrete Skillwerte und einzelne Storymissionen sind noch OFFEN.
+- Primäre Quelle für die 13 regulären Begleiter und Jonas:
+  "Remnants_of_Tomorrow_Begleiter_Planungsstand(1).txt", Stand 09.10.2026
+  (lokale, vom Projektverantwortlichen bereitgestellte Planungsdatei).
+- Ergänzende ältere Festlegungen zu Sarah, Hunden, passiver Hilfe, Siedlungs-NPCs und KI
+  bleiben als separate Projektbereiche dokumentiert.
+- Bei Unterschieden hat die neue Begleiterdatei für die REGULÄRE BEGLEITERLISTE Vorrang.
+- Offene Widersprüche sind als OFFEN gekennzeichnet; keine zusätzlichen Werte erfinden.
+- Planung ist nicht gleich Implementierung. Das fertige Testersystem bleibt unangetastet.
 
-4. HUNDE ALS EIGENES BEGLEITERSYSTEM
-------------------------------------
-- Zum Start sind Hunde die einzigen vorgesehenen Tierbegleiter.
-- Der erste Hund wird im Verlauf der Story freigeschaltet.
-- Weitere Hunde können später hinzukommen.
-- Höchstens 1 Hund kann gleichzeitig aktiv mit dem Spieler unterwegs sein.
-- Hunde haben keine normale Lebenspunkte-/HP-Anzeige und sterben nicht dauerhaft.
-- Hunde haben ein getrenntes Fähigkeitssystem und keine klassische Skillleiste.
-- Ein Hund kann zu Beginn höchstens 2 zufällig erhaltene Fähigkeiten besitzen.
-- Später ist ein Zucht- und Kreuzungssystem vorgesehen, um Eigenschaften gezielt zu kombinieren.
-- Normale Begleit- und Zuchthunde sind der Spielerbasis zugeordnet.
-- Siedlungs-Wachhunde sind hiervon getrennt und gehören zum Verteidigungszentrum.
-- Erste Wachhunde werden frühestens mit Verteidigungszentrum Stufe 2 vorgesehen; auf Stufe 3 sind weiterentwickelte Wachhund-Posten möglich.
-- Konkrete Rassen, Fähigkeitslisten, Zuchtregeln und Werte sind noch OFFEN.
+1. ALLGEMEINE REGELN – NEUE BEGLEITERDATEI
+------------------------------------------
+- Maximal 3 Begleiter können gleichzeitig aktiv sein.
+- Begleiter sind unverwundbar und können nicht dauerhaft sterben.
+- Begleiter besitzen keine normalen Überlebenswerte wie Hunger, Durst, Temperatur,
+  Strahlung oder Infektion.
+- Freigeschaltete Begleiter bleiben dauerhaft verfügbar.
+- Die Freischaltung erfolgt durch Story- bzw. Begleiterquests.
+- Begleiter können freie Passagierplätze in Fahrzeugen nutzen.
+- Im späteren Multiplayer können freie Passagierplätze stattdessen Mitspieler aufnehmen.
+- Waffenwerte der Begleiter richten sich nach den normalen Waffenwerten des Spiels.
+- Eigenschaften, Waffen, Kleidung, Persönlichkeit und Spezialfähigkeiten werden
+  pro Begleiter einzeln festgelegt.
+- Die Datei sagt nicht ausdrücklich, ob der zusätzlich geplante Hund in das Limit
+  der 3 aktiven Begleiter hinein zählt: OFFEN (siehe Abschnitt Hunde).
 
-5. PASSIVE HILFE – 3 STUFEN
----------------------------
-Alle Begleiter besitzen eine dreistufige Passive Hilfe.
-Der Spieler muss das Ziel trotzdem selbst finden oder die notwendige Handlung selbst ausführen.
+2. REGULÄRE BEGLEITER – VOLLSTÄNDIGE NAMENSLISTE
+------------------------------------------------
+Frauen (6):
+- Lucy
+- Scarlett
+- Lisa
+- Hikari
+- Brooke
+- Vixen
+
+Männer (7):
+- Jonas
+- Alvin
+- Rix
+- Leon
+- Tony
+- Dimitry
+- Gary
+
+Insgesamt: 13 namentlich vorgemerkte reguläre Begleiter.
+Jonas ist derzeit der einzige davon, dessen Eigenschaften vollständig ausgearbeitet sind.
+Für die übrigen 12 sind die persönlichen Eigenschaften noch OFFEN.
+
+3. JONAS – FESTGELEGTE EIGENSCHAFTEN
+-------------------------------------
+Name: Jonas
+Geschlecht: männlich
+Größe: 1,95 m
+Rolle: offensiver Nahkampf-/Beschützer-Begleiter
+Charakter: ruhig, kontrolliert und bedrohlich
+
+Kleidung:
+- Komplett schwarz gekleidet
+- Sturmhaube im Gesicht
+
+Waffen:
+- Baseballschläger
+- Springmesser
+- Katana
+
+Spezialfähigkeit:
+- Jonas tritt geeignete Gegner mit seinen Springerstiefeln zu Boden.
+- Nach erfolgreichem Niederschlag setzt er bevorzugt sofort im Nahkampf nach.
+- Abklingzeit: 20 Sekunden.
+- Bosse können nicht umgetreten werden.
+- Sehr schwere Gegner und bestimmte Mutationen können immun gegen den
+  Niederschlag sein.
+
+Rufe:
+- „Bleib liegen.“
+- „Ich weiß wo du wohnst“
+
+Stimme:
+- Keine Verwendung der echten Stimme des realen Vorbilds.
+- Eigene, künstlich erzeugte Charakterstimme.
+- Bevorzugtes späteres Erzeugungswerkzeug: Chatterbox.
+- Stimmstil: ruhig, tief, bedrohlich.
+- Verwendung fertiger Audiodateien im Spiel.
+
+Status:
+- Jonas ist laut der übergebenen Datei der einzige vollständig ausgearbeitete Begleiter.
+
+4. DIE NOCH NICHT AUSGEARBEITETEN 12 BEGLEITER
+----------------------------------------------
+- Lucy: Eigenschaften OFFEN
+- Scarlett: Eigenschaften OFFEN
+- Lisa: Eigenschaften OFFEN
+- Hikari: Eigenschaften OFFEN
+- Brooke: Eigenschaften OFFEN
+- Vixen: Eigenschaften OFFEN
+- Alvin: Eigenschaften OFFEN
+- Rix: Eigenschaften OFFEN
+- Leon: Eigenschaften OFFEN
+- Tony: Eigenschaften OFFEN
+- Dimitry: Eigenschaften OFFEN
+- Gary: Eigenschaften OFFEN
+
+Nicht ohne weitere Entscheidung ergänzen:
+- Rollen, Größen, Hintergrundgeschichten, Kleidung, Stimmen
+- Startwaffen, Skills, Spezialfähigkeiten, Abklingzeiten
+- Individuelle Begleiterquests und exakte Freischaltreihenfolge
+
+5. SARAH – GETRENNTE ÄLTERE STORYPLANUNG
+----------------------------------------
+Sarah kommt in der neuesten Liste der 13 REGULÄREN Begleiter NICHT vor.
+Die bereits vorhandene Storyplanung zu ihr wird daher erhalten, aber nicht als
+14. fest bestätigte reguläre Begleiterin ausgegeben.
+
+Älterer Projektstand:
+- Sarah begegnet dem Spieler zunächst freundlich und hilfsbereit.
+- Ein Karma-/Vertrauenssystem mit positivem und negativem Pfad ist vorgesehen.
+- Ab 50 % Vertrauen/Karma soll Sarah als Begleiterin erhalten bleiben;
+  darunter kann ein neutraler bzw. negativer Storypfad entstehen.
+- Der negative Pfad kann nach Tschernobyl führen, ohne zwingenden Bosskampf.
+- Offen bleibt, ob Sarah verantwortlich war oder selbst benutzt wurde.
+- Als wichtige Storyfigur wurde Sarah ohne normale Lebenspunkte geplant.
+
+OFFEN:
+- Ist Sarah zusätzlich zu den 13 regulären Begleitern eine gesonderte Storybegleiterin,
+  ersetzt sie einen geplanten Begleiter oder erhält sie eine andere Storyrolle?
+- Gehört sie im Fall einer Begleiterrolle zum Limit von 3?
+
+6. HUNDE – ERGÄNZENDER, ÄLTERER PROJEKTSTAND
+--------------------------------------------
+- Zum Start sollen ausschließlich Hunde als Tierbegleiter vorkommen.
+- Der erste Hund wird im Storyverlauf freigeschaltet; weitere können hinzukommen.
+- Bisher geplant: höchstens ein aktiver Hund gleichzeitig.
+- Hunde haben keine normalen Lebenspunkte und sterben nicht dauerhaft.
+- Hunde verwenden ein eigenes Fähigkeitssystem statt klassischer Skillleiste.
+- Ein Hund erhält anfangs höchstens 2 zufällige Fähigkeiten.
+- Späteres Zucht- und Kreuzungssystem zur Kombination von Eigenschaften.
+- Normale Begleit- und Zuchthunde gehören an die Spielerbasis.
+- Siedlungs-Wachhunde gehören zum Verteidigungszentrum;
+  erste Wachhunde ab Stufe 2, erweiterte Posten auf Stufe 3.
+- Konkrete Rassen, Fertigkeiten, Vererbung, Zuchtwerte: OFFEN.
+- WICHTIGER ABGLEICHPUNKT: Die neue Datei nennt generell maximal 3 aktive Begleiter.
+  Der frühere Plan "3 menschliche Begleiter PLUS 1 aktiver Hund" ist damit
+  nicht eindeutig bestätigt oder aufgehoben. Ob der Hund separat zählt: OFFEN.
+
+7. PASSIVE HILFE – ERGÄNZENDER PROJEKTSTAND
+-------------------------------------------
+Alle Begleiter sollen eine dreistufige Passive Hilfe besitzen.
+Der Spieler muss Ziele/Aktionen weiterhin selbst erreichen und ausführen.
 
 Stufe 1: Dezenter Hinweis
-- Menschlicher Begleiter: kurze Bemerkung, Blick oder andere unauffällige Reaktion.
+- Mensch: kurzer Hinweis, Blick oder unauffällige Reaktion.
 - Hund: Blickrichtung oder unauffälliges Verhalten.
 
 Stufe 2: Deutlicher Hinweis
-- Menschlicher Begleiter: weist einen Bereich klarer aus.
-- Hund: kann sich ein Stück auf einen interessanten Bereich zubewegen.
+- Mensch: zeigt einen Bereich deutlicher an.
+- Hund: bewegt sich etwas in Richtung eines interessanten Bereichs.
 
-Stufe 3: Sehr konkreter Hinweis
-- Menschlicher Begleiter: benennt oder zeigt einen relevanten Bereich bzw. eine nötige Aktion.
-- Hund: nähert sich dem relevanten Ort, stoppt davor und überlässt die eigentliche Handlung dem Spieler.
+Stufe 3: Konkreter Hinweis
+- Mensch: benennt/zeigt Bereich oder erforderliche Aktion genauer.
+- Hund: nähert sich der Stelle, führt die Spielerhandlung aber nicht selbst aus.
 
-Die genauen Auslösebedingungen, Abstände, Zeiten und Freischaltungsregeln sind noch OFFEN.
+Genaue Auslösebedingungen, Abstände und Zeitregeln: OFFEN.
 
-6. INAKTIVE BEGLEITER UND SIEDLUNGS-NPCS
-----------------------------------------
-- Nicht aktive menschliche Begleiter dürfen in der Siedlung geeignete Aufgaben autonom bearbeiten.
-- Sie dürfen die tatsächlich für ihre Aufgabe erforderlichen Ressourcen selbst beschaffen.
-- Private Lager und der Rucksack des Spielers sind für autonome NPCs tabu.
-- Siedlungslager dürfen nur mit ausdrücklicher Freigabe verwendet werden.
-- NPCs dürfen nicht wahllos Materialien verbrauchen oder private Gegenstände an sich nehmen.
-- Arbeitsstationen sollen Aufgabenstatus und geschätzte Rückkehrzeit anzeigen.
-- Fach-NPCs benötigen ausreichend Wohnraum und das jeweils passende Funktionsgebäude in der erforderlichen Stufe.
-- Wachen und Söldner können für Aufgaben der Siedlungsverteidigung bzw. Expeditionen eingesetzt werden, soweit die entsprechenden Gebäude und Spielsysteme freigeschaltet sind.
-- Das Verteidigungszentrum übernimmt Kampf-/Wach-/Söldnertraining.
-- Das Funk-/Expeditionszentrum benötigt für Expeditionen die vorgesehenen Freischaltungen und ein Expeditionsfahrzeug.
-- Nicht jeder Siedlungs-NPC zählt automatisch als aktiver Spielerbegleiter.
+8. SIEDLUNGS-NPCS UND AUTONOMIE – ERGÄNZENDER PROJEKTSTAND
+----------------------------------------------------------
+- Nicht aktive menschliche Begleiter bzw. geeignete Siedlungs-NPCs dürfen
+  passende Aufgaben autonom bearbeiten und nötige Ressourcen beschaffen.
+- Private Lager und Rucksack des Spielers sind für autonome NPCs tabu.
+- Siedlungslager dürfen nur nach ausdrücklicher Berechtigung genutzt werden.
+- Arbeitsstationen zeigen Status und geschätzte Rückkehrzeiten.
+- Fach-NPCs benötigen Wohnraum und ein passendes Funktionsgebäude.
+- Wachen/Söldner können in freigeschalteten Siedlungssystemen verteidigen
+  oder an Expeditionen teilnehmen.
+- Nicht jeder Siedlungs-NPC ist ein regulärer aktiver Spielerbegleiter.
+- Bisherige ergänzende Balanceidee: aktive Begleiter maximal 75 % effektive Leistung,
+  nicht aktive Siedlungshelfer bis 100 % bei ihren Aufgaben.
+  Diese 75-%-Regel wird in der neuen Begleiterdatei nicht genannt:
+  vor endgültiger Umsetzung mit dem Projektverantwortlichen abgleichen.
 
-7. KI-VERHALTEN UND FEHLERBEHANDLUNG
-------------------------------------
-- Gemeinsame technische KI-Basis, aber deutlich getrenntes Verhalten für Gegner, Tiere, Siedlungs-NPCs und Begleiter.
-- Datengetriebene Regeln und explizite Spielerberechtigungen haben Vorrang vor unkontrollierten KI-Aktionen.
-- Ein wirklich festgefahrener NPC/Begleiter erhält einen klaren Fehlerstatus.
-- Solange der echte Hänger besteht, werden Aufgabe und weitere Aktionen eingefroren.
-- Ein harter Neustart sowie nötige Eingriffe wie Abbruch, Rückruf oder Fortsetzen erfolgen nur durch den Spieler, nicht selbständig durch die KI.
-- Exakte Erkennungsintervalle und konkrete Fehlerdialoge sind noch OFFEN.
+9. KI, BERECHTIGUNGEN UND FAHRZEUGE
+-----------------------------------
+- Gemeinsame technische KI-Basis, aber getrenntes Verhalten für Gegner, Tiere,
+  Begleiter und Siedlungs-NPCs.
+- Begleiter dürfen ohne ausdrücklichen Befehl begrenzt selbst reagieren.
+- Fremde Spieler dürfen die Begleiter des Besitzers im späteren Multiplayer
+  nicht umkommandieren, umskillen oder steuern.
+- Bei echtem KI-Hänger klarer Fehlerstatus; harter Neustart nur auf Spieleraktion.
+- Begleiter können freie Passagiersitze nutzen; Sitzplätze sind fest und nicht aufrüstbar.
+- Auch Missions-NPCs und im späteren Multiplayer andere Spieler können Plätze nutzen.
+- Ob Hunde selbst Passagierplätze benötigen: OFFEN.
+- Fahrzeugdetails stehen in docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt.
 
-8. FAHRZEUGE UND BEGLEITER
---------------------------
-- Begleiter dürfen automatisch freie geeignete Passagiersitze benutzen.
-- Die Sitzplatzzahl der Fahrzeuge ist fest und nicht aufrüstbar.
-- Missions-NPCs können ebenfalls freie Plätze beanspruchen.
-- Der spätere Mehrspielerbetrieb darf freie Plätze gegebenenfalls für andere Spieler nutzen.
-- Ob und wie der aktive Hund Fahrzeugplätze nutzt, ist noch OFFEN.
-- Verbindliche Details der einzelnen Fahrzeuge stehen separat in
-  docs/Remnants_of_Tomorrow_Fahrzeuge_Planungsstand.txt.
+10. DATENHALTUNG UND SPEICHERUNG
+---------------------------------
+- Konfigurierbare Begleiter-/Skill-/KI-/Hundewerte grundsätzlich in JSON-Datenbanken.
+- C# übernimmt dafür notwendige Laufzeitlogik.
+- Spielerbezogene Freischaltungen, aktive Auswahl, individuelle Skillfortschritte,
+  Aufgaben, Hundeeigenschaften und Story-/Vertrauenszustände in den Spielstand.
+- Primäres Spielstandformat: .rotsave; Reserve/Fallback: .sgsave.
+- Bisherige Speichersystem-Festlegungen und fünf manuelle Slots nicht verändern.
 
-9. DATENHALTUNG UND PERSISTENZ
-------------------------------
-- Konfigurierbare Begleiter-, Hunde-, Skill-, KI- und Aufgabenwerte sollen grundsätzlich datengetrieben in JSON-Datenbanken stehen.
-- C# übernimmt Laufzeitlogik, die nicht sinnvoll in Datenbanken gehört.
-- Spielerbezogene Zustände wie Freischaltungen, Begleiterzuordnung, individuelle Skills, Hundeeigenschaften, Siedlungszuweisungen und Story-/Vertrauenswerte gehören in den jeweiligen Spielstand.
-- Primäre Spielstandendung: .rotsave; Reserve-/Fallbackendung: .sgsave.
-- Die bestehende Planung zum Speichersystem wird nicht ohne Grund neu gestaltet.
-
-10. NOCH OFFENE FRAGEN (NICHT ALS BESCHLOSSEN BEHANDELN)
---------------------------------------------------------
-- Weitere namentlich benannte menschliche Begleiter und ihre Hintergrundgeschichten.
-- Konkrete Begleiterklassen, Werte, Ausrüstung, Fähigkeiten und Skillkosten.
-- Rekrutierungsbedingungen für gewöhnliche menschliche Begleiter und Söldner.
-- Genaues Kampfsystem und Lebensregeln für nicht einzigartige menschliche Begleiter.
-- Konkrete Hunderassen, Zufallsfähigkeiten, Zuchtwahrscheinlichkeiten und Vererbungsregeln.
-- Exakte Passive-Hilfe-Trigger und alle KI-Schwellenwerte.
-- Bedienung des Begleitermenüs, verfügbare Befehle und genaue Fahrzeugmitnahme für Hunde.
-- Implementierungsreihenfolge und Integration in die vorhandenen DB-Dateien.
+OFFENE ENTSCHEIDUNGEN
+---------------------
+1. Zählt ein aktiver Hund innerhalb der maximal 3 Begleiter oder zusätzlich?
+2. Wie wird Sarah gegenüber den 13 regulären Begleitern eingeordnet?
+3. Gilt die ältere 75-%-Leistungsgrenze zusätzlich zur neuen Begleiterdatei?
+4. Konkrete Eigenschaften/Quests der 12 übrigen namentlich geplanten Begleiter.
+5. Individuelle Hundewerte, Zucht, passive Hilfe und KI-Schwellenwerte.
 
 STAND
 -----
-Planung und bestätigte Prinzipien dokumentiert.
-Keine Behauptung, dass Begleiter, Hunde oder KI bereits vollständig spielbar sind.
+Die Namen und Jonas-Details wurden aus der übergebenen lokalen Projektdatei
+übernommen. Die zusätzlichen älteren Projektregeln wurden separat erhalten.
+Nichts davon ist durch dieses Dokument automatisch als technisch umgesetzt
+oder getestet anzusehen.
