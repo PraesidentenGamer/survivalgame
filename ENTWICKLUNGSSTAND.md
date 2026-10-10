@@ -361,3 +361,19 @@ implementation oder erfolgreichem Test verwechselt werden. Die
 bisherigen Schätzungen von ca. 40 % funktionaler und ca. 30 %
 endgültiger Gesamtfertigstellung bleiben vorläufig unverändert.
 Primärer Save-Dateityp ist .rotsave; .sgsave bleibt Fallback.
+
+## Technischer Teststand 10.10.2026 – Fahrzeugprototyp / Gebietsankunft
+
+Die zuvor dokumentierte Fahrzeugplanung ist inzwischen **teilweise als Prototyp in Unity 2017.2.5f1 erprobt**. Das ersetzt noch keine vollständige Implementierung der geplanten Fahrzeuge.
+
+**Lokal umgesetzt und getestet:**
+- Fahrzeug-Loader für `Assets/StreamingAssets/database/vehicles.json.db`: **8** Fahrzeugdefinitionen geladen.
+- Separater Steuerungs-Loader für `vehicle_steering.json.db`: **8** Konfigurationen geladen, Physikparameter ausdrücklich noch vorläufig.
+- `VehicleManager.cs` startet mit 8 gesperrten/noch nicht gebauten Fahrzeugen.
+- Test-Jeep nutzt `VehiclePhysicsConfigurator.cs`, `VehicleWheelController.cs` und `VehicleInteraction.cs`. **4 Räder**, **AWD**, **12,03 Unity-Einheiten/s** resultierende konfigurierte Höchstgeschwindigkeit. Einsteigen, Fahren/Bremsen und Aussteigen im Test bestätigt.
+- Eigenständiges `WorldMapArrival.cs` implementiert den **südlichen Einstieg** für Gebietskarten. Test auf Standardkarte **200×200**, außerhalb des roten Ausgangstriggers: **X=0, Z=-90**; erneute Ankunft bei Kartenwechseln bestätigt. Spieler kann sich durch die ganze Karte bewegen. Korrektur von `Scene.handle` für Unity 2017.2.5f1 vorgenommen und erfolgreich kompiliert.
+- `AreaSpawnZone` (**190×190**) und Ressourcenspawns sowie `WorldMapExit.cs`, `WorldMapTravel.cs`, `SaveSystem.cs` und `Prefab_Player` wurden dabei **nicht geändert**.
+
+**Nächste technische Integration:** Reisemodus mit Fahrzeug auf der Weltkarte, das konkrete Fahrzeug über den Szenenwechsel erhalten und den Spieler **bereits im Fahrzeug im Süden** des Zielgebiets einsetzen. Dazu Fahrzeugbestand/Position und Save-/Load-Persistenz anbinden. Wiederherstellung gespeicherter Spielerkoordinaten mit F11 als separaten Regressionstest prüfen.
+
+**Abgrenzung:** Bestehende Planungsdokumente beschreiben den späteren Funktionsumfang; die genannten Ergebnisse betreffen zunächst den getesteten lokalen Unity-Prototyp. Der hier aktualisierte GitHub-Stand ist **Dokumentation**, kein automatischer Upload der Unity-C#-Quelltexte oder Assets. Globale Fortschrittsschätzungen bleiben **ca. 40 %** (funktionale Fassung ohne Grafik-/Audio-Polishing) und **ca. 30 %** (endgültiger Umfang).
