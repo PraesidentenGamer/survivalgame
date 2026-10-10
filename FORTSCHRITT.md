@@ -513,3 +513,27 @@ mit den freigegebenen Fahrzeugwerten abgleichen, Datenvalidierung und
 Save-Strukturen prüfen, danach Fahrzeug-Kernlogik mit Unity 2017.2.5f1
 umsetzen und testen. Die bereits vorbereiteten Tester-Systeme dabei
 nicht unnötig verändern.
+
+## Update 10.10.2026 – Implementierungstests: Jeep und südliche Gebietsankunft
+
+**Nachweislich getestete Prototypen (Unity 2017.2.5f1):**
+
+- Fahrzeug-Hauptdatenbank `vehicles.json.db`: `VehicleDatabaseLoader.cs` meldet **8** erfolgreich geladene Fahrzeugdefinitionen.
+- Fahrzeug-Steuerungsdatenbank `vehicle_steering.json.db`: `VehicleSteeringDatabaseLoader.cs` meldet **8** geladene Datensätze; Physikwerte weiterhin **vorläufig**.
+- `VehicleManager.cs`: Grundverwaltung der **8 gesperrten, ungebauten** Fahrzeuge initialisiert. Das ist noch kein vollständiges Story-/Freischalt- oder Save-System.
+- `VehiclePhysicsConfigurator.cs` + `VehicleWheelController.cs`: Jeep mit **4 Rädern**, **AWD**, interner Geschwindigkeitswert **65**, resultierende Höchstgeschwindigkeit **12,03 Unity-Einheiten/s** im Test bereit.
+- `VehicleInteraction.cs`: Ein- und Aussteigen sowie Fahren/Bremsen am Test-Jeep erfolgreich erprobt; alter `TestJeep` als Referenz deaktiviert.
+- Neu `WorldMapArrival.cs` (eigenständiges Laufzeitsystem): erkennt Gebietsboden und berücksichtigt südlichen `WorldMapExit`-Trigger. Nach Korrektur der Unity-2017-Inkompatibilität (`Scene.handle` entfernt) ohne Kompilierungsfehler getestet.
+- Südlicher Spawn auf der **200×200**-Standardkarte: **X=0, Z=-90**, Blickrichtung **Norden (+Z)** im Code. Bei Wechseln zwischen verschiedenen Gebietskarten erneut Z=-90 bestätigt; der Spieler konnte die ganze Karte durchqueren.
+- Bestehende Komponenten `WorldMapTravel.cs`, `WorldMapExit.cs`, `SaveSystem.cs`, `Prefab_Player`, `AreaSpawnZone.cs` und `AreaSpawnManager.cs` blieben unverändert. Der **190×190**-Ressourcenbereich bleibt erhalten.
+
+**Noch nicht als fertig markieren:**
+
+- Weltkarten-Fahrzeugreise mit Übernahme des konkreten Fahrzeugs in die Zielszene; Fahrer soll am südlichen Eingang **bereits im Fahrzeug sitzen**.
+- Dauerhafte Speicherung von Fahrzeug, Standort, Tank, Haltbarkeit, Lager und Reisezustand; Freischaltung/Bergung/Montage/Produktion und sonstige Fahrzeugfunktionen.
+- Eigener Regressionstest für F11/Save-Load und dort gespeicherte Spielerkoordinaten nach Einführung von `WorldMapArrival.cs`; das Verhalten des Save-Skripts wurde im Code nachvollzogen, aber hier nicht als erneut getestet gemeldet.
+- Erweiterte Tests für Fahrzeuge mit anderem Platzbedarf (insbesondere Panzer und LSD-Labor) und weitere Kartentypen.
+
+**Schutz bestehender Systeme:** Funktionsfähige Skripte, Prefabs, Karten und Datenbankdateien nicht ohne Not umbauen; neue Mechaniken möglichst separat ergänzen.
+
+**Fortschrittsschätzung unverändert:** ca. **40 %** funktionale Fassung ohne finales Grafik-/Audio-Polishing, ca. **30 %** endgültiges Spiel. Erfolgreiche Prototyptests entsprechen nicht der Vollimplementierung.
