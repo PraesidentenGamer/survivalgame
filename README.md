@@ -193,3 +193,17 @@ dokumentiert:
 Die Umsetzung in Unity, Datenbankmigration und Tests folgen noch.
 Die zuletzt dokumentierten Fortschritts-Schätzwerte sind keine
 bestätigten Ergebnisse neuer Fahrzeugtests.
+
+## Update 10.10.2026 – Fahrzeugprototyp und südliche Gebietsankunft (getestet)
+
+Die zuvor abgeschlossene **Fahrzeug-Funktionsplanung** wird inzwischen durch erste tatsächlich getestete Unity-Prototypen ergänzt. Dies ist **keine** vollständige Fahrzeugimplementierung.
+
+- `VehicleDatabaseLoader.cs` lädt die Fahrzeug-Hauptdatenbank (`Assets/StreamingAssets/database/vehicles.json.db`) mit **8 Fahrzeugen**.
+- `VehicleSteeringDatabaseLoader.cs` lädt `vehicle_steering.json.db` mit **8 Fahrzeug-Steuerungsdatensätzen**. Die Physikwerte sind vorläufige Testwerte.
+- `VehicleManager.cs` verwaltet die 8 Fahrzeuge zunächst gesperrt und nicht zusammengebaut; Freischaltungen, vollständige Persistenz und Spielmechaniken sind noch nicht fertig.
+- Der datenbankgestützte Jeep-Fahrtest mit `VehiclePhysicsConfigurator.cs`, `VehicleWheelController.cs` und `VehicleInteraction.cs` wurde erfolgreich durchgeführt: **4 Räder, AWD, interne Geschwindigkeit 65, Unity-Höchstgeschwindigkeit 12,03 Einheiten/s**; Ein- und Aussteigen funktionieren im Test.
+- `WorldMapArrival.cs` ergänzt die südliche Ankunft **ohne Eingriffe** in die bereits funktionierenden Skripte und Prefabs. Mit Unity **2017.2.5f1** getestet: in der zentrierten **200×200**-Standardkarte bei **X=0, Z=-90**, außerhalb des südlichen Weltkarten-Ausgangstriggers. Ankunft beim Wechsel zwischen verschiedenen Gebietskarten bestätigt; Bewegung über die Karte möglich.
+- `WorldMapTravel.cs`, `WorldMapExit.cs`, `SaveSystem.cs`, `Prefab_Player`, `AreaSpawnManager.cs` und `AreaSpawnZone.cs` wurden für diese Änderung **nicht verändert**. Die Ressourcen-Spawnzone bleibt **190×190**.
+- **Offen:** Fahrzeug auf der Weltkarte tatsächlich mitnehmen und im Zielgebiet mit Fahrer an Bord südlich erscheinen lassen; Reise-/Fahrzeugzustände in Save/Load integrieren; F11-Wiederherstellung nach Einführung des Arrival-Systems gesondert erneut testen.
+
+Die Fortschrittsschätzungen bleiben unverändert (**ca. 40 %** funktionaler Umfang ohne finales Grafik-/Audio-Polishing, **ca. 30 %** endgültiges Spiel). Die Dokumentation beschreibt nur den bestätigten lokalen Entwicklungs-/Teststand; die genannten Unity-Quelldateien sind damit nicht automatisch im Repository eingecheckt.
