@@ -10,13 +10,15 @@
 
 **Verbindliche Regeln:** Reparaturen bei **1–99 %** sind auch unterwegs direkt am stehenden Fahrzeug mit physisch anwesendem Spieler, Werkzeug (nicht verbraucht), Materialien und ausdrücklicher Bestätigung möglich; Teilreparaturen proportional mit Aufrundung, **ohne Minispiel**. **0 %** erfordert die vollständige Generalreparatur an der Hauptbasis. Nur der **erstmalige Aufbau von Fahrzeugwracks** benötigt ein Montage-Minispiel; sein Fortschritt soll dauerhaft gespeichert werden.
 
-**Nächste technische Schritte – ohne Grafikarbeiten:**
+**Korrigierte nächste technische Schritte – Nutzerentscheidung vom 12.10.2026:**
 
-1. Feldreparaturen abschließen: Materialentnahme aus erlaubten erreichbaren Quellen, Schutzmengen, Teilreparatur, Reparaturbestätigung sowie Unterbrechung/Fortsetzung bei Angriff und persistenter Fortschritt; Funktionsprüfung weiterhin nur mit dem Test-Jeep.
-2. Platzierbaren Basisbau für die Fahrzeugwerkstatt und deren Reparaturauftrag-/Warteschlangensystem technisch vorbereiten; keine fest eingebaute Testwerkstatt, keine endgültigen Gebäude-Assets.
-3. Test-Jeep-Anbindung und Integrität von Treibstoff, Inventar/Fahrzeuglager, Fahrzeugzustand sowie verschlüsseltem F5/F11 bei weiteren Systemänderungen erhalten. Test- und reguläre Zustände sauber getrennt lassen.
-4. Fahrzeugbergung, Freischaltung, speicherbaren Erstaufbau und dessen Montage-Minispiel technisch vorbereiten. Spezifische Fahr-/Flug-/Boot-Physik der übrigen sieben Fahrzeuge nicht provisorisch einzeln testen.
-5. Danach übrige Spielmechaniken weiter integrieren: Gebietsübergänge, Gegner/Kampf, Basisbau, Crafting/Produktion, Fortschritt, Story/Quests, Events und Begleiter. Das vorhandene `AreaSpawnManager`-Ressourcensystem nicht durch ein zweites Spawnsystem ersetzen.
+1. **Nur die technische Fahrzeugreparatur am bestehenden Test-Jeep abschließen:** Materialverbrauch und Prüfung erlaubter Quellen, anteilige Reparaturen, ausdrückliche Bestätigung sowie Unterbrechen/Fortsetzen und später sichere Speicherung des Reparaturfortschritts. Keine neuen Werkstatt-Testobjekte oder grafischen Objekte.
+2. **Nur vorhandene technische Fahrzeugsysteme gezielt vervollständigen**, soweit nachweislich nötig: Treibstoff, Fahrzeuglager, Zustandsverwaltung und verschlüsseltes F5/F11. Funktionierende C#-Systeme, Test-Jeep und AES-256-/HMAC-Logik unverändert lassen, wenn keine Änderung erforderlich ist.
+
+**Bis passende Grafiken und Modelle vorhanden sind ausdrücklich zurückgestellt (keine aktuellen Arbeitspakete):**
+- Frei platzierbarer Basisbau einschließlich der echten Fahrzeugwerkstatt und weiterer Gebäude: dafür müssten zunächst die Gebäudeinhalte bzw. grafischen Grundlagen vorbereitet werden.
+- Fahrzeugbergung, freischaltbarer Erstaufbau und Montage-Minispiel: keine provisorische Umsetzung vor der späteren Asset-/Modellphase.
+- Weitere inhaltliche Spielsysteme wie Gegner/Kampf, Werkbänke/Crafting, Story/Quests, Events und Begleiter: für deren praktische Ausarbeitung werden geeignete grafische Spielobjekte benötigt.
 
 **Grafiken, endgültige 3D-Modelle, Animationen, visuelle Effekte und abschließende Benutzeroberflächen kommen erst ganz am Ende.** Bis dahin einfache Platzhalter verwenden und keine mehrfachen Oberflächen- oder Fahrzeugtests erzwingen. Quellcode bei künftigen Änderungen vollständig **direkt im Chat**, Dateien nur auf ausdrücklichen Wunsch. GitHub-Dokumentationsänderungen sind kein automatischer Upload lokaler Unity-Skripte.
 
