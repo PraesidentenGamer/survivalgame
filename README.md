@@ -2,6 +2,23 @@
 
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
 
+## Update 12.10.2026 – Test-Jeep: Fahrzeugschaden, Reparatur und verschlüsselter Spielstand
+
+**Bestätigte Unity-Tests (2017.2.5f1), ausschließlich am vorhandenen Test-Jeep:**
+
+- **Kollisionsschaden:** Aufpralle reduzieren die Haltbarkeit tatsächlich; die Unity-Console protokolliert die abgezogenen Schadenspunkte.
+- **Fahrzeug-HUD:** `VehicleStatusHUD.cs` liest beim nicht aufgebauten Test-Jeep jetzt den tatsächlichen Wert aus `VehicleFuelRuntime.TryGetTestJeepDurability()`. Der Zahlenwert und der grüne Balken wurden im Spiel korrekt aktualisiert (beispielsweise **266/300** statt fälschlich 300/300).
+- **Fahrsperre:** Bei **höchstens 10 %** Resthaltbarkeit (Jeep: **30/300 oder weniger**) ist der Jeep nicht mehr fahrbereit; das wurde im Test bestätigt.
+- **Testreparatur:** Die Wiederherstellung der Jeep-Haltbarkeit wurde erfolgreich getestet. Sie ist nicht mit dem vollständigen, materialabhängigen Reparatursystem gleichzusetzen.
+- **Simulierte Feldreparatur:** `TestJeepWorkshopSimulator.cs` benötigt **kein** Szenen-/Werkstatt-Testobjekt; mit **K** wird am stehenden Jeep eine provisorische Reparaturbedienung geöffnet. Eine laufende Reparatur mit Restzeit und Fortschrittsbalken wurde im Editor sichtbar bestätigt. **Materialabzug, regulärer Reparaturabschluss und persistenter Reparaturfortschritt sind noch nicht gesondert als bestanden bestätigt.**
+- **Spielstände:** Beschädigte Jeep-Haltbarkeit wurde per **F5** gespeichert und per **F11** sowie nach vollständigem Neustart wiederhergestellt. Die aktuelle **Spielstandversion 8** nutzt `.rotsave` mit **AES-256-CBC und HMAC-SHA256**; `.sgsave` bleibt Reserve. Die vorhandene Verschlüsselungs- und Integritätslogik wurde für diese Tests nicht umgebaut.
+
+**Verbindliche Reparatur-/Montageregel:** Reparaturen bei **1–99 %** sind auch **unterwegs** am stehenden Fahrzeug mit Werkzeug, Material und ausdrücklicher Bestätigung erlaubt – **ohne Minispiel**. **0 %** erfordert die Generalreparatur in der Hauptbasis-Werkstatt. Ein **Montage-Minispiel** ist nur für den erstmaligen Wiederaufbau geborgener Fahrzeugwracks vorgesehen. Die spätere Fahrzeugwerkstatt darf der Spieler **selbst platzieren**.
+
+**Arbeitsreihenfolge:** Zuerst gemeinsame technische Spielmechaniken, Datenbanken, Speicherzustände, Fortschritt und gezielte Jeep-Tests. **Grafiken, 3D-Modelle, Animationen, visuelle Gestaltung und endgültige Benutzeroberflächen erst ganz am Ende.** Die anderen sieben Fahrzeugmodelle und ihre individuellen Fahrtests werden bis dahin nicht mit zusätzlichen Provisorien erzwungen. Das vorhandene Ressourcen-Spawnsystem (`AreaSpawnManager`) bleibt bestehen.
+
+Details und offene Arbeiten: [FORTSCHRITT.md](FORTSCHRITT.md) und [ENTWICKLUNGSSTAND.md](ENTWICKLUNGSSTAND.md). Die Änderungen auf GitHub dokumentieren den lokal getesteten Stand; sie laden nicht automatisch Unity-C#-Dateien hoch.
+
 ## Update 11.10.2026 – Fahrzeugreise und Tanksystem (in Unity getestet)
 
 **Remnants of Tomorrow befindet sich weiter in der Entwicklung.** Die letzten Tests mit Unity 2017.2.5f1 haben den Jeep-Prototyp, die Fahrzeugreise und das Tanksystem deutlich vorangebracht:
@@ -12,7 +29,7 @@
 - **Mindestreserve:** Automatische Entnahme respektiert die geschützte Reserve; die Freigabe einer manuellen Entnahme unter die Reserve wurde im isolierten Test erfolgreich geprüft.
 - **Spielstände:** `.rotsave` speichert Jeep-Tank, bezahlte Restfahrzeit, Tankstellenvorräte, Mindestreserven und die getrennten Ein-/Aus-Einstellungen der Automatik. F5, F11 und die Wiederherstellung nach Neustart des Unity-Play-Modus wurden geprüft.
 
-**Abgrenzung:** Dies sind getestete **Prototypfunktionen**, keine fertige Fahrzeug-/Tankstellenimplementierung für alle acht Fahrzeuge. Die Fahrstrecken verbinden vorerst Gebietsmarker geradlinig; exakte Straßen- und Brückenverläufe, Betankung aus Fahrzeuglagern, Inventar-/Item-Anbindung, fertige Tankstellen-GUIs und Grafik fehlen noch. Die Spielstände sind zurzeit **nicht verschlüsselt**; AES-256 mit Integritätsschutz ist vorgesehen. Der Quellcode dieses lokalen Unity-Prototyps wird durch die Dokumentationsaktualisierung nicht automatisch auf GitHub veröffentlicht.
+**Abgrenzung:** Dies sind getestete **Prototypfunktionen**, keine fertige Fahrzeug-/Tankstellenimplementierung für alle acht Fahrzeuge. Die Fahrstrecken verbinden vorerst Gebietsmarker geradlinig; exakte Straßen- und Brückenverläufe, Betankung aus Fahrzeuglagern, Inventar-/Item-Anbindung, fertige Tankstellen-GUIs und Grafik fehlen noch. Dieser Abschnitt dokumentiert den älteren Teststand vom 11.10.; inzwischen ist **AES-256-CBC mit HMAC-SHA256** für die `.rotsave`-Spielstände (Version 8) integriert und erfolgreich verwendet worden. Der Quellcode dieses lokalen Unity-Prototyps wird durch die Dokumentationsaktualisierung nicht automatisch auf GitHub veröffentlicht.
 
 ## Aktueller Stand
 
