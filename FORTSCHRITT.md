@@ -1,6 +1,28 @@
 # Projektfortschritt
 
-**Stand:** 11.10.2026
+## Aktualisierung 12.10.2026 – bestätigte Jeep-Tests und nächste technische Arbeiten
+
+**Tatsächlich am Test-Jeep in Unity 2017.2.5f1 bestätigt:** Kollisionsschaden wird als Haltbarkeitsverlust berechnet; `VehicleStatusHUD.cs` aktualisiert die Jeep-Haltbarkeit korrekt (beispielsweise 266/300); bei maximal 10 % Haltbarkeit ist der Jeep fahruntüchtig; die kostenlose Testreparatur stellt Haltbarkeit wieder her; beschädigte Haltbarkeit bleibt nach **F5/F11 und vollständigem Neustart** erhalten. Dies sind Tests am Jeep, **nicht** an den sieben anderen Fahrzeugtypen.
+
+**Verschlüsselter Speicherstand:** Der aktuelle lokale Spielstand verwendet **Version 8**, `.rotsave` mit **AES-256-CBC + HMAC-SHA256** sowie `.sgsave` als Reserve. Frühere Ausführungen in diesem Dokument zu "Version 6" oder "noch unverschlüsseltem JSON" sind **historisch und inzwischen überholt**. Die AES-/HMAC-Logik blieb während der Jeep-Haltbarkeitsänderung unverändert.
+
+**Reparatur:** Der eigenständige, nur im Unity-Editor verwendete `TestJeepWorkshopSimulator.cs` simuliert Feldreparaturen **ohne platziertes Werkstattobjekt**. Der Nutzer hat eine **laufende zeitgesteuerte Reparatur mit Fortschrittsbalken** gezeigt. Ein vollständig bestätigter Reparaturabschluss **mit echtem Materialabzug** oder dauerhafter Speicherung eines laufenden Reparaturvorgangs liegt noch nicht vor. Die spätere Hauptbasis-Werkstatt ist ein **vom Spieler selbst frei platziertes Gebäude**, nicht eine feste Szenenposition.
+
+**Verbindliche Regeln:** Reparaturen bei **1–99 %** sind auch unterwegs direkt am stehenden Fahrzeug mit physisch anwesendem Spieler, Werkzeug (nicht verbraucht), Materialien und ausdrücklicher Bestätigung möglich; Teilreparaturen proportional mit Aufrundung, **ohne Minispiel**. **0 %** erfordert die vollständige Generalreparatur an der Hauptbasis. Nur der **erstmalige Aufbau von Fahrzeugwracks** benötigt ein Montage-Minispiel; sein Fortschritt soll dauerhaft gespeichert werden.
+
+**Nächste technische Schritte – ohne Grafikarbeiten:**
+
+1. Feldreparaturen abschließen: Materialentnahme aus erlaubten erreichbaren Quellen, Schutzmengen, Teilreparatur, Reparaturbestätigung sowie Unterbrechung/Fortsetzung bei Angriff und persistenter Fortschritt; Funktionsprüfung weiterhin nur mit dem Test-Jeep.
+2. Platzierbaren Basisbau für die Fahrzeugwerkstatt und deren Reparaturauftrag-/Warteschlangensystem technisch vorbereiten; keine fest eingebaute Testwerkstatt, keine endgültigen Gebäude-Assets.
+3. Test-Jeep-Anbindung und Integrität von Treibstoff, Inventar/Fahrzeuglager, Fahrzeugzustand sowie verschlüsseltem F5/F11 bei weiteren Systemänderungen erhalten. Test- und reguläre Zustände sauber getrennt lassen.
+4. Fahrzeugbergung, Freischaltung, speicherbaren Erstaufbau und dessen Montage-Minispiel technisch vorbereiten. Spezifische Fahr-/Flug-/Boot-Physik der übrigen sieben Fahrzeuge nicht provisorisch einzeln testen.
+5. Danach übrige Spielmechaniken weiter integrieren: Gebietsübergänge, Gegner/Kampf, Basisbau, Crafting/Produktion, Fortschritt, Story/Quests, Events und Begleiter. Das vorhandene `AreaSpawnManager`-Ressourcensystem nicht durch ein zweites Spawnsystem ersetzen.
+
+**Grafiken, endgültige 3D-Modelle, Animationen, visuelle Effekte und abschließende Benutzeroberflächen kommen erst ganz am Ende.** Bis dahin einfache Platzhalter verwenden und keine mehrfachen Oberflächen- oder Fahrzeugtests erzwingen. Quellcode bei künftigen Änderungen vollständig **direkt im Chat**, Dateien nur auf ausdrücklichen Wunsch. GitHub-Dokumentationsänderungen sind kein automatischer Upload lokaler Unity-Skripte.
+
+
+
+**Stand:** 12.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
