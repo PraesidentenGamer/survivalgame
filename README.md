@@ -1,6 +1,18 @@
-# Survival Game
+# Remnants of Tomorrow (RoT)
 
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
+
+## Update 11.10.2026 – Fahrzeugreise und Tanksystem (in Unity getestet)
+
+**Remnants of Tomorrow befindet sich weiter in der Entwicklung.** Die letzten Tests mit Unity 2017.2.5f1 haben den Jeep-Prototyp, die Fahrzeugreise und das Tanksystem deutlich vorangebracht:
+
+- **Weltkartenreisen:** 30 permanente Gebietsmarker und ein vorläufiges Netz aus 40 Verbindungen; der Jeep fährt entlang berechneter Routenknoten. Die Fahrt zum Hafen, Ankunft mit Fahrzeug und erneutes Verlassen des Gebiets wurden getestet. Wasserwege zur Insel sind für den Jeep gesperrt.
+- **Treibstoff:** Jeep-Tank mit 180 Punkten; 8 Punkte je angefangenem Fahrzeitblock von 150 Sekunden *aktiver* Fahrt. Beim Stillstand bleibt die bereits bezahlte Zeit erhalten; ohne ausreichenden Treibstoff und ohne Restfahrzeit ist kein weiterer Antrieb möglich.
+- **Tankstellen:** Zwei getrennte Vorräte für Hauptbasis und Siedlung (je 50.000 Punkte normal, 50.100 absolut). Manuelles Nachfüllen aus dem lokalen Vorrat sowie automatisches Betanken eines geparkten Jeeps wurden erfolgreich geprüft.
+- **Mindestreserve:** Automatische Entnahme respektiert die geschützte Reserve; die Freigabe einer manuellen Entnahme unter die Reserve wurde im isolierten Test erfolgreich geprüft.
+- **Spielstände:** `.rotsave` speichert Jeep-Tank, bezahlte Restfahrzeit, Tankstellenvorräte, Mindestreserven und die getrennten Ein-/Aus-Einstellungen der Automatik. F5, F11 und die Wiederherstellung nach Neustart des Unity-Play-Modus wurden geprüft.
+
+**Abgrenzung:** Dies sind getestete **Prototypfunktionen**, keine fertige Fahrzeug-/Tankstellenimplementierung für alle acht Fahrzeuge. Die Fahrstrecken verbinden vorerst Gebietsmarker geradlinig; exakte Straßen- und Brückenverläufe, Betankung aus Fahrzeuglagern, Inventar-/Item-Anbindung, fertige Tankstellen-GUIs und Grafik fehlen noch. Die Spielstände sind zurzeit **nicht verschlüsselt**; AES-256 mit Integritätsschutz ist vorgesehen. Der Quellcode dieses lokalen Unity-Prototyps wird durch die Dokumentationsaktualisierung nicht automatisch auf GitHub veröffentlicht.
 
 ## Aktueller Stand
 
@@ -12,7 +24,7 @@ Den ausführlichen Entwicklungsstand findest du hier:
 
 ## Aktueller Schwerpunkt
 
-Der kurzfristige Schwerpunkt liegt auf der **Ausgabe des ersten externen Testbuilds**. Der Windows-Build ist grundsätzlich möglich; aktuell wird noch die sichere Mitlieferung der externen Datenbanken über `StreamingAssets` abgeschlossen.
+Aktuell steht die **schrittweise Fertigstellung der Spielsysteme** im Vordergrund, insbesondere der datenbankgesteuerten Fahrzeug- und Tankstellenmechanik. Der endgültige Build-/Installertest folgt erst in der Abschlussphase.
 
 Aktuelle Datenrichtung:
 
@@ -113,21 +125,16 @@ Die Spielererkennung wurde korrigiert:
 
 Dadurch funktioniert der Exit mit allen `Prefab_Player`-Instanzen und zentral auf allen Standardmaps, die `Prefab_MapBoundsAndExits` verwenden.
 
-## Nächster Entwicklungsblock
+## Nächster Entwicklungsblock (ab 11.10.2026)
 
-### Bis zum ersten Tester-Build
-1. Datenbanken über `StreamingAssets/database` vollständig mitliefern
-2. Windows-x86_64-Build neu erzeugen
-3. Start und Datenbankzugriff kurz prüfen
-4. Build-Ordner zusammen mit der Tester-Prüfliste verteilen
+1. **Fahrzeuglager-Treibstoffquelle vorbereiten:** pro Fahrzeug ausdrücklich freigebbar; bei Abwesenheit des Spielers nur lokaler Tankstellenvorrat und gegebenenfalls freigegebenes Fahrzeuglager, niemals das Spielerinventar.
+2. **Weltkarten-Fahrten abrechnen:** die Fahrzeit bzw. die zurückgelegte Route korrekt in den Tankverbrauch einbeziehen, ohne die bewährte Verbrauchslogik zu verändern.
+3. **Tankstellenregeln vervollständigen:** Standort-/Näheprüfung, weitere Fahrzeuge, Vorratswarnstufen, konfigurierbare Schwellenwerte und Weltkartenanzeige.
+4. **Spielstandschutz:** AES-256-CBC und HMAC-SHA256 unter Unity 2017.2.5f1 getrennt testen und erst danach in `.rotsave` integrieren; bestehende Spielstände dürfen nicht verloren gehen.
+5. **Weitere Pflichtsysteme:** Events, Gegner, Loot, Crafting, Basisbau, Story, Skills, Begleiter und alle übrigen Kernmechaniken schrittweise integrieren.
+6. **Abschlussphase:** Gegenstände aus der Item-Datenbank, Modelle, Grafik, Audio sowie GUIs anbinden bzw. nur dort überarbeiten, wo es nötig ist. Vollständiger Kompatibilitäts-/Installertest erst zum Abschluss; Windows 7 SP1 ist verbindlich, Windows XP SP3 ist ein optionaler zusätzlicher Härtetest.
 
-### Danach
-1. Event-Testdaten aus `EventMapTest.cs` herauslösen
-2. `events.json.db` an den Eventmanager anbinden
-3. Event-ID, Größe, Dauer, Loot, Gegner, Ressourcen und Layout aus DB laden
-4. Eventzustand in Save/Load integrieren
-5. danach Gegner-, Loot- und Ressourcen-Spawns vollständig anbinden
-6. anschließend die offenen Pflichtsysteme aus [FORTSCHRITT.md](FORTSCHRITT.md) schließen
+Die bisherigen Schätzungen des ersten Testbuilds sind ältere Planungswerte, **keine** aktuelle Aussage, das fertige Spiel sei nahezu abgeschlossen. Neue Windows-Builds und Installer werden nicht allein wegen dieses Dokumentationsupdates erstellt.
 
 ## Ziel „vollständig spielbar“
 
