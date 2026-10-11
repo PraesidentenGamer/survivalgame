@@ -1,12 +1,12 @@
 # Projektfortschritt
 
-**Stand:** 10.10.2026
+**Stand:** 11.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
 ## Aktueller Schwerpunkt
 
-**Ersten externen Testbuild fertigstellen und danach die noch fehlenden Kern-, Inhalts- und Produktionssysteme bis zum endgültigen Spiel schließen.**
+**Weiterentwicklung der Fahrzeug- und Tankstellensysteme nach den erfolgreichen Jeep-Tests; danach weitere Pflichtmechaniken.** Der vollständige Windows-Build-/Installertest wird für die Abschlussphase zurückgestellt.
 
 Aktuelle Architektur:
 ```text
@@ -22,6 +22,47 @@ Grundregel:
 - keine doppelte Pflege derselben Daten in C# und DB
 - C# führt Logik aus; Inhalte und Balance werden möglichst datengetrieben
 - bestehende funktionierende UI-/Prefab-/Inspector-Strukturen bleiben kompatibel
+
+## Bestätigter Entwicklungsfortschritt vom 11.10.2026
+
+### Fahrzeug- und Weltkartenreisen – getestet
+
+- `vehicles.json.db`: acht Fahrzeugdatensätze vorbereitet; **der Jeep** wurde tatsächlich im Unity-Editor gefahren und getestet. Die übrigen Fahrzeuge sind noch nicht vollständig implementiert.
+- `worldmap_routes.json.db`: 30 feste Routenknoten und 40 Verbindungen als erste, noch zu verfeinernde Geländegraph-Version.
+- Die Fahrzeugreise prüft erlaubtes Gelände anhand der Datenbank (`terrainSupport`); Jeep-Fahrt zur Insel über Wasser wird abgelehnt, zum Hafen ist sie erlaubt.
+- Das Reisesymbol folgt einer berechneten Folge von Markern statt der direkten Luftlinie zwischen Start und Ziel. Die Teilstrecken zwischen den Markern sind weiterhin gerade und müssen später an Straßen/Brücken angepasst werden.
+- Fahrt zur Weltkarte, berechnete Route zum Hafen, Fahrzeugankunft mit Spieler im Jeep sowie erneutes Verlassen des Zielgebiets wurden im Prototyp bestätigt.
+
+### Jeep-Treibstoff und Tankstellen – getestet
+
+- Jeep-Tankkapazität **180 Punkte** und Verbrauch **8 Punkte** pro angefangenem Fahrzeitblock aus der Fahrzeugdatenbank; ein Block entspricht **150 Sekunden aktiver Fahrt**. Bereits bezahlte Restfahrzeit pausiert beim Stillstand; leerer Tank ohne Restzeit sperrt den Antrieb.
+- Der separate Testtank und die bezahlte Restfahrzeit sind über `VehicleFuelRuntime` in `.rotsave` integrierbar und mit F5/F11 sowie nach einem Play-Modus-Neustart wiederhergestellt worden.
+- Zwei voneinander unabhängige Tankstellen: **Hauptbasis** und **Siedlung**, jeweils **50.000** Punkte Normalvorrat und **50.100** Punkte absolute Obergrenze.
+- Manuelle Entnahme aus dem lokalen Vorrat und Auffüllen des Jeep-Tanks wurden erfolgreich geprüft; die Tankstelle verliert nur die tatsächlich eingefüllten Punkte.
+- Mindestreserven wurden erfolgreich getestet: automatische Entnahmen greifen nicht darauf zu; manuelle Entnahme unter die Grenze ist nur mit ausdrücklicher Freigabe möglich.
+- Die Tankautomatik füllt im jetzigen Test alle **3 Sekunden bis zu 20 Punkte** in den stehenden Jeep nach. Sie ist standardmäßig **AUS** und verwendet bislang ausschließlich den lokalen Tankstellenvorrat.
+- `.rotsave` (Save-Struktur **Version 6**) speichert Tankstellenvorräte, Mindestreserven und die getrennten Automatik-Einstellungen. Das Wiedereinlesen nach F11 und nach vollständigem Neustart des Play-Modus wurde bestätigt. Der Fehler durch die zuvor noch verwendete `SaveSystem.cs`-Version 5 wurde durch die aktualisierte Version behoben.
+
+### Bekannte Grenzen / noch nicht umgesetzt
+
+- Nur der Jeep-Prototyp ist in diesem Abschnitt fahrbereit getestet; keine Aussage über funktionierende Fahrt, Ankunft oder Tankautomatik aller acht Fahrzeuge.
+- Keine echten Zapfsäulen-/Distanzprüfungen, keine Tankstellenoberflächen, keine Inventar-/Kraftstoffitem-Transaktionen und keine Betankung aus Fahrzeuglagern.
+- Keine automatische Fahrzeugbetankung in **nicht geladenen Gebieten**; keine eigene Tankstellenproduktion. Kraftstoffherstellung ist als vorgelagerte Verarbeitung in den Rezeptdaten vorgesehen.
+- Die Zeit einer Weltkarten-Fahrzeugreise wird noch nicht zuverlässig auf den bezahlten Treibstoffblock angerechnet.
+- `.rotsave` ist derzeit JSON ohne Verschlüsselung/Manipulationsschutz; AES-256-CBC + HMAC-SHA256 bleibt ein geplanter Entwicklungsschritt.
+- Die in den alten Dokumentabschnitten genannten Testbuild-Schätzwerte beschreiben frühere Planungsstände und sind keine aktuellen Abschlussquoten.
+
+### Priorisierter nächster Arbeitsabschnitt
+
+1. Optionale Nutzung des **Fahrzeuglagers** als eigene Treibstoffquelle vorbereiten: ausschließlich nach expliziter Freigabe pro Fahrzeug; bei Spielerabwesenheit niemals auf den Rucksack zugreifen.
+2. Treibstoff-/Fahrzeitberechnung der **Weltkarten-Fahrzeugreisen** ergänzen und testen.
+3. Lokale Tankstellen-/Abstandsregeln, weitere Fahrzeugtypen und Vorratswarnungen ausbauen; per Spielstand konfigurierbar.
+4. Save-Verschlüsselung mit Integritätsprüfung zunächst separat erproben, danach verlustfreie Migration der bestehenden Spielstände.
+5. Anschließend zu den weiteren Kernmechaniken (Events, Gegner, Loot, Produktion, Basisbau, Story, NPCs) übergehen. Grafiken, endgültige Items und GUI-Gestaltung folgen später; bereits gute, schlichte GUIs werden nicht unnötig ersetzt.
+
+**Teststrategie:** Vollständige Build-, Installer- und Kompatibilitätsprüfungen am Ende der Spielentwicklung; Windows 7 SP1 ist verbindlich vorgesehen, Windows XP SP3 optional als zusätzlicher Härtetest.
+
+---
 
 ## Geschätzter Gesamtfortschritt
 
