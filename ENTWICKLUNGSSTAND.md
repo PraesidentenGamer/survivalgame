@@ -1,10 +1,12 @@
 # Entwicklungsstand
 
-**Stand:** 10.10.2026
+**Stand:** 11.10.2026
 
 ## Aktuelle Entwicklungsphase
 
-Die grundlegende Planung der Pflichtsysteme ist weit fortgeschritten. Der aktuelle kurzfristige Schwerpunkt liegt auf dem **ersten externen Testbuild**; parallel bleiben die datengetriebene Weltkarte, Gebietssysteme und die dynamische EventMap die technische Basis.
+Im Unity-Editor **2017.2.5f1** wurde der Jeep-Prototyp einschließlich Weltkartenreisen, der Treibstoffabrechnung während aktiver Fahrt, lokaler Tankstellen, Mindestreserveschutz und automatischer Betankung erfolgreich getestet. Die Ein-/Aus-Einstellungen der Hauptbasis und Siedlung bleiben nach F5/F11 und vollständigem Neustart des Play-Modus erhalten.
+
+Aktuell werden die Funktionen schrittweise vervollständigt; endgültige Grafiken, Gegenstände, GUIs sowie komplette Windows-Build- und Installertests folgen erst in einer späteren Abschlussphase.
 
 Die maßgebliche Datenrichtung lautet:
 
@@ -21,12 +23,59 @@ Grundregel:
 - C# bleibt Logikschicht
 - Inhalte und Balance wandern schrittweise in die Datenbanken
 
+## Praxisstand 11.10.2026 – Weltkarten-Fahrzeuge und Tankstellen
+
+### Tatsächlich mit Unity 2017.2.5f1 getestet
+
+- **Jeep-Fahrt und Weltkarte:** Der Jeep erreicht den Kartenrand, kann explizit für die Weltkartenreise gewählt werden, reist zu einem erlaubten Ziel und erscheint dort wieder mit dem Spieler an Bord. Die Weiterfahrt im Hafen und das erneute Verlassen des Gebiets funktionieren.
+- **Geländeregeln:** `worldmap_routes.json.db` verwendet 30 Routenknoten und 40 ungerichtete Verbindungen. Der Jeep darf den Hafen anfahren, aber nicht die durch Wasser getrennte Insel. Erlaubte Terrainklassen werden pro Fahrzeug aus `vehicles.json.db` abgefragt.
+- **Reisevisualisierung:** Das Reisesymbol folgt der berechneten Folge von Knoten (im Test: Basis → Siedlung → Stadtruinen → Bunker B → Hafen). Teilstrecken bleiben aktuell einfache Geraden; fein aufgelöste Wegepunkte für Straßen und Brücken fehlen.
+- **Verbrauch:** Jeep-Tank **180 Punkte**, **8 Punkte** Vorauszahlung pro angefangenem **150-Sekunden-Block aktiver Fahrt**. Stillstand, Ausrollen und Pausen verbrauchen keine bezahlte Fahrzeit. Ohne verfügbare Punkte und ohne bezahlte Restzeit ist kein weiterer Antrieb möglich.
+- **Manuelle Testbetankung:** Der lokale Vorrat der Hauptbasis konnte erfolgreich in den Jeep übertragen werden; nicht benötigte Punkte werden nicht entnommen. Ein separater kostenloser Editor-Testbefehl dient ausschließlich der Entwicklung.
+- **Automatische Betankung:** Im geladenen Basis-/Siedlungsgebiet wird ein stillstehender Jeep bei freigegebener Automatik alle drei Sekunden mit höchstens 20 Punkten pro Durchgang aus dem jeweiligen lokalen Vorrat betankt. Zu Beginn eines neuen Spiels ist die Funktion ausgeschaltet.
+- **Getrennte Tankstellen:** Hauptbasis und Siedlung besitzen je einen unabhängigen Vorrat (normal 50.000, absolut 50.100 Punkte). Mindestreservetests erfolgreich: automatisch niemals die Reserve verbrauchen; manuell nur nach ausdrücklich erteilter Freigabe.
+- **Speichern/Laden:** Save-Datenstruktur Version **6**; `.rotsave` enthält Jeep-Testtank, bereits bezahlte Restfahrzeit, beide Tankstellenvorräte samt Mindestreserve sowie separat aktivierbare Automatik. F5/F11 und Neustart des Unity-Play-Modus wurden getestet. Ein fehlender Speicher-/Ladeanschluss in der zunächst verwendeten `SaveSystem.cs` wurde anschließend korrigiert.
+
+### Architektur und noch offene Verbindungen
+
+```text
+vehicles.json.db                 worldmap_routes.json.db
+       |                                  |
+VehicleDatabaseLoader             Fahrzeug-Routenpruefung
+       |                                  |
+Jeep-Teststeuerung / FuelRuntime     WorldMapTravel
+       |                                  |
+       +---------- SaveSystem ------------+
+                      |
+        .rotsave (primaer) / .sgsave (Reserve)
+                      |
+             FuelStationManager
+                      |
+         VehicleAutoRefuelManager
+```
+
+Die acht Fahrzeugdefinitionen bilden weiterhin zunächst die Datenbasis; die Fahr- und Betankungstests betreffen den **Jeep**, nicht alle acht Fahrzeugtypen. Die Treibstoffquellen aus dem Fahrzeuglager (ausdrückliche Einzelfreigabe), die vollständige Zuordnung von Items/Kraftstoff, räumliche Tankstellenprüfungen, fernab des Spielers entladene Szenen, Weltkarten-Fahrtverbrauch sowie Warn- und GUI-Funktionen sind **noch offen**. Das Spielerinventar darf bei Abwesenheit nicht für eine automatische Betankung verwendet werden.
+
+**Spielstandschutz:** Zurzeit enthält die `.rotsave` noch unverschlüsseltes JSON; AES-256-CBC mit HMAC-SHA256 ist vorgesehen, aber **noch nicht integriert**. Der Kryptografietest erfolgt getrennt, bevor vorhandene Spielstände umgestellt werden.
+
+**Grafik- und Build-Phase:** Zunächst funktionieren die Spielsysteme technisch; finale Items, Modelle und optische Überarbeitungen folgen später. Bereits passende, schlichte GUIs bleiben erhalten. Windows 7 SP1 wird zwingend unterstützt werden müssen; Windows XP SP3 wird am Ende optional als Härtetest geprüft. Keine Behauptung einer bereits getesteten Fertigfassung.
+
+### Geplante nächste Schritte
+
+1. Fahrzeuglager als **optionale, einzeln freigegebene** Treibstoffquelle vorbereiten (ohne Zugriff auf den abwesenden Spieler-Rucksack).
+2. Fahrtdauer/Verbrauch auf der Weltkarte nachvollziehbar abrechnen.
+3. Stationäre Tankstellen-Regeln, Vorratswarnungen, Weltkartenanzeige und weitere Fahrzeugtypen schrittweise ergänzen.
+4. Kryptografischen Spielstandschutz separat testen und später sicher in den bestehenden Save-Ablauf integrieren.
+5. Danach die übrigen Kernmechaniken und schließlich Spielinhalte, Grafik, Audio, GUIs und Abschlusstests umsetzen.
+
+---
+
 ## Architektur
 
 **C# = Logik und Systeme**  
 **`.json.db` = strukturierte Spielinhalte und Balance im Ordner `database`**  
 **JSON = Einstellungen/Config**  
-**.sgsave = Spielstand**
+**`.rotsave` = primärer Spielstand**, **`.sgsave` = Reserve**
 
 
 ## Hauptmenü und globales Pause-System
