@@ -1,5 +1,13 @@
 # Entwicklungsstand
 
+## Aktualisierung 13.10.2026 – Basis-Horden: bestätigte Unity-Tests
+
+**Bestätigt in Unity 2017.2.5f1:** Getrennter Hordenspawner, zufällige Stufe und Angriffsrichtung, vollständig erzeugte Testgruppen mit 10 bzw. 25 Gegnern, korrekt sinkender Restgegnerzähler, Angriffsabschluss bei 0 und sofortiger Abbruch mit Entfernen übriger Gegner beim Spielertod. Normale Gebietsspawns und das allgemeine Zombie-Prefab wurden nicht verändert.
+
+**Speichern und Laden (F5/F11):** Vollständige und teilweise besiegte Horden wurden anhand der aktiven Gegneranzahl korrekt wiederhergestellt: **10 → 8 (gespeichert) → 5 → 8 (geladen)**. Die lokale Spielstandstruktur steht nun bei **Version 9**, weiterhin mit `.rotsave`, `.sgsave` und der vorhandenen AES-256-CBC-/HMAC-SHA256-Verarbeitung.
+
+**Noch offen bzw. nicht gesondert überprüft:** Restleben und Positionen einzelner Gegner nach dem Laden, Wiederherstellung über Szenenwechsel, automatische Zeit-/Warnabläufe, Interaktion mit gebauten Fenstern/Türen/Wänden und die endgültigen Gegnerklassen. Kein Fertigstellungsnachweis des gesamten Basisbaus.
+
 ## Aktualisierung 12.10.2026 – bestätigte Jeep-Tests und nächste technische Arbeiten
 
 **Tatsächlich am Test-Jeep in Unity 2017.2.5f1 bestätigt:** Kollisionsschaden wird als Haltbarkeitsverlust berechnet; `VehicleStatusHUD.cs` aktualisiert die Jeep-Haltbarkeit korrekt (beispielsweise 266/300); bei maximal 10 % Haltbarkeit ist der Jeep fahruntüchtig; die kostenlose Testreparatur stellt Haltbarkeit wieder her; beschädigte Haltbarkeit bleibt nach **F5/F11 und vollständigem Neustart** erhalten. Dies sind Tests am Jeep, **nicht** an den sieben anderen Fahrzeugtypen.
@@ -24,7 +32,7 @@
 
 
 
-**Stand:** 12.10.2026
+**Stand:** 13.10.2026
 
 ## Aktuelle Entwicklungsphase
 
