@@ -1,5 +1,13 @@
 # Projektfortschritt
 
+## Aktualisierung 13.10.2026 – Basis-Horden: bestätigte Funktionstests
+
+**Geprüft in Unity 2017.2.5f1:** Eigenständiger Basis-Hordenspawner mit zufälliger Hordenstufe und Richtung. Testhorden mit 10 beziehungsweise 25 Gegnern wurden vollständig erzeugt. Der Restgegnerzähler reagiert auf Abschüsse; das Ende einer besiegten Horde sowie der sofortige Abbruch und das Entfernen verbleibender Gegner bei Spielertod wurden bestätigt. Die normalen Gebietsspawns bleiben unabhängig.
+
+**F5/F11 bestanden:** Die aktive Gegnerzahl einer vollständigen Horde und der Speicherstand einer teilweise besiegten Horde wurden wiederhergestellt. Beispiel: **10 → 8 (F5) → 5 → 8 (F11)**. Lokale Spielstandstruktur **Version 9**; bestehende AES-256-CBC-/HMAC-SHA256-Verarbeitung und die `.rotsave`-/`.sgsave`-Dateien bleiben erhalten.
+
+**Offene Arbeiten:** Prüfung einzelner Gegnerpositionen und Lebenspunkte, Szenenwechsel mit laufender Horde, regulärer Zeit- und Warnablauf, endgültige Gegnerklassen sowie das Angreifen echter Basisbauteile. Der bestätigte Testumfang ist keine fertige Gesamtimplementierung.
+
 ## Aktualisierung 12.10.2026 – bestätigte Jeep-Tests und nächste technische Arbeiten
 
 **Tatsächlich am Test-Jeep in Unity 2017.2.5f1 bestätigt:** Kollisionsschaden wird als Haltbarkeitsverlust berechnet; `VehicleStatusHUD.cs` aktualisiert die Jeep-Haltbarkeit korrekt (beispielsweise 266/300); bei maximal 10 % Haltbarkeit ist der Jeep fahruntüchtig; die kostenlose Testreparatur stellt Haltbarkeit wieder her; beschädigte Haltbarkeit bleibt nach **F5/F11 und vollständigem Neustart** erhalten. Dies sind Tests am Jeep, **nicht** an den sieben anderen Fahrzeugtypen.
@@ -24,7 +32,7 @@
 
 
 
-**Stand:** 12.10.2026
+**Stand:** 13.10.2026
 
 Diese Datei ist die kompakte Arbeitsübersicht für den aktuellen Projektstand. Sie trennt bestätigte/fertige Systeme von offenen Pflichtpunkten für eine vollständig spielbare Fassung.
 
