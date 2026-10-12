@@ -1,5 +1,5 @@
 Remnants of Tomorrow – Spielerbasis und Horden – Planungsstand
-Stand: 09.10.2026
+Stand: 13.10.2026 (Spielregeln vom 09.10.; Testergebnisse vom 13.10.2026)
 
 Diese Datei fasst die aktuell bestätigten Regeln für Spielerbasis, Basisbau, Energieversorgung, Basisobjekte und Horden zusammen. Spätere ausdrücklich bestätigte Entscheidungen ersetzen ältere Vorschläge.
 
@@ -260,4 +260,35 @@ Noch zu planen bzw. zu finalisieren:
 - Anzeige der zufällig gewählten Hordenstufe vor oder erst beim Angriff
 - genaue Reparaturbedienung im UI
 - Datenbankstruktur für Baustufen, HP, Kosten und Hordenregeln
-- Save/Load der laufenden Horden- und Basiszustände
+- Weitere Save/Load-Prüfungen für einzelne Gegner- und Basiszustände; die verbleibende Horden-Gegneranzahl wird bereits erfolgreich gespeichert und geladen
+
+============================================================
+12. TECHNISCHER TESTSTAND – 13.10.2026
+============================================================
+
+Diese Ergebnisse betreffen einen lokalen Unity-2017.2.5f1-Prototyp.
+Die obigen verbindlichen Spielregeln bleiben unverändert.
+
+Erfolgreich getestet:
+- Separater Basis-Hordenspawn, ohne Änderung normaler Gebietsspawns.
+- Zufällige Hordenstufe und Angriffsrichtung; Testgruppen mit
+  10 beziehungsweise 25 Gegnern vollständig erzeugt.
+- Besiegte Gegner reduzieren die verbleibende Gegneranzahl.
+- Nach dem letzten Abschuss endet die Horde und wird entfernt.
+- Der Spielertod während einer aktiven Horde beendet den Angriff
+  sofort und entfernt verbliebene Hordengegner.
+- F5/F11 stellen die zum Speicherzeitpunkt noch vorhandene
+  Gegneranzahl korrekt wieder her; Test: 10 -> 8 (F5)
+  -> 5 -> 8 (F11).
+- Die lokale Spielstandstruktur verwendet nun Version 9.
+  Vorhandene Verschlüsselung und Reservedatei bleiben bestehen.
+
+Noch offen beziehungsweise nicht gesondert getestet:
+- Individuelle Gegner-Lebenspunkte und Positionen nach Laden.
+- Laden eines aktiven Angriffs über Szenenwechsel.
+- Automatischer 24-Ingame-Stunden-Ablauf samt Warnung.
+- Angriffe auf tatsächlich gebaute Fenster/Türen/Wände.
+- Endgültige Gegnerklassen und Schadenswerte.
+
+Die aktuellen Basisgrenzen im Spawner sind vorläufige Testwerte.
+Es wurden dafür keine Basisgebäude errichtet.
