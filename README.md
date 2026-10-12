@@ -2,6 +2,16 @@
 
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
 
+## Update 13.10.2026 – Basis-Horden: Angriffe und Spielstandtests
+
+**Lokal in Unity 2017.2.5f1 bestätigt:** Ein eigenständiges Basis-Hordensystem erzeugt Gegnergruppen mit zufälliger Hordenstufe und Angriffsrichtung. Die festgelegten Gruppengrößen sind 10, 25 oder 50 Gegner; Testdurchläufe mit 10 und 25 Gegnern funktionierten. Abschüsse verringern den Restzähler; nach dem letzten Abschuss endet der Angriff. Stirbt der Spieler während einer Horde, wird diese sofort beendet und ihre übrigen Gegner werden entfernt. Das normale Gebietsspawnsystem bleibt getrennt.
+
+**F5/F11 bestätigt:** Sowohl eine vollständige Horde als auch der Restbestand einer teilweise besiegten Horde wurden wiederhergestellt. Konkreter Test: **10 → 8 (F5) → 5 → 8 (F11)**. Die lokale Spielstandstruktur ist inzwischen **Version 9**; die vorhandene `.rotsave`-/`.sgsave`-Verarbeitung mit **AES-256-CBC und HMAC-SHA256** bleibt bestehen.
+
+**Abgrenzung:** Die exakte Wiederherstellung individueller Gegner-Lebenspunkte und -Positionen, Szenenwechsel während aktiver Angriffe, die automatische Zeitsteuerung mit Warnung und Angriffe auf echte Basisbauteile sind noch nicht separat getestet. Unterschiedliche Gegnerklassen und Bauschaden sind noch nicht fertig integriert. Die Ergebnisse belegen einen getesteten Prototyp, kein vollständig abgeschlossenes Basis-/Hordensystem.
+
+Dieses GitHub-Update dokumentiert den lokalen Entwicklungsstand; es veröffentlicht keine lokalen Unity-C#-Dateien.
+
 ## Update 12.10.2026 – Test-Jeep: Fahrzeugschaden, Reparatur und verschlüsselter Spielstand
 
 **Bestätigte Unity-Tests (2017.2.5f1), ausschließlich am vorhandenen Test-Jeep:**
