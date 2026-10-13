@@ -1,5 +1,31 @@
 # Projektfortschritt
 
+## Aktualisierung 14.10.2026 – Offene Hauptspielarbeiten und Eventsystem
+
+**Aktuelle Einordnung:** Das Hauptspiel ist weiterhin in Entwicklung. Einzelne Unity-Prototypen (Weltkarte/Gebiete, Test-Jeep und Treibstoff/Tankstellen, geschützte Spielstände, Basis-Horden) sind überprüft; daraus folgt **noch kein abgeschlossener Gesamt-Gameplay-Ablauf**. Der nächste zusammenhängende Funktionsnachweis soll die Strecke **Hauptbasis → grüner Kiefernwald → Ressourcen und Kampf → Rückkehr → Herstellung/Basisbau → Speichern/Laden** umfassen.
+
+| Bereich | Nach jetzigem Kenntnisstand noch offen |
+|---|---|
+| Progression | XP-Vergabe, Levelaufstiege, Forschung, Level- und Storyfreischaltungen vollständig integrieren |
+| Gegenstände und Gebiete | Inventar, Stacks, Rucksäcke, Lager, Ausrüstung, Ressourcenabbau, Loot und Spawnverteilung verknüpfen |
+| Crafting und Bau | Werkbänke, Rezepte, Produktionszeiten, Rasterbau, Upgrades und Abriss spielfähig machen |
+| Kampf und Survival | Gegner-/Kampfsystem, Hunger/Durst, Kälte, Strahlung und Infektion vervollständigen |
+| Basis-Horden | Automatischer 24-Ingame-Stunden-Rhythmus, 2-Stunden-Warnung, Bauschaden und offene Save-/Load-Fälle |
+| Reisen und Fahrzeuge | Gebiets-/Storyfreischaltungen, Reise- und Tanklogik, restliche Fahrzeugtypen und Reparaturabläufe integrieren |
+| Langfristige Inhalte | Quest-/Storysystem, zweite Basis, Siedlung, Begleiter, weitere Regionen, Bunker und besondere Events |
+| Spielstände | Neue Spielsysteme vollständig in `.rotsave` übernehmen und Wiederherstellung gezielt testen |
+
+**Eventsystem ist ein eigenständiger noch unvollständiger Pflichtbereich.**
+- **Vorhanden/getestet:** skalierbare gemeinsame `EventMap`, drei temporäre Testgebiete, dynamische Weltkartenmarker mit stabiler Position.
+- **Datenbasis:** `events.json.db` mit **7 Einträgen**; bekannte Grundregeln für Flugzeugabsturz, „Gleich eins aufs Maul“ und Basis-Horde, vier weitere Kalender-/Saisonideen noch offen.
+- **Noch zu definieren:** vollständiger Eventkatalog, Kategorien, Auslösebedingungen und Zufallsregeln, Häufigkeit, Zeitlimits, Ziele, Gegner, Belohnungen, Schwierigkeit, Wiederholung und gleichzeitige Ereignisse.
+- **Noch umzusetzen/zu testen:** Datenbank-Loader/Manager, Event-ID und Inhalte in der gemeinsamen `EventMap`, Eventmarker und Fortschritt, Ende während Aufenthalt, Pause/Offline, Spielertod sowie Speichern/Laden aller Eventzustände.
+- **Schon geplant:** kurzlebige Mini-Eventflächen (Richtwert 30 × 30 Meter; zum Beispiel eine Stunde), hochwertige Beute beim Flugzeugabsturz, eigenständige Eventkennfarbe. Details werden erst im vollständigen Evententwurf verbindlich abgeschlossen.
+
+**Reihenfolge verbindlich:** Zuerst die Logik und sämtliche Gameplay-Systeme, dann technische Integration und Tests. **Audio, endgültige Modelle, Grafik, Texturen, Animationen, Effekte und grafische Verfeinerung erst ganz zum Schluss.** Bereits getestete Skripte und Prototypen nur bei echtem Änderungsbedarf anfassen. Frühere provisorische Arbeitsprioritäten bleiben als historische Einträge erhalten.
+
+**Stand:** 14.10.2026 – aktualisierte Dokumentation, ohne neue Unity-Testergebnisse.
+
 ## Aktualisierung 13.10.2026 – Basis-Horden: bestätigte Funktionstests
 
 **Geprüft in Unity 2017.2.5f1:** Eigenständiger Basis-Hordenspawner mit zufälliger Hordenstufe und Richtung. Testhorden mit 10 beziehungsweise 25 Gegnern wurden vollständig erzeugt. Der Restgegnerzähler reagiert auf Abschüsse; das Ende einer besiegten Horde sowie der sofortige Abbruch und das Entfernen verbleibender Gegner bei Spielertod wurden bestätigt. Die normalen Gebietsspawns bleiben unabhängig.
