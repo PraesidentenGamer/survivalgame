@@ -1,5 +1,35 @@
 # Entwicklungsstand
 
+## Aktualisierung 14.10.2026 – Hauptspiel und vollständige Eventplanung
+
+**Einordnung:** Das Hauptspiel ist technisch noch nicht abgeschlossen. Bestätigt sind einzelne Prototypen und konkrete Tests, insbesondere die Weltkarten-/Jeep-/Tankstellenfunktionen, die verschlüsselte `.rotsave`-Verarbeitung und die jüngsten Basis-Hordentests. Die tatsächliche durchgängige Spielschleife **Basis → Kiefernwald → Sammeln/Kampf → Rückkehr → Crafting/Bauen → Speichern/Laden** bleibt ein noch zu bestätigendes Integrationsziel. Vorhandene Datensätze oder vorbereitete Skripte sind nicht mit einer fertig getesteten Funktion gleichzusetzen.
+
+**Offene Hauptsysteme (technisch):**
+- Spieler-XP, Level, Forschung und Freischaltungen vollständig verbinden.
+- Inventar/Stacks, Rucksäcke, Ausrüstung, Lager und Gegenstandsdaten aufeinander abstimmen.
+- Gebietsspawns, Abbau von Holz/Stein/Erzen, Loot und Gegnerverhalten zu einem funktionierenden Ressourcenkreislauf verbinden.
+- Werkbänke, Rezepte, Materialkosten, Produktionszeiten und rasterbasierten Basisbau einschließlich Upgrades, Abriss und späteren Hordenschäden realisieren.
+- Kampf, Spielerzustände (Hunger, Durst, Kälte, Strahlung, Infektion), Weltkartenreisen und Freischaltungen vollständig integrieren.
+- Quests, Story, weitere Gebiete, Siedlung, Begleiter und verbleibende Fahrzeug-/Tankstellenfunktionen schrittweise realisieren.
+- Neu angebundene Systeme vollständig in den geschützten Spielstand übernehmen und anhand echter Lade-/Neustarttests überprüfen.
+
+**Eventsystem – bestätigter technischer Unterbau:** Eine gemeinsame skalierbare `EventMap` wurde mit drei verschieden großen temporären Testgebieten erfolgreich ausprobiert; dynamische Marker besitzen pro Ereignis eine feste Weltkartenposition. In `events.json.db` existieren derzeit **7 Ereigniseinträge**. Für **Flugzeugabsturz**, **„Gleich eins aufs Maul“** und **Basis-Horde** sind Grundregeln bekannt; die übrigen vier Kalender-/Saisonideen sind noch nicht abschließend definiert.
+
+**Eventsystem – vor einer Fertigstellung ausdrücklich noch festzulegen und zu entwickeln:**
+1. Eventkategorien und pro Event eindeutige Daten/IDs; Auslösung durch Zufall, Spielzeit, Level, Story oder andere Bedingungen.
+2. Häufigkeit, parallele aktive Events, Wiederholbarkeit, Sperrzeiten, Laufzeit und Ablaufregeln.
+3. Aufgaben, Gegner, Zielbedingungen, Scheitern/Erfolg, Schwierigkeit sowie Loot-/XP-/Sonderbelohnungen.
+4. Eventzustände auf Weltkarte und `EventMap`, Eventmarker und eigene Kennfarbe unabhängig von normalen Gebiets-Schwierigkeitsmarkern.
+5. Verhalten während Pause, Spielende/Offline-Zeit, Gebietswechsel, Aufenthalt in einem abgelaufenen Event und Spielertod.
+6. Speicherung von Event-ID, Position, Restlaufzeit, Fortschritt und Belohnungsstatus in `.rotsave` samt sicherer Wiederherstellung.
+7. `events.json.db` an Loader/Manager anbinden und die bislang verwendeten Testdaten durch die echte Ereignissteuerung ersetzen.
+
+**Bereits festgelegte Eventgrundregeln bleiben erhalten:** Kleine, zeitweise verfügbare Mini-Eventgebiete können etwa 30 × 30 Meter umfassen und beispielsweise ungefähr eine Stunde auf der Weltkarte erscheinen. Flugzeugabstürze können hochwertige Beute bieten. Das Nahkampf-Event „Gleich eins aufs Maul“ wird später im Detail definiert. Eventgebiete behalten ihre eigene Kennfarbe; normale Gebiete werden durch ein Event nicht umgefärbt. Nach bisherigen Planungsregeln bleiben Spieler in einem bereits betretenen, zwischenzeitlich abgelaufenen Eventgebiet bis zum Verlassen dort; die genaue Laufzeit-/Offline-Implementierung ist noch offen.
+
+**Verbindliche Arbeitsfolge:** Zuerst Spielmechaniken und Daten-/Speicheranbindung, danach Integrationstests. **Erst am Ende folgen Audio, 3D-Modelle, Grafiken, Texturen, Animationen, Effekte und abschließende Oberflächengestaltung.** Bereits bestehende funktionierende Systeme nicht ohne konkreten Fehler umbauen. Ältere Zwischenprioritäten aus dem Fahrzeugprototyp bleiben als historischer Stand dokumentiert, sind aber keine Anweisung, jetzt Grafikarbeiten vorzuziehen.
+
+**Stand:** 14.10.2026 – Dokumentations- und Planungsabgleich, kein neuer Unity-Funktionstest.
+
 ## Aktualisierung 13.10.2026 – Basis-Horden: bestätigte Unity-Tests
 
 **Bestätigt in Unity 2017.2.5f1:** Getrennter Hordenspawner, zufällige Stufe und Angriffsrichtung, vollständig erzeugte Testgruppen mit 10 bzw. 25 Gegnern, korrekt sinkender Restgegnerzähler, Angriffsabschluss bei 0 und sofortiger Abbruch mit Entfernen übriger Gegner beim Spielertod. Normale Gebietsspawns und das allgemeine Zombie-Prefab wurden nicht verändert.
