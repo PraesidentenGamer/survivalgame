@@ -1,5 +1,19 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 14.10.2026 – Hauptspiel: Entwicklungsstand und offene Kernsysteme
+
+**Stand der Hauptspielentwicklung:** Remnants of Tomorrow bleibt in aktiver Entwicklung. Die vorhandenen Unity-Grundlagen (Spieler/Kamera, Weltkarte und Gebietswechsel, Ressourcen- und Inventarprototypen, Fahrzeug-/Tankstellenprototyp, Speichern/Laden sowie Basis-Hordentests) sind keine Bestätigung eines bereits vollständig spielbaren Hauptspiels. Die zuvor dokumentierten konkreten Unity-Tests bleiben unverändert gültig.
+
+**Nächstes technisches Gesamtziel:** Ein zusammenhängender Spielablauf von der Hauptbasis in den grünen Kiefernwald, dort Ressourcen sammeln und Gegner bekämpfen, zurückkehren, Materialien verarbeiten beziehungsweise etwas bauen und den gesamten Fortschritt anschließend sicher speichern und laden. Dieser vollständige Ablauf ist **noch nicht als durchgängig bestanden bestätigt**.
+
+**Weiterhin offen oder unvollständig:** XP/Level und Freischaltungen; Inventar, Ausrüstung und Lager; Ressourcenabbau und Loot; Crafting mit Werkbänken und Produktionszeiten; rasterbasierter Basisbau samt Ausbaustufen; Gegner/Kampf; Hordenautomatik und Bauschaden; Hunger, Durst und Gebietseinflüsse; Reisen und Storyfreischaltungen; verbleibende Fahrzeug-/Tankstellenregeln; Quests und Story; Begleiter, Siedlung und weitere Regionen; vollständige Save-/Load-Integration.
+
+**Eventsystem als eigenständiger großer Pflichtbereich:** Die gemeinsame dynamische `EventMap` und mehrere temporäre Testmarker wurden bereits erprobt. `events.json.db` enthält derzeit 7 Einträge: drei mit bekannten Grundregeln (Flugzeugabsturz, „Gleich eins aufs Maul“, Basis-Horde) und vier bislang nicht fertig ausgearbeitete Kalender-/Saisonideen. Es fehlen eine vollständige Eventdefinition (Arten, Startbedingungen/Zufall, Häufigkeit, Laufzeit, Ablauf und Ziele, Gegner/Loot, Belohnungen, Wiederholbarkeit, Schwierigkeit), die produktive Anbindung an die Eventdatenbank sowie persistente Zeit-, Weltkarten- und Speicherzustände. Die Datenbankeinträge und EventMap-Tests sind **kein Nachweis eines fertigen Eventsystems**.
+
+**Verbindliche Entwicklungsreihenfolge:** Erst sämtliche Spielmechaniken und ihre technischen Verbindungen fertigstellen und testen. **Audio, endgültige Modelle, Texturen, Animationen, Effekte und grafische Gestaltung kommen ganz am Ende.** Bis dahin reichen vorhandene funktionale Testanzeigen und Platzhalter; keine zusätzlichen grafischen Provisorien erzwingen. Die bisherige engere Arbeitsplanung aus dem Fahrzeugblock beschreibt einen älteren Zwischenstand und schränkt diese Gesamt-Roadmap nicht ein.
+
+Dieses Update aktualisiert ausschließlich die öffentliche Projektdokumentation; es lädt keinen lokalen Unity-Quellcode hoch.
+
 Öffentlicher Entwicklungsstand, Roadmap und Ideensammlung für das Survival-Game-Projekt.
 
 ## Update 13.10.2026 – Basis-Horden: Angriffe und Spielstandtests
