@@ -8,6 +8,12 @@
 
 **Noch offen bzw. nicht gesondert überprüft:** Restleben und Positionen einzelner Gegner nach dem Laden, Wiederherstellung über Szenenwechsel, automatische Zeit-/Warnabläufe, Interaktion mit gebauten Fenstern/Türen/Wänden und die endgültigen Gegnerklassen. Kein Fertigstellungsnachweis des gesamten Basisbaus.
 
+## Dokumentationsabgleich 13.10.2026 – Datenbestand und Speicherregeln
+
+**Vorhandene Datenbanken:** `enemies.json.db` enthält **53 Gegnereinträge**; `events.json.db` enthält **7 Ereigniseinträge**. Bei den Events sind für Flugzeugabsturz, Nahkampf-Event und Basis-Horde Grundregeln dokumentiert. Vier Kalender-/Saisonereignisse sind weiterhin Ideen und noch nicht vollständig ausgearbeitet. Der Datenbestand belegt keine abgeschlossene Umsetzung sämtlicher Gegner- oder Eventfunktionen in Unity.
+
+**Gültige Speicherplanung:** `.rotsave` ist das primäre Format, `.sgsave` die Reserve; vorgesehen sind **höchstens 5 manuelle Speicherslots**. Die zuletzt bestätigte lokale Struktur ist **Version 9** mit der bestehenden AES-256-CBC-/HMAC-SHA256-Verarbeitung. Der erfolgreiche Horden-Test bestätigt die Wiederherstellung der Gegneranzahl, nicht sämtliche denkbaren Speicherzustände.
+
 ## Aktualisierung 12.10.2026 – bestätigte Jeep-Tests und nächste technische Arbeiten
 
 **Tatsächlich am Test-Jeep in Unity 2017.2.5f1 bestätigt:** Kollisionsschaden wird als Haltbarkeitsverlust berechnet; `VehicleStatusHUD.cs` aktualisiert die Jeep-Haltbarkeit korrekt (beispielsweise 266/300); bei maximal 10 % Haltbarkeit ist der Jeep fahruntüchtig; die kostenlose Testreparatur stellt Haltbarkeit wieder her; beschädigte Haltbarkeit bleibt nach **F5/F11 und vollständigem Neustart** erhalten. Dies sind Tests am Jeep, **nicht** an den sieben anderen Fahrzeugtypen.
