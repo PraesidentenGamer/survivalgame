@@ -8,6 +8,12 @@
 
 **Offene Arbeiten:** Prüfung einzelner Gegnerpositionen und Lebenspunkte, Szenenwechsel mit laufender Horde, regulärer Zeit- und Warnablauf, endgültige Gegnerklassen sowie das Angreifen echter Basisbauteile. Der bestätigte Testumfang ist keine fertige Gesamtimplementierung.
 
+## Dokumentationsabgleich 13.10.2026 – Datenbanken und Speichervorgaben
+
+**Referenzdaten:** `enemies.json.db` enthält **53 Gegnereinträge**. In `events.json.db` sind **7 Ereignisse** erfasst; drei haben bestätigte Grundregeln, vier sind noch nicht finalisierte Kalender-/Saisonideen. Die vollständige Laufzeitanbindung bleibt eine offene Aufgabe.
+
+**Spielstände:** Primärformat `.rotsave`, Reserveformat `.sgsave`; **maximal 5 manuelle Speicherslots** sind vorgesehen. Der zuletzt lokal bestätigte Spielstand verwendet **Version 9** und die vorhandene AES-256-CBC-/HMAC-SHA256-Verarbeitung.
+
 ## Aktualisierung 12.10.2026 – bestätigte Jeep-Tests und nächste technische Arbeiten
 
 **Tatsächlich am Test-Jeep in Unity 2017.2.5f1 bestätigt:** Kollisionsschaden wird als Haltbarkeitsverlust berechnet; `VehicleStatusHUD.cs` aktualisiert die Jeep-Haltbarkeit korrekt (beispielsweise 266/300); bei maximal 10 % Haltbarkeit ist der Jeep fahruntüchtig; die kostenlose Testreparatur stellt Haltbarkeit wieder her; beschädigte Haltbarkeit bleibt nach **F5/F11 und vollständigem Neustart** erhalten. Dies sind Tests am Jeep, **nicht** an den sieben anderen Fahrzeugtypen.
@@ -394,8 +400,8 @@ Grafik, Audio, Shader und finales optisches Polishing sind in dieser Liste bewus
 - verzweigte Entscheidungen / Sarah-Karma
 
 ### 10. Save-/Load-System produktionsreif
-- endgültige `.sgsave`-Struktur
-- bis zu 10 manuelle Slots
+- endgültige `.rotsave`-Struktur (`.sgsave` als Reserve)
+- maximal 5 manuelle Speicherslots (vorgesehen)
 - Autosave
 - Pflichtsave bei Gebietswechsel
 - Recovery-Save
