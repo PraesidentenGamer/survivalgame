@@ -12,6 +12,12 @@
 
 Dieses GitHub-Update dokumentiert den lokalen Entwicklungsstand; es veröffentlicht keine lokalen Unity-C#-Dateien.
 
+## Dokumentationsabgleich 13.10.2026 – Datenbanken und Spielstände
+
+- **Gegnerdaten:** Die vorhandene `enemies.json.db` enthält **53 Gegnereinträge**. Nicht alle Gegnertypen sind damit bereits als vollständige Unity-Gegner samt Modellen und KI eingebunden.
+- **Eventdaten:** Die vorhandene `events.json.db` enthält **7 Einträge**. Drei besitzen bestätigte Grundregeln (Flugzeugabsturz, Nahkampf-Event und Basis-Horde); vier Kalender-/Saisonereignisse sind noch nicht abschließend definierte Ideen. Datenbankeinträge bedeuten keine fertige Laufzeitumsetzung.
+- **Speicherregeln:** `.rotsave` ist das primäre Spielstandformat, `.sgsave` die Reserve. Für die Planung gelten **maximal 5 manuelle Speicherslots**. Die lokal verwendete Spielstandstruktur steht bei **Version 9**; die vorhandene AES-256-CBC-/HMAC-SHA256-Verarbeitung bleibt bestehen. Die Fertigstellung aller Speicherfunktionen ist damit noch nicht bestätigt.
+
 ## Update 12.10.2026 – Test-Jeep: Fahrzeugschaden, Reparatur und verschlüsselter Spielstand
 
 **Bestätigte Unity-Tests (2017.2.5f1), ausschließlich am vorhandenen Test-Jeep:**
