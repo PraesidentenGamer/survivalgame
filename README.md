@@ -1,5 +1,10 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 14.10.2026 – Computersystem und GEAM OS: Planungsstand gesichert
+
+Die umfangreichen verbindlichen Festlegungen zum PC-System, zu Hardware, Reparaturen, Diagnose, GEAM OS, Installation, Programmmedien, Programmkiste und zur Flugdatenschreiberanalyse stehen jetzt gesammelt in [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt). Die Spielcomputer verwenden GEAM OS, inklusive Versionsupgrades, Mehrfachstart, Wiederherstellung und Rettungsmedien. Die Analyse erfolgt auf einem PC mit zuvor gefundenem/installiertem Programm, NICHT an einer separaten Analysestation. **Ausschließlich Planung; keine neue Unity-Implementierung oder DB-Migration erfolgt.**
+
+
 ## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
 
 Die weitere Eventplanung ist jetzt in **zwei getrennten Dokumenten** nachvollziehbar: [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt).
