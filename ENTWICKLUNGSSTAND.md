@@ -1,5 +1,10 @@
 # Entwicklungsstand
 
+## Update 14.10.2026 – PC-System und GEAM OS: Beschlüsse archiviert
+
+Verbindliche Details in [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt); Entwicklungsschwerpunkt bleibt nach der Sicherung die Einzelplanung des Flugzeugabsturzes. Analyse von Flugdatenschreibern erfolgt auf einem geeigneten GEAM-OS-Computer mit gefundenem und installiertem Analyseprogramm, nicht an einer separaten Analysestation. Alle weiteren Hardware-, OS-, Software-, Reparatur- und Speicherregeln wurden gesondert dokumentiert. **Planungsstand ist ausdrücklich keine fertige Unity-Funktion; keine Datenbankmigration, Assets oder Quelltexte in diesem Commit.**
+
+
 ## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
 
 **Planungsstruktur:** [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt). Das erste Dokument definiert nur die globalen Kategorien, Start-/Offline-/Ablaufregeln, Eventinstanzen, Schutzregeln und den technischen DB-/Save-Aufbau. Das zweite dokumentiert separat die konkreten Eventarten, bereits festgelegte Mengen und offene Einzelfragen.
