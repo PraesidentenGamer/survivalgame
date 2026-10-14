@@ -1,5 +1,10 @@
 # Projektfortschritt
 
+## Update 14.10.2026 – Computersystem / GEAM OS (Planung)
+
+**Detaillierter verbindlicher Planungsstand:** [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt). Enthält Hardware-Kompatibilität, PC-Funde/Seltenheiten, Transport und Ausbau, automatische Verkabelung, ausschließlich Luftkühlung, PC-/Laufwerkszustände, GEAM OS und seine Installationen, Software-/Datenträgermanagement, Programmkiste (10/20/30/40/50 Slots, Endstufe unbegrenzt), Installationspausen/Queue/Prioritäten, Wiederherstellung und Rettungsmedien, Reparaturen/Diagnose/Akkus sowie Flugdatenschreiberanalyse am PC (30 Minuten aktive Spielzeit, Queue und Strompausen). **Noch nicht umgesetzt oder vollständig getestet.** Keine neuen konkreten DB-Werte oder C#-Laufzeitfunktionen durch dieses Dokumentationsupdate.
+
+
 ## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
 
 **Dokumentation bewusst getrennt:** [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt).
