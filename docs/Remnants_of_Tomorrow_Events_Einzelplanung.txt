@@ -8,12 +8,45 @@ BESTAND
 Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGameEvents, und enthält 7 Eventeinträge. Der neu vorgesehene „Zerstörte Konvoi“ ist bislang kein Datenbankeintrag. Die Planung enthält damit 8 benannte Events. Die in der bestehenden DB enthaltenen Einträge mit active=false bleiben bis zur technischen Integration inaktiv.
 
 ## Flugzeugabsturz
-- ID: flugzeugabsturz (in DB).
-- Temporäres Mini-Event; ab Spielerlevel 1 ohne Level-Sperre.
-- Maximal 60 Minuten; ungefähre Eventfläche 30 × 30 Meter.
-- Überwiegend hochwertige Beute, vorhandener Lootpool LOOT_EVENT_PLANECRASH.
-- Aufgrund der höherwertigen Beute nur zufallsbasiert, nicht automatisch garantiert.
-- Enthält feindliche Gegner. Deren Anzahl und Typ sowie Kistenzahl und exakte Chancen sind noch offen.
+Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen, aber noch nicht vollständig in events.json.db eingetragen oder in Unity als Eventablauf umgesetzt.
+
+### Bereits festgelegte Eventgrundlagen
+- Event-ID: flugzeugabsturz (in bestehender DB V2).
+- Kategorie: temporäres Mini-Event, ab Spielerlevel 1.
+- Dauer: maximal 60 Minuten; Richtwert für die dynamisch erzeugte Eventfläche ca. 30 × 30 Meter.
+- Beutequalität: hochwertig; bestehender Event-Lootpool-Verweis LOOT_EVENT_PLANECRASH.
+- Erscheinen: als hochwertiges temporäres Event zufallsabhängig, nicht bei jedem möglichen Temp-Eventstart garantiert.
+- Ein einziges großes Flugzeugwrack und 4 bis 6 verstreute Versorgungskisten, die die Piloten vor dem Absturz abgeworfen haben.
+- Das Wrack ist durchsuchbar und besitzt drei SEPARAT durchsuchbare Hauptbereiche: Cockpit, Passagierbereich und Frachtraum.
+- Für einmalige Kistenbefüllung, einmalige Gegnererzeugung, Timer-Ende, Wiederbetreten, Speicherung und Verlustschutz gelten die allgemeinen Regeln im separaten Regeldokument.
+
+### Neu vollständig als Funktionskonzept übernommen (14.10.2026)
+1. Cockpit mit Zugangssperre: Das Cockpit kann mit einem geeigneten Schlüssel ODER Werkzeug geöffnet werden. Die konkreten Schlüssel-/Werkzeug-IDs und Fund-/Verbrauchsregeln sind noch nicht definiert.
+2. Unterschiedliche Lootpools in den 4–6 abgeworfenen Versorgungskisten: Die Kisten müssen nicht alle dieselben Itemarten enthalten. Mögliche Kategorien (Medizin, Lebensmittel, Werkzeuge, Ausrüstung, Materialien) sind bisher Beispiele, KEINE festgelegten Verteilungszahlen.
+3. Verschlossener Frachtraum: Er besitzt eine eigene Zugangssperre; die genauen erforderlichen Gegenstände und die Öffnungsmechanik sind noch offen.
+4. Durchsuchbare Piloten und Passagiere: Durchsuchbare Fundstellen an den betroffenen Personen können eigene Gegenstände, Schlüssel, Dokumente oder Hinweise enthalten. Anzahl und Inhalt noch offen.
+5. Frachtmanifest mit Hinweisen: Ein auffindbares Manifest enthält Hinweise auf die transportierten bzw. auffindbaren Versorgungsgüter. Fundort, konkrete Hinweise und Folgewirkung noch offen.
+6. Beschädigte und verschlossene Behälter: Einzelne Behälter benötigen je nach Zustand eine besondere Öffnungsmethode oder sind bereits zugänglich. Details der benötigten Werkzeuge und Öffnungszeiten offen.
+7. Zufällige Wrackzustände: Bei der Erzeugung einer Eventinstanz wird ein Zustand/Variantenlayout festgelegt; welche Abschnitte oder Behälter beschädigt bzw. verschlossen sind, darf variieren. Die Variante muss für die Dauer DERSELBEN Eventinstanz beständig bleiben und wird in .rotsave gesichert; sie darf beim Wiederbetreten nicht neu ausgewürfelt werden.
+8. Besondere Fundstücke und Flugdatenschreiber: Ein Flugdatenschreiber oder andere besondere Gegenstände können als Fundstücke und für spätere Aufgaben/Händler relevant werden. Konkrete Item-IDs, Fundbedingungen und Verwendungen offen.
+9. Gegner zwischen den Trümmern: Feindliche Gegner gehören zum Event und können an geeigneten Trümmer-/Kisten-/Wrackbereichen erscheinen. Ihre Anzahl, Typen und sicheren Spawnflächen sind erst mit der dynamischen Map zu bestimmen; keine pauschal erfundene Stückzahl.
+10. XP für Entdeckungen: Bestimmte erste Entdeckungen, gefundene Dokumente oder erstmalig geöffnete besondere Bereiche können Erfahrungspunkte auslösen. Welche Aktionen XP vergeben und in welcher Höhe, bleibt noch zu bestimmen; keine wiederholte XP-Vergabe durch bloßes Wiederbetreten derselben Eventinstanz.
+
+### Datenbank/Spielstand – technische Zuordnung
+- events.json.db: Anzahlspanne 4–6 Kisten, individuelle Lootpool-Referenzen, Wrack-/Behältertypen, mögliche Varianten, Sperren, erforderliche Schlüssel/Werkzeuge, Fundstücke, XP-Auslöser, Gegnerprofile und individuelle Eventparameter.
+- .rotsave: ausgewählte Variante dieser Eventinstanz, pro Bereich/Person/Behälter vorhandene und entnommene Gegenstände, geöffnete Sperren, gefundene Hinweise, bereits ausgezahlte XP/Belohnungen, Gegnerzustände sowie laufende Zeitdaten.
+- Allgemeine Gegnerstammdaten kommen aus enemies.json.db; eventbezogene Zusammenstellung und Anzahl aus events.json.db.
+- Die Regeln sollen datenbankgesteuert sein, nicht als Spezialwerte im C#-Eventmanager fest programmiert werden.
+- Die grafische Ausarbeitung des Wracks und der Objekte erfolgt erst nach den technischen Gameplay-Systemen.
+
+### Konkret noch offene Detailentscheidungen
+- Wie Schlüssel und Öffnungswerkzeuge beschafft werden; ob alle Bereiche ohne vorab mitgebrachte Ausrüstung zugänglich sein sollen.
+- Wie viele Personen/Fundstellen und beschädigte Behälter erscheinen.
+- Art, Menge, Gewichtung und garantierte Beute je Kiste, Wrackbereich und Person.
+- Welche Wrackvarianten auftreten und welche Sperren zusammen auftreten dürfen.
+- Fundort/Inhalt des Frachtmanifests, Bedingungen und Nutzen des Flugdatenschreibers.
+- Gegneranzahlen/-typen/-verhalten und Spawnpositionen nach Prüfung der EventMap.
+- XP-Auslöser und XP-Beträge sowie ggf. besondere Aufgaben und Belohnungen.
 
 ## Zerstörter Konvoi
 - Neue Event-ID noch zu vergeben; bislang nicht in der Eventdatenbank.
@@ -28,7 +61,7 @@ Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGame
 - ID: gleich_eins_aufs_maul (in DB).
 - Normales Kampf-Event mit Nahkampffokus, separate Kampfzone; Rest der EventMap friedlich.
 - Boss-ID: boss_gleich_eins_aufs_maul; geplante Fähigkeit Superschlag mit 20–40 Schaden.
-- Freischaltung im Rahmen Level 10–20, konkretes Level nicht final.
+- Freischaltung: Spielerlevel 15 (im Gespräch am 14.10.2026 bestätigt).
 - Dauer, Angriffswerte außerhalb der genannten Idee, Belohnungen und Aufgaben nicht final.
 
 ## Basis-Horde
@@ -39,13 +72,13 @@ Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGame
 - Ganze Gruppe erscheint zugleich; nicht in Wellen. Ziel: Hauptbasis. Kein Diebstahl aus Lagern.
 - Die vorhandene Datenbank führt noch testZombieCount=5 und leere Tier-Zusammensetzungen: Das sind ältere Testfelder, die erst bei der DB-Migration angepasst werden müssen.
 - Hordenprototyp mit 10 und 25 Gegnern sowie Speichern/Laden der Gegnerzahl bereits getestet. Automatische Zeitsteuerung, Bauschaden und vollständige individuelle Gegnerwiederherstellung bleiben offen.
-- Freischaltlevel noch nicht endgültig zugeordnet.
+- Freischaltung: ab Spielerlevel 1 (im Gespräch am 14.10.2026 bestätigt).
 
 ## 1.-April-Event
 - ID: april_1 (in DB).
 - Kalender-Event am realen 1. April, 1 Tag Dauer laut DB.
 - Einträge wie UI-/Händlerscherze, Scherzitems, kleine Belohnungen und Quests sind Ideen, noch nicht final.
-- Genaues Level innerhalb des Rahmens 10–20 und Inhalte offen.
+- Keine Spielerlevel-Beschränkung; das Event steht am 1. April unabhängig vom Spielerlevel bereit (im Gespräch am 14.10.2026 bestätigt). Die Inhalte sind noch offen.
 
 ## Sommer-Event
 - ID: sommer_event (in DB).
@@ -63,7 +96,7 @@ Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGame
 - Zeitraum, Level, Inhalte, Belohnungen und Kampfbereich noch offen.
 
 ## Noch auszuarbeiten
-- Konkrete Eventlevel und Startbedingungen für reguläre Eventarten.
+- Konkrete Level und Startbedingungen der noch nicht einzeln festgelegten Kalender-/Saison-Events; bereits bestätigte Ausnahmen und Levelwerte beibehalten.
 - Gegnerzahlen, Kampfregeln, Eventziele und Belohnungswerte je Event.
 - Seltenheitswahrscheinlichkeiten des Flugzeugabsturzes und anderer hochwertiger Beuteereignisse.
 - Saisontermine und vollständige Kalender-/Saisonabläufe.
