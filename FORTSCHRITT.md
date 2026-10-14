@@ -1,5 +1,24 @@
 # Projektfortschritt
 
+## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
+
+**Dokumentation bewusst getrennt:** [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt).
+
+| Bereich | Planungsfortschritt / noch offen |
+|---|---|
+| Globale Eventplätze | Festgelegt: 1 normales Zufalls-Event plus höchstens 2 temporäre Mini-Events; Horden und Kalender/Saison separat |
+| Entstehung und Zeit | Festgelegt: neue Zufalls-Events nur bei geöffnetem Spiel, laufende Timer offline aktiv, 24 Ingame-Stunden Mindestabstand zwischen temporären Starts |
+| EventMap | Bereits mit variablen Flächen getestet; vorhandene räumlich getrennte gelbe Sternmarker beibehalten |
+| Kampf und Frieden | Festgelegt: temporäre Events stets mit Gegnern; normale EventMap friedlich außer in ausdrücklich vorgesehenen Kampfbereichen |
+| Loot und Gegner | Festgelegt: einmalige Instanzbefüllung/-erzeugung; entnommene Beute und besiegte Gegner bleiben weg, noch lebende Gegner und Restbeute bleiben |
+| Eventende | Festgelegt: nicht vorzeitig nach Abschluss; Timer maßgeblich, bei Spieleraufenthalt im abgelaufenen Gebiet Entfernung erst nach Verlassen |
+| Spielertod | Geplant: eventgebundener Rückgabe-/Verlustschutz bei abgelaufenem, nicht mehr erreichbarem Gebiet; keine Rückgabe beim lebenden Gebietswechsel |
+| Einzel-Events | 7 Eventeinträge in DB V2; Konvoi als achter Typ geplant, noch nicht migriert; Konvoi mit 6 Kisten und mindestens 6 seltenen Items |
+| Eventbalance | Noch offen: konkrete Gegnerzahlen/Spawns, reguläre Eventlevel 10–20, Zufallswahrscheinlichkeiten, Saisonabläufe |
+| Integration | Noch offen: DB-Loader/Eventmanager, persistente Eventinstanzen, Offline-/Tod-/Ladeprüfungen |
+
+**Status: Planungsfortschritt, keine neue Unity-Funktionsbestätigung.** Keine Änderung der lokalen Eventdatenbank oder C#-Skripte. Spielmechaniken vor abschließender Audio-/Grafik-/Modellphase.
+
 ## Aktualisierung 14.10.2026 – Offene Hauptspielarbeiten und Eventsystem
 
 **Aktuelle Einordnung:** Das Hauptspiel ist weiterhin in Entwicklung. Einzelne Unity-Prototypen (Weltkarte/Gebiete, Test-Jeep und Treibstoff/Tankstellen, geschützte Spielstände, Basis-Horden) sind überprüft; daraus folgt **noch kein abgeschlossener Gesamt-Gameplay-Ablauf**. Der nächste zusammenhängende Funktionsnachweis soll die Strecke **Hauptbasis → grüner Kiefernwald → Ressourcen und Kampf → Rückkehr → Herstellung/Basisbau → Speichern/Laden** umfassen.
