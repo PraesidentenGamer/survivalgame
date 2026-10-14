@@ -1,0 +1,143 @@
+# Remnants of Tomorrow (RoT) – Eventsystem: Allgemeine Regeln
+Stand: 14.10.2026
+Status: Verbindliche Planungsfestlegungen; keine Aussage über eine vollständige Unity-Implementierung.
+
+ZWECK UND ABGRENZUNG
+Dieses Dokument enthält ausschließlich übergreifende Regeln und technische Zuständigkeiten.
+Einzelne Eventnamen, Mengen, Beute und besondere Abläufe gehören in:
+docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt
+Die bisherige events.json.db ist Datenbankversion 2 mit 7 Einträgen. Neu beschlossene Regeln
+sind Planungsstand und noch nicht automatisch in diese Datei eingearbeitet.
+
+1. DATENGETRIEBENE ARCHITEKTUR – VERBINDLICH
+- Alle konfigurierbaren Werte ALLER Eventarten stammen aus events.json.db.
+- Der C#-Loader/Eventmanager liest diese Werte, entscheidet anhand der Daten und führt sie aus.
+- Die gemeinsame, bereits im Prototyp erfolgreich erprobte EventMap dient als Eventgebiet.
+- Wo Stammdaten (z. B. allgemeine Gegnerwerte oder Gegenstandsdaten) in separaten DBs liegen,
+  referenziert events.json.db diese Datensätze und hält nur eventabhängige Regeln/Abweichungen.
+- Keine doppelten, hartkodierten Balancewerte im C#-Eventmanager.
+- Aktuelle Eventinstanzen und deren veränderliche Zustände gehören in .rotsave,
+  nicht als Laufzeitmutation in die Definitionsdatenbank.
+- Finale Modelle, Texturen, Effekte, Animationen und Audio erst in der abschließenden Gestaltungsphase.
+
+2. KATEGORIEN UND GLEICHZEITIGKEIT – VERBINDLICH
+- Normale zufällige Events: höchstens 1 gleichzeitig aktiv.
+- Temporäre Mini-Events: höchstens 2 gleichzeitig aktiv, unabhängig von normalen Events.
+- Normale Events und temporäre Mini-Events dürfen gleichzeitig existieren.
+- Basis-Horden sowie Kalender- und Saison-Events belegen keinen dieser Plätze.
+- Story-/Questevents können eigene Bedingungen erhalten; Details offen.
+- Die Grenze von 2 temporären Events bleibt auch dann bestehen, wenn sie wegen langer
+  Startabstände bei den heutigen kurzen Eventlaufzeiten üblicherweise nicht ausgeschöpft wird.
+
+3. FREISCHALTUNG – VERBINDLICHE RICHTUNG
+- Für reguläre, levelgebundene Events sind Freischaltungen im Bereich Spielerlevel 10 bis 20 vorgesehen.
+- Die konkrete Levelzuordnung pro Event ist noch nicht endgültig festgelegt.
+- Kurze temporäre Mini-Events Flugzeugabsturz und Zerstörter Konvoi sind von dieser
+  Levelanforderung ausgenommen und ab Spielerlevel 1 möglich.
+- Kalenderevents benötigen zusätzlich ihren jeweiligen realen Zeitraum, soweit in der
+  Eventdefinition festgelegt. Kein vorzeitiges Freischalten nur wegen des Levels.
+
+4. AUSLÖSUNG UND ZEIT – VERBINDLICH
+- Neue zufällige Events werden nur erzeugt, während das Spiel geöffnet ist.
+- Bereits laufende Eventtimer laufen auch bei vollständig geschlossenem Spiel weiter.
+- Der zeitliche Mindestabstand zwischen zwei NEUEN temporären Mini-Eventstarts beträgt
+  24 Ingame-Stunden, gerechnet ab dem Start des letzten solchen Events.
+- Die vorhandene Ingame-Uhr ist die Zeitquelle; keine zusätzliche Eventuhr einführen.
+- Geplanter Umrechnungsmaßstab: 24 Ingame-Stunden = 6 reale Stunden;
+  tatsächliche Uhranbindung in der aktuellen Unity-Fassung bei Integration prüfen.
+- Die Wartezeit für die Entstehung neuer Zufalls-Events pausiert, wenn das Spiel geschlossen ist;
+  bereits laufende Eventlaufzeiten pausieren dadurch NICHT.
+- Nach Erreichen des Startabstands soll ein gewöhnliches temporäres Event erscheinen,
+  sofern ein Platz verfügbar und ein geeignetes Event freigeschaltet ist.
+- Events mit besonders hochwertiger Beute unterliegen stattdessen einer Zufallsprüfung;
+  beim Fehlschlag kann ein gewöhnliches Event gewählt werden. Gibt es kein geeignetes
+  gewöhnliches Event, ist auch kein neuer Eventstart möglich.
+- Genaue Wahrscheinlichkeit, Auswahlgewichtung und Verhalten bei erneutem fehlgeschlagenem
+  Versuch sind noch offen; KEINE erfundenen Prozentwerte.
+- Ein allgemeines Intervall für NORMALE Zufalls-Events ist bisher nicht verbindlich festgelegt.
+- Kalender-, Saison- und Basis-Horden-Termine werden eigenständig je Event definiert.
+
+5. AUSWAHL UND ROTATION – VERBINDLICH
+- Der temporäre Eventpool wird zufallsbasiert ausgewählt.
+- Solange nur wenige temporäre Eventtypen verfügbar sind, darf derselbe Typ bei zwei
+  verschiedenen Eventinstanzen auftreten; es gibt kein grundsätzliches Duplikatverbot.
+- Mit einem größeren Eventpool erfolgt zufällige Rotation zwischen geeigneten Eventtypen.
+- Eventinstanzen brauchen eindeutige eigene Instanz-IDs, damit Timer, Gegner und Beute
+  trotz gleicher Eventtyp-ID nicht verwechselt werden.
+- Konkrete Rotationsgewichte und eventtypabhängige Sperrzeiten: noch offen.
+
+6. EVENTMAP, MARKER UND FRIEDLICHE BEREICHE – VERBINDLICH
+- Die EventMap ist eine gemeinsame dynamisch genutzte bzw. skalierte Szene.
+- Vorhandene gelbe, rotierende Sternmarker und die bestehende räumliche
+  Mindestabstandslogik bleiben unverändert.
+- Ein Marker behält für die Laufzeit seiner Eventinstanz dieselbe Weltkartenposition.
+- Eventmarker überschreiben nie die Schwierigkeitsfarbe normaler Weltkartengebiete.
+- Jedes TEMPORÄRE Mini-Event enthält feindliche Gegner.
+- NORMALE Events haben eine grundsätzlich friedliche EventMap; Gegner/Kampf sind
+  ausschließlich in ausdrücklich definierten Kampfbereichen vorgesehen.
+- Basis-Horden folgen ihren eigenen Regeln und verwenden keinen gewöhnlichen Eventplatz.
+- Richtwerte aus der bestehenden DB: normale Eventfläche ca. 100 x 100 Meter,
+  Mini-Eventfläche ca. 30 x 30 Meter; Spezial-/Storyevents dürfen abweichen.
+- Gegnerzahl, Spawnflächen, spezielle Kampfbereiche und individuelle Größen
+  werden erst auf Grundlage der Eventdefinition und der technischen Map geprüft.
+
+7. EVENTLAUFZEIT UND ABLAUF – VERBINDLICH
+- Temporäre Events bleiben BIS zum Ablauf ihres Timers bestehen, auch wenn alle
+  Gegner besiegt, Aufgaben beendet und alle Kisten geplündert sind.
+- Ist der Spieler beim Timerablauf im Eventgebiet, bleibt das Gebiet bis zu seinem
+  Verlassen bestehen; danach wird die abgelaufene Instanz entfernt.
+- Ist der Spieler bei Timerablauf außerhalb, verschwindet das Event gemäß seinem Timer.
+- Bereits laufende Timer laufen offline weiter, selbst wenn kein neues Event entsteht.
+- Für einzelne Events kann die DB besondere Zeitwerte vorgeben; die konkret vereinbarten
+  Kurz-Events haben eine maximale Laufzeit von 60 Minuten.
+- Unbekannte Eventlaufzeiten bleiben offen und werden nicht durch globale Standardwerte ersetzt.
+
+8. BEUTE UND GEGNER – VERBINDLICH
+- In temporären Events wird jede Lootkiste genau einmal PRO EVENTINSTANZ befüllt.
+- Bereits entnommene Beute taucht beim erneuten Betreten nicht wieder auf.
+- Nicht entnommene Beute bleibt erhalten, solange die Eventinstanz zugänglich ist.
+- Gegner temporärer Events werden einmal PRO EVENTINSTANZ erzeugt.
+- Besiegte Gegner bleiben tot; überlebende bleiben beim erneuten Betreten vorhanden.
+- Positionen, verbleibende Lebenspunkte, Beuteentnahmen und Kisteninhalte müssen
+  instanzbezogen gespeichert/wiederhergestellt werden.
+- Gegneranzahl ist individuell und gegenwärtig nicht global festgelegt.
+- Loot-Seltenheiten des Hauptspiels: Normal, Selten, Episch, Legendär;
+  konkrete erlaubte Stufen und Garantien je Eventdefinition.
+- Eventgegenstände E001–E180 sind als eigener Itembereich in der Datenbank vorgesehen;
+  sie bleiben nach Eventende erhalten und werden nicht automatisch umgewandelt.
+- Eigene eventbezogene Beutepools, Rezepte, Händler und Quests bleiben unterstützt.
+
+9. TOD, GEBIETSWECHSEL UND VERLUSTSCHUTZ – VERBINDLICH
+- Bei Tod in einem temporären Event werden die tatsächlich verlorenen Gegenstände
+  im Todes-/Leichenstatus festgehalten; Rückkehr und Bergung sind möglich, solange
+  das Event noch erreichbar ist.
+- Läuft das Event nach einem Tod ab, bevor die verlorenen Gegenstände geborgen sind,
+  greift die besondere Schutz-/Rückgaberegel; die Sachen gehen nicht endgültig
+  durch die Entfernung des Eventgebiets verloren.
+- Maßgeblich ist ein TOD im temporären Event. Normales lebendes Verlassen oder Reisen
+  löst weder Schutzgutschrift noch automatische Rückgabe aus.
+- Hauptbasis/Siedlung und anschließende Reisen werden bei der sicheren Rückgabe
+  berücksichtigt; eine eventbedingte Unerreichbarkeit darf keine endgültigen Verluste erzeugen.
+- Ausschließlich noch ungeborgene Gegenstände dürfen zurückgegeben werden;
+  weder Duplikate noch Überschreiben des aktuellen Inventars.
+- Die allgemein geltende Leichenbergung und der aktive Zwei-Stunden-Timer bleiben
+  grundsätzlich bestehen; ihr genaues technisches Zusammenspiel mit dem
+  eventbedingten Rückgabeschutz ist bei der Integration zu prüfen.
+
+10. SPEICHERUNG UND TECHNISCHE FERTIGSTELLUNG – OFFEN
+- Definitionsdaten: events.json.db; eventuelle verknüpfte Stammdaten aus ihren Fach-DBs.
+- Instanzdaten: Instanz-ID, Eventtyp-ID, Start-/Endezeit, Weltkartenposition,
+  Gegnerstatus, Kisteninhalte, entnommene Gegenstände, Aufgabenfortschritt,
+  Todes-/Bergungsschutz und ausgegebene Belohnungen in .rotsave.
+- Timer, Offline-Fortsetzung, abgelaufene Eventinstanzen, Spielneustart,
+  Gebietswechsel und gleichzeitige Events sind mit echten Integrationstests zu prüfen.
+- Eine tatsächlich bestandene datenbankgesteuerte Laufzeitumsetzung liegt nicht vor.
+- Der vorhandene EventMap-Mehrgrößentest (drei gleichzeitige Marker) belegt nur
+  die technische Map-/Markerbasis, nicht die neue Begrenzungs-/Eventlogik.
+
+OFFENE ALLGEMEINE PLANUNGSFRAGEN
+- Für normale Events: konkrete Auslöse- und Häufigkeitsbedingungen.
+- Für seltene temporäre Events: Wahrscheinlichkeiten, Fehlversuch-/Neuwahlregeln.
+- Für Temp-Events: zufällige Rotationsgewichte bei wachsendem Pool.
+- Für Story-/Questevents: Überschneidungen, Ablauf und besondere Voraussetzungen.
+- Detailfälle der Eventzustandsübergänge und Wiederherstellung nach Tod/Offline.
