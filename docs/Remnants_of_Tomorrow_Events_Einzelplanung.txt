@@ -58,11 +58,17 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Gegner sind verpflichtend; Gegnerzahl und -typen bleiben offen, bis die dynamischen Event-Spawnflächen überprüft wurden.
 
 ## Gleich eins aufs Maul
-- ID: gleich_eins_aufs_maul (in DB).
-- Normales Kampf-Event mit Nahkampffokus, separate Kampfzone; Rest der EventMap friedlich.
-- Boss-ID: boss_gleich_eins_aufs_maul; geplante Fähigkeit Superschlag mit 20–40 Schaden.
-- Freischaltung: Spielerlevel 15 (im Gespräch am 14.10.2026 bestätigt).
-- Dauer, Angriffswerte außerhalb der genannten Idee, Belohnungen und Aufgaben nicht final.
+- ID: gleich_eins_aufs_maul (als Grundeintrag in der bestehenden Eventdatenbank).
+- Großes Nahkampf- und Aufgaben-Event, freigeschaltet ab Spielerlevel 15.
+- Geplante Laufzeit: 14 echte Kalendertage je Ausgabe.
+- Automatisch generiertes friedliches Hauptgebiet mit Aufgaben-NPCs; Kämpfe in eigens festgelegten Bereichen.
+- 30 Pflichtaufgaben und 130 freiwillige Nebenaufgaben, davon auch Einsätze in erreichbaren normalen Gebieten.
+- Jede Aufgabe hat XP-, Eventmarken-, Rufpunkt- und Gegenstandsbelohnungen.
+- Eigener Tauschshop mit 100 Angeboten, unbegrenztem Warenbestand und Mengenauswahl.
+- Kostenlose Spielinhalte; keine Echtgeldkäufe oder Premiumwährungen.
+- Öffentliche Einzeldatei: docs/events/Gleich_eins_aufs_Maul.txt
+- Interner Questablauf, exakte Belohnungstabellen, Shoppreise und besondere Herausforderungen stehen NICHT im öffentlichen Repository.
+- Häufigkeit und sonstige nicht bestätigte Einzeldetails bleiben offen; die technischen Systeme sind noch nicht vollständig umgesetzt.
 
 ## Basis-Horde
 - ID: horde_basis (in DB).
