@@ -1,5 +1,15 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
+
+Die weitere Eventplanung ist jetzt in **zwei getrennten Dokumenten** nachvollziehbar: [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt).
+
+**Übergreifende Regeln:** Höchstens 1 normales Zufalls-Event sowie unabhängig davon höchstens 2 temporäre Mini-Events; Basis-Horden, Kalender- und Saisonereignisse belegen diese Plätze nicht. Neue Zufalls-Events entstehen nur im geöffneten Spiel, laufende Eventtimer laufen auch offline. Zwischen zwei Starts temporärer Mini-Events liegen mindestens 24 Ingame-Stunden. Die bestehende dynamische EventMap und ihr gelber rotierender Sternmarker bleiben erhalten. Temporäre Eventgebiete enthalten Gegner; normale Events bleiben außerhalb ausdrücklich definierter Kampfbereiche friedlich. Eventbeute und Gegnerzustände werden pro Instanz nur einmal erzeugt und persistiert. Abgelaufene Gebiete bleiben bis zum Verlassen bestehen, wenn der Spieler noch darin ist; nach Tod im Event schützt die besondere Rückgaberegel verloren gegangene Gegenstände vor endgültigem Verlust durch das Verschwinden des Gebiets.
+
+**Einzel-Events:** Die vorhandene Datenbank V2 enthält 7 Eventeinträge; „Zerstörter Konvoi“ ist als achter Typ geplant, aber **noch nicht in die DB eingetragen**. Für ihn sind 6 Kisten und insgesamt mindestens 6 seltene Gegenstände (nur Normal/Selten) festgelegt. Flugzeugabsturz und Konvoi sind ab Level 1 möglich und auf höchstens 60 Minuten begrenzt. Weitere Eventlevel (Rahmen Level 10–20), Gegnerzahlen, Wahrscheinlichkeiten und Saisonabläufe bleiben teils offen.
+
+**Technischer Status:** Dies ist eine **Planungsaktualisierung**, keine neue Unity-Funktionsprüfung und keine Änderung an `events.json.db`. Spätere Eventwerte werden vollständig datenbankgesteuert. Grafik, Audio und Modelle folgen am Ende.
+
 ## Update 14.10.2026 – Hauptspiel: Entwicklungsstand und offene Kernsysteme
 
 **Stand der Hauptspielentwicklung:** Remnants of Tomorrow bleibt in aktiver Entwicklung. Die vorhandenen Unity-Grundlagen (Spieler/Kamera, Weltkarte und Gebietswechsel, Ressourcen- und Inventarprototypen, Fahrzeug-/Tankstellenprototyp, Speichern/Laden sowie Basis-Hordentests) sind keine Bestätigung eines bereits vollständig spielbaren Hauptspiels. Die zuvor dokumentierten konkreten Unity-Tests bleiben unverändert gültig.
