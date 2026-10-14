@@ -108,8 +108,7 @@ Grundregel:
 - Herbst/Halloween
 - Weihnachten
 - Flugzeugabsturz als kleines temporäres Mini-Event
-- „Gleich eins aufs Maul“ als kampforientiertes Event
-- Bossidee „Gleich eins aufs Maul“ mit Spezialangriff „Superschlag“
+- „Gleich eins aufs Maul“ als mehrtägiges Kampf- und Aufgaben-Event; öffentliche Übersicht unter docs/events/Gleich_eins_aufs_Maul.txt
 
 ### Weltkarte
 - Hauptressourcen und mögliche Beute beim Gebiet anzeigen
