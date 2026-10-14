@@ -1,0 +1,60 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: GLEICH EINS AUFS MAUL
+Öffentliche Eventübersicht
+Stand: 15.10.2026
+Status: In Planung und Entwicklung. Die hier beschriebenen Systeme sind keine Bestätigung einer bereits spielbaren Umsetzung.
+
+============================================================
+DAS EVENT
+============================================================
+
+„Gleich eins aufs Maul“ ist ein umfangreiches, mehrtägiges Kampf- und Aufgaben-Event in Remnants of Tomorrow.
+
+- Freischaltung ab Spielerlevel 15.
+- Geplante Laufzeit: 14 echte Kalendertage pro Eventausgabe.
+- Automatisch erzeugtes Event-Hauptgebiet als zentraler Anlaufpunkt.
+- Verschiedene Event-NPCs bieten Aufträge und Herausforderungen an.
+- Eigene Kampfbereiche mit Schwerpunkt Nahkampf.
+- Der zentrale Aufenthaltsbereich ist grundsätzlich friedlich.
+- Eventaufgaben können auch in bereits freigeschaltete reguläre Weltkartengebiete führen.
+
+============================================================
+AUFGABEN UND SPIELERFREIHEIT
+============================================================
+
+- Insgesamt 160 unterschiedliche Aufgaben sind vorgesehen.
+- 30 Aufgaben bilden die verpflichtende Hauptquestreihe.
+- 130 Nebenaufgaben sind freiwillig.
+- Für den regulären Hauptabschluss müssen keine Nebenaufgaben absolviert werden.
+- Spieler können freiwillige Aufgaben auch nach Abschluss der Hauptquestreihe innerhalb der verbleibenden Eventlaufzeit weiter erledigen.
+- Externe Aufträge berücksichtigen erreichbare Gebiete. Spieler müssen nicht vorzeitig bislang gesperrte Storygebiete freischalten.
+- Die Aufgaben bieten sowohl kürzere Einsätze als auch längere Herausforderungen.
+
+============================================================
+BELOHNUNGEN UND TAUSCHSHOP
+============================================================
+
+- Aufgaben belohnen Spieler mit Erfahrungspunkten, erspielbaren Eventmarken, Rufpunkten und passenden Spielgegenständen.
+- Ein eventspezifisches Rufsystem ermöglicht zusätzliche Freischaltungen.
+- Ein eigener Event-Tauschshop bietet Ressourcen, Versorgungsgüter, Ausrüstung und weitere passende Gegenstände an.
+- Shopangebote können mit erspielten Eventmarken und je nach Angebot auch durch die Abgabe von Spielgegenständen erworben werden.
+- Shopangebote haben keinen erschöpfbaren Lagerbestand: Mehrere identische Pakete können auf einmal erworben werden, sofern die nötigen Zahlungsmittel bzw. Tauschmaterialien vorhanden sind.
+- Vor dem Tausch werden Inhalt, benötigte Mittel und Gesamtpreis angezeigt und der Kauf muss bestätigt werden.
+
+REMNANTS OF TOMORROW IST KOSTENLOS.
+Keine Echtgeldkäufe, keine kostenpflichtigen Premiumwährungen und keine Bezahlschranken.
+
+============================================================
+TECHNISCHER PLANUNGSSTAND
+============================================================
+
+- Allgemeine Eventmechaniken richten sich nach dem projektweiten Eventsystem.
+- Konfigurierbare Eventdefinitionen werden für events.json.db vorgesehen.
+- Der Fortschritt einer laufenden Eventinstanz wird spielstandbezogen in .rotsave gesichert.
+- Genaue Erscheinungshäufigkeit und weitere technische Details sind noch nicht abschließend festgelegt.
+- Finale grafische Ausgestaltung und technische Integration erfolgen in der weiteren Entwicklung.
+
+Weiterführende allgemeine Dokumentation:
+docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt
+
+Dieses Dokument beschreibt ausschließlich die öffentlich vorgesehene Eventübersicht.
