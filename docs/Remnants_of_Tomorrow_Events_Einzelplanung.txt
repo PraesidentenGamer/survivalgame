@@ -80,11 +80,16 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Hordenprototyp mit 10 und 25 Gegnern sowie Speichern/Laden der Gegnerzahl bereits getestet. Automatische Zeitsteuerung, Bauschaden und vollständige individuelle Gegnerwiederherstellung bleiben offen.
 - Freischaltung: ab Spielerlevel 1 (im Gespräch am 14.10.2026 bestätigt).
 
-## 1.-April-Event
+## 1.-April-Event („April, April!“)
 - ID: april_1 (in DB).
-- Kalender-Event am realen 1. April, 1 Tag Dauer laut DB.
-- Einträge wie UI-/Händlerscherze, Scherzitems, kleine Belohnungen und Quests sind Ideen, noch nicht final.
-- Keine Spielerlevel-Beschränkung; das Event steht am 1. April unabhängig vom Spielerlevel bereit (im Gespräch am 14.10.2026 bestätigt). Die Inhalte sind noch offen.
+- Jährliches Kalender-Event: 1. April von 00:00 bis 23:59 Uhr, technisches Ende am 2. April um 00:00 Uhr.
+- Ohne Levelbeschränkung, ab Level 1 zugänglich.
+- Automatisch erzeugtes Hauptgebiet mit Event-NPCs; insgesamt 40 Quests, davon 4 Pflicht- und 36 optionale Aufgaben.
+- Eigener Eventshop mit 50 dauerhaft verfügbaren, beliebig oft kaufbaren Angeboten; Eventmarken und Rufsystem.
+- Keine Echtgeldkäufe; harmlose thematische Überraschungen und keine verpflichtenden Kämpfe.
+- Öffentliche Einzelübersicht: docs/events/April_April.txt
+- Konkrete Questlösungen, Belohnungswerte, Shoppreise und Aprilscherze liegen ausschließlich in der privaten TXT.
+- Alle Detailwerte sind Planungsstand und noch nicht als Unity-Implementierung bestätigt.
 
 ## Sommer-Event
 - ID: sommer_event (in DB).
