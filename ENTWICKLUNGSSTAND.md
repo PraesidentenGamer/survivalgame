@@ -1,5 +1,15 @@
 # Entwicklungsstand
 
+## Update 14.10.2026 – Eventplanung in Systemregeln und Einzel-Events getrennt
+
+**Planungsstruktur:** [Allgemeine Eventregeln](docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt) · [Einzelplanung der Events](docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt). Das erste Dokument definiert nur die globalen Kategorien, Start-/Offline-/Ablaufregeln, Eventinstanzen, Schutzregeln und den technischen DB-/Save-Aufbau. Das zweite dokumentiert separat die konkreten Eventarten, bereits festgelegte Mengen und offene Einzelfragen.
+
+**Neu verbindlich geplant:** Maximal 1 normales zufälliges Event und separat maximal 2 temporäre Mini-Events; Basis-Horden und Kalender-/Saison-Events sind unabhängig. Temporäre und normale Events können parallel laufen. Neue zufällige Events entstehen nur bei geöffnetem Spiel. Temporäre Starts haben mindestens 24 Ingame-Stunden Abstand; laufende Events können offline auslaufen. Eventmarker bleiben räumlich getrennt. Temporäre Events enthalten Gegner; normale Eventflächen sind abgesehen von definierten Kampfbereichen friedlich. Lootkisten und Gegner werden nur einmal pro Eventinstanz befüllt/erzeugt und ihre verbleibenden Zustände sollen persistiert werden. Eventinstanzen verschwinden nicht vor Ablauf, auch bei vollständiger Plünderung; Aufenthalt in einem abgelaufenen Gebiet bleibt bis zum Verlassen möglich. Bei Tod im temporären Event ist ein Verlustschutz für die nicht geborgenen Gegenstände vorgesehen, wenn das Gebiet später verschwindet.
+
+**DB-Daten vs. Planung:** `events.json.db` Version 2 enthält weiterhin 7 Einträge; der Konvoi ist nur der geplante achte Eventtyp. Die konkreten Eventlevel 10–20 sind nicht einzeln bestätigt. Flugzeugabsturz und Konvoi sind als Ausnahmen ab Level 1 vorgesehen. Der Konvoi erhält 6 Kisten mit mindestens 6 seltenen Gegenständen; Gegnerzahl bleibt offen. Unterschiedliche Eventarten und Lootklassen bleiben einzeln festzulegen. Auslösewahrscheinlichkeiten und Zeitregel für gewöhnliche normale Events sind nicht abschließend bestimmt.
+
+**Status:** Fortschritt bei der Planung – keine neue produktive Eventsystem-Implementierung und kein neuer Unity-Test. Erst alle Gameplay- und Speicherfunktionen, erst am Schluss Modelle, Grafik und Audio.
+
 ## Aktualisierung 14.10.2026 – Hauptspiel und vollständige Eventplanung
 
 **Einordnung:** Das Hauptspiel ist technisch noch nicht abgeschlossen. Bestätigt sind einzelne Prototypen und konkrete Tests, insbesondere die Weltkarten-/Jeep-/Tankstellenfunktionen, die verschlüsselte `.rotsave`-Verarbeitung und die jüngsten Basis-Hordentests. Die tatsächliche durchgängige Spielschleife **Basis → Kiefernwald → Sammeln/Kampf → Rückkehr → Crafting/Bauen → Speichern/Laden** bleibt ein noch zu bestätigendes Integrationsziel. Vorhandene Datensätze oder vorbereitete Skripte sind nicht mit einer fertig getesteten Funktion gleichzusetzen.
