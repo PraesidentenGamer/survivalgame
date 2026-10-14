@@ -103,3 +103,13 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - DB-Migration der bestätigten Planungsregeln und zusätzlicher Konvoi-Eintrag.
 
 Alle bisherigen Werte sind Planungsfestlegungen, soweit nicht ausdrücklich als bereits in der DB oder im Unity-Prototyp bestätigt bezeichnet.
+
+### Flugdatenschreiberanalyse – nachtraeglich festgelegt am 14.10.2026
+- Eine eigenstaendige Analysestation wird NICHT gebaut. Analyse erfolgt auf einem GEAM-OS-Computer mit passender, zuvor gefundener und auf diesem Computer installierter Analyse-Software.
+- Analyse-Software auf USB-Stick oder CD/DVD auffindbar, u.a. bei Flugzeugabsturz, Bunker, Forschungseinrichtung. Fundwahrscheinlichkeiten offen.
+- Jeder Computer braucht eine eigene Installation. Datentraeger bleibt wiederverwendbar, wird nicht verbraucht. Manuelle Installation mit Fortschritt und von Programm/HW abhaengiger Dauer. Stromausfall oder Entnahme pausieren mit gespeicherter Fortsetzung; expliziter Abbruch mit Sicherheitsabfrage loescht Installationsfortschritt. Hintergrundinstallation und mehrere parallele hardwareabhaengige Installationen, Queue, einstellbare Prioritaeten Niedrig/Normal/Hoch.
+- Software-Datentraeger in separater Programmkiste. 10/20/30/40/50 Slots, maximal 10 gleiche Exemplare pro Stack vor Endstufe; bei 50 Slots unbegrenzte Slots und Stackgroessen. Rueckgabe nach Installation automatisch an Programmkiste, bei Platzmangel ins Inventar, sonst im Computer behalten.
+- Pro Absturz maximal 1 Flugdatenschreiber, aber insgesamt maximal 5 gleichzeitig im ganzen Spiel (auch in Lagern/Eventgebieten). Questabgabe gibt einen Platz frei. Informationen bleiben dauerhaft als Gefundene Dokumente im Questbuch.
+- ANALYSE selbst: pro Recorder 30 Minuten reale aktive Spielzeit, nur bei Strom und offenem Spiel. Verlassen des Computers ist erlaubt. Queue nacheinander, Einreihung/Umordnung/Entfernen wartender Auftraege, automatischer naechster Start. Abbruch einer laufenden Analyse gibt den Recorder zurueck, verwirft ihren bisherigen Fortschritt; abgeschlossene Ergebnisse bleiben. Queue und Fortschritt in .rotsave.
+- Vollstaendige Hardware-/GEAM-OS-/Software-Regeln: docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt.
+- Wichtig: Dies ist eine Planungsfestlegung, keine bestaetigte Unity-Implementierung. Konkrete technische Werte und DB-Migration offen.
