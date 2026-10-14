@@ -1,0 +1,72 @@
+# Remnants of Tomorrow – Einzelplanung der Events
+Stand: 14.10.2026
+Status: Planung, keine neue Unity-Implementierung.
+
+Dieses Dokument enthält AUSSCHLIESSLICH die individuellen Eventdaten. Die für alle Eventarten geltenden Regeln stehen in docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt.
+
+BESTAND
+Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGameEvents, und enthält 7 Eventeinträge. Der neu vorgesehene „Zerstörte Konvoi“ ist bislang kein Datenbankeintrag. Die Planung enthält damit 8 benannte Events. Die in der bestehenden DB enthaltenen Einträge mit active=false bleiben bis zur technischen Integration inaktiv.
+
+## Flugzeugabsturz
+- ID: flugzeugabsturz (in DB).
+- Temporäres Mini-Event; ab Spielerlevel 1 ohne Level-Sperre.
+- Maximal 60 Minuten; ungefähre Eventfläche 30 × 30 Meter.
+- Überwiegend hochwertige Beute, vorhandener Lootpool LOOT_EVENT_PLANECRASH.
+- Aufgrund der höherwertigen Beute nur zufallsbasiert, nicht automatisch garantiert.
+- Enthält feindliche Gegner. Deren Anzahl und Typ sowie Kistenzahl und exakte Chancen sind noch offen.
+
+## Zerstörter Konvoi
+- Neue Event-ID noch zu vergeben; bislang nicht in der Eventdatenbank.
+- Gewöhnliches temporäres Mini-Event ab Level 1, maximal 60 Minuten.
+- Genau 6 Lootkisten; insgesamt mindestens 6 garantiert seltene Gegenstände.
+- Nur die vierstufige Hauptspiel-Seltenheit Normal/Selten ist erlaubt; keine epischen oder legendären Gegenstände.
+- Zufällige Verteilung der garantierten seltenen Gegenstände über alle Kisten, nicht genau einer je Kiste.
+- Weitere Beute kann normal oder selten sein.
+- Gegner sind verpflichtend; Gegnerzahl und -typen bleiben offen, bis die dynamischen Event-Spawnflächen überprüft wurden.
+
+## Gleich eins aufs Maul
+- ID: gleich_eins_aufs_maul (in DB).
+- Normales Kampf-Event mit Nahkampffokus, separate Kampfzone; Rest der EventMap friedlich.
+- Boss-ID: boss_gleich_eins_aufs_maul; geplante Fähigkeit Superschlag mit 20–40 Schaden.
+- Freischaltung im Rahmen Level 10–20, konkretes Level nicht final.
+- Dauer, Angriffswerte außerhalb der genannten Idee, Belohnungen und Aufgaben nicht final.
+
+## Basis-Horde
+- ID: horde_basis (in DB).
+- Unabhängiger Basisangriff alle 24 Ingame-Stunden; Vorwarnung 2 Ingame-Stunden davor.
+- Stufe 1: 10 leichte Gegner; Stufe 2: 25 Gegner gemischt leicht/mittel; Stufe 3: 50 Gegner gemischt leicht/mittel/schwer.
+- Zufällig bestimmte Stufe; ausschließlich normale Gegner, ohne Elite- oder Bossgegner.
+- Ganze Gruppe erscheint zugleich; nicht in Wellen. Ziel: Hauptbasis. Kein Diebstahl aus Lagern.
+- Die vorhandene Datenbank führt noch testZombieCount=5 und leere Tier-Zusammensetzungen: Das sind ältere Testfelder, die erst bei der DB-Migration angepasst werden müssen.
+- Hordenprototyp mit 10 und 25 Gegnern sowie Speichern/Laden der Gegnerzahl bereits getestet. Automatische Zeitsteuerung, Bauschaden und vollständige individuelle Gegnerwiederherstellung bleiben offen.
+- Freischaltlevel noch nicht endgültig zugeordnet.
+
+## 1.-April-Event
+- ID: april_1 (in DB).
+- Kalender-Event am realen 1. April, 1 Tag Dauer laut DB.
+- Einträge wie UI-/Händlerscherze, Scherzitems, kleine Belohnungen und Quests sind Ideen, noch nicht final.
+- Genaues Level innerhalb des Rahmens 10–20 und Inhalte offen.
+
+## Sommer-Event
+- ID: sommer_event (in DB).
+- Saison-Event; mögliche Themen Hitze, Wasser, Küste, See, Camping.
+- Zeitraum, Level, Inhalte, Belohnungen und gegebenenfalls begrenzte Kampfbereiche noch offen.
+
+## Herbst-/Halloween-Event
+- ID: herbst_halloween_event (in DB).
+- Saison-Event; Ideen: Nebel, dunkle Atmosphäre, Kürbisdekoration, besondere Gegner und eventuell großer Kürbis-Boss.
+- Zeitraum, Level, Inhalte, Belohnungen und Kampfbereich noch offen.
+
+## Weihnachts-Event
+- ID: weihnachts_event (in DB).
+- Saison-Event; Ideen: Schnee, Lichter, Geschenke, Winteritems, Händlerrotation, mögliches besonderes Eventgebiet.
+- Zeitraum, Level, Inhalte, Belohnungen und Kampfbereich noch offen.
+
+## Noch auszuarbeiten
+- Konkrete Eventlevel und Startbedingungen für reguläre Eventarten.
+- Gegnerzahlen, Kampfregeln, Eventziele und Belohnungswerte je Event.
+- Seltenheitswahrscheinlichkeiten des Flugzeugabsturzes und anderer hochwertiger Beuteereignisse.
+- Saisontermine und vollständige Kalender-/Saisonabläufe.
+- DB-Migration der bestätigten Planungsregeln und zusätzlicher Konvoi-Eintrag.
+
+Alle bisherigen Werte sind Planungsfestlegungen, soweit nicht ausdrücklich als bereits in der DB oder im Unity-Prototyp bestätigt bezeichnet.
