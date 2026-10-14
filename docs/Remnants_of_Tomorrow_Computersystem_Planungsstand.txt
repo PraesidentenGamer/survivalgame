@@ -1,0 +1,337 @@
+# Remnants of Tomorrow (RoT) - Computersystem und GEAM OS
+Verbindlicher Planungsstand: 14.10.2026
+STATUS: PLANUNG; KEINE BESTAETIGUNG EINER FERTIGEN UNITY-IMPLEMENTIERUNG
+
+ZWECK
+Diese Datei sichert die bereits getroffenen Entscheidungen zum Computersystem in RoT.
+Sie ist kein technisches Handbuch des eigenstaendigen GEAM-OS-Projekts. Im Spiel wird
+GEAM OS als Computersimulation innerhalb von Unity dargestellt; eine echte PC- oder
+Betriebssystem-Emulation ist nicht erforderlich. Das urspruengliche GEAM OS bleibt
+ein getrenntes Projekt und wird dadurch nicht veraendert.
+
+VERBINDLICHE ENTWICKLUNGSREGELN
+- Nur bereits entschiedene Regeln als verbindlich behandeln. Offene Zahlen nicht erfinden.
+- Konfigurierbare Daten (z. B. Hardware, Fundquoten, Programmgroessen und Reparaturwerte)
+  spaeter aus passenden Datenbanken laden, statt feste Werte in C# einzutragen.
+- Persistente Spielzustaende pro Spielstand in .rotsave halten.
+- Vorhandene getestete Funktionen nicht grundlos umbauen. Zuerst Gameplay, Speicherung,
+  Tests; Grafik, 3D-Modelle, Animation und Audio erst zum Schluss.
+- Vorlaeufig keine weiteren Computer-Zusatzfunktionen planen: Zum Event Flugzeugabsturz
+  zurueckkehren. Dieses Dokument konserviert den aktuellen Stand.
+- Das fruehere Bild "Futuristische GEAM OS Desktop-Welt.png" liegt als Designreferenz
+  in der Dateibibliothek vor; es wurde bei diesem Update nicht als GitHub-Asset hochgeladen.
+
+====================================================================
+01. FUNDE, SELTENHEIT UND TRANSPORT
+====================================================================
+BESCHLOSSEN
+- Computer koennen vollstaendig zusammengebaut gefunden, zerlegt, repariert,
+  aufgeruestet oder aus Einzelteilen selbst zusammengebaut werden.
+- Gefundene PCs koennen funktionsfaehig, teilweise beschaedigt, unvollstaendig
+  oder komplett defekt sein. Teile eines defekten PCs koennen noch brauchbar sein.
+- Vier Spiel-Seltenheiten: Normal/Gruen, Selten/Blau, Episch/Gelb, Legendaer/Rot.
+- Seltenheit beeinflusst Hardwarequalitaet, Fundchancen eines VOLLSTAENDIGEN PCs
+  und die jeweiligen Transportmoeglichkeiten; Groesse und Gewicht zaehlen mit.
+- Der Fundort beeinflusst ebenfalls Wahrscheinlichkeit und Qualitaet der Computer:
+  Wohnhaus, Buero, Industrieanlage, Bunker, Forschungseinrichtung usw.
+- Selbst legendaere PCs duerfen grundsaetzlich auch in einfachen Gebieten gefunden
+  werden, dann allerdings mit sehr geringer, noch offener Wahrscheinlichkeit.
+- Komplette PCs koennen je nach Bedingungen getragen/transportiert werden; sonst
+  ist Zerlegung am Fundort moeglich. Fuer schwere PCs koennen Fahrzeuge relevant sein.
+- Die konkret ausgewuerfelte Ausstattung und der Zustand bleiben in derselben
+  Welt-/Objektinstanz erhalten und werden gespeichert.
+OFFEN
+- Fundprozente, Typverteilungen, Gewichte, Transportgrenzen, konkrete Fundtabellen
+  und Wahrscheinlichkeiten der einzelnen Zustaende.
+
+====================================================================
+02. BAUTEILE, ANSCHLUESSE UND KUEHLUNG
+====================================================================
+BESCHLOSSEN
+- Weitreichendes modulares PC-System: Gehaeuse, Mainboard, CPU, RAM, Netzteil,
+  CPU-Kuehler, Waermeleitpaste, Gehaeuseluefter, Laufwerke (HDD, SATA-SSD,
+  NVMe-SSD), optische Laufwerke, passende Erweiterungskarten und Anschluesse
+  sowie weitere wesentliche reale PC-Bauteile. Auch externe Geraete koennen
+  passend angeschlossen werden.
+- Separate Grafikkarten werden im Computersystem ausdruecklich NICHT benoetigt.
+- Ausschliesslich LUFTKUEHLUNG, einschliesslich geeigneter Passivkuehlkoerper.
+- CPU-/Lueftertemperaturen, Luftstrom, Kuehlleistung, Verschleiss und
+  Schutzabschaltung bei kritischer Ueberhitzung als Mechaniken vorgesehen.
+- Mainboard-Sockel, RAM-Generation, Steckplatztypen, Gehaeuse und Netzteil-
+  anschluesse/-leistung muessen kompatibel sein.
+- Strom- und Datenkabel werden bei kompatiblen Komponenten AUTOMATISCH verbunden.
+  Der Spieler muss keine einzelnen Kabel verlegen.
+- Unpassende Komponenten werden abgelehnt; die Ursache wird erklaert.
+- Jeder PC besitzt seine eigene Anzahl an SATA-Anschluessen und NVMe-Steckplaetzen.
+  Das reale Beispiel des Spielentwicklers (3 NVMe und 4 SATA) ist KEIN globaler
+  Standard fuer Spielcomputer.
+- Es gibt werkzeuglose Bauarten und Bauteile mit Werkzeugpflicht: Steckbare
+  Komponenten wie RAM/CPU oft ohne Werkzeug, geschraubte Bauteile je nach Aufbau
+  mit passendem Schraubendreher/anderen Werkzeugen.
+- Normale interne Hardwarearbeiten nur am ausgeschalteten und stromlos
+  vorbereiteten PC. USB und ausdruecklich Hot-Swap-faehige Laufwerke koennen
+  unter den passenden Bedingungen im laufenden Betrieb gewechselt werden.
+- Wartungsmodus wahlweise durch manuelles Abschalten und Stromtrennen oder
+  durch eine bestaetigungspflichtige automatische Herunterfahr-Vorbereitung.
+OFFEN
+- Konkrete Hardwarefamilien, Leistungswerte, Stecker/Slots je Typ, TDP-/Temperatur-
+  schwellen, Takt-/Leistungsmodelle und Werkzeugzuordnungen.
+
+====================================================================
+03. MASSENSPEICHER UND LAUFWERKSDATEN
+====================================================================
+BESCHLOSSEN
+- HDDs, SATA-SSDs und NVMe-SSDs haben begrenzte reale Spielkapazitaet.
+- Die Speicherkapazitaet eines PCs ergibt sich aus seinen eingebauten Laufwerken.
+- Laufwerke duerfen gegen andere getauscht oder an freien Anschluessen ergaenzt werden.
+- Installierte Programme und Dateien brauchen Speicherplatz.
+- Bei fehlendem Platz kann eine Installation nicht sinnvoll weiterlaufen;
+  Loeschen/Deinstallieren oder Kapazitaetserweiterung schafft Platz.
+- Jedes Laufwerk hat eine eindeutige Kennung und bewahrt seine Daten beim Ausbau.
+- Nach Anschluss desselben Laufwerks an einem anderen PC bleiben Dateien erhalten.
+  Manche Programme koennen auf dem neuen PC erneute Einrichtung brauchen.
+- Mehrere Laufwerke und Partitionen sowie Boot-/Systemlaufwerksauswahl vorgesehen.
+- Vor Formatierung oder destruktiven Partitionsaktionen muss der Spieler
+  ausdruecklich vor Datenverlust gewarnt werden.
+- Partitionierung/Formatierung sind Bestandteil der GEAM-OS-Einrichtung.
+OFFEN
+- Vollstaendige Dateisystem-Simulation, Partitionstypen, exakte Laufwerkskapazitaeten,
+  Geschwindigkeiten, Dateiformate und Datenrettungs-Details.
+
+====================================================================
+04. GEAM OS: GRUNDPRINZIP
+====================================================================
+BESCHLOSSEN
+- Jeder Spielcomputer nutzt GEAM OS als Betriebssystem.
+- Das GEAM-OS-Bild aus dem frueheren Projekt dient als visuelle Referenz.
+- Geplant: Desktop, Fenster, Startmenue, Taskleiste, Dateiverwaltung,
+  Datentraegerverwaltung, Programme, Systemeinstellungen und Hardwareverwaltung.
+- Mehrere GEAM-OS-Versionen mit moeglicherweise unterschiedlichen Hardware-
+  anforderungen und Softwarekompatibilitaet sind vorgesehen.
+- Mehrere voneinander getrennte GEAM-OS-Installationen duerfen gleichzeitig
+  auf verschiedenen Laufwerken/Partitionen vorhanden sein.
+- Ein Bootmanager erlaubt Auswahl und Festlegung eines Standardsystems.
+- Jede Installation hat eigene Systemdateien, Programme, Einstellungen und
+  Wiederherstellungspunkte.
+- Wird ein Systemlaufwerk entfernt, bleibt dessen Installation auf dem
+  ausgebauten Datentraeger, ist aber bis zur erneuten Verfuegbarkeit nicht nutzbar.
+
+====================================================================
+05. GEAM OS: INSTALLATION UND UPGRADE
+====================================================================
+BESCHLOSSEN
+- GEAM OS kann mit bootfaehigen USB-Sticks oder CDs/DVDs installiert werden.
+- BIOS/UEFI und Bootreihenfolge werden im Spiel nachgebildet.
+- Der Spieler waehlt Zielplatte/Partition und kann Partitionen verwalten.
+- GEAM OS kann neu installiert werden oder als Versionsupgrade ueber eine
+  bestehende geeignete Installation installiert werden.
+- Beim Upgrade bleiben kompatible Programme, Einstellungen und persoenliche
+  Dateien moeglichst erhalten. Vorher werden Hardware, Platz und Kompatibilitaet
+  geprueft.
+- Installation/Upgrade brauchen Zeit, zeigen Fortschritt und koennen
+  den Computer neu starten.
+- Scheitert ein Upgrade, versucht GEAM OS zuerst automatische Reparatur
+  und Wiederherstellung der vorherigen funktionierenden Version.
+  Scheitert dies, muss der Spieler manuell reparieren.
+- Datenverlust soll moeglichst vermieden, aber nicht in jedem Fehlerfall
+  ausgeschlossen werden.
+
+====================================================================
+06. SYSTEMWIEDERHERSTELLUNG UND RETTUNGSMEDIEN
+====================================================================
+BESCHLOSSEN
+- GEAM OS kann automatisch vor wichtigen Systemaenderungen und Upgrades
+  Wiederherstellungspunkte erstellen; der Spieler kann selbst weitere anlegen.
+- Die automatische Erstellung kann je GEAM-OS-Installation aktiviert/deaktiviert
+  werden. Manuelles Anlegen bleibt unabhaengig davon moeglich.
+- Der Spieler legt das Platzlimit fuer Wiederherstellungspunkte selbst fest.
+- Wenn das Limit erreicht wird, werden zuerst die aeltesten automatisch
+  erstellten Punkte geloescht.
+- MANUELL erstellte Punkte duerfen NIEMALS automatisch geloescht werden.
+- Blockieren geschuetzte Punkte den verfuegbaren Platz, wird die Erzeugung
+  neuer Punkte ausgesetzt, statt geschuetzte Punkte zu loeschen.
+- Alle Punkte koennen manuell geloescht werden. Sie benoetigen Speicherkapazitaet.
+- Normale Systemwiederherstellung soll persoenliche Dateien grundsaetzlich schonen.
+- Integrierte Reparatur-/Recovery-Umgebung samt Startreparatur vorgesehen.
+- Alternative: bootfaehige GEAM-OS-Rettungsmedien auf USB/CD/DVD.
+- Diese Rettungsmedien koennen an geeigneten Orten gefunden oder an einem
+  funktionierenden PC selbst erstellt werden.
+- Rettungsmedien bleiben auch dann ein Ausweg, wenn das interne Recovery
+  selbst beschaedigt ist, sofern die Hardware starten kann.
+
+====================================================================
+07. PROGRAMMFUNDE, INSTALLATIONSMEDIEN UND LAGER
+====================================================================
+BESCHLOSSEN
+- Das zur Flugdatenschreiber-Auswertung benoetigte Analyseprogramm muss gefunden
+  und auf einem Computer installiert werden. Es ist nicht von Anfang an nutzbar.
+- Moegliche Fundorte: Flugzeugabsturz, Bunker, Forschungseinrichtungen und
+  weitere passende Fundorte. Keine endgueltigen Dropquoten.
+- Programmmedien koennen USB-Sticks oder CDs/DVDs sein.
+- JEDER Computer braucht seine eigene Installation des Programms.
+- Ein gefundenes Programminstallationsmedium wird NICHT bei der Installation
+  verbraucht und kann an weiteren PCs erneut verwendet werden.
+- Normale Datentraeger koennen in einem Datentraegerregal aufbewahrt werden;
+  Programminstallationsmedien gehoeren in eine gesonderte PROGRAMMKISTE.
+- Programmkiste beginnt mit 10 Slots und kann in 10er-Schritten auf 20,
+  30, 40 und 50 Slots erweitert werden (insgesamt fuenf Ausbaustufen).
+- Vor der Endstufe: je identischer Software maximal 10 Exemplare pro Stack;
+  unterschiedliche Softwaretypen duerfen vorkommen, solange freie Slots bestehen.
+- Nach Erreichen der Endstufe (50 Slots) werden AUTOMATISCH die Slotobergrenze
+  und die Begrenzung der Stackgroesse aufgehoben: unbegrenzte Lagerung.
+- Ueberschuessige Software/Programmkopien koennen spaeter verkauft werden.
+- Nach erfolgreicher Installation wird das Medium automatisch in die
+  Programmkiste zurueckgelegt, wenn dort Platz ist; sonst ins Spielerinventar;
+  wenn auch dieses voll ist, bleibt es im Computer. Nichts geht verloren.
+- Programmkistenstufe, Inhalt und Ort jedes Mediums werden gespeichert.
+
+====================================================================
+08. SOFTWAREINSTALLATION, ABLAUF UND STROMAUSFAELLE
+====================================================================
+BESCHLOSSEN
+- Installation wird MANUELL am Computer mit eingelegtem/eingestecktem Medium
+  gestartet. Datentraeger/Installationsprogramm wird ausgewaehlt.
+- Ein Installationsfenster zeigt Fortschritt 0-100 % und Status.
+- Programmgroesse beeinflusst Installationsdauer; konkrete Zeiten noch offen.
+- Installationen laufen im Hintergrund weiter, wenn der Spieler den PC verlaesst,
+  solange PC und benoetigte Stromversorgung aktiv sind.
+- Bei Stromausfall wird der Installationszustand pausiert und in .rotsave
+  gespeichert. Nach erneutem Einschalten UND funktionierender Versorgung
+  setzt er AUTOMATISCH beim gespeicherten Fortschritt fort.
+- Dieses Sicherungskonzept aehnelt dem Zweck eines Ruhezustands/Dumps; es wird
+  kein echter Speicherabbild-Dump bzw. keine echte hiberfil.sys benoetigt.
+- Wird das benoetigte Medium waehrend der Installation entfernt, wird die
+  entsprechende Installation pausiert. Nach Wiedereinlegen DESSELBEN Mediums
+  setzt sie bei vorhandener Stromversorgung automatisch fort.
+- Spieler darf jede Installation auch MANUELL ABBRECHEN; Sicherheitsabfrage
+  ist zwingend. Bestaetigter Abbruch verwirft den gesamten Fortschritt,
+  bereinigt unvollstaendige Programmdateien und bewahrt das Medium.
+- Reines Pausieren vernichtet keinen Fortschritt.
+- Mehrere Programme koennen parallel installiert werden; weitere Auftraege
+  koennen in einer Warteschlange warten.
+- Anzahl paralleler Installationen richtet sich nach Hardwareleistung UND
+  Anforderungen der installierten Software; keine feste globale Zahl.
+- CPU, RAM und Datentraegergeschwindigkeit sind fuer die Ressourcenbelastung
+  relevant. Bei Auslastung laufen Installationen langsamer.
+- Jedes Programm hat eigenen Fortschritt, kann unabhaengig pausiert/abgebrochen
+  werden. Datentraegerentnahme pausiert nur betroffene Auftraege.
+- Prioritaeten NIEDRIG, NORMAL und HOCH, Voreinstellung NORMAL. Prioritaet
+  kann VOR UND WAEHREND der laufenden Installation jederzeit geaendert werden;
+  Ressourcen werden unmittelbar neu verteilt. Niedrige Prioritaet darf nicht
+  grundsaetzlich verhungern.
+- Queue, Prioritaeten, Medienzuordnung, Fortschritt und Endzustaende werden
+  pro Computer in .rotsave gespeichert.
+OFFEN
+- Spezifische Dateigroessen, Installationszeiten, Ressourcenformeln, erlaubte
+  Installationszahlen je Hardware und konkrete Programme.
+
+====================================================================
+09. REPARATUR, WARTUNG UND WERKSTAETTEN
+====================================================================
+BESCHLOSSEN
+- Einfache PC-Arbeiten (z. B. RAM/Laufwerk ersetzen, Gehaeuse oeffnen,
+  unbeschaedigte Teile bergen, leichte Reinigung) sind mit passenden
+  Werkzeugen auch direkt am Fundort moeglich.
+- Anspruchsvolle Reparaturen und das Herstellen von Komponenten benoetigen
+  eine passende REPARATURWERKBANK / technische Werkstatt.
+- Soweit bereits ein geeignetes allgemeines Reparaturwerkbank-System
+  existiert, soll dieses MITGENUTZT werden statt eine redundante
+  exklusive PC-Reparaturwerkbank einzufuehren.
+- Bestehende dokumentierte Planung fuer die Siedlung: Technikzentrum Stufe 1
+  einfache Werkstatt; Stufe 2 Technikwerkstatt mit Elektronikreparaturen;
+  Stufe 3 fortgeschrittene Elektronik und komplexe Reparaturen.
+- Eine vollstaendig implementierte ALLGEMEINE Reparaturwerkbank ist durch den
+  bisherigen Repo-Abgleich NICHT nachgewiesen. Die Fahrzeugwerkstatt ist
+  separat vorgesehen und nicht automatisch die PC-Werkbank.
+- Einfache Schaeden: passende allgemeine Materialien.
+  Schwere Schaeden: Spezialersatzteile, geeignete Werkzeuge, Werkbank.
+- Sind ALLE Bedingungen erfuellt, gelingt die Reparatur garantiert;
+  keine zufaelligen Reparaturfehlschlaege.
+- Reparaturen beanspruchen Zeit und zeigen Fortschritt.
+- Bei 0 % Bauteilzustand entscheidet Bauteil UND Schaden, ob Reparatur
+  moeglich ist. Nicht reparierbare Bauteile duerfen ausgeschlachtet /
+  recycelt werden.
+- Bauteile haben eigene Haltbarkeit; Austausch und Reparatur sind getrennt.
+OFFEN
+- Reparaturrezepte, benoetigte Werkzeuge, Bauteil-Schadensmatrizen, Zeiten
+  und genaue Werkbankzuordnungen.
+
+====================================================================
+10. DIAGNOSE UND DIAGNOSEWERKZEUGE
+====================================================================
+BESCHLOSSEN
+- BIOS/UEFI und POST koennen bestimmte Start-/Hardwarefehler anzeigen.
+- GEAM OS kann erkannte Hardwarefehler, Temperaturen und Geraetezustand
+  darstellen, sofern der PC weit genug funktioniert.
+- Weitere Fehler muessen mit passenden manuellen Diagnosewerkzeugen oder
+  an der Werkstatt untersucht werden.
+- Diagnosewerkzeuge koennen gefunden ODER nach passender Freischaltung
+  an einer geeigneten Werkbank hergestellt werden.
+- Verschleiss ist BAUARTABHAENGIG:
+  Elektronische Messgeraete verschleissen bei normaler Nutzung nicht
+  zwangslaufig, koennen aber beschaedigt werden.
+  Mechanische Werkzeuge koennen nutzungsabhaengig verschleissen.
+  Spezielle Geraete haben individuell festzulegende Schadensregeln.
+- Stromversorgung je nach Geraetetyp: Batterien, austauschbare Akkus,
+  Netzstrom, Versorgung ueber Computeranschluss oder passiv.
+- Akkus altern LANGSAM und verlieren nach und nach Maximal-Kapazitaet;
+  sie sind durch passende Ersatzakkus austauschbar.
+- Nicht aufladbare Batterien werden entladen und spaeter ersetzt.
+- Aufladen je nach Bauart extern im Ladegeraet, direkt im Geraet oder beides.
+- Ladezustand, Alterung und Geraetezustand werden gespeichert.
+OFFEN
+- Energie-/Diagnosewerte, Werkzeuge, Produktionsrezepte, Ladezeiten,
+  Haltbarkeitswerte und konkrete Schadensursachen.
+
+====================================================================
+11. FLUGZEUGABSTURZ: FLUGDATENSCHREIBER UND PC-ANALYSE
+====================================================================
+BESCHLOSSEN
+- Die zuerst vorgeschlagene eigenstaendige AnalyseSTATION ist VERWORFEN:
+  Auswertung erfolgt auf einem GEAM-OS-COMPUTER mit gefundenem und
+  jeweils einzeln installiertem Flugdatenschreiber-Analyseprogramm.
+- Ein Flugdatenschreiber ist pro Flugzeugabsturz vorgesehen, aber es duerfen
+  SPIELWEIT hoechstens 5 Exemplare zugleich existieren (Inventar, Lager,
+  Eventgebiet zusammen). Bei Bestand 5 kein neuer Recorder im naechsten
+  Flugzeugabsturz. Abgabe bei Quest macht spaetere neue Funde wieder moeglich.
+- Flugdatenschreiber sind dauerhafte Gegenstaende und verfallen nicht
+  mit dem temporaren Event. Analyseinformationen bleiben im Questbuch
+  unter "Gefundene Dokumente", auch nach spaeterer Questabgabe.
+- Analysezeit: 30 Minuten REALE AKTIVE SPIELZEIT pro Flugdatenschreiber.
+- Die Analyse darf im Hintergrund laufen, waehrend der Spieler anderes tut.
+  Bei geschlossenem Spiel pausiert sie und setzt beim naechsten Start fort.
+- Bei fehlendem Strom PAUSE, bei wiederhergestelltem Strom FORTSETZUNG
+  ohne Verlust bereits geleisteter Analysezeit.
+- Ein Computer darf mehrere Recorder in eine Analyse-WARTESCHLANGE aufnehmen,
+  analysiert sie jedoch NACHEINANDER.
+- Standardmaessig Einreihungsreihenfolge; wartende Auftraege koennen
+  umsortiert oder geloescht werden. Bei Entfernen eines noch nicht
+  begonnenen Auftrags wird der Recorder zurueckgegeben.
+- Eine laufende Analyse kann abgebrochen werden: Recorder zurueckgeben,
+  VOLLEN ANALYSEFORTSCHRITT dieses Auftrags verlieren (naechster Start
+  wieder 30 Minuten); andere Auftraege und fertige Ergebnisse bleiben.
+- Nach Abschluss oder Abbruch des aktiven Analyseauftrags startet der
+  naechste wartende Auftrag automatisch.
+- Queue, Auftraege, Fortschritt, Abschluss/Dokumente und Strompausen
+  werden in .rotsave gespeichert.
+- Die BEREITS BESCHLOSSENEN Event-Grundregeln bleiben in
+  docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt.
+- Die Flugzeugabsturz-Detailplanung bleibt in
+  docs/Remnants_of_Tomorrow_Events_Einzelplanung.txt.
+
+====================================================================
+12. NOCH NICHT VERBINDLICH UND SPAETERE UMSETZUNG
+====================================================================
+- Weitere denkbare Computerfunktionen wie tiefgehendes Netzwerk, Drucker,
+  Malware/Antivirus, Festplattenverschluesselung, Klonen, Datenrettung,
+  komplexes Benutzersystem, detaillierte Treiber und Befehlszeile sind
+  NICHT automatisch beschlossen; daher jetzt keine neue Detailplanung.
+- Genauer GEAM-OS-Versionskatalog und OS-Groessen, Hardwaredaten, Lootgewichte,
+  konkrete Software, Werkzeuge, Rezepte und Zeiten bleiben offen.
+- Endgueltige Datenbankstruktur und C#-Modulaufteilung erst bei technischer
+  Integration auf Grundlage des tatsaechlichen Repo-/Unity-Stands entwerfen.
+- Keine neuen Unity-Skripte, Modelle oder Datenbankmigration durch diese
+  reine Dokumentationsaktualisierung. Keine unbestaetigten Test-Erfolge melden.
+- Naechster Planungsfokus wieder FLUGZEUGABSTURZ: Wrackzustaende, Hindernisse
+  und Schluessel/Werkzeuge, Personen-Fundstellen, Lootpools, Frachtmanifest,
+  Quest/XP, spaeter Gegnerzahl erst nach EventMap-Spawnflaechenpruefung.
