@@ -1,0 +1,48 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT 2: APRIL, APRIL!
+ÖFFENTLICHE EVENTÜBERSICHT
+Stand: 15.10.2026
+Status: In Planung und Entwicklung – keine bestätigte vollständige Unity-Implementierung.
+
+============================================================
+EIN TAG VOLLER ÜBERRASCHUNGEN
+============================================================
+
+Jedes Jahr am 1. April erwartet dich in Remnants of Tomorrow ein besonderes Kalender-Event mit humorvollen Begegnungen, kleinen Rätseln und überraschenden Entdeckungen.
+
+- Start: 1. April um 00:00 Uhr.
+- Verfügbar bis zum Ende des 1. April (23:59 Uhr; technisches Eventende am 2. April um 00:00 Uhr).
+- Keine Levelbeschränkung: Teilnahme bereits ab Spielerlevel 1.
+- Ein eigenes automatisch generiertes Event-Hauptgebiet mit Event-NPCs.
+- 40 Eventaufgaben insgesamt: 4 Pflichtaufgaben und 36 freiwillige Nebenaufgaben.
+- Einige Aufgaben können auch in bereits freigeschaltete normale Weltkartengebiete führen.
+- Keine verpflichtenden Kämpfe, kein verpflichtender Bosskampf.
+
+============================================================
+BELONUNGEN UND EVENTSHOP
+============================================================
+
+- Aufgaben bringen Erfahrungspunkte, Eventmarken, Rufpunkte und passende Spielgegenstände.
+- Eigene Event-Rufstufen bieten zusätzliche Shopfreischaltungen.
+- Event-Tauschshop mit 50 unterschiedlichen Angeboten.
+- Alle Shopangebote haben unbegrenzten Warenbestand. Spieler können mehrere Exemplare oder Pakete gleichzeitig erwerben.
+- Je nach Angebot werden erspielte Eventmarken oder passende Ingame-Materialien getauscht.
+- Für Käufe gibt es eine Übersicht der Kosten sowie eine ausdrückliche Bestätigung vor der Abbuchung.
+
+Remnants of Tomorrow ist kostenlos.
+Es gibt keine Echtgeldkäufe, Premiumwährung oder kostenpflichtigen Spielvorteile.
+
+============================================================
+FAIRNESS UND TECHNISCHER STATUS
+============================================================
+
+- Die Überraschungen sind harmlose Spielinhalte.
+- Es gibt keine absichtlich vorgetäuschten echten Systemfehlermeldungen, keine zerstörten Spielergegenstände und keine dauerhaften Veränderungen der Einstellungen.
+- Eventfortschritt und Belohnungsstatus sollen spielstandbezogen gesichert werden.
+- Die allgemeine Eventarchitektur und -speicherung wird im gemeinsamen Event-Regeldokument beschrieben.
+- Die Angaben stellen Planungsfestlegungen dar; die vollständige Implementierung und Balance sind noch nicht abgeschlossen.
+
+Allgemeines Event-Regeldokument:
+docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt
+
+Vollständige Questlösungen, Einzelbelohnungen, Shoppreise und konkrete Eventüberraschungen sind absichtlich nicht Bestandteil der öffentlichen Projektinformationen.
