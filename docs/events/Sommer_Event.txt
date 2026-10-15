@@ -1,0 +1,72 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT 3: SOMMER, SONNE, ÜBERLEBEN!
+ÖFFENTLICHE EVENTÜBERSICHT
+Stand: 15.10.2026
+Status: Planung / Entwicklung – keine bestätigte vollständige Unity-Implementierung.
+
+============================================================
+SOMMER IN DER POSTAPOKALYPSE
+============================================================
+
+„Sommer, Sonne, Überleben!“ ist ein mehrtägiges Saison-Event mit eigenen
+Aufgaben, einem zentralen Sommerlager und zahlreichen Aktivitäten.
+
+- Geplanter Zeitraum: jährlich vom 1. Juli, 00:00 Uhr, bis zum 14. Juli,
+  23:59 Uhr (14 volle echte Kalendertage; technisches Ende 15. Juli, 00:00).
+- Teilnahme für alle Spieler ab Level 1.
+- Ein automatisch generiertes, grundsätzlich friedliches Event-Hauptgebiet.
+- Event-NPCs geben verschiedene Aufgaben und Herausforderungen aus.
+- Auch bereits freigeschaltete reguläre Weltkartengebiete können für
+  einzelne Eventaufträge genutzt werden.
+- Insgesamt 100 unterschiedliche Aufgaben: 12 Pflichtaufgaben und
+  88 freiwillige Nebenaufgaben.
+- Hauptabschluss durch die Pflichtaufgaben; alle Nebenaufgaben bleiben
+  freiwillig. Kein verpflichtender Bosskampf.
+- Nach dem Hauptabschluss bleibt das Event während seiner regulären
+  Laufzeit für freiwillige Aktivitäten verfügbar.
+- Keine Pflicht zum täglichen Einloggen.
+
+============================================================
+AUFGABEN UND BELOHNUNGEN
+============================================================
+
+Das Event bietet Aufgaben rund um Erkundung, Versorgung, Rettung,
+Sommerlager und weitere optionale Herausforderungen.
+
+- Alle Quests vergeben Erfahrungspunkte, erspielbare Sommermarken,
+  Sommer-Rufpunkte und passende Spielgegenstände.
+- Ein eventeigenes Rufsystem hat fünf Stufen.
+- Das Event verwendet normale Gebietsfreischaltungen; es ist nicht
+  notwendig, gesperrte Storygebiete vorzeitig freizuschalten.
+- Die Spielzeit lässt sich über die zweiwöchige Eventdauer frei verteilen.
+
+============================================================
+EIGENER EVENT-TAUSCHSHOP
+============================================================
+
+- 100 unterschiedliche Shopangebote, darunter Ressourcen,
+  Versorgung, Ausrüstung und thematische Eventdekoration.
+- JEDES Angebot ist unbegrenzt vorrätig und darf mehrfach gekauft werden.
+- Kauf mehrerer Pakete auf einmal mit Gesamtpreisanzeige.
+- Bezahlung ausschließlich mit erspielten Sommermarken oder,
+  sofern angeboten, direkt mit Ingame-Gegenständen und Materialien.
+- Vor jedem Kauf erfolgt eine ausdrückliche Sicherheitsbestätigung.
+- Erreichte Rufstufen schalten zusätzliche Shopangebote frei.
+
+REMNANTS OF TOMORROW IST KOSTENLOS.
+Keine Echtgeldkäufe, keine kostenpflichtigen Premiumwährungen und keine
+Bezahlschranken.
+
+============================================================
+ENTWICKLUNGSSTAND
+============================================================
+
+Die Eventdaten werden später datenbankgesteuert eingebunden,
+Spielstand- und Fortschrittsdaten in .rotsave gespeichert.
+Die vollständige Integration in Unity und das Balancing stehen noch aus.
+
+Allgemeine Eventregeln:
+docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt
+
+Diese öffentliche Datei enthält bewusst KEINE vollständigen Questziele,
+Einzelbelohnungen, Itempreise, Fundorte oder Überraschungsdetails.
