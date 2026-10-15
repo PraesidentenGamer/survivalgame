@@ -106,10 +106,19 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Vollständige Questziele, Einzelbelohnungen, genaue Shoppreise und Sommerüberraschungen stehen ausschließlich in der privaten TXT.
 - Technische Unity-Integration und genaue Datenbankmigration noch nicht als abgeschlossen bestätigt.
 
-## Herbst-/Halloween-Event
-- ID: herbst_halloween_event (in DB).
-- Saison-Event; Ideen: Nebel, dunkle Atmosphäre, Kürbisdekoration, besondere Gegner und eventuell großer Kürbis-Boss.
-- Zeitraum, Level, Inhalte, Belohnungen und Kampfbereich noch offen.
+## Herbst-/Halloween-Event („Halloween: Nacht der Verlorenen“)
+- ID: herbst_halloween_event (als Grundeintrag in bestehender Eventdatenbank).
+- Saison-/Kalenderevent: jährlich 18. Oktober 00:00 Uhr bis 31. Oktober 23:59 Uhr; technisches Ende 1. November 00:00 Uhr (14 echte Kalendertage).
+- Freischaltlevel datenbankgesteuert; konkreter endgültiger Wert noch nicht festgelegt, nicht als Level 1 behandeln.
+- Automatisch generiertes Halloween-Hauptgebiet und gesonderte optionale Aktivitäten.
+- 120 Quests, darunter 15 Pflichtaufgaben und 105 freiwillige Aufgaben. Freiwillige Herausforderungen sind keine Voraussetzung für den Hauptabschluss.
+- Fünf Rufstufen und 100 unterschiedliche Shopangebote; unbegrenzter Warenbestand und frei wählbare Mengen.
+- Halloweenmarken und alternative Materialtauschangebote, keine Echtgeldkäufe.
+- Acht besondere Halloweenmechaniken als Planungsumfang bestätigt; konkrete Rätsel, Gegner, Kampfwerte, Fundstellen und Überraschungen bleiben vertraulich.
+- Hauptgebiet, Shop und freiwillige Aktivitäten bis zum regulären Kalenderende zugänglich.
+- Öffentliche Einzeldatei: docs/events/Halloween_Event.txt
+- Alle 120 Einzelziele und Belohnungen, 100 Shopartikel und Preise, Bossdaten und die vollständige Mechanikplanung stehen ausschließlich in der privaten TXT-Datei.
+- Technische Unity-Integration und vollständige Übernahme in die Datenbanken stehen noch aus.
 
 ## Weihnachts-Event
 - ID: weihnachts_event (in DB).
