@@ -1,0 +1,67 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT 4 – HALLOWEEN: NACHT DER VERLORENEN
+ÖFFENTLICHE EVENTÜBERSICHT
+Stand: 15.10.2026
+Status: Inhaltliche Planung bestätigt; technische Umsetzung in Unity steht noch aus.
+
+======================================================================
+HALLOWEEN IN REMNANTS OF TOMORROW
+======================================================================
+
+Zum Halloween-Kalender-Event erwartet die Spieler ein besonderes,
+herbstlich-düsteres Eventgebiet mit eigenen Aufgaben, Begegnungen und
+Belohnungen.
+
+- Geplanter Zeitraum: jährlich vom 18. Oktober, 00:00 Uhr, bis
+  zum 31. Oktober, 23:59 Uhr; Ende technisch am 1. November, 00:00 Uhr.
+- Dauer: 14 echte Kalendertage.
+- Freischaltlevel: wird ausschließlich aus der Eventdatenbank geladen;
+  der endgültige konkrete Wert ist derzeit noch nicht festgelegt.
+- Eigenes dynamisch erzeugtes Event-Hauptgebiet.
+- 120 Aufgaben: 15 Pflichtaufgaben und 105 freiwillige Aufgaben.
+- Die Hauptgeschichte lässt sich unabhängig von optionalen
+  Herausforderungen abschließen.
+- Nach Abschluss der Hauptgeschichte können freiwillige Aufgaben
+  während der verbleibenden Eventlaufzeit weiter erledigt werden.
+- Keine Pflicht zum täglichen Einloggen.
+
+======================================================================
+BELOHNUNGEN UND TAUSCHSHOP
+======================================================================
+
+- Aufgaben vergüten Erfahrungspunkte, Halloweenmarken, Rufpunkte und
+  passende Spielgegenstände.
+- Fünf eventeigene Rufstufen.
+- Ein eigener Tauschshop mit 100 unterschiedlichen Angeboten.
+- Alle Shopangebote haben unbegrenzte Warenbestände und können
+  mehrfach in einer frei gewählten Stückzahl gekauft werden.
+- Zahlungen erfolgen ausschließlich mit erspielten Halloweenmarken
+  beziehungsweise – bei dafür geeigneten Artikeln – durch direkten
+  Tausch von Spielmaterialien.
+- Kosten und Stückzahlen werden vor einem Kauf ausdrücklich bestätigt.
+- Im Sortiment befinden sich Versorgung, Materialien, Ausrüstung und
+  thematisch passende Gegenstände.
+
+Remnants of Tomorrow bleibt vollständig kostenlos.
+Keine Echtgeldkäufe, Premiumwährungen oder kostenpflichtigen Vorteile.
+
+======================================================================
+TECHNISCHER PLANUNGSSTAND
+======================================================================
+
+- Konfigurationsdaten sollen datenbankgesteuert sein.
+- Spielstandbezogene Ereignis- und Aufgabenfortschritte werden in
+  .rotsave gesichert.
+- Das Event nutzt die gemeinsamen Regeln des RoT-Eventsystems.
+- Optische und akustische Darstellungsoptionen werden beim Ausbau
+  der Spieloberfläche berücksichtigt.
+- Die tatsächliche Umsetzung und abschließende Balance in Unity
+  sind nicht als abgeschlossen bestätigt.
+
+Öffentliche allgemeine Eventregeln:
+docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt
+
+BEWUSST NICHT ÖFFENTLICH:
+Konkrete Aufgabenlösungen, Fundorte, Rätselabläufe, Gegner- und
+Spezialfähigkeiten, Belohnungszahlen, Tauschpreise und besondere
+Überraschungen verbleiben in der internen Eventplanung.
