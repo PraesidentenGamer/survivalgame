@@ -1,5 +1,5 @@
 # Remnants of Tomorrow – Einzelplanung der Events
-Stand: 14.10.2026
+Stand: 16.10.2026
 Status: Planung, keine neue Unity-Implementierung.
 
 Dieses Dokument enthält AUSSCHLIESSLICH die individuellen Eventdaten. Die für alle Eventarten geltenden Regeln stehen in docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt.
@@ -120,10 +120,24 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Alle 120 Einzelziele und Belohnungen, 100 Shopartikel und Preise, Bossdaten und die vollständige Mechanikplanung stehen ausschließlich in der privaten TXT-Datei.
 - Technische Unity-Integration und vollständige Übernahme in die Datenbanken stehen noch aus.
 
-## Weihnachts-Event
-- ID: weihnachts_event (in DB).
-- Saison-Event; Ideen: Schnee, Lichter, Geschenke, Winteritems, Händlerrotation, mögliches besonderes Eventgebiet.
-- Zeitraum, Level, Inhalte, Belohnungen und Kampfbereich noch offen.
+## Weihnachts-Event („Weihnachten: Hoffnung im Schnee“)
+- ID: weihnachts_event, in events.json.db V2 als Grundeintrag vorhanden.
+- Jährlich 1. Dezember, 00:00 Uhr bis 31. Dezember, 23:59 Uhr; technisches Ende 1. Januar, 00:00 Uhr.
+- Freischaltlevel aus events.json.db; nicht eigenmächtig durch einen festen Wert ersetzen.
+- Dynamisch erzeugtes Weihnachtsdorf mit friedlichem Hauptbereich und getrennten freiwilligen Kampfzonen.
+- 120 Aufgaben: 15 Pflichtaufgaben und 105 freiwillige Aufgaben; alle 120 in der privaten Einzelakte geplant.
+- 100 Shopangebote, fünf Rufstufen und eine durch Aufgaben erspielbare Eventwährung.
+- Zehn winterliche Sondermechaniken und eine freiwillige Boss-Herausforderung inhaltlich vorgesehen.
+- Alle Events, auch Weihnachten, passen Gegner, Aufgabenanforderungen und Belohnungen an Spielerlevel und erreichbare Ausrüstung an.
+- Kein täglicher Login nötig; optionale Aufgaben und Shop bleiben bis Eventende erreichbar.
+- Öffentliche spoilerarme Übersicht: docs/events/Weihnachten_Event.txt.
+- Aufgabenlösungen, Shoppreise, Belohnungstabellen, Gegnerprofil/Schwächen und Überraschungen ausschließlich privat.
+- Nur Planungsfortschritt: Datenbankmigration, Unity-Umsetzung und Verhaltenstests stehen noch aus.
+
+## Weitere vorgesehene Horror-Events
+- Ein eigenständiges Horrorauto-Event ist für die spätere Ausarbeitung fest vorgemerkt, ohne hier inhaltliche Überraschungen zu verraten.
+- Noch kein Eintrag in events.json.db V2; genaue ältere Details nicht vollständig wiedergefunden.
+- Die übergreifende Levelanpassung gilt auch für dieses Event.
 
 ## Noch auszuarbeiten
 - Konkrete Level und Startbedingungen der noch nicht einzeln festgelegten Kalender-/Saison-Events; bereits bestätigte Ausnahmen und Levelwerte beibehalten.
