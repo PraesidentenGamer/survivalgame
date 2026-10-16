@@ -5,7 +5,7 @@ Status: Planung, keine neue Unity-Implementierung.
 Dieses Dokument enthält AUSSCHLIESSLICH die individuellen Eventdaten. Die für alle Eventarten geltenden Regeln stehen in docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt.
 
 BESTAND
-Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGameEvents, und enthält 7 Eventeinträge. Der neu vorgesehene „Zerstörte Konvoi“ ist bislang kein Datenbankeintrag. Die Planung enthält damit 8 benannte Events. Die in der bestehenden DB enthaltenen Einträge mit active=false bleiben bis zur technischen Integration inaktiv.
+Die zuletzt bereitgestellte events.json(3).db hat Version 2, Schema SurvivalGameEvents, und enthält 7 Eventeinträge. Der neu vorgesehene „Zerstörte Konvoi“ ist bislang kein Datenbankeintrag. Die bisherige Planungsübersicht wurde inzwischen um zusätzliche Story- und Rennevents ergänzt. Die Eintragszahl der Bestandsdatenbank bleibt unverändert. Die in der bestehenden DB enthaltenen Einträge mit active=false bleiben bis zur technischen Integration inaktiv.
 
 ## Flugzeugabsturz
 Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen, aber noch nicht vollständig in events.json.db eingetragen oder in Unity als Eventablauf umgesetzt.
@@ -82,7 +82,7 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 
 ## 1.-April-Event („April, April!“)
 - ID: april_1 (in DB).
-- Jährliches Kalender-Event: 1. April von 00:00 bis 23:59 Uhr, technisches Ende am 2. April um 00:00 Uhr.
+- Jährlicher hervorgehobener Zeitraum: 1. April (Kalendertermin); das freigeschaltete Event bleibt auch außerhalb dieses Tages spielbar.
 - Ohne Levelbeschränkung, ab Level 1 zugänglich.
 - Automatisch erzeugtes Hauptgebiet mit Event-NPCs; insgesamt 40 Quests, davon 4 Pflicht- und 36 optionale Aufgaben.
 - Eigener Eventshop mit 50 dauerhaft verfügbaren, beliebig oft kaufbaren Angeboten; Eventmarken und Rufsystem.
@@ -93,7 +93,7 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 
 ## Sommer-Event („Sommer, Sonne, Überleben!“)
 - ID: sommer_event (als Grundeintrag in der bisherigen Eventdatenbank).
-- Saison-Großevent: jährlich vom 1. Juli 00:00 Uhr bis zum 14. Juli 23:59 Uhr (technisches Ende 15. Juli, 00:00 Uhr).
+- Saisonale Hervorhebung: jährlich 1.–14. Juli; das freigeschaltete Event bleibt auch außerhalb dieses Zeitraums spielbar.
 - Teilnahme für alle ab Level 1.
 - Automatisch generiertes friedliches Hauptgebiet mit Aufgaben-NPCs, ergänzt um erreichbare normale Gebiete für Außenaufträge.
 - 100 Aufgaben: 12 Pflichtaufgaben und 88 freiwillige Nebenaufgaben; ohne verpflichtenden Bosskampf.
@@ -101,35 +101,35 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Fünf Rufstufen und eigener Tauschshop mit 100 Angeboten und unbegrenztem Warenbestand; frei wählbare Kaufmengen und bei geeigneten Angeboten alternativer Materialtausch.
 - Kein Echtgeld, keine Bezahlschranken.
 - Sommerlager, gebietsabhängige Hitze, versteckte Sommerkisten, optionale Rettungseinsätze, Sammelgegenstände und Sommerabschluss sind als sechs spezielle Mechaniken bestätigt.
-- Keine erzwungene tägliche Anwesenheit; Hauptgebiet und Shop bleiben bis zum Eventende bestehen.
+- Keine erzwungene tägliche Anwesenheit; Das Event und seine freigeschalteten Angebote sollen unabhängig vom saisonalen Hervorhebungsfenster verfügbar sein.
 - Öffentliche Einzeldatei: docs/events/Sommer_Event.txt
 - Vollständige Questziele, Einzelbelohnungen, genaue Shoppreise und Sommerüberraschungen stehen ausschließlich in der privaten TXT.
 - Technische Unity-Integration und genaue Datenbankmigration noch nicht als abgeschlossen bestätigt.
 
 ## Herbst-/Halloween-Event („Halloween: Nacht der Verlorenen“)
 - ID: herbst_halloween_event (als Grundeintrag in bestehender Eventdatenbank).
-- Saison-/Kalenderevent: jährlich 18. Oktober 00:00 Uhr bis 31. Oktober 23:59 Uhr; technisches Ende 1. November 00:00 Uhr (14 echte Kalendertage).
+- Saisonale Hervorhebung: jährlich 18.–31. Oktober; das freigeschaltete Event bleibt auch außerhalb dieses Zeitraums spielbar.
 - Freischaltlevel datenbankgesteuert; konkreter endgültiger Wert noch nicht festgelegt, nicht als Level 1 behandeln.
 - Automatisch generiertes Halloween-Hauptgebiet und gesonderte optionale Aktivitäten.
 - 120 Quests, darunter 15 Pflichtaufgaben und 105 freiwillige Aufgaben. Freiwillige Herausforderungen sind keine Voraussetzung für den Hauptabschluss.
 - Fünf Rufstufen und 100 unterschiedliche Shopangebote; unbegrenzter Warenbestand und frei wählbare Mengen.
 - Halloweenmarken und alternative Materialtauschangebote, keine Echtgeldkäufe.
 - Acht besondere Halloweenmechaniken als Planungsumfang bestätigt; konkrete Rätsel, Gegner, Kampfwerte, Fundstellen und Überraschungen bleiben vertraulich.
-- Hauptgebiet, Shop und freiwillige Aktivitäten bis zum regulären Kalenderende zugänglich.
+- Hauptgebiet, Shop und freiwillige Aktivitäten sollen auch außerhalb der saisonalen Hervorhebung zugänglich bleiben.
 - Öffentliche Einzeldatei: docs/events/Halloween_Event.txt
 - Alle 120 Einzelziele und Belohnungen, 100 Shopartikel und Preise, Bossdaten und die vollständige Mechanikplanung stehen ausschließlich in der privaten TXT-Datei.
 - Technische Unity-Integration und vollständige Übernahme in die Datenbanken stehen noch aus.
 
 ## Weihnachts-Event („Weihnachten: Hoffnung im Schnee“)
 - ID: weihnachts_event, in events.json.db V2 als Grundeintrag vorhanden.
-- Jährlich 1. Dezember, 00:00 Uhr bis 31. Dezember, 23:59 Uhr; technisches Ende 1. Januar, 00:00 Uhr.
+- Saisonale Hervorhebung: jährlich 1.–31. Dezember; das freigeschaltete Event bleibt auch außerhalb dieses Zeitraums spielbar.
 - Freischaltlevel aus events.json.db; nicht eigenmächtig durch einen festen Wert ersetzen.
 - Dynamisch erzeugtes Weihnachtsdorf mit friedlichem Hauptbereich und getrennten freiwilligen Kampfzonen.
 - 120 Aufgaben: 15 Pflichtaufgaben und 105 freiwillige Aufgaben; alle 120 in der privaten Einzelakte geplant.
 - 100 Shopangebote, fünf Rufstufen und eine durch Aufgaben erspielbare Eventwährung.
 - Zehn winterliche Sondermechaniken und eine freiwillige Boss-Herausforderung inhaltlich vorgesehen.
 - Alle Events, auch Weihnachten, passen Gegner, Aufgabenanforderungen und Belohnungen an Spielerlevel und erreichbare Ausrüstung an.
-- Kein täglicher Login nötig; optionale Aufgaben und Shop bleiben bis Eventende erreichbar.
+- Kein täglicher Login nötig; Optionale Aufgaben und Shop bleiben auch außerhalb des saisonalen Hervorhebungszeitraums erreichbar.
 - Öffentliche spoilerarme Übersicht: docs/events/Weihnachten_Event.txt.
 - Aufgabenlösungen, Shoppreise, Belohnungstabellen, Gegnerprofil/Schwächen und Überraschungen ausschließlich privat.
 - Nur Planungsfortschritt: Datenbankmigration, Unity-Umsetzung und Verhaltenstests stehen noch aus.
@@ -143,6 +143,17 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Öffentliche, spoilerarme Einzelübersicht: docs/events/Christine_Event.txt.
 - Handlung, Hintergrundgeschichten, Gegnermechaniken, spätere Entwicklungen, Questlösungen und Belohnungsdetails bleiben ausschließlich intern.
 - Noch kein Eintrag in events.json.db V2; vollständige Unity-Umsetzung und Integrationstests stehen aus.
+
+## Asphalt unter Feuer (Event 7)
+- Eigenständiges, fahrzeug- und rennorientiertes Großevent mit 100 Aufgaben (15 Hauptaufgaben, 85 zusätzliche Herausforderungen).
+- 30 offizielle Rennen in den Klassen Straße, Sport und Meister; unterschiedliche Rennarten, Zeitprüfungen und fahrerische Aufgaben.
+- Gold, Silber und Bronze sind gültige erfolgreiche Rennabschlüsse; Platz 1 ist für den Fortschritt nicht vorgeschrieben.
+- Kostenlose passende Leihwagen, freiwillige Qualifikation und persönliche Rennrekorde/Top-10-Listen vorgesehen.
+- 100 unterschiedliche Shopangebote, erspielbare Rennmarken und mehrere technische/optische Fahrzeugausbaustufen.
+- Vorgesehene 14-tägige Eventausgabe als besonderer Zeitraum; freigeschaltete Inhalte bleiben aufgrund der allgemeinen freien Eventauswahl weiterhin spielbar.
+- Öffentliche spoilerarme Einzelübersicht: docs/events/Asphalt_unter_Feuer_Event.txt
+- Storyabläufe, alle Einzelmissionen, spezielle Fahrzeugbelohnungen, Preise und Freischaltbedingungen bleiben ausschließlich in der internen Planung.
+- Bisher reine Konzeption; noch kein Eintrag in events.json.db V2 und keine bestätigte vollständige Unity-Implementierung.
 
 ## Noch auszuarbeiten
 - Konkrete Level und Startbedingungen der noch nicht einzeln festgelegten Kalender-/Saison-Events; bereits bestätigte Ausnahmen und Levelwerte beibehalten.
@@ -162,3 +173,9 @@ Alle bisherigen Werte sind Planungsfestlegungen, soweit nicht ausdrücklich als 
 - ANALYSE selbst: pro Recorder 30 Minuten reale aktive Spielzeit, nur bei Strom und offenem Spiel. Verlassen des Computers ist erlaubt. Queue nacheinander, Einreihung/Umordnung/Entfernen wartender Auftraege, automatischer naechster Start. Abbruch einer laufenden Analyse gibt den Recorder zurueck, verwirft ihren bisherigen Fortschritt; abgeschlossene Ergebnisse bleiben. Queue und Fortschritt in .rotsave.
 - Vollstaendige Hardware-/GEAM-OS-/Software-Regeln: docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt.
 - Wichtig: Dies ist eine Planungsfestlegung, keine bestaetigte Unity-Implementierung. Konkrete technische Werte und DB-Migration offen.
+
+### Nachtrag: Freie Eventauswahl und Eventshop-Preise (16.10.2026)
+- Alle freigeschalteten regulären und saisonalen Events sind jederzeit auswählbar; alte Kalender-Endangaben sind nur saisonale Hervorhebungsfenster, keine Zugangssperren.
+- Zeitlich begrenzte zufällige Mini-Eventinstanzen behalten ihre festen Instanzlaufzeiten und Spawnregeln.
+- Für ALLE Eventshops enden Preise ausschließlich auf 0 oder 5; die zentrale Rundung erfolgt stets nach oben.
+- Diese Festlegungen sind Planung, noch nicht in den Unity-Skripten oder Datenbanken umgesetzt.
