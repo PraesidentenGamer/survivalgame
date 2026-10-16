@@ -1,0 +1,33 @@
+# Remnants of Tomorrow – Event 7: Asphalt unter Feuer
+Stand: 16.10.2026
+Status: Inhaltliche Konzeption weitgehend abgeschlossen. Technische Umsetzung und Feintuning stehen aus.
+
+KURZBESCHREIBUNG
+Ein zusätzliches, actionorientiertes Fahrzeug- und Renn-Event in Remnants of Tomorrow: unterschiedliche Rennklassen, vielfältige Herausforderungen, Fahrzeuganpassungen und ein eigener Tauschshop. Teilnahme und Fortschritt bleiben freiwillig; das Event ergänzt das Survival-Spiel.
+
+ÖFFENTLICHER PLANUNGSUMFANG
+- 100 Aufgaben insgesamt, darunter 15 Hauptaufgaben und 85 weitere Herausforderungen.
+- 30 offizielle Rennen in drei Klassen: Straßenklasse, Sportklasse und Meisterklasse.
+- Rennarten: Rundstrecke, Sprint, Zeitrennen, Ausscheidungsrennen und Verfolgungsrennen.
+- Offizielle Rennen sind auf ungefähr höchstens 15 Minuten geplanter Fahrzeit ausgelegt; die Strecken haben feste Rundenanzahlen.
+- Die drei Podiumsplätze Gold, Silber und Bronze gelten gleichermaßen als erfolgreicher Rennabschluss. Platz 1 ist für den Fortschritt niemals Pflicht.
+- 4 bis 12 Rennteilnehmer je nach Rennart; bei Zeitprüfungen gelten passende Zeitgrenzen.
+- Je Rennklasse stehen mehrere passende, kostenlose Leihfahrzeuge zur Auswahl; geeignete eigene Fahrzeuge dürfen ebenfalls teilnehmen.
+- Freiwillige, unbegrenzt wiederholbare Qualifikation mit gespeicherter Bestzeit; ein Fahrzeugwechsel vor Rennstart ist möglich.
+- Kostenlose Rennneustarts und persönliche Rennstatistiken einschließlich Top-10-Zeitarchiv je Strecke.
+- Technische und optische Fahrzeugverbesserungen mit mehreren Entwicklungsstufen.
+- Ein eigener Shop mit 100 geplanten Angeboten und erspielbarer Eventwährung. Keine Echtgeldkäufe.
+- Veranstaltung mit einer ursprünglich vorgesehenen 14-tägigen Ausgabe; der freigeschaltete Spielinhalt soll nach der neuen Eventauswahlregel weiterhin spielbar bleiben.
+- Geplanter dauerhafter Fortschritt und dauerhafte Belohnungen, gespeichert im jeweiligen Spielstand.
+
+SPIELWEITE EINORDNUNG
+- Die Eventauswahl liegt beim Spieler: freigeschaltete reguläre und saisonale Events sind auch außerhalb ihrer hervorgehobenen Kalenderzeiträume spielbar.
+- Ein allgemeiner Fahrzeugshop und die Fahrzeuggarage werden als separate Funktionen des Grundspiels geplant und sind keine Voraussetzung für eine Echtgeldzahlung.
+- Dauerhafte Fahrzeugschäden sind für offizielle Rennen nicht vorgesehen; andere Einsätze richten sich nach den allgemeinen Fahrzeugregeln.
+- Alle Inhalte werden bei der Umsetzung auf Spielbalance, technische Machbarkeit und Nutzungsrechte geprüft.
+
+SPOILERSCHUTZ
+Die konkreten Missionsabläufe, Geschichte, besonderen Fahrzeugbelohnungen, Preislisten, Freischaltwege und Überraschungen stehen NICHT in diesem öffentlichen Dokument. Die detaillierte Eventplanung bleibt intern.
+
+TECHNISCHER STAND
+Bisher Konzeption, keine bestätigte vollständige Umsetzung in Unity, keine fertigen 3D-Modelle und kein Eintrag von Event 7 in events.json.db V2. Weitergehende Balancetests und Modell-/Lizenzprüfungen stehen noch aus.
