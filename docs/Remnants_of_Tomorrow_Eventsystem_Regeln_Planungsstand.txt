@@ -1,5 +1,5 @@
 # Remnants of Tomorrow (RoT) – Eventsystem: Allgemeine Regeln
-Stand: 14.10.2026
+Stand: 16.10.2026
 Status: Verbindliche Planungsfestlegungen; keine Aussage über eine vollständige Unity-Implementierung.
 
 ZWECK UND ABGRENZUNG
@@ -34,8 +34,10 @@ sind Planungsstand und noch nicht automatisch in diese Datei eingearbeitet.
 - Die konkrete Levelzuordnung pro Event ist noch nicht endgültig festgelegt.
 - Kurze temporäre Mini-Events Flugzeugabsturz und Zerstörter Konvoi sind von dieser
   Levelanforderung ausgenommen und ab Spielerlevel 1 möglich.
-- Kalenderevents benötigen zusätzlich ihren jeweiligen realen Zeitraum, soweit in der
-  Eventdefinition festgelegt. Kein vorzeitiges Freischalten nur wegen des Levels.
+- Kalender- und Saison-Events dürfen nach ihrer spielbezogenen Freischaltung auch außerhalb
+  ihrer saisonalen Kalendertermine freiwillig gestartet und gespielt werden. Die Kalendertermine
+  dienen der Hervorhebung und optionalen saisonalen Zusatzelementen, NICHT als Zugangssperre.
+- Instanzgebundene, kurzlebige Mini-Events bleiben an ihre eigene Erscheinungsdauer gebunden.
 
 4. AUSLÖSUNG UND ZEIT – VERBINDLICH
 - Neue zufällige Events werden nur erzeugt, während das Spiel geöffnet ist.
@@ -43,8 +45,9 @@ sind Planungsstand und noch nicht automatisch in diese Datei eingearbeitet.
 - Der zeitliche Mindestabstand zwischen zwei NEUEN temporären Mini-Eventstarts beträgt
   24 Ingame-Stunden, gerechnet ab dem Start des letzten solchen Events.
 - Die vorhandene Ingame-Uhr ist die Zeitquelle; keine zusätzliche Eventuhr einführen.
-- Geplanter Umrechnungsmaßstab: 24 Ingame-Stunden = 6 reale Stunden;
-  tatsächliche Uhranbindung in der aktuellen Unity-Fassung bei Integration prüfen.
+- Keine pauschale feste Umrechnung von Ingame-Stunden in Realstunden:
+  die Spieldauer pro Ingame-Tag ist konfigurierbar. Eventabstände beziehen sich auf
+  die tatsächlich laufende Ingame-Uhr.
 - Die Wartezeit für die Entstehung neuer Zufalls-Events pausiert, wenn das Spiel geschlossen ist;
   bereits laufende Eventlaufzeiten pausieren dadurch NICHT.
 - Nach Erreichen des Startabstands soll ein gewöhnliches temporäres Event erscheinen,
@@ -141,3 +144,24 @@ OFFENE ALLGEMEINE PLANUNGSFRAGEN
 - Für Temp-Events: zufällige Rotationsgewichte bei wachsendem Pool.
 - Für Story-/Questevents: Überschneidungen, Ablauf und besondere Voraussetzungen.
 - Detailfälle der Eventzustandsübergänge und Wiederherstellung nach Tod/Offline.
+
+
+11. FREIE EVENTAUSWAHL UND FORTSCHRITT – VERBINDLICH (16.10.2026)
+- Spieler entscheiden selbst, welches freigeschaltete reguläre, Story- oder Saison-Event sie spielen möchten.
+- Kein Zwang, eine andere laufende Eventgeschichte zuerst abzuschließen.
+- Fortschritt, erhaltene Belohnungen und Eventwährungen bleiben je Event in .rotsave getrennt erhalten.
+- Reguläre und saisonale Events sind unabhängig von ihren saisonalen Hervorhebungsterminen spielbar.
+- Bei kurzfristigen zufällig erscheinenden Mini-Eventinstanzen gelten weiterhin Spawn- und Zeitlimits.
+- Vorgesehene Level-/Storyvoraussetzungen für einzelne Events bleiben gültig.
+- Ein Eventwechsel darf nicht bereits abgeschlossene Fortschritte oder erteilte Einmalbelohnungen löschen.
+- Die konkrete Benutzeroberfläche der freien Eventauswahl wird erst in der Gestaltungsphase festgelegt.
+
+12. EVENTSHOP-PREISE – VERBINDLICH (16.10.2026)
+- Für ALLE Eventshops gilt: Preise enden ausschließlich auf 0 oder 5.
+- Eine zentrale Preisnormalisierung rundet unzulässige Endziffern immer AUF:
+  1/2/3/4 zur nächsthöheren 5; 6/7/8/9 zum nächsten vollen Zehner.
+- Bereits passende Werte bleiben unverändert; keine negative Preisberechnung.
+- Angezeigter und berechneter Abbuchungspreis müssen identisch sein.
+- Missions-/Rennbelohnungen sind hiervon getrennt geregelt; nicht pauschal auf 5 runden.
+- Alle Währungen sind erspielbar; keine Echtgeldkäufe oder Bezahlschranken.
+- Die Preis- und Belohnungswerte selbst werden datenbasiert je Event festgelegt.
