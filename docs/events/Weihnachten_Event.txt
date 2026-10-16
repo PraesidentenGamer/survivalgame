@@ -1,0 +1,54 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT 5 – WEIHNACHTEN: HOFFNUNG IM SCHNEE
+ÖFFENTLICHE EVENTÜBERSICHT
+Stand: 16.10.2026
+Status: Inhaltliche Planung bestätigt; noch keine vollständige Unity-Implementierung.
+
+======================================================================
+WEIHNACHTEN IN REMNANTS OF TOMORROW
+======================================================================
+
+Ein winterliches Kalender-Event mit eigenem, dynamisch erzeugtem
+Weihnachtsdorf, gemeinschaftlichen Aufgaben, Erkundung und zusätzlichen
+freiwilligen Herausforderungen.
+
+- Zeitraum: jährlich 1. Dezember, 00:00 Uhr, bis 31. Dezember, 23:59 Uhr;
+  technisches Ende am 1. Januar um 00:00 Uhr.
+- Teilnahme ab dem jeweils in events.json.db festgelegten Freischaltlevel.
+- 120 Aufgaben insgesamt: 15 Pflichtaufgaben, 105 freiwillige Aufgaben.
+- Der Hauptabschluss ist ohne optionale Herausforderungen möglich.
+- Nach der Hauptgeschichte bleiben die freiwilligen Inhalte und der
+  Eventshop bis zum Kalenderende zugänglich.
+- Kein tägliches Einloggen erforderlich.
+
+======================================================================
+FORTSCHRITT UND TAUSCHSHOP
+======================================================================
+
+- Eigene Weihnachtsmarken und ein Rufsystem mit fünf Stufen.
+- 100 verschiedene Tauschshopangebote mit thematischen Gegenständen,
+  Dekoration, Materialien, Ausrüstung und weiteren Belohnungen.
+- Keine Echtgeldkäufe; Spielgegenstände bleiben nach Eventende erhalten.
+- Shopartikel sind grundsätzlich unbegrenzt verfügbar. Dauerhafte
+  Rezeptfreischaltungen werden pro Spielstand nur einmal erworben.
+- Event-Aufgaben und Kämpfe müssen an das jeweilige Spielerlevel und
+  die regulär erreichbare Ausrüstung angepasst werden.
+- Besondere freiwillige Herausforderungen dürfen anspruchsvoller sein,
+  sind aber nicht Voraussetzung für den Hauptabschluss.
+
+======================================================================
+TECHNISCHER STATUS
+======================================================================
+
+- Definitionen und Balancewerte werden datenbankgesteuert geplant.
+- Individuelle Aufgaben-, Shop- und Eventzustände sollen in .rotsave
+  gesichert werden.
+- Es wurde nur die inhaltliche Planung beschlossen; vollständige
+  Datenbankintegration, Umsetzung, Tests und finale Gestaltung stehen aus.
+- Allgemeine Eventregeln:
+  docs/Remnants_of_Tomorrow_Eventsystem_Regeln_Planungsstand.txt
+
+BEWUSST NICHT ÖFFENTLICH:
+Einzelaufgaben und Lösungen, spezielle Überraschungen, Gegnerprofile,
+Schadensarten und Schwächen, detaillierte Beute, Rufpunktschwellen,
+genaue Shoppreise sowie die internen Ablauf- und Balancetabellen.
