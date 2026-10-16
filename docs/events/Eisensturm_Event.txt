@@ -1,0 +1,23 @@
+# Remnants of Tomorrow – Eisensturm: Schatten der Festung
+Stand: 17.10.2026
+Status: Umfangreiche inhaltliche Planung; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Ein optionales, dauerhaft spielbares Story- und Erkundungsevent rund um eine große, alte Festungsanlage. Militärische Einrichtungen mit einer technischen Gestaltung angelehnt an die Zeit um 1980 treffen auf verborgene, experimentelle Forschung.
+
+OEFFENTLICHER PLANUNGSUMFANG
+- 100 geplante Aufgaben, davon 20 Hauptmissionen und 80 freiwillige Nebenmissionen.
+- Eine zusammenhängende Festung mit fünf miteinander verbundenen, technisch getrennt geladenen Bereichen.
+- Weitgehend freie Erkundung, ergaenzt durch Schluessel, Zugangskarten, Raetsel und storybezogene Freischaltungen.
+- Sicherheitsanlagen, unterschiedliche Gegnergruppen und optionale Herausforderungen.
+- Forschungs- und Handwerkssystem fuer besondere Technologien, mit reparierbaren und verbesserbaren Ausruestungsgegenstaenden.
+- Eigener Eventshop mit 100 vorgesehenen Angeboten und erspielbarer Eventwaehrung.
+- Dauerhafte Spielstandspeicherung und freiwillige, wiederholbare Auftraege nach Storyfortschritt.
+- Regelgemaessige Eventauswahl unabhaengig von einem festen Kalendertermin.
+- Keine Echtgeldkaeufe oder kostenpflichtigen Freischaltungen.
+
+SPOILERFREIE DARSTELLUNG
+Exakte Missionsablaeufe, Gegner- und Bossidentitaeten, besondere Funde, geheime Raeume, Waffendetails, Zahlenwerte, Einzelpreise und die Aufloesung der Geschichte bleiben in einer getrennten internen Planungsakte.
+
+ENTWICKLUNGSSTAND
+Dies ist eine Konzeptplanung, kein fertig spielbares Event. Es bestehen noch keine entsprechend vollstaendig umgesetzten Unity-Szenen und kein bestaetigter Eintrag des neuen Events in der vorhandenen Eventdatenbank. Alle Darstellungen, Bezeichnungen und Inhalte werden fuer das eigene Spiel eigenstaendig gestaltet.
