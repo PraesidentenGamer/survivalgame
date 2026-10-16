@@ -155,6 +155,18 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Storyabläufe, alle Einzelmissionen, spezielle Fahrzeugbelohnungen, Preise und Freischaltbedingungen bleiben ausschließlich in der internen Planung.
 - Bisher reine Konzeption; noch kein Eintrag in events.json.db V2 und keine bestätigte vollständige Unity-Implementierung.
 
+## Eisensturm – Schatten der Festung (S11, zusätzlicher Eventvorschlag)
+- Großes, freiwilliges Festungs-, Erkundungs- und Forschungsevent als eigenständige Spielgeschichte.
+- 100 Missionen: 20 Hauptaufgaben und 80 freiwillige Aufgaben.
+- Fünf miteinander verbundene, technisch getrennt geladene Festungsabschnitte mit großteils freier Erkundung.
+- Eigene Zugangs- und Sicherheitsmechaniken, verschiedene Gegnertypen und optionale Herausforderungen.
+- Eigenes Forschungs-, Herstellungs- und Verbesserungssystem für experimentelle Ausrüstung.
+- Eigener Eventshop mit 100 vorgesehenen Angeboten und erspielbarer Eventwährung.
+- Wiederholbare freiwillige Aufträge und dauerhaft gespeicherter Storyfortschritt.
+- Öffentliche spoilerarme Übersicht: docs/events/Eisensturm_Event.txt
+- Einzelmissionen, konkrete Gegner und Bosse, Überraschungen, besondere Gegenstände, Preis- und Belohnungswerte bleiben ausschließlich in der internen Akte.
+- Ausgearbeitete Planung, jedoch keine bestätigte vollständige Unity-Implementierung oder DB-Migration.
+
 ## Noch auszuarbeiten
 - Konkrete Level und Startbedingungen der noch nicht einzeln festgelegten Kalender-/Saison-Events; bereits bestätigte Ausnahmen und Levelwerte beibehalten.
 - Gegnerzahlen, Kampfregeln, Eventziele und Belohnungswerte je Event.
