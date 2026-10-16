@@ -134,10 +134,15 @@ Planungsstatus: Alle unten als FESTGELEGT markierten Mechaniken sind beschlossen
 - Aufgabenlösungen, Shoppreise, Belohnungstabellen, Gegnerprofil/Schwächen und Überraschungen ausschließlich privat.
 - Nur Planungsfortschritt: Datenbankmigration, Unity-Umsetzung und Verhaltenstests stehen noch aus.
 
-## Weitere vorgesehene Horror-Events
-- Ein eigenständiges Horrorauto-Event ist für die spätere Ausarbeitung fest vorgemerkt, ohne hier inhaltliche Überraschungen zu verraten.
-- Noch kein Eintrag in events.json.db V2; genaue ältere Details nicht vollständig wiedergefunden.
-- Die übergreifende Levelanpassung gilt auch für dieses Event.
+## Christine – Das Horrorauto (Event 6)
+- Umfangreiches Horror- und Storyevent, derzeit als eigenständige Planung ausgearbeitet.
+- 50 reguläre Aufgaben (15 Hauptaufgaben und 35 Nebenaufgaben), 10 optionale Halloween-Zusatzaufgaben sowie 100 geplante Shopartikel.
+- Dynamisch erzeugte Begegnungsgebiete; die Aufgaben, Gegner und Belohnungen berücksichtigen Spielerlevel und Ausrüstung.
+- Reguläre Eventausgabe mindestens 7 Kalendertage; genaue Dauer noch offen. Einzelbegegnungen sind mit vier Stunden Echtzeit vorgesehen.
+- Zentrale Storyaufgaben bleiben nach Ablauf der regulären Ausgabe abschließbar; für sonst unlösbare Aufgaben sind Alternativziele vorgesehen.
+- Öffentliche, spoilerarme Einzelübersicht: docs/events/Christine_Event.txt.
+- Handlung, Hintergrundgeschichten, Gegnermechaniken, spätere Entwicklungen, Questlösungen und Belohnungsdetails bleiben ausschließlich intern.
+- Noch kein Eintrag in events.json.db V2; vollständige Unity-Umsetzung und Integrationstests stehen aus.
 
 ## Noch auszuarbeiten
 - Konkrete Level und Startbedingungen der noch nicht einzeln festgelegten Kalender-/Saison-Events; bereits bestätigte Ausnahmen und Levelwerte beibehalten.
