@@ -1,0 +1,25 @@
+# Remnants of Tomorrow – Event „Christine: Das Horrorauto“
+Stand: 16.10.2026
+Status: Umfangreiche Eventplanung; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Ein eigenständiges, atmosphärisches Horror- und Storyevent mit rätselhaften Fahrzeugbegegnungen, Erkundung und besonderen Aufgaben. Spannung, eine nachvollziehbare Geschichte und faire Spielmechaniken stehen im Vordergrund.
+
+ÖFFENTLICHER PLANUNGSUMFANG
+- 50 reguläre Aufgaben: 15 Hauptaufgaben und 35 freiwillige Nebenaufgaben.
+- 10 zusätzliche, optionale Halloween-Aufgaben.
+- 100 geplante Angebote in einem eigenen Event-Tauschshop.
+- Unterschiedliche dynamisch erzeugte Begegnungsszenarien.
+- Aufgabenfortschritt wird gespeichert; notwendige Alternativziele sollen Sackgassen vermeiden.
+- Gegner, Herausforderungen und Belohnungen werden an Spielerlevel und erreichbare Ausrüstung angepasst.
+- Erkennbare Angriffsankündigungen und faire Reaktionsmöglichkeiten gehören zum Konzept.
+- Die reguläre Eventausgabe soll mindestens 7 Kalendertage dauern; die endgültige Dauer ist noch offen.
+- Einzelne temporäre Begegnungen sind derzeit mit 4 Stunden Echtzeit vorgesehen.
+- Die zentrale Geschichte soll auch nach Ende einer Eventausgabe abschließbar bleiben.
+- Besondere Fortschritte können dauerhaft erhalten bleiben.
+
+WICHTIGE HINWEISE
+- Die vollständige Handlung, Lösungen, Missionsdetails, Preise, Belohnungen, Gegnerverhalten, spätere Entwicklungen und Überraschungen bleiben bewusst unveröffentlicht.
+- Name, Fahrzeugdarstellung, Stimmen und sonstige mögliche Bezüge zu bekannten Werken werden vor einer Veröffentlichung rechtlich geprüft und bei Bedarf eigenständig gestaltet.
+- Bisher reine Planung. Keine vollständige technische Eventumsetzung, keine bestätigten Balancetests und kein entsprechender Eintrag in der derzeitigen events.json.db V2.
+- Es sind keine Echtgeldkäufe oder bezahlten Freischaltungen vorgesehen.
