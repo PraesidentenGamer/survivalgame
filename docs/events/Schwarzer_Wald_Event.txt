@@ -1,0 +1,49 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: SCHWARZER WALD
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzeptplanung bestätigt; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Eine abgelegene Waldregion verändert sich auf rätselhafte Weise. Zwischen
+alten Kiefern, verlassenen Forstgebäuden und dichtem Unterholz entdeckt der
+Spieler ungewöhnliche Pflanzen, gefährliche Tiere und Spuren wissenschaftlicher
+Untersuchungen. Erkundung, Natursurvival und die Erforschung des Waldes stehen
+im Mittelpunkt – kein reines Extrem-Horror-Event.
+
+GEPLANTER UMFANG
+- Sechs Waldgebiete mit schrittweiser Storyfreischaltung.
+- 60 Aufgaben: 18 Haupt- und 42 freiwillige Nebenmissionen.
+- Zwölf vorgesehene Gegnertypen und drei Bossbegegnungen.
+- Achtzehn versteckte optionale Forschungsfunde.
+- Fünf wiederholbare Herausforderungen und ein Eventshop mit 60 Angeboten.
+- Eigene erspielbare Eventwährung: Waldmarken.
+- Umweltmechaniken für Pflanzen, Sporenbelastung und unterschiedliches
+  Tierverhalten.
+- Mehrere Storyentscheidungen; freie Erkundung und optionale Inhalte bleiben
+  nach der Hauptgeschichte erhalten.
+
+SPIELERFREUNDLICHE REGELN
+- Freigeschaltete Sektoren bleiben erreichbar.
+- Schutzmöglichkeiten und Hinweise machen gefährliche Gebiete nachvollziehbar.
+- Wichtige Missionsobjekte und dauerhafte Rätsellösungen werden nicht bei
+  jeder Gebietsbetretung zufällig neu positioniert.
+- Für Pflichtmissionen nötige Gegenstände sind unabhängig vom Eventshop
+  erhältlich.
+- Bereits erworbene Belohnungen und Missionsabschlüsse bleiben gespeichert.
+
+ENTWICKLUNGSSTAND
+Dies ist eine reine Konzeptplanung für das bestehende Unity-2017.2.5f1-Projekt
+Remnants of Tomorrow. Die reale Projektstruktur wird vor der technischen
+Umsetzung geprüft. Gegner-, Missionen-, Loot- und Shopwerte sollen später über
+geeignete Datenbankfelder balancierbar sein, ohne bestehende gültige
+Spielstanderfolge zu beschädigen. Modelle, Animationen, Effekte und Audio sind
+noch nicht fertiggestellt.
+
+SPOILERSCHUTZ
+Konkrete Rätsellösungen, Identitäten der besonderen Gegner, geheime
+Funddokumente, individuelle Missionsabläufe, Shoppreislisten und die
+Storyauflösung werden ausschließlich in der getrennten internen TXT
+aufbewahrt. Diese interne Fassung wird nicht auf GitHub veröffentlicht.
+
+Ende des öffentlichen Planungsstands.
