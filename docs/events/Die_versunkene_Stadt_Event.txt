@@ -1,0 +1,48 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT – DIE VERSUNKENE STADT
+ÖFFENTLICHER PLANUNGSSTAND (SPOILERARM)
+Stand: 18.10.2026
+
+STATUS
+Die inhaltliche Grundplanung wurde angenommen und um Detailkataloge ergänzt.
+Das Event ist noch nicht als fertiger Unity-Inhalt umgesetzt und nicht spielbar.
+Die endgültige Event-ID und das Freischaltlevel werden später mit der bestehenden
+RoT-Eventdatenbank abgeglichen.
+
+KURZBESCHREIBUNG
+Eine ehemalige Großstadt steht nach einer Katastrophe teilweise unter Wasser.
+Mit Booten und auf sicheren Wegen erkunden Spieler verlassene Straßenzüge,
+Gebäude und technische Anlagen. Eine beschädigte Hochwasserinfrastruktur
+spielt dabei eine zentrale Rolle.
+
+GEPLANTER UMFANG
+- Sechs unterschiedliche, schrittweise erschließbare Stadtgebiete.
+- Insgesamt 75 Missionen: 24 Haupt- und 51 Nebenmissionen.
+- Unterschiedliche Wasserstände mit Schwimmen, Tauchen und sicheren Luftstellen.
+- Mehrere Boote sowie reparierbare Pumpen, Stromanlagen und Fluttore.
+- Zehn vorgesehene Gegnertypen und drei besondere Bossbegegnungen.
+- Achtzehn versteckte optionale Forschungsfunde.
+- Sechs wiederholbare Event-Herausforderungen.
+- Ein eigener Eventshop mit 75 geplanten Artikeln und erspielbaren Flutmarken.
+- Mehrere Storyentscheidungen mit freiem Weiterspielen.
+
+SPIELPRINZIP
+Die Stadtgebiete werden durch Erkundung, Aufgaben und technische Reparaturen
+erschlossen. Wasserstände und Zugänge verändern sich kontrolliert. Bereits
+gesicherter Fortschritt soll gespeichert bleiben, und alle Storyabschlüsse
+sollen das vorgesehene Nachspiel ermöglichen.
+
+TECHNISCHER RAHMEN
+Das Event ist für das vorhandene Projekt Remnants of Tomorrow mit Unity
+2017.2.5f1 vorgesehen. Bereits funktionierende RoT-Systeme sollen bevorzugt
+weiterverwendet werden. Zunächst technische Platzhalter und Funktionstests,
+hochwertige Grafik, Modelle, Animationen und Audio erst später.
+
+SPOILER-SCHUTZ
+Diese öffentliche Übersicht verrät weder Rätsellösungen noch Geheimfundorte,
+Bossidentitäten, wichtige Storyenthüllungen, konkrete Endentscheidungen oder
+vollständige Missions- und Shopkataloge. Diese Details verbleiben in einer
+getrennten internen TXT-Dokumentation, die nicht veröffentlicht wird.
+
+Dies ist ausdrücklich ein Planungsstand, keine Ankündigung einer fertigen
+oder bereits spielbaren Eventveröffentlichung.
