@@ -1,0 +1,37 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: FUNKSTILLE
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzept bestätigt, technische Umsetzung noch nicht begonnen.
+
+KURZBESCHREIBUNG
+Ein widersprüchliches Notsignal führt in ein verlassenes regionales Funknetz.
+Mehrere Relaisstationen, ein großes Antennenplateau und ehemalige Leitstellen
+müssen untersucht werden. Der Schwerpunkt liegt auf Kommunikation, Reparatur,
+Signalrätseln, Erkundung und gefährlichen Anlagen.
+
+GEPLANTER UMFANG
+- Fünf unterschiedliche, schrittweise zugängliche Funk- und Anlagengebiete.
+- 75 Missionen: 20 Haupt- und 55 freiwillige Nebenmissionen.
+- Wiederherstellung eines verteilten Kommunikationsnetzes.
+- Signalpeilung, fiktive Frequenzrätsel, Stromversorgung und Nachrichtenarchiv.
+- Zehn geplante Gegnertypen und drei besondere Bossbegegnungen.
+- Fünfzehn optionale Geheimfunde und Forschungsdokumente.
+- Fünf nach Freischaltung unbegrenzt wiederholbare Herausforderungen.
+- Ein Eventshop mit 70 Angeboten und erspielbaren Funkmarken.
+- Mehrere mögliche Storyabschlüsse mit weiterhin nutzbaren Nachspielinhalten.
+
+ENTWICKLUNGSRAHMEN
+Geplant für das bestehende Unity-2017.2.5f1-Projekt Remnants of Tomorrow.
+Vorhandene Spieler-, Inventar-, Computer-, Missions- und Speichersysteme sollen
+bevorzugt wiederverwendet werden. Erst technische Platzhalter, danach
+hochwertige Grafik und Audio. Balancewerte für Gegner, Missionen und Shop
+sollen soweit möglich später über die bestehenden Datenbanken konfigurierbar
+sein; dazu müssen die tatsächlichen Datenbankschemas geprüft werden.
+
+SPOILERSCHUTZ
+Die Bossidentitäten, geheimen Funde und Fundorte, individuellen Missions-
+abläufe, vollständigen Shoplisten, Rätsellösungen und die Auflösung der
+Geschichte bleiben in einer getrennten internen TXT-Dokumentation.
+
+Dieses Dokument beschreibt einen Planungsstand, kein bereits spielbares Event.
