@@ -1,0 +1,48 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT – DIE LETZTE ZUGFAHRT
+OEFFENTLICHER PLANUNGSSTAND (SPOILERARM)
+Stand: 18.10.2026
+
+STATUS
+Konzeptplanung abgeschlossen und vorlaeufig uebernommen. Technische Umsetzung
+und Tests haben fuer dieses Event noch nicht begonnen. Die genaue Event-ID und
+das Freischaltlevel werden erst mit der bestehenden RoT-Eventdatenbank abgeglichen.
+
+KURZBESCHREIBUNG
+Ein umfangreiches, freiwilliges Eisenbahn-, Erkundungs- und Survival-Storyevent.
+Der Spieler entdeckt ein stillgelegtes Bahnnetz und versucht, eine beschaedigte
+Diesellokomotive wieder fahrtuechtig zu machen. Verlassene Bahnhoefe,
+beschaedigte Gleise und gefaehrliche Begegnungen stehen einer erneuten Zugfahrt
+im Weg.
+
+GEPLANTER UMFANG
+- Sechs miteinander verbundene Streckenabschnitte mit unterschiedlichen Orten.
+- 60 Aufgaben: 18 Hauptmissionen und 42 freiwillige Nebenmissionen.
+- Restaurierung einer Diesellokomotive, Reparaturen und Streckenfreigaben.
+- Fuenf vorgesehene Waggonfunktionen fuer Transport und Versorgung.
+- Gegnerbegegnungen, zwei besondere Bosskaempfe und technische Raetsel.
+- Zwoelf optionale versteckte Eisenbahnfunde.
+- Vier wiederholbare Transportauftraege nach dem Storyfortschritt.
+- Ein Eventshop mit 60 geplanten Artikeln und erspielbaren Gleismarken.
+- Unterschiedliche Storyentscheidungen mit anschliessendem Weiterspielen.
+
+SPIELPRINZIP
+Zuerst werden Depot, Lokomotive und Streckentechnik wiederhergestellt. Danach
+oeffnen sich weitere Abschnitte der Bahnstrecke. Im Nachspiel koennen
+offengebliebene Aufgaben erledigt und weitere Transporte gefahren werden.
+
+TECHNISCHER PLANUNGSSTAND
+Geplant fuer das bestehende Unity-2017.2.5f1-Projekt von Remnants of Tomorrow.
+Bestehende RoT-Systeme sollen bevorzugt weiterverwendet werden. Zunaechst
+funktionierende Platzhalter und Tests; hochwertige Modelle, Animationen und
+Audio erst spaeter. Freischaltungen und Belohnungen sollen dauerhaft und
+zuverlaessig in den RoT-Spielstaenden erhalten bleiben.
+
+SPOILERHINWEIS
+Diese oeffentliche Fassung verraet keine Loesungen, keine Identitaeten der
+zentralen Gegner, keine konkreten Storyenden, keine Fundorte und keine
+vollstaendigen Missions- oder Shoplisten. Ausfuehrliche interne Planungsdaten
+werden nicht auf GitHub veroeffentlicht.
+
+Dieses Dokument beschreibt geplante Inhalte und ist keine Ankuendigung eines
+fertigen oder bereits spielbaren Events.
