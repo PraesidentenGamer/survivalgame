@@ -1,0 +1,49 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: NEUJAHRSNACHT – DER LETZTE COUNTDOWN
+ÖFFENTLICHER PLANUNGSSTAND (SPOILERARM)
+Stand: 18.10.2026
+Status: Konzept bestätigt; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Zum Jahreswechsel bereitet eine Gruppe Überlebender ein gemeinsames Fest vor.
+Der Spieler hilft bei Stromversorgung, Vorräten, Beleuchtung und der Sicherheit
+rund um den Festplatz. Das Event verbindet eine festliche Stimmung mit
+Erkundung, Reparaturaufgaben, Begegnungen und einer besonderen Countdown-Szene.
+
+GEPLANTER UMFANG
+- Fünf zusammenhängende Veranstaltungs- und Versorgungsbereiche.
+- 40 Aufgaben: zehn Hauptmissionen und 30 freiwillige Nebenmissionen.
+- Sechs geplante Gegnertypen und eine besondere Bossbegegnung.
+- Acht optionale versteckte Erinnerungs- und Festfunde.
+- Vier wiederholbare Herausforderungen und 40 Eventshopangebote.
+- Eigene, im Spiel erspielbare Eventwährung: Neujahrsmarken.
+- Festbeleuchtung, Stromversorgung, Versorgungs- und Sicherheitsaufgaben.
+- Eine besondere Jahreswechsel-Sequenz und zwei mögliche Storyabschlüsse.
+
+ZEITRAUM UND VERFÜGBARKEIT
+Jährliche saisonale Hervorhebung vom 31. Dezember bis 1. Januar.
+Die besondere Einstimmung beginnt am 31. Dezember ab 18:00 Uhr; Ende der
+Kalenderhervorhebung ist am 1. Januar um 23:59 Uhr. Das einmal freigeschaltete
+Event bleibt auch außerhalb des Jahreswechsels spielbar. Der große Countdown
+wird durch die Spielgeschichte ausgelöst; niemand muss dafür in Echtzeit bis
+Mitternacht warten. Das genaue Freischaltlevel wird später anhand der
+vorhandenen Eventdatenbank bestimmt.
+
+SPIELERFREUNDLICHE GRUNDREGELN
+Bereits abgeschlossene Missionen und erhaltene Belohnungen bleiben erhalten.
+Wichtige Storygegenstände müssen ohne Shopkäufe erhältlich sein. Die Feier
+und ihr Abschluss funktionieren auch mit reduzierten Grafikeffekten.
+Gegner-, Missions- und Shopwerte sind später, soweit passende DB-Felder
+bestehen, erneut balancierbar.
+
+TECHNISCHER PLANUNGSSTAND
+Geplant für das vorhandene Remnants-of-Tomorrow-Projekt mit Unity 2017.2.5f1.
+Bestehende Quest-, Inventar-, Kampf-, Speicher- und Eventsysteme sollen
+vorrangig weiterverwendet werden. Erst Technik und Platzhalter testen,
+danach grafische und musikalische Ausgestaltung. Noch keine spielbare Version.
+
+SPOILERSCHUTZ
+Keine genauen Rätsellösungen, Bossidentität, geheimen Fundorte, vollständigen
+Missionsabläufe, individuellen Shoppreise oder konkreten Storyentscheidungen.
+Diese Inhalte stehen allein in einer getrennten internen PC-TXT. Sie wird
+nicht auf GitHub veröffentlicht.
