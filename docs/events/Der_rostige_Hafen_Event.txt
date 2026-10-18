@@ -1,0 +1,39 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: DER ROSTIGE HAFEN
+OEFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzeptplanung beschlossen; noch kein fertiges Unity-Event.
+
+KURZBESCHREIBUNG
+Im verlassenen Industriehafen tauchen neue Hinweise auf einen verschollenen
+Versorgungstransport auf. Spieler erkunden Containerfelder, Werkstaetten,
+Schiffe und abgelegene technische Anlagen. Im Mittelpunkt stehen industrielle
+Reparaturen, Bergung und Frachtraetsel.
+
+OEFFENTLICHER UMFANG
+- Sechs nacheinander freischaltbare Hafenbereiche.
+- 60 Missionen: 18 Haupt- und 42 freiwillige Nebenmissionen.
+- Zehn Gegnertypen und zwei geplante besondere Bossbegegnungen.
+- Zwoelf optionale Dokumentfunde.
+- Vier wiederholbare Herausforderungen nach Freischaltung.
+- Eventshop mit 60 Angeboten und erspielbaren Hafenmarken.
+- Interaktive Hafenkraene, Containerverwaltung, Schiffserkundung,
+  Werkstaetten, Reparaturdocks und Bootstransporte.
+- Mehrere moegliche Storyabschluesse; optionale Inhalte auch danach nutzbar.
+
+ENTWICKLUNG UND DATENBANKEN
+Das Event ist eine Planung fuer das bestehende Unity-2017.2.5f1-Projekt von
+Remnants of Tomorrow. Vorhandene Spielsysteme sollen bevorzugt wiederverwendet
+werden. Hauptsache ist zunaechst funktionierendes Gameplay mit Platzhaltern;
+Grafik, Animation und Audio folgen spaeter. Gegner- und Shopwerte,
+Transportanforderungen und Missionsbelohnungen koennen spaeter ueber geeignete
+DB-Felder neu balanciert werden, ohne IDs oder bereits gespeicherte Erfolge
+zurueckzusetzen.
+
+SPOILERSCHUTZ
+Bossidentitaeten, konkrete Missionen und Loesungen, geheime Funde, Einzeldaten
+des Shops und die Storyenden werden nicht oeffentlich verraten. Sie stehen
+in einer getrennten internen TXT-Datei, die nicht auf GitHub gehoert.
+
+Dies ist kein fertiges oder bereits spielbares Event und keine Zusage eines
+Veroeffentlichungsdatums.
