@@ -1,0 +1,53 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT S12 – SPERRZONE: KONTROLLVERLUST
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARME GITHUB-FASSUNG
+Stand: 18.10.2026
+
+STATUS
+Konzeptplanung weitgehend abgeschlossen. Das Event befindet sich in der Planungsphase;
+eine spielbare Veröffentlichung oder eine fertige Unity-Implementierung wird hiermit
+nicht angekündigt. Die spätere Umsetzung folgt erst nach Prüfung des vorhandenen
+RoT-Projekts. Angaben können sich durch Entwicklung und Tests noch ändern.
+
+WORUM GEHT ES?
+„Sperrzone: Kontrollverlust“ ist ein umfangreiches, eigenständiges Extrem-Horror-
+Event für Remnants of Tomorrow. Im Mittelpunkt steht die Erkundung einer verlassenen,
+gesicherten Forschungsanlage mit mehreren unterschiedlich gestalteten Bereichen.
+
+GEPLANTE SPIELINHALTE
+- Acht zusammenhängende Forschungssektoren mit unterschiedlichen Atmosphären.
+- Umfangreiche Haupt- und Nebenaufgaben (insgesamt 100 geplant).
+- Erkundung, interaktive Terminals, Zugangskontrollen und technische Rätsel.
+- Unterschiedliche Kreaturen, Verfolgungen und anspruchsvolle Bossbegegnungen.
+- Dynamische Horrorinszenierungen mit Licht, Geräuschen und Umgebungseffekten.
+- Forschungsfunde und optionale Geheimnisse zum Entdecken.
+- Eventeigene Belohnungen und ein umfangreicher Tauschshop.
+- Wiederholbare Herausforderungen auch nach Abschluss der Hauptgeschichte.
+- Mehrere Entscheidungen im Storyverlauf mit anschließendem freien Weiterspielen.
+
+SPIELERFREUNDLICHE GRUNDREGELN
+- S12 soll nach seiner Freischaltung dauerhaft zugänglich bleiben.
+- Rätsel und Kämpfe sollen schwierig, aber nachvollziehbar und fair sein.
+- Bereits gesicherter Fortschritt soll beim Neuladen erhalten bleiben.
+- Grafik- und Audiooptionen sollen auch schwächere Windows-PCs berücksichtigen.
+- Deutschsprachige Untertitel sind für fremdsprachige Durchsagen vorgesehen.
+- Vor dem Betreten wird auf die intensiven Horrorinhalte hingewiesen.
+
+TECHNISCHER RAHMEN
+Geplant mit Unity 2017.2.5f1 (Built-in-Rendering-Pipeline). Bestehende, funktionierende
+Systeme von RoT sollen bevorzugt weiterverwendet werden. Erst Mechanik und Tests,
+danach aufwendige Modelle, Animationen und Audio-Gestaltung.
+
+ENTWICKLUNGSSTAND
+[ABGESCHLOSSEN – KONZEPT] Spielwelt, Inhalte, grundlegende Mechaniken, Benutzeroberfläche
+und Entwicklungsreihenfolge sind in der Planung ausgearbeitet.
+[AUSSTEHEND] Prüfung des bestehenden Unity-Projekts und seiner Skripte.
+[AUSSTEHEND] Technische Entwicklung, Integration und vollständige Spieltests.
+[AUSSTEHEND] Endgültige Grafik, 3D-Assets, Animationen, Vertonung und Feinschliff.
+
+HINWEIS ZU SPOILERN
+Diese öffentliche Fassung nennt absichtlich weder die Auflösung der Geschichte
+noch die Identitäten wichtiger Begegnungen, geheime Zugänge, besondere Begleiter,
+Rätsellösungen oder einzelne Storyentscheidungen.
+
+Ende des öffentlichen Planungsstands.
