@@ -1,5 +1,17 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 19.10.2026 – 25 Eventkonzepte und lokale Eventdatenbanken vorbereitet
+
+**Neuer Planungs- und Datenstand:** Für **25 größere Events** liegen bestätigte Konzepte sowie lokal vorbereitete, getrennte Eventdatenbanken vor. Ein zentraler `event_index.json.db` ordnet die Eventdateien zu. Die Dateien tragen Namen nach dem Muster `event_1_beispielname.json.db`; die Endung `.json.db` bezeichnet weiterhin **JSON-Inhalte, keine SQL-Datenbank**. Die detaillierten Eventplanungen, Inhalte und internen Datenbankdateien bleiben außerhalb des öffentlichen Repositories.
+
+**Spielstatus:** Das Vorliegen der Datenbanken ist **kein Nachweis einer fertigen oder in Unity erfolgreich eingelesenen Eventfunktion**. Die Verbindung zu Eventmanager, Quest-/Belohnungslogik, Weltkarte, Speichersystem und Oberflächen sowie Integrationstests stehen noch aus. Käufe und Verkäufe vergeben grundsätzlich **keine XP**. Grafik, Modelle und endgültige Shopgestaltung folgen in einer späteren Phase.
+
+Die älteren, datierten Angaben in diesem Repository zu sieben Einträgen in `events.json.db` beschreiben einen **früheren Prototypstand** und nicht diese neue Sammlung der 25 großen Eventdatenbanken. Einzelne kurzfristige Zufalls-/Mini-Events werden getrennt von den großen Eventkonzepten betrachtet.
+
+**Datenschutz der Planung:** Dieses Update veröffentlicht nur einen spoilerarmen Fortschrittsstand; keine internen Missionstexte, versteckten Inhalte, einzelnen Shopangebote, Preislisten, kryptografischen Schlüssel oder lokalen Unity-Projektdateien.
+
+
+
 ## Update 14.10.2026 – Computersystem und GEAM OS: Planungsstand gesichert
 
 Die umfangreichen verbindlichen Festlegungen zum PC-System, zu Hardware, Reparaturen, Diagnose, GEAM OS, Installation, Programmmedien, Programmkiste und zur Flugdatenschreiberanalyse stehen jetzt gesammelt in [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt). Die Spielcomputer verwenden GEAM OS, inklusive Versionsupgrades, Mehrfachstart, Wiederherstellung und Rettungsmedien. Die Analyse erfolgt auf einem PC mit zuvor gefundenem/installiertem Programm, NICHT an einer separaten Analysestation. **Ausschließlich Planung; keine neue Unity-Implementierung oder DB-Migration erfolgt.**
