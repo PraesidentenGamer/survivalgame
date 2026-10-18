@@ -1,0 +1,40 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: DAS BIOTOP-EXPERIMENT
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Umfangreiche Konzeptplanung bestätigt; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Eine große, künstlich angelegte Forschungslandschaft gerät außer Kontrolle.
+Spieler untersuchen unterschiedliche abgeschlossene Klimazonen, reparieren
+Bewässerung und Energieversorgung und erforschen ungewöhnliche Ökosysteme.
+Im Mittelpunkt stehen Erkundung, Rätsel, Biotopsteuerung und Survival.
+
+GEPLANTER UMFANG
+- Sechs eigenständige, schrittweise freizuschaltende Biotopbereiche.
+- 75 Aufgaben: 24 Hauptmissionen und 51 optionale Nebenmissionen.
+- Klimaregulation, Bewässerung, Pflanzenwachstum, Umwelteinflüsse und Energie.
+- Zwölf geplante Gegnerarten und drei besondere Bossbegegnungen.
+- Achtzehn freiwillige Forschungsfunde mit Hintergrundinformationen.
+- Sechs unbegrenzt wiederholbare Herausforderungen nach Freischaltung.
+- Eigener Eventshop mit 75 geplanten Angeboten und erspielbaren Biomarken.
+- Mehrere mögliche Storyabschlüsse; freie Erkundung und optionale Aufgaben
+  bleiben danach zugänglich.
+
+SPIELPRINZIP UND TECHNIK
+Die klimatischen Bedingungen sind klar begrenzte Spielzustände, keine
+aufwendige Echtzeit-Simulation kompletter Ökosysteme. Feste Storyobjekte und
+bereits abgeschlossene Aufgaben werden nicht zufällig zurückgesetzt. Inhalte
+sollen an die bestehenden Systeme von Remnants of Tomorrow (Unity 2017.2.5f1)
+angebunden werden. Gegner-, Klima-, Quest- und Shopwerte sind später soweit
+möglich über geeignete Datenbankfelder anpassbar. Zunächst werden einfache
+technische Platzhalter getestet; hochwertige Modelle und Audio folgen später.
+Event-ID und Freischaltlevel werden erst mit der vorhandenen Event-DB geprüft.
+
+SPOILERSCHUTZ
+Diese öffentliche Datei verrät keine geheimen Funde oder Fundorte,
+individuellen Missionsabläufe, Bossidentitäten, Storyauflösungen,
+Rätsellösungen oder internen Shoppreislisten. Diese bleiben ausschließlich
+in einer getrennten internen TXT beim Entwickler.
+
+Dies ist eine reine Planung, noch keine spielbare Veröffentlichung.
