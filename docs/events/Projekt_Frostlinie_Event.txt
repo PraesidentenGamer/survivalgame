@@ -1,0 +1,47 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT – PROJEKT FROSTLINIE
+OEFFENTLICHER PLANUNGSSTAND (SPOILERARM)
+Stand: 18.10.2026
+
+STATUS
+Die Konzeptplanung ist vorlaeufig angenommen. Das Event befindet sich nicht
+in einem fertig spielbaren Entwicklungsstand. Seine spaetere Integration und
+die konkrete Freischaltung werden gegen die vorhandenen RoT-Datenbanken geprueft.
+
+KURZBESCHREIBUNG
+Ein abgelegenes Forschungsgebiet im ewigen Eis sendet nach langer Funkstille
+wieder Signale. Die Spieler erkunden verlassene Lager, verschneite Landschaften
+und Forschungseinrichtungen, sichern Versorgungswege und untersuchen eine
+ungewoehnliche Natur- und Technikkatastrophe.
+
+GEPLANTER UMFANG
+- Fuenf zusammenhaengende Gebiete mit schrittweiser Freischaltung.
+- 60 Aufgaben: 20 Hauptmissionen und 40 freiwillige Nebenmissionen.
+- Wetter und Temperatur als besondere Survivalmechanik des Events.
+- Reparierbare Generatoren, Schutzraeume und optionale Erkundungswege.
+- Ein im Storyfortschritt freischaltbares Schneefahrzeug.
+- Neun unterschiedliche Gegnertypen und zwei Bossbegegnungen.
+- Zwoelf optionale Forschungsfunde.
+- Vier nach Freischaltung beliebig oft wiederholbare Herausforderungen.
+- Eigene Eventwaehrung (Frostmarken) und 60 geplante Shopangebote.
+- Mehrere Storyentscheidungen mit anschliessender freier Erkundung.
+
+SPIELBARKEIT UND BARRIEREFREIHEIT
+Das Event soll anspruchsvoll, aber fair bleiben. Klares Wetter und extreme
+Schneestuerme unterscheiden sich in Sicht und Temperaturanforderungen. Wichtige
+Wege und Hinweise bleiben auch mit reduzierten Grafikeffekten erkennbar. Die
+Rettungs- und Fortschrittsregeln von RoT gelten weiterhin.
+
+TECHNISCHER RAHMEN
+Ziel ist die Weiterverwendung der bestehenden RoT-Systeme in Unity 2017.2.5f1.
+Werte fuer Gegner, Wetter, Aufgaben und Eventwirtschaft sollen, soweit es die
+vorhandenen Datenbankschemas erlauben, spaeter ohne Skriptaenderungen
+balancierbar sein. Zuerst Funktionstests mit Platzhaltern, danach hochwertige
+Grafik, Animation und Audio. Keine fertige Unity-Implementierung behauptet.
+
+SPOILERSCHUTZ
+Geheime Fundorte, Hintergrund und Aufloesung, Identitaeten und Mechaniken der
+Bosse, konkrete Storyentscheidungen, individuelle Missionsablaeufe und alle
+internen Shoppreise bleiben ausschliesslich in der getrennten internen TXT.
+
+Ende des oeffentlichen Planungsstands.
