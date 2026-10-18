@@ -1,0 +1,45 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT – DIE VERLORENE MINE
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+
+STATUS
+Konzeptplanung bestätigt; noch nicht als spielbarer Unity-Inhalt umgesetzt.
+Die konkrete Event-ID und das Freischaltlevel werden später mit den
+bestehenden RoT-Datenbanken abgeglichen. Gegnerwerte, Missionsbelohnungen,
+Shoppreise und Rohstoffmengen bleiben über geeignete Datenbankfelder balancierbar.
+
+KURZBESCHREIBUNG
+Eine seit Jahren geschlossene Bergwerksanlage sendet weiterhin ungewöhnliche
+Signale aus großer Tiefe. Bei der Erkundung trifft der Spieler auf alte
+Fördertechnik, verlassene Stollen, Reparaturaufgaben und gefährliche
+Begegnungen. Hinter der offiziellen Geschichte der Mine verbirgt sich mehr.
+
+ÖFFENTLICHER PLANUNGSUMFANG
+- Sechs schrittweise freischaltbare Bergwerksbereiche.
+- 60 Aufgaben: 18 Hauptmissionen und 42 optionale Nebenmissionen.
+- Förderaufzug, Grubenloren, Beleuchtung und reparierbare Grubentechnik.
+- Erzabbau, Stollensicherung und besondere Gefahrenzonen.
+- Zehn geplante Gegnerarten und zwei besondere Bossbegegnungen.
+- Zwölf optionale geheime Funde.
+- Vier nach Freischaltung unbegrenzt wiederholbare Herausforderungen.
+- Eventshop mit 60 geplanten Angeboten und erspielbaren Grubenmarken.
+- Mehrere Storyentscheidungen mit anschließendem Nachspiel.
+
+SPIELPRINZIP UND TECHNIK
+Der Spieler repariert die Infrastruktur und erreicht immer tiefere Ebenen.
+Freigaben, gefundene Dokumente und Belohnungen sollen gespeichert bleiben.
+Unfreiwillige Sackgassen sind bei Aufzug-, Gas- und Stollenmechaniken
+ausgeschlossen. Die geplante Umsetzung nutzt Unity 2017.2.5f1 und soll
+vorhandene RoT-Systeme, einschließlich der datenbankgestützten Balance,
+so weit wie sinnvoll weiterverwenden. Zunächst technische Platzhalter,
+endgültige Modelle und Vertonung erst später.
+
+SPOILERSCHUTZ
+Konkrete Storyentscheidungen, geheime Fundorte und Dokumente,
+Bossidentitäten, Rätsellösungen und individuelle Shop-/Missionskataloge
+sind nicht Teil dieser öffentlichen Übersicht. Sie bleiben in der
+separaten internen TXT auf dem PC des Entwicklers.
+
+Dies ist eine Konzeptankündigung, keine Zusage eines Veröffentlichungstermins
+und keine Behauptung einer bereits spielbaren Umsetzung.
