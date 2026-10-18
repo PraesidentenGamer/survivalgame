@@ -1,5 +1,25 @@
 # Projektfortschritt
 
+## Update 19.10.2026 – 25 Eventdatenbanken lokal vorbereitet
+
+| Bereich | Stand / nächste Aufgabe |
+|---|---|
+| Große Eventkonzepte | **25 von 25** geplanten Events konzeptionell festgelegt |
+| Lokale Eventdatenbanken | **25 separate `.json.db`-Dateien** und ein `event_index.json.db` vorhanden |
+| Dateiformat | Reines JSON mit der Endung `.json.db`, keine SQL-Datenbank |
+| Übertragung der Planung | Definitionen aus den internen TXT-Planungen in JSON-Strukturen überführt und ergänzt; die individuelle Spielbarkeit ist noch nicht geprüft |
+| Original- und Sicherungsdateien | Vorhandene `.BAK`-/`.1BAK`-Sicherungen dürfen erhalten bleiben; der zukünftige Loader muss aktive Datenbankfassungen eindeutig auswählen |
+| Eventshops | Datenseitig vorbereitet; **Käufe/Verkäufe geben keine XP**; grafische Ausarbeitung bleibt später |
+| Unity-Integration | **Offen:** Lese- und Kompatibilitätstests unter Unity 2017.2.5f1, Loader, Eventmanager, Quest-Auslöser, Weltkarten-/Eventsteuerung, Belohnungsabwicklung |
+| Spielerfortschritt | **Offen:** vollständige, zuverlässige Integration von Eventzuständen und Belohnungsstatus in `.rotsave` |
+| Grafik-/Abschlussphase | Modelle, Audio, Animationen, visuelle Effekte und endgültige Shopoberflächen folgen später |
+
+**Abgrenzung:** Gültiges JSON oder eine vorhandene Planungsdatei beweist keine funktionierende Unity-Anbindung. Frühere Einträge mit 7 Eventdatensätzen in `events.json.db` beziehen sich auf den älteren Prototyp und bleiben aus dokumentarischen Gründen im Verlauf erhalten. Temporäre Mini-Events und Basis-Horden haben teils eigene Regeln und sind nicht identisch mit den 25 großen Konzept-Events.
+
+Dieses öffentliche Update enthält **keine internen Event-Datenbanken, geheimen Missionsabläufe, Einzelartikel, Einzelpreise oder Storyspoiler**. Lokale Spielskripte und der bestehende Spielstandschutz wurden für dieses Dokumentationsupdate nicht verändert.
+
+
+
 ## Update 14.10.2026 – Computersystem / GEAM OS (Planung)
 
 **Detaillierter verbindlicher Planungsstand:** [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt). Enthält Hardware-Kompatibilität, PC-Funde/Seltenheiten, Transport und Ausbau, automatische Verkabelung, ausschließlich Luftkühlung, PC-/Laufwerkszustände, GEAM OS und seine Installationen, Software-/Datenträgermanagement, Programmkiste (10/20/30/40/50 Slots, Endstufe unbegrenzt), Installationspausen/Queue/Prioritäten, Wiederherstellung und Rettungsmedien, Reparaturen/Diagnose/Akkus sowie Flugdatenschreiberanalyse am PC (30 Minuten aktive Spielzeit, Queue und Strompausen). **Noch nicht umgesetzt oder vollständig getestet.** Keine neuen konkreten DB-Werte oder C#-Laufzeitfunktionen durch dieses Dokumentationsupdate.
