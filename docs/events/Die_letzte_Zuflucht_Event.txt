@@ -1,0 +1,47 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: DIE LETZTE ZUFLUCHT
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzept bestätigt; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Eine kleine Überlebendensiedlung braucht dringend Hilfe. Gebäude und Schutzanlagen
+sind beschädigt, die Versorgung ist angespannt und der Gemeinschaft fehlen
+wichtige Ersatzteile. Spieler unterstützen die Menschen bei Reparaturen, bei der
+Wiederherstellung von Versorgung und Sicherheit sowie bei langfristigen
+Entscheidungen für das Zusammenleben.
+
+GEPLANTER UMFANG
+- Sechs miteinander verbundene, schrittweise freigeschaltete Siedlungsbereiche.
+- 60 Aufgaben: 18 Hauptmissionen und 42 freiwillige Nebenmissionen.
+- Dauerhafte Reparaturen und Ausbauten an Wohngebäuden, Versorgung und Technik.
+- Bewohner mit eigenen Funktionen und übersichtlichen Tagesabläufen.
+- Landwirtschaft, Wasser, Energie und Verteidigung als Siedlungssysteme.
+- Acht unterschiedliche Gegnertypen und zwei besondere Bossbegegnungen.
+- Zwölf optionale versteckte Dokumente und Erinnerungsstücke.
+- Vier nach Freischaltung beliebig oft wiederholbare Herausforderungen.
+- Eigene Eventwährung (Zufluchtsmarken) und ein Shop mit 60 Angeboten.
+- Mehrere mögliche Storyabschlüsse und freies Nachspiel.
+
+GRUNDREGELN
+Das Event ergänzt das vorhandene RoT-Spiel, ohne die Hauptbasis oder die zweite
+geplante Basis zu ersetzen. Bauzustände und Missionsfreigaben werden dauerhaft
+in Spielständen gespeichert. Für die Hauptgeschichte notwendige Materialien
+und Ausrüstung müssen ohne Eventshopkauf erhältlich sein. Es gibt keine
+Echtgeld-Sperren. Eine Siedlung geht nicht allein durch einen Offline-Timer
+endgültig verloren.
+
+ENTWICKLUNGSSTAND
+Reine Planung für das bestehende Unity-2017.2.5f1-Projekt. Vorhandene Quest-,
+Inventar-, Begleiter-, Horden- und Speichersysteme sollen bevorzugt genutzt
+werden. Zahlenwerte wie Materialmengen, Gegnerwerte und Shoppreise bleiben
+später über geeignete Datenbankfelder balancierbar. Technische Platzhalter
+und Tests gehen endgültigen Modellen und Animationen voraus.
+
+SPOILERSCHUTZ
+Hier werden weder Bossidentitäten noch die genauen Missionsabläufe,
+Geheimfunde, individuelle Shoppreise, Rätsellösungen oder Storyentscheidungen
+offengelegt. Diese stehen in einer getrennten internen TXT-Fassung, die
+nicht auf GitHub veröffentlicht wird.
+
+Dies ist ein Planungsstand, keine Ankündigung eines bereits spielbaren Events.
