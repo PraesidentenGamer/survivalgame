@@ -1,0 +1,37 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: OSTERN – DIE VERSCHWUNDENEN VORRÄTE
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Geplantes Kalender-Event; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Eine Überlebendengemeinschaft möchte ein Osterfest vorbereiten. Doch wichtige
+Vorräte, Geschenke und Dekorationen verschwinden. Der Spieler hilft bei einer
+frühlingshaften Suche, löst Rätsel, findet Gegenstände und unterstützt die
+Feierlichkeiten.
+
+GEPLANTER UMFANG
+- Vier abwechslungsreiche Eventgebiete.
+- 40 Missionen: zwölf Haupt- und 28 optionale Nebenmissionen.
+- Eine besondere Ostereiersuche mit geeigneten wechselnden Fundpositionen.
+- Sechs Gegnertypen und eine Bossbegegnung.
+- Acht optionale geheime Erinnerungsfunde.
+- Vier wiederholbare Herausforderungen und eigener Eventshop mit 40 Angeboten.
+- Eigene erspielbare Eventwährung: Ostermarken.
+- Zwei mögliche Storyabschlüsse und nachholbare Eventinhalte.
+
+ZEITRAUM
+Saisonale Hervorhebung jährlich von Karfreitag bis Ostermontag. Das
+freigeschaltete Event bleibt auch außerhalb dieser Zeit freiwillig spielbar.
+Freischaltlevel und interne Event-ID werden anhand der RoT-Datenbank bestimmt.
+
+ENTWICKLUNGSSTAND
+Reine Konzeptplanung für Remnants of Tomorrow (Unity 2017.2.5f1).
+Vorhandene Systeme für Missionen, Inventar, Kampf und Spielstände sollen
+wiederverwendet werden. Werte können nach Datenbankschema-Prüfung später
+ausbalanciert werden. Technische Platzhalter zuerst, endgültige Assets später.
+
+SPOILERSCHUTZ
+Keine geheimen Fundorte, Bossidentitäten, Einzelpreise, Rätsellösungen,
+individuellen Missionsabläufe oder Details der zwei Storyenden. Diese Inhalte
+werden ausschließlich in einer getrennten internen PC-TXT dokumentiert.
