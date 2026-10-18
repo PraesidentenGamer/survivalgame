@@ -1,0 +1,44 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: HERBSTERNTE – VORRÄTE FÜR DEN WINTER
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Umfassendes Konzept bestätigt; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Mehrere landwirtschaftliche Betriebe benötigen Hilfe, um vor dem Winter
+Lebensmittel und Vorräte zu sichern. Der Spieler unterstützt die Ernte,
+repariert Maschinen, stellt Transportwege wieder her und schützt die
+Versorgung vor Gefahren. Das Event verbindet Landwirtschaft, Erkundung,
+Reparaturaufgaben und ein gemeinsames Herbstfest.
+
+ÖFFENTLICHER UMFANG
+- Vier schrittweise freischaltbare landwirtschaftliche Eventgebiete.
+- 40 Missionen: 12 Hauptmissionen und 28 freiwillige Nebenmissionen.
+- Ernten und Transportieren von Vorräten, reparierbare Landmaschinen,
+  Vorratslager sowie spielerische Konservierungs- und Kühltechnik.
+- Sechs geplante Gegnertypen und eine besondere Bossbegegnung.
+- Acht optionale versteckte Dokumente und Erinnerungsstücke.
+- Vier wiederholbare Herausforderungen.
+- Eigener Eventshop mit 40 geplanten Angeboten und erspielbaren Erntemarken.
+- Zwei mögliche Storyabschlüsse, nachholbare Aufgaben und freies Nachspiel.
+
+KALENDER UND VERFÜGBARKEIT
+Saisonale Hervorhebung: jährlich vom 1. bis 31. Oktober.
+Einmal freigeschaltet, bleibt das Event auch außerhalb dieses Zeitraums
+spielbar. Das genaue Freischaltlevel und die interne Event-ID werden erst
+mit der vorhandenen RoT-Eventdatenbank abgeglichen.
+
+ENTWICKLUNGSSTAND
+Das Event befindet sich in der Konzeptplanung für Remnants of Tomorrow mit
+Unity 2017.2.5f1. Vorhandene Landwirtschafts-, Quest-, Fahrzeug-, Inventar-,
+Kampf- und Speichersysteme sollen nach Prüfung wiederverwendet werden.
+Zuerst werden die Funktionen mit Platzhaltern getestet; Modelle, Animationen
+und Audio folgen später. Gegnerwerte, Erträge, Reparaturmengen und
+Shoppreise sollen über geeignete Datenbankfelder neu balanciert werden
+können. Noch keine spielbare Unity-Umsetzung.
+
+SPOILERSCHUTZ
+Diese öffentliche Fassung enthält keine Bossidentität, konkreten Rätsel-
+und Nebenmissionsabläufe, geheimen Fundorte, individuellen Shoppreise oder
+Details der beiden Storyentscheidungen. Sie verbleiben ausschließlich in
+einer getrennten internen Planungs-TXT auf dem PC des Entwicklers.
