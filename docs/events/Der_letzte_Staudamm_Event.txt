@@ -1,0 +1,40 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: DER LETZTE STAUDAMM
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzept bestätigt; technische Umsetzung steht aus.
+
+KURZBESCHREIBUNG
+Eine alte Talsperre sendet einen dringenden Notruf. Unterbrochene Versorgung,
+verlassene Betriebsgebäude und beschädigte technische Anlagen führen den Spieler
+zu einem großen Erkundungs- und Survival-Event. Der Schwerpunkt liegt auf
+Forschung, Reparaturen, Rettung und Entscheidungen über die Zukunft der Region.
+
+GEPLANTE INHALTE
+- Sechs große, schrittweise zugängliche Anlagenbereiche.
+- Insgesamt 60 Missionen: 18 Hauptaufgaben und 42 Nebenaufgaben.
+- Erkundung der Staumauer, des Kraftwerks, der Wartungswege und der Zentrale.
+- Spielerische Wasserregulierung, Turbinen, Pumpen und Notstromtechnik.
+- Zehn geplante Gegnertypen und zwei besondere Bossbegegnungen.
+- Zwölf optionale versteckte Dokumente und Funde.
+- Vier wiederholbare Herausforderungen.
+- Eigener Eventshop mit 60 geplanten Artikeln und erspielbaren Dammmarken.
+- Mehrere Storyabschlüsse und die Möglichkeit zum freien Nachspiel.
+
+TECHNISCHER RAHMEN
+Das Event ist als Erweiterung des bestehenden Spiels Remnants of Tomorrow mit
+Unity 2017.2.5f1 geplant. Soweit möglich sollen vorhandene Spielsysteme
+weiterverwendet werden. Werte für Gegner, Aufträge, Technik und Shop können
+später über geeignete Datenbankfelder balanciert werden. Zunächst sind
+Platzhalter und Funktionstests, danach hochwertige Gestaltung vorgesehen.
+Die Steuerungen sind ausdrücklich fiktive Spielmechaniken, keine realen
+Betriebsanleitungen für Wasserbauwerke.
+
+SPOILERSCHUTZ
+Diese Veröffentlichung enthält keine geheimen Fundorte, Bossidentitäten,
+Rätsellösungen, vollständigen Missions- und Preislisten oder konkreten
+Storyentscheidungen. Diese Details stehen ausschließlich in der getrennten,
+nicht öffentlichen internen TXT-Dokumentation.
+
+Dies ist ein Planungsstand und keine Ankündigung eines bereits spielbaren
+Events oder eines festen Veröffentlichungstermins.
