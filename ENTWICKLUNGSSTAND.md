@@ -1,5 +1,17 @@
 # Entwicklungsstand
 
+## Update 19.10.2026 – Große Events: Konzepte und lokale Datenbanken vorbereitet
+
+Die Konzeptplanung für **25 größere RoT-Events** ist abgeschlossen. Zu diesen Events wurden lokal **25 getrennte, auf JSON basierende Dateien mit der Endung `.json.db`** und eine zentrale Zuordnung über `event_index.json.db` vorbereitet. Vorhandene Planungswerte wurden soweit möglich übernommen, einzelne zuvor nicht festgelegte Balanceangaben für die Datenbasis ergänzt. Die internen Planungen, Datenbanken und Geheimnisse werden nicht auf GitHub veröffentlicht.
+
+**Technischer Stand ausdrücklich begrenzt:** Die Datenbankdateien befinden sich im lokalen Unity-Projekt, wurden aber **noch nicht als vollständig lesbar, geladen oder spielbar unter Unity 2017.2.5f1 nachgewiesen**. Noch erforderlich sind Loader-/Schemaabgleich, ID- und Assetreferenzen, Quest- und Missionsauslöser, Eventsteuerung, Kauf-/Belohnungslogik, Persistenz und ausführliche Integrationstests. Eventshop-Gestaltung, Modelle, Texturen, Audio und Effekte sind bewusst für die spätere Gestaltungsphase zurückgestellt.
+
+**Allgemeine Regel:** Käufe und Verkäufe, auch in Eventshops, liefern **0 XP**. Persönlicher Eventfortschritt und ausgezahlte Belohnungen sollen getrennt von statischen JSON-Definitionen im Spielstand gespeichert werden; die vollständige Einbindung ist noch offen. Der bestehende Spielstandschutz und die C#-Speicherskripte werden nicht nur wegen dieses Dokumentationsupdates umgebaut.
+
+**Historische Einordnung:** Ältere Einträge in diesem Dokument über `events.json.db` mit 7 Einträgen beschreiben einen früheren Teststand und gelten nicht als aktueller Zählstand der 25 separat vorbereiteten großen Eventdatenbanken. Das ist kein Nachweis einer abgeschlossenen Umsetzung der normalen Zufalls-/Mini-Events.
+
+
+
 ## Update 14.10.2026 – PC-System und GEAM OS: Beschlüsse archiviert
 
 Verbindliche Details in [Computer- und GEAM-OS-Planungsstand](docs/Remnants_of_Tomorrow_Computersystem_Planungsstand.txt); Entwicklungsschwerpunkt bleibt nach der Sicherung die Einzelplanung des Flugzeugabsturzes. Analyse von Flugdatenschreibern erfolgt auf einem geeigneten GEAM-OS-Computer mit gefundenem und installiertem Analyseprogramm, nicht an einer separaten Analysestation. Alle weiteren Hardware-, OS-, Software-, Reparatur- und Speicherregeln wurden gesondert dokumentiert. **Planungsstand ist ausdrücklich keine fertige Unity-Funktion; keine Datenbankmigration, Assets oder Quelltexte in diesem Commit.**
