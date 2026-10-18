@@ -1,0 +1,53 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: WINTERSTURM – KAMPF GEGEN DIE KÄLTE
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzeptplanung bestätigt. Noch nicht als spielbares Unity-Event umgesetzt.
+
+KURZBESCHREIBUNG
+Ein ungewöhnlich heftiger Wintereinbruch hat mehrere Orte von der Außenwelt
+abgeschnitten. Straßen sind verschüttet, Generatoren ausgefallen und
+Überlebende warten auf Unterstützung. Im Mittelpunkt stehen Rettung,
+Wärmeversorgung, Schneeräumung und sichere Versorgungstransporte.
+
+ÖFFENTLICHER PLANUNGSUMFANG
+- Vier schrittweise zugängliche Rettungs- und Wintergebiete.
+- 40 Missionen: zwölf Hauptmissionen und 28 freiwillige Nebenmissionen.
+- Fünf Wetterstufen von ruhigem Winterwetter bis zum Extremsturm.
+- Temperatur- und Kälteschutz als zusätzliche Survivalmechaniken.
+- Beheizbare Unterkünfte, Notstromtechnik und reparierbare Räumfahrzeuge.
+- Ein Rettungskonvoi mit sicheren Strecken-Checkpoints.
+- Sechs geplante Gegnertypen und eine besondere Bossbegegnung.
+- Acht optionale Dokumente und Erinnerungsfunde.
+- Vier nach Freischaltung wiederholbare Herausforderungen.
+- Ein Eventshop mit 40 geplanten Angeboten und erspielbaren Wintermarken.
+- Unterschiedliche Storyabschlüsse und dauerhaft zugängliches Nachspiel.
+
+ZEITRAUM UND SPIELBARKEIT
+Saisonale Hervorhebung jährlich im Februar. Ist das Event freigeschaltet,
+kann es auch außerhalb des Februars gespielt werden. Die Story muss nicht
+innerhalb einer realen Frist abgeschlossen werden. Event-ID und
+Freischaltlevel werden später anhand der vorhandenen RoT-Datenbank geprüft.
+
+SICHERHEIT UND BEDIENBARKEIT
+Es gibt eindeutig erkennbare Schutzräume und Wetterwarnungen.
+Keine Pflichtmission soll durch zufälliges Wetter dauerhaft unlösbar sein.
+Die nötige Kälteschutzausrüstung muss ohne Shopkäufe erhältlich bleiben.
+Reduzierte Grafikeinstellungen dürfen wichtige Spielhinweise nicht entfernen.
+
+ENTWICKLUNGSSTAND
+Das Event befindet sich ausschließlich in der Planungsphase. Vorgesehen ist
+die Einbindung in das bestehende Unity-2017.2.5f1-Projekt Remnants of Tomorrow.
+Vorhandene Fahrzeug-, Quest-, Inventar-, Begleiter- und Speichersysteme
+sollen nach einer Bestandsaufnahme möglichst wiederverwendet werden.
+Balancewerte für Wetter, Gegner, Aufträge und Eventshop sollen später
+über geeignete Datenbankfelder veränderbar sein. Erst technische Tests,
+anschließend endgültige Modelle, Animationen, Audio und Effekte.
+
+SPOILERSCHUTZ
+Geheime Fundorte, Rätsellösungen, vollständige Missions- und Preislisten,
+Bossidentität sowie die konkreten Storyentscheidungen werden nur in der
+separaten internen TXT-Dokumentation festgehalten und nicht veröffentlicht.
+
+Dies ist eine Planung, keine Ankündigung eines bereits spielbaren Events
+oder eines festen Veröffentlichungstermins.
