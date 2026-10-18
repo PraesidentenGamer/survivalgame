@@ -1,0 +1,38 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT: DER SCHWEIGENDE LEUCHTTURM
+OEFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Inhaltlich geplant; Unity-Umsetzung noch nicht begonnen.
+
+KURZBESCHREIBUNG
+An einer verlassenen Küste erscheint plötzlich ein rätselhaftes Lichtsignal.
+Spieler erkunden die Küstenstation, einen alten Leuchtturm, sturmgepeitschte
+Klippen und vergessene technische Anlagen. Im Mittelpunkt stehen Funktechnik,
+Reparaturen, Erkundung und die Suche nach der Ursache der ungewöhnlichen Signale.
+
+GEPLANTE SPIELINHALTE
+- Fünf abwechslungsreiche, im Storyverlauf freischaltbare Küstengebiete.
+- 50 Missionen: 15 Hauptmissionen und 35 freiwillige Nebenmissionen.
+- Reparatur und Steuerung des Leuchtturms; Stromversorgung und Funkrätsel.
+- Küstennebel, Regen, Stürme und klar abgegrenzte Gezeitenbereiche.
+- Acht geplante Gegnerarten sowie zwei besondere Bossbegegnungen.
+- Zehn versteckte optionale Fundstücke und Dokumente.
+- Vier wiederholbare Herausforderungen nach entsprechender Freischaltung.
+- Ein Eventshop mit 50 geplanten Artikeln und erspielbaren Leuchtmarken.
+- Unterschiedliche Storyabschlüsse, freies Nachspiel und nachholbare Aufgaben.
+
+TECHNIK UND ENTWICKLUNGSSTAND
+Entwicklung vorgesehen für das bestehende Remnants-of-Tomorrow-Projekt mit
+Unity 2017.2.5f1. Vorhandene Spielsysteme werden bevorzugt weiterverwendet.
+Zunächst entstehen technische Platzhalter und belastbare Funktionstests;
+endgültige Modelle, Animationen und Vertonung werden später ausgearbeitet.
+Gegnerwerte, Missionsbelohnungen, Herausforderungen und Shoppreise bleiben
+im Rahmen der vorgesehenen Datenbankfelder später balancierbar.
+
+SPOILERSCHUTZ
+Keine Veröffentlichung geheimer Räume, Fundorte, konkreter Rätsellösungen,
+Bossidentitäten, vertraulicher Storydetails, einzelner Missionsabläufe,
+Shoppreislisten oder Storyentscheidungen. Die vollständige interne Planung
+bleibt ausschließlich beim Entwickler und wird nicht auf GitHub gestellt.
+
+Die genannten Inhalte sind eine Planung und noch keine spielbare Umsetzung.
