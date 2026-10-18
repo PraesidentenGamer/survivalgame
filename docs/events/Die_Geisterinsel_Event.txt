@@ -1,0 +1,41 @@
+REMNANTS OF TOMORROW (RoT)
+EVENT – DIE GEISTERINSEL
+ÖFFENTLICHER PLANUNGSSTAND – SPOILERARM
+Stand: 18.10.2026
+Status: Konzept übernommen; noch nicht in Unity umgesetzt.
+
+KURZBESCHREIBUNG
+Ein rätselhafter Seefunk-Notruf führt auf eine scheinbar unbewohnte Insel.
+Der Spieler erkundet alte Anlegestellen, ein verlassenes Dorf, neblige Wälder,
+verfallene militärische Bauten und verborgene technische Bereiche.
+Erkundung, Spurensuche und unheimliche Atmosphäre stehen im Mittelpunkt.
+Im Unterschied zu einem Extrem-Horror-Event bleibt Raum für ruhige Entdeckungen.
+
+GEPLANTER INHALT
+- Fünf Inselgebiete, die im Storyverlauf schrittweise freigeschaltet werden.
+- 50 Missionen: 15 Hauptmissionen und 35 freiwillige Nebenmissionen.
+- Acht unterschiedliche Gegnertypen und zwei besondere Bossbegegnungen.
+- Zehn optionale geheime Dokumente und Erinnerungsstücke.
+- Vier nach Freischaltung wiederholbare Herausforderungen.
+- Ein eigener Eventshop mit 50 geplanten Angeboten und erspielbaren Inselmarken.
+- Nebel, wechselnde Tageszeiten, alte Generatoren, versteckte Wege und
+  technische Rätsel an Funk- und Sicherheitseinrichtungen.
+- Mehrere Storyabschlüsse; offene Nebeninhalte bleiben anschließend erreichbar.
+
+ENTWICKLUNGSSTAND UND TECHNIK
+Das Event ist bisher reine Planung für das bestehende Spiel Remnants of Tomorrow
+(Unity 2017.2.5f1). Bestehende Steuerungs-, Inventar-, Quest-, Begleiter- und
+Speichersysteme sollen soweit möglich weiterverwendet werden. Zunächst wird
+mit einfachen technischen Platzhaltern getestet; endgültige Modelle, Audio
+und Beleuchtung folgen später. Gegner-, Missions-, Loot- und Shopwerte können
+über geeignete Datenbankfelder später ausbalanciert werden. Event-ID und
+Freischaltlevel müssen vor der Implementierung mit den echten DBs abgeglichen
+werden.
+
+SPOILERSCHUTZ
+Keine Bossidentitäten, geheimen Fundorte, individuellen Rätsellösungen,
+konkreten Storyentscheidungen, Shoppreislisten oder vollständigen Questabläufe.
+Diese Details sind ausschließlich in einem separaten internen TXT-Planungsstand
+festgehalten, der nicht auf GitHub veröffentlicht wird.
+
+Dies ist ein Planungsstand, keine Ankündigung eines bereits spielbaren Events.
