@@ -1,5 +1,36 @@
 # Projektfortschritt
 
+## Update 19.10.2026 – Lootplanung für 27 reguläre Gebiete und offene Umsetzung
+
+| Teilbereich | Bestätigter Planungsstand / offene Umsetzung |
+|---|---|
+| Reguläre Gebiete | **27 von 27** Lootspawn-Plänen ausgearbeitet; lokale interne TXT und separate `loot_regulaere_gebiete.json.db` erstellt |
+| Sichere Gebiete | Basis, Siedlung und zweite Basis erhalten **keine** zufälligen Lootkisten |
+| Kistensystem | Kleine Kisten 4 Slots, normale 8 Slots, große 12–16 Slots; gebietsspezifische Mengen, Gewichte und bei Spezialgebieten garantierte Kategorien geplant |
+| Regulärer Wiedereintritt | **Bei jedem neuen Betreten** werden Positionen und Inhalte normaler Zufallskisten neu gewürfelt; alte Inhalte einschließlich vom Spieler eingelegter Gegenstände werden gelöscht; kein Rückgabespeicher |
+| Ausnahmen | Feste Story-, Missions- und Lagerkisten nicht durch Zufallsreset ersetzen; bloßer Etagenwechsel im Bunker erzeugt keinen neuen Gebietsbesuch |
+| Temporäre Eventinstanzen | **Andere Regel:** Eventkisten behalten ihren Zustand pro Eventinstanz; Event-Lootwerte werden getrennt geplant |
+| Gebietsschwierigkeit | Maßgeblich ist die tatsächlich geladene `Assets/StreamingAssets/database/areas.json.db` und damit die Anzeige auf der Weltkarte. In der vorbereiteten Lootfassung bestehen **11 Abweichungen** zu älteren Planungsfarben |
+| Seltenheiten | **Feste** Seltenheitsstufe pro Gegenstand beschlossen; 109 verwendete Gegenstände zugeordnet (41 gewöhnlich, 39 selten, 22 episch, 7 legendär); nicht verfügbare Stufe nutzt die vereinbarte Ausweichregel |
+| Stapelgrößen | Schutzkleidung einzeln, Torf 100, Edelstein und Uranerz je 50 als Planungsentscheidungen bestätigt; Aktualisierung der Itemdaten noch ausstehend |
+| Bestehende Lootpools | Neun bisherige Pooldefinitionen unverändert übernommen; aktive ältere Pools `basic_forest` und `mine_iron` vor Umstellung auf tatsächliche Nutzung/Itemreferenzen prüfen |
+| Technischer Stand | Daten vorbereitet, **kein Nachweis einer vollständig angeschlossenen oder in Unity getesteten Loot-Runtime**; originale Gebietsdatenbank, funktionierende Skripte und Save-Komponenten unangetastet |
+
+### Nächste Schritte – offene Aufgaben, in Arbeitsreihenfolge
+
+1. **Datenabgleich:** Die elf Farb-/Schwierigkeitsabweichungen in der Lootplanung nach der tatsächlich geladenen `areas.json.db` bzw. Weltkartenanzeige korrigieren. Bestätigte Gegenstände, Mengen und Kistenanzahlen dabei nicht ungefragt ändern.
+2. **Datenfinalisierung:** Die beschlossene feste Seltenheitszuordnung und Stapelgrößen in Kopien der betroffenen Datenbanken einarbeiten; Gewichtssummen, aktive Item-IDs, verfügbare Kategorien, Garantien, Mengen und Slotgrenzen validieren.
+3. **Altbestände prüfen:** Feststellen, ob `basic_forest`, `mine_iron` und weitere ältere Pool-IDs noch referenziert werden. Erst danach fehlende Angaben ergänzen oder Verweise gezielt auf neue Pools umstellen; keine unkontrollierten Löschungen.
+4. **Ladeweg festlegen und anbinden:** Die separate `loot_regulaere_gebiete.json.db` mit dem vorhandenen `loot.json.db`-Ladeweg in `StreamingAssets/database` abstimmen (getrennt laden oder kontrolliert zusammenführen). Originale nicht ungeprüft überschreiben.
+5. **Kisten-Spawn und Gebietsreset:** GameManager-gesteuerten Neuaufbau bei jedem tatsächlichen Gebietseintritt anbinden; gültige getrennte Spawnzonen, Erreichbarkeit, Abstände und mehrstöckige Bunker berücksichtigen. Kein Reset durch bloßen Etagenwechsel.
+6. **Kistenbefüllung:** Gewichtete Gegenstandsauswahl, feste Seltenheitsfilter mit Ausweichregel, garantierte Waffen-/Schutz-/Technikfunde, Stapelbildung und die 4/8/12–16-Slot-Kapazitäten datengetrieben auswerten.
+7. **Szenen- und Speichergrenzen:** Temporäre normale Zufallskisten von permanenten Story-/Missions-/Lagerbehältern sowie von persistierenden Eventinstanzen trennen. Bestehende `.rotsave`- und Speicherskripte nur nach gesonderter Prüfung und Auftrag verändern.
+8. **Unity-2017.2.5f1-Integrationstests:** Gebiet betreten, plündern, verlassen, erneut betreten; neue Positionen und Inhalte sowie Entfernung des alten Kisteninhalts prüfen. Dazu volle Inventare, Spezialgarantien, Bunkeretagen, die drei sicheren Gebiete, Speichern/Laden und fehlende Loot-Duplikate testen.
+9. **Event-Loot separat:** Erst nach eigenständiger Eventregelprüfung die Eventkisten und Eventwerte planen; die Reset-Regel regulärer Gebiete nicht auf temporäre Events übertragen.
+
+**Abgrenzung:** Alle hier beschriebenen neuen Lootwerte, Dokumentationen und lokalen JSON-Dateien sind Planungs-/Datenstände. Es wurden durch dieses GitHub-Update keine Unity-Skripte, lokalen Originaldatenbanken, Spielstände oder internen Beutelisten veröffentlicht oder geändert.
+
+
 ## Update 19.10.2026 – 25 Eventdatenbanken lokal vorbereitet
 
 | Bereich | Stand / nächste Aufgabe |
