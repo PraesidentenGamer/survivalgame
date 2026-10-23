@@ -1,5 +1,23 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 23.10.2026 – Neue Datenbankstruktur und Produktionsstationen
+
+Die Datenhaltung für Werkbänke, Öfen und sonstige Produktionsstationen wird zur besseren Übersicht, Wartbarkeit und späteren Erweiterbarkeit neu geordnet. Zwei **zusätzliche JSON-Datenbanken sind geplant**:
+
+- `stations.json.db`: Stammdaten der Produktionsstationen, Eingabeslots, Brennmaterial-Slot und Lager-/Queue-Regeln.
+- `burnmaterials.json.db`: Zulässige Brennmaterialien und individuelle Brenndauern. Der geplante Anfangskatalog umfasst Holz, Kohle, Holzkohle, Torf, Pressbrennstoff und Holzspäne.
+
+Die bestehenden `items.json.db` und `recipes.json.db` bleiben erhalten. **Die jeweils benötigte Station bleibt weiterhin im Feld `station` jedes Rezepts eingetragen**; die neue Stationsdatenbank ersetzt diese Zuordnung nicht. Fahrzeugtreibstoff und Brennmaterial für Produktionsstationen sind getrennte Systeme.
+
+**Geplante Regeln der normalen Werkbänke in der Hauptbasis:** keine Stationsausbaustufen; Rezeptfreigabe über Spielerlevel und gegebenenfalls zusätzliche Forschung; feste Produktionswarteschlange für maximal 20 einzelne Aufträge; ein fertiger Gegenstand je Produktionsdurchlauf; Eingabeslots mit höchstens 20 gleichen Gegenständen; eigene Ausgabe mit 10 Slots zu höchstens 50 Stück pro Stapel (individuelle Gegenstände bleiben einzeln). Gleiche Produkte werden automatisch gestapelt. Der Spieler kann fertige Waren freiwillig entnehmen, aber nicht selbst in die Ausgabe einlagern. Produktionsmaterialien dürfen nur in dafür vorgesehene Eingabeslots. Das Spielerinventar muss für eine laufende Produktion nicht frei sein; bei voller Stationsausgabe wartet ein fertiger Auftrag auf Lagerplatz.
+
+Wenn eine Station Brennmaterial benötigt, liegt der Brennmaterial-Slot bei zwei Eingabeslots unten und bei größeren Anordnungen unten links. Nicht jedes Rezept benötigt Brennmaterial. Bereits aktivierte Brenndauer bleibt erhalten und wird auch bei leerem Brennmaterial-Slot genutzt; fehlt danach neuer Brennstoff, wird der Produktionsfortschritt ohne Verlust angehalten. Die sechs Brenndauern (Holz 60 s, Kohle 180 s, Holzkohle 120 s, Torf 90 s, Pressbrennstoff 240 s, Holzspäne 30 s) dienen vorerst als **Balancing-Planungswerte**, nicht als getestete Implementierung. Produktion und Brenntimer laufen nicht weiter, wenn das Spiel vollständig geschlossen ist.
+
+**Siedlung:** Separates, bereits geplantes Gebäudesystem mit bis zu drei Ausbaustufen; dessen Regeln werden nicht ungeprüft durch die festen Hauptbasis-Werte ersetzt.
+
+**Status:** Dieser Eintrag beschreibt den aktuellen **Planungsstand**. Die neuen Datenbankdateien, die Umstellung der bestehenden Crafting-Skripte, die endgültige Rezeptabstimmung und die Unity-Integration sind **noch nicht umgesetzt oder erfolgreich getestet**. Interne Projektdateien und vollständige lokale Datenbanken werden durch dieses Dokumentationsupdate nicht veröffentlicht.
+
+
 ## Update 19.10.2026 – 25 Eventkonzepte und lokale Eventdatenbanken vorbereitet
 
 **Neuer Planungs- und Datenstand:** Für **25 größere Events** liegen bestätigte Konzepte sowie lokal vorbereitete, getrennte Eventdatenbanken vor. Ein zentraler `event_index.json.db` ordnet die Eventdateien zu. Die Dateien tragen Namen nach dem Muster `event_1_beispielname.json.db`; die Endung `.json.db` bezeichnet weiterhin **JSON-Inhalte, keine SQL-Datenbank**. Die detaillierten Eventplanungen, Inhalte und internen Datenbankdateien bleiben außerhalb des öffentlichen Repositories.
