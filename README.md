@@ -1,5 +1,20 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 27.10.2026 – Produktionssystem in Unity integriert, Forschungsstationen vorbereitet
+
+**Unity-Zwischenprüfung:** Die zusammengeführte Produktionssystem-Fassung wurde in Unity 2017.2.5f1 eingelesen. Nach einem kurzen Start und Ende des Play-Modus zeigte die Unity-Konsole **0 Fehler und 0 Warnungen**. Das bestätigt keine vollständige Funktionsprüfung aller Herstellungsabläufe.
+
+**Automatische Szenenzuweisung:** Ein Editorwerkzeug bearbeitete 34 Szenen und meldete 166 Komponenten-/Referenzänderungen ohne Verarbeitungsfehler. Die älteren Test-Szenen `Zombies.unity` und `Test_Kiefernwald_v01.unity` blieben ausgeschlossen. Drei Szenen ohne eindeutig erkannten Player (Menüs/Weltkarte) erzeugten Warnungen. Im Durchlauf wurden noch keine vorhandenen Produktionsstationen an den Spieler gekoppelt.
+
+**Forschung:** Technische Forschungsstations-GameObjects wurden in `Test_Basis.unity` und `Siedlung.unity` erzeugt. Dort vorhandene `ResearchManager` wurden beibehalten. Die endgültige Platzierung erfolgt durch Spieler im später integrierten Bausystem; die derzeitigen Objekte sind nur technische Platzhalter, noch keine fertig nutzbaren, platzierbaren Stationen.
+
+**Produktionsdaten:** Item- und Rezeptdatenbank bleiben getrennt. Es existiert eine rezeptgenaue Stationszuordnung; nicht aufgelöste Itemreferenzen und unbestätigte Upgrade-/Forschungsregeln bleiben gesperrt. Bereits bezahlte Aufträge sind derzeit nicht stornierbar; eine sichere persistente Rückerstattung folgt erst bei einer späteren, ausdrücklich freigegebenen Überarbeitung des Speichersystems.
+
+**Nächste Schritte:** Die vorhandenen Produktionsstations-Prefabs und Spielerreferenzen verbinden; die Forschungsstationen als platzierbare Bauobjekte integrieren; einen realen Herstellungsablauf (Zutatenentnahme, Warteschlange, Produktion, Ausgabe) prüfen; anschließend den zusammenhängenden Basis–Kiefernwald–Basis-Spielablauf vervollständigen. Ein späterer zentraler C#-Selbsttest soll die wichtigsten Systeme automatisiert prüfen. Unity-Compilerfreiheit und technische GameObjects gelten nicht als vollständige Laufzeit-Freigabe.
+
+Dieses öffentliche Update enthält ausschließlich den spoilerarmen Entwicklungsstand. Interne Projektdateien, vollständige Datenbanken, Quellcode und versteckte Inhalte werden nicht veröffentlicht.
+
+
 ## Update 23.10.2026 – Neue Datenbankstruktur und Produktionsstationen
 
 Die Datenhaltung für Werkbänke, Öfen und sonstige Produktionsstationen wird zur besseren Übersicht, Wartbarkeit und späteren Erweiterbarkeit neu geordnet. Zwei **zusätzliche JSON-Datenbanken sind geplant**:
