@@ -1,5 +1,11 @@
 # Projektfortschritt
 
+## Update 28.10.2026 – Produktions- und Recyclingfunktionen (Entwicklungsstand)
+
+Die modularen Grundlagen des Produktionssystems werden weiter ausgearbeitet. Für Recyclingstationen sind eigenständige Bausteine für Auftragsplanung, Warteschlangen sowie Ein- und Ausgabeverwaltung vorbereitet. Die zugehörigen Datenregeln und ihre Konsistenz werden schrittweise geprüft.
+
+**Abgrenzung:** Dies ist ein Entwicklungs- und Vorbereitungsstand, keine vollständig angeschlossene oder abschließend getestete Spielfunktion. Die Integration in die vorhandene Stationsbedienung und abschließende Unity-Tests folgen später. Bestehende funktionierende Kernsysteme werden dabei möglichst unverändert gelassen. Interne Inhalte, detaillierte Balancingwerte und technische Schutzkonzepte bleiben außerhalb des öffentlichen Repositories.
+
 ## Update 19.10.2026 – Lootplanung für 27 reguläre Gebiete und offene Umsetzung
 
 | Teilbereich | Bestätigter Planungsstand / offene Umsetzung |
