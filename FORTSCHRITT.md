@@ -1,5 +1,37 @@
 # Projektfortschritt
 
+## Bestandsaufnahme 28.10.2026 – Offene Arbeiten bis zur spielbaren Gesamtfassung
+
+Die Dokumentation und früheren Entwicklungsstände wurden erneut auf offene Pflichtarbeiten geprüft. **Eine umfangreiche technische und inhaltliche Restentwicklung bleibt bestehen.** Vorbereitete Datenbanken, konzeptionell festgelegte Systeme und einzelne in Unity erprobte Prototypen gelten ausdrücklich nicht automatisch als fertig integrierte, getestete Spielfunktionen.
+
+### Schwerpunktbereiche
+
+| Bereich | Öffentlicher Status / noch offen |
+|---|---|
+| Produktion, Werkbänke und Recycling | Modulare Logik und Daten vorbereitet; Regeln, Stationsverbindungen, Lager-, Auftrags- und Fehlerbehandlung weiter vervollständigen |
+| Inventar, Ressourcen und Loot | Systemübergreifende Gegenstandsverwaltung, Gebietsbeute, Inventargrenzen und vollständige Spielabläufe prüfen |
+| Basisbau und Siedlung | Bauen, Ausbauen, Abriss, Versorgung, NPC-Aufgaben und Angriffe auf Bauwerke weiter umsetzen |
+| Charakterfortschritt und Survival | Level, Forschung, Fähigkeiten, Freischaltungen, Spielerzustände und Tod vollständig abstimmen |
+| Gegner, Kampf und Horden | Gegnerverhalten, Waffen, Ausrüstung, Kampfabläufe sowie langfristige Hordensteuerung und Wiederherstellung ausbauen |
+| Fahrzeuge und Reisen | Vorhandene Fahr-, Tank- und Reiseprototypen auf die vorgesehenen Systeme erweitern; Fahrzeugzustände und Übergänge absichern |
+| Begleiter und Händler | KI, Aufgaben, Handel, Interaktionen und Verknüpfungen mit dem Spielablauf ergänzen |
+| Welt, Story, Missionen und Events | Karteninhalte und spielbare Missionsketten, Ereignissteuerung und Belohnungen vollständig implementieren |
+| GUI und audiovisuelle Inhalte | Benutzeroberflächen, Modelle, Animationen, Texturen, Effekte, Musik und Geräusche in der späteren Gestaltungsphase fertigstellen |
+| Automatische Editor-Einrichtung | Eigenständige Einrichtungswerkzeuge zur späteren Verbindung bestehender Komponenten und Referenzen, ohne unnötige Testobjekte |
+| Qualitätssicherung | Automatische Daten-/Integrationstests und realistische Spielablaufsimulationen; anschließend Build-, Performance- und Kompatibilitätstests |
+| Fertigstellung | Ausstehende Gesamtintegration, Regressionstests, Release-Vorbereitung und abschließende Schutz-/Speicherarbeiten |
+
+### Geplante Arbeitsfolge
+
+1. Noch fehlende Gameplay- und Produktionsmechaniken in kontrollierten Paketen vervollständigen.
+2. Systeme wie Basis, Fahrzeuge, Welt, NPCs, Gegner und Events zu durchgehenden Spielabläufen ausbauen.
+3. Vorbereitete Bausteine später über eigenständige Editor-Werkzeuge einrichten und verbinden.
+4. Grafik, 3D-Modelle, GUI, Audio, Animationen und Weltinhalte finalisieren.
+5. Einen vollständigen Kernablauf von Basis über Erkundung und Rückkehr bis Produktion, Fortschritt und Speicherung automatisiert und manuell testen; danach weitere Szenarien abdecken.
+6. Abschließende Stabilitäts-, Speicher-, Build- und Kompatibilitätsprüfungen durchführen.
+
+**Qualitätshinweis:** Frühere Prozentangaben sind nur historische Schätzungen und ersetzen keine aktuelle technische Vollständigkeitsmessung. Diese Bestandsaufnahme dokumentiert offene Aufgaben, keine neu behaupteten Unity-Tests oder Änderungen an lokalen Projektdateien. Interne Detailpläne, konkrete Balancingwerte und Schutzkonzepte werden nicht veröffentlicht.
+
 ## Update 28.10.2026 – Produktions- und Recyclingfunktionen (Entwicklungsstand)
 
 Die modularen Grundlagen des Produktionssystems werden weiter ausgearbeitet. Für Recyclingstationen sind eigenständige Bausteine für Auftragsplanung, Warteschlangen sowie Ein- und Ausgabeverwaltung vorbereitet. Die zugehörigen Datenregeln und ihre Konsistenz werden schrittweise geprüft.
