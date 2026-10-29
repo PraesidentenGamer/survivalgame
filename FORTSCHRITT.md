@@ -1,5 +1,16 @@
 # Projektfortschritt
 
+## Update 29.10.2026 – Schnittstellen und neue Anzeigen (noch nicht final getestet)
+
+- **Produktion / Lager:** Zusammengehörige C#-Korrekturen für Stationssperren, Auftragsgrenzen und Ausgabeabläufe wurden lokal vorbereitet und teils im aktuellen Unity-Projektstand abgeglichen. Die Integration gilt bis zur Unity-Kompilierung und zum praktischen Herstellungstest nicht als abgeschlossen.
+- **Neue, automatisch startende Komponenten:** Zweisprachiges Informationsmenü mit kontextabhängiger Farbtafel; zentraler Benachrichtigungsverlauf mit Wiederholungsbegrenzung; Zustandsmeldungen für Produktionsstationen (Lagersperre, Sicherheit, Pause). Vollständige C#-Quelltexte wurden dem Entwickler bereitgestellt, aber eine Kompilierungs- oder Gameplayfreigabe steht aus.
+- **Sprachen:** Deutsch ist Ausgangssprache, Englisch zweite Sprache mit deutschem Fallback. Derzeit sind die neuen Anzeigen vorbereitet; eine projektweite Textlokalisierung folgt später.
+- **Daten/Schutz:** Ausschließlich aktive Dateien im lokalen Verzeichnis `Assets/StreamingAssets/database/` sind für die laufenden Datenbankprüfungen maßgeblich. SaveSystem und aktive Spieldatenbanken wurden für diese Dokumentationsaktualisierung nicht verändert.
+- **Nächster echter Integrationsblock:** Neue C#-Skripte in Unity kompilieren, automatische Initialisierung und F8/F9-Bedienung überprüfen; danach den tatsächlich spielbaren Ablauf Ressourcen → Produktion → Ausgabe → Inventar → Speichern/Laden testen und fehlende Mechaniken schließen.
+
+**Qualitätskennzeichnung:** Statische Codeprüfung ≠ bestätigte Unity-Kompilierung ≠ erfolgreicher Gameplay-Test. Keine internen oder versteckten Inhalte öffentlich dokumentieren.
+
+
 ## Bestandsaufnahme 28.10.2026 – Offene Arbeiten bis zur spielbaren Gesamtfassung
 
 Die Dokumentation und früheren Entwicklungsstände wurden erneut auf offene Pflichtarbeiten geprüft. **Eine umfangreiche technische und inhaltliche Restentwicklung bleibt bestehen.** Vorbereitete Datenbanken, konzeptionell festgelegte Systeme und einzelne in Unity erprobte Prototypen gelten ausdrücklich nicht automatisch als fertig integrierte, getestete Spielfunktionen.
