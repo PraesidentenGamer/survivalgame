@@ -1,5 +1,16 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 29.10.2026 – Produktionssicherheit, Sprachen und Spielmeldungen
+
+**Lokaler Entwicklungsstand:** Das Crafting-/Stationssystem wurde hinsichtlich Transaktionssperren, Warteschlangengrenzen, Lagerkapazitäten und Auftragsabschluss weiterbearbeitet. Bestehende Produktions- und Lagerkomponenten wurden aufeinander abgestimmt. Diese Quellcodearbeiten gelten **noch nicht als vollständig in Unity 2017.2.5f1 kompiliert und im Gameplay getestet**; statische Prüfungen allein reichen nicht aus.
+
+**Neue eigenständige Spielfunktionen als C#-Quelltexte ausgegeben:** Ein automatisch startendes Spielinformationsmenü mit Farbtafel und Sprachwahl (Deutsch/Englisch), ein zentraler Benachrichtigungsmanager mit Meldehistorie sowie eine automatische Zustandsüberwachung der Produktionsstationen. Die Spielobjekte sollen im Play-Modus automatisch erzeugt werden, ohne manuelle Szeneneinrichtung. Die Systeme wurden im Chat als vollständige Skripte geliefert; **eine erfolgreiche Unity-Laufzeitprüfung ist noch nicht bestätigt**. Die Sprachauswahl betrifft derzeit das neue Menü und die neuen Meldungen, nicht bereits die gesamten vorhandenen Spieltexte.
+
+**Weiteres Vorgehen:** Zuerst die neuen Skripte in Unity kompilieren und ihre automatische Initialisierung testen; danach Meldungsereignisse und den durchgehenden Kernspielablauf von Basis über Ressourcenbeschaffung und Herstellung bis Speichern/Laden zusammenhängend verbinden. Bereits funktionierende Komponenten sollen nicht ohne konkreten Anlass erneut geändert werden.
+
+**Abgrenzung:** Dieses öffentliche Dokumentationsupdate enthält weder Quellcode noch lokale Unity-Projektarchive, Spielstände, vertrauliche Event-/Storyinhalte oder aktive Datenbanken. Maßgeblich für lokale Datenbankprüfungen ist ausschließlich `Assets/StreamingAssets/database/`; Sicherungsdateien mit anderen Endungen zählen nicht als aktive Datenbanken.
+
+
 ## Update 27.10.2026 – Produktionssystem in Unity integriert, Forschungsstationen vorbereitet
 
 **Unity-Zwischenprüfung:** Die zusammengeführte Produktionssystem-Fassung wurde in Unity 2017.2.5f1 eingelesen. Nach einem kurzen Start und Ende des Play-Modus zeigte die Unity-Konsole **0 Fehler und 0 Warnungen**. Das bestätigt keine vollständige Funktionsprüfung aller Herstellungsabläufe.
