@@ -1,5 +1,15 @@
 # Projektfortschritt
 
+## Update 30.10.2026 – SaveSystem, fünf Slots und gesicherte Wiederherstellung
+
+- **Fünf Slots:** Lokaler Entwicklungsstand mit getrennten Haupt- und Reservespielständen pro Slot; Slot 1 behält die bisherigen Namen `savegame.rotsave` und `savegame.sgsave`. Weitere Slot-Dateien erhalten den Zusatz `_slot2` bis `_slot5`.
+- **Sicherungskette:** `.sgsave` bleibt der vorherige Hauptstand, zusätzlich sind `.rotsave.backup1` und `.rotsave.backup2` vorgesehen. Die Sicherungsgenerationen sollen vor Verwendung entschlüsselt und geprüft werden; Wiederherstellung nur nach ausdrücklicher Bestätigung, ohne aktive Spielsitzung.
+- **Integrität:** Temporäre verschlüsselte Spielstände werden vor dem Dateitausch zurückgelesen. Weitere Schutzprüfungen gegen das Überschreiben beschädigter Hauptdateien und gegen veraltete `.staging`-Dateien wurden lokal als Entwicklungsänderungen vorbereitet. Eine vollständige Ausfallsicherheitsprüfung steht aus.
+- **Menü:** Eigenständige `RoTSaveSlotMenu.cs` für Slotübersicht und Recovery vorbereitet. In der Unity-Konsole vom 30.10.2026 trat `CS0165` für `checkReason` auf; anschließend lokal korrigiert, aber **noch nicht durch eine neue Unity-Kompilierung bestätigt**. Zwei vorhandene `CS0219`-Warnungen sind keine Kompilierfehler.
+- **Story:** Fortschritts-Snapshot in `SaveSystem` integriert (lokaler Teststand). Die Storyruntime und die drei Storydatenbanken müssen hinsichtlich Initialisierung, Altspielständen und Missions-IDs noch im Zusammenspiel getestet werden.
+- **Offene Pflichtarbeit:** Missionsabschluß, einmalige Belohnung und Fahrzeugfreischaltung transaktionssicher mit Save/Load verbinden; Wiederherstellungsmenü in Unity prüfen; alle fünf Slots, Sicherungsrotation, F5/F11 und reale Fehlerfälle testen.
+- **Freigabe:** Aktuelle lokal funktionierende `SaveSystem.cs` nicht durch ungetestete Zwischenstände ersetzen. Statische Quellcodeprüfung ist kein Unity-Compiler- oder Gameplay-Test.
+
 ## Update 29.10.2026 – Schnittstellen und neue Anzeigen (noch nicht final getestet)
 
 - **Produktion / Lager:** Zusammengehörige C#-Korrekturen für Stationssperren, Auftragsgrenzen und Ausgabeabläufe wurden lokal vorbereitet und teils im aktuellen Unity-Projektstand abgeglichen. Die Integration gilt bis zur Unity-Kompilierung und zum praktischen Herstellungstest nicht als abgeschlossen.
