@@ -1,5 +1,15 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 30.10.2026 – Spielstandverwaltung und Story-Integration (Entwicklungsstand)
+
+**SaveSystem:** Die lokale C#-Entwicklungsfassung wurde auf fünf getrennte Speicherslots vorbereitet. Slot 1 verwendet weiterhin `savegame.rotsave` und `savegame.sgsave`; Slots 2–5 besitzen eigene Dateinamen. Je Slot sind die Reserve `.sgsave` und zwei ältere technische Sicherungsgenerationen (`.backup1`, `.backup2`) vorgesehen. Der neue Speichervorgang prüft seine verschlüsselte temporäre Datei vor der Übernahme. Kontrollierte Wiederherstellung, Slotübersicht und Sperren gegen versehentliche Überschreibungen sind im Entwicklungsstand vorbereitet.
+
+**Story:** Die Übernahme von Haupt-, Neben- und Bonusstory-Fortschritt in die bestehende verschlüsselte `.rotsave` ist als Integrationsstand vorhanden; das gesicherte Zusammenspiel von Missionsabschlüssen, Fahrzeugfreischaltungen, Belohnungen und erfolgreicher Dateispeicherung ist noch offen. Storydatenbanken sind als Planungs-/Datenstände zu behandeln, nicht automatisch als aktivierte Missionen.
+
+**Unity-Stand:** Eine Unity-2017.2.5f1-Konsolenausgabe vom 30.10.2026 meldete einen Compilerfehler `CS0165` in `RoTSaveSlotMenu.cs` (nicht initialisierte Variable `checkReason`) sowie zwei nicht blockierende `CS0219`-Warnungen in `RoTEquipmentController.cs`. Die Menüdatei wurde daraufhin lokal korrigiert; **eine erneute fehlerfreie Unity-Kompilierung oder ein Gameplay-/Recovery-Test ist noch nicht bestätigt**. Weitere lokal vorbereitete SaveSystem-Änderungen wurden nicht zur Installation freigegeben.
+
+**Datenschutz und Versionsdisziplin:** Dieses Update dokumentiert ausschließlich den technischen Stand. Keine Spielstände, Schlüssel, internen Storydetails, lokalen Entwicklungsarchive oder noch ungeprüften C#-Dateien werden hier veröffentlicht. Die vorhandene funktionsfähige Projektfassung bleibt bis zum gemeinsamen Integrationstest erhalten.
+
 ## Update 29.10.2026 – Produktionssicherheit, Sprachen und Spielmeldungen
 
 **Lokaler Entwicklungsstand:** Das Crafting-/Stationssystem wurde hinsichtlich Transaktionssperren, Warteschlangengrenzen, Lagerkapazitäten und Auftragsabschluss weiterbearbeitet. Bestehende Produktions- und Lagerkomponenten wurden aufeinander abgestimmt. Diese Quellcodearbeiten gelten **noch nicht als vollständig in Unity 2017.2.5f1 kompiliert und im Gameplay getestet**; statische Prüfungen allein reichen nicht aus.
