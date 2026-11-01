@@ -1,5 +1,42 @@
 # Entwicklungsstand
 
+## Update 01.11.2026 – Hauptspiel, Integrationsstand und Grafikziel
+
+**Referenzstand:** Lokales Unity-Projektarchiv `Survival Game(20261031-224245).zip`; Engine **Unity 2017.2.5f1**, Built-in Render Pipeline. Dieses GitHub-Update ist **Projekt- und Statusdokumentation**, kein Upload des vollständigen Unity-Projekts. Änderungen an lokalen Arbeitskopien und separat ausgelieferte C#-Dateien gelten erst nach Einbau und Unity-Test als bestätigt.
+
+### Geprüfter Umfang der aktuellen Projektkopie
+
+- **36 Unity-Szenen**; laut bisherigem Build-Abgleich **34 aktiv** und alle referenzierten Build-Szenendateien vorhanden. `MainMenu` dient als Einstieg, `Test_Basis` als bisheriges Ziel für ein neues Spiel.
+- **213 C#-Dateien**, **32 Prefabs** und **2 eigenständige Materialdateien** im Archiv. Der vorhandene Quellcode-/Szenenbestand ist keine Bestätigung eines fehlerfreien Windows-Builds.
+- **25 getrennte Eventdatenbanken und `event_index.json.db`** unter `Assets/StreamingAssets/database/events/`. Die Eventdaten und ihre Entwürfe sind vorhanden und sollen **nicht neu geplant oder pauschal verschoben** werden. Eine vollständige End-to-End-Ausführung sämtlicher Events in Unity wurde damit noch nicht nachgewiesen.
+- Vorhandene Systeme umfassen Inventar, Container, Crafting, Ausrüstung, Ressourcenabbau, Kampf-/Gegnergrundlagen, Weltkarte/Gebietswechsel, Speichern und Hauptmenü. Der Integrations- und Regressionstest des **durchgehenden Spielablaufs** hat Vorrang.
+
+### Integration – bestätigter Quellcode- und Arbeitsstand
+
+- Container-/Inventarübertragungen: gesammelte Arbeitsfassung für `DemoChestItem.cs`, `DemoLootChest.cs`, `DemoChestDepositTest.cs`, `PlayerInventory.cs` liegt separat vor. Die gemeinsame Unity-Kompilierung und Laufzeitfunktion sind **noch nicht bestätigt**.
+- Werkzeug-/Axtkette: Arbeiten an `PlayerEquipment.cs`, `DemoTree.cs`, `CraftingManager.cs` und der vorhandenen Instanz-/Haltbarkeitsbindung. Wiederholte Änderungen an `DemoTree.cs` **beenden**; kein erneuter Umbau ohne nachgewiesenen Fehler. Der letzte Axtbruch-/Inventar-Rollback ist **nicht als vollständig transaktionssicher getestet** freigegeben.
+- Drei Abbauskripte (`DemoStone.cs`, `DemoKohle.cs`, `DemoEisen.cs`) wurden für die Nutzung der datenbankgesteuerten Gegenstands-IDs `stein`, `kohle`, `eisen` als Arbeitsfassungen ausgegeben.
+- Speicherslots/Hauptmenü: `SaveSystem` verwaltet fünf Slots mit `.rotsave` als Hauptformat, `.sgsave` als Reserve; im Hauptmenü existiert eine **separat erstellte, noch nicht in Unity geprüfte** Arbeitsfassung mit Slot-Auswahl und Überschreibwarnung. Rückkehr aus dem Pausenmenü und Sitzungszustandswechsel müssen gemeinsam getestet werden. Bereits vorhandene Spielstände nicht automatisch löschen.
+- Weltkarte: Bestehende Marker-Ermittlung über `WorldMapTravel.FindCurrentMarker()` beibehalten; keine spekulativen Änderungen an den Ausgangstriggern oder deren Verzögerung.
+
+### Grafische Bestandsaufnahme und Referenz
+
+- Vorhandene Projekt-Qualitätsstufen: Very Low, Low, Medium, High, Very High, Ultra. Qualitätsstufen allein sind **keine fertige AAA-Grafik**.
+- Das hochgeladene Wolfenstein:-Youngblood-Gameplay dient **nur als visuelle Referenz** (gute Darstellung auch bei gezielt niedrigen/mittleren Einzeloptionen); nicht als Forderung nach einer anderen Engine.
+- Grafikziel: Hochwertige Umgebungsgestaltung, glaubwürdige PBR-Materialien, gute Beleuchtung, LOD-/Occlusion-Optimierung und stabile FPS bereits auf mittleren Stufen. Höhere Stufen sollen sichtbare Verbesserungen bringen, ohne ineffizient alle Optionen zu maximieren.
+- In der Projektkopie waren **keine eigenständigen FBX-/OBJ-Modelle** und nur wenige separate Materialien vorhanden. Größter Produktionsschwerpunkt ist deshalb die **Erstellung/Integration echter 3D-Umgebungen, Charaktere, Animationen, Texturen, Soundeffekte und Musik**. Für das Wolfsmädchen sind finale 3D-Modelle bewusst erst spät vorgesehen.
+- Vorhandene Gebietskarten, ihre statischen Bodenflächen und Kartenbegrenzungen beibehalten. Platzierbare Ressourcen und Gegner können bei Gebietsbesuchen nach den vorhandenen Regeln neu verteilt werden.
+
+### Lieferstrategie und Zieltermine
+
+**Angestrebter Abschluss: 31.12.2026; spätestes Wunschziel: 31.01.2027.** Dies sind **Zieltermine, keine nachgewiesene Liefergarantie**. Der vollständige gewünschte Umfang umfasst Gameplay, alle vorhandenen Eventkonzepte/-daten, Grafik, Animationen, Audio, UI, Persistenz, Windows-Build und Tests.
+
+Arbeitsregel: große fachlich zusammenhängende Entwicklungsblöcke, aber **wenige tatsächlich notwendige finale C#-Dateien pro Übergabe**; funktionierende Skripte unverändert lassen, keine endlosen Kleinstrevisionen, kein manuelles Anlegen leerer Unity-GameObjects. Keine neuen Test-ZIPs bei jeder Kleinigkeit. C#-Kompatibilität mit Unity 2017.2.5f1 und Datenbanken ausschließlich unter `Assets/StreamingAssets/database/` respektieren. Der nächste überprüfbare Meilenstein ist ein **durchgehender Windows-Gameplaytest**: Hauptmenü → Slot/Neues Spiel → Gebiet → Sammeln/Kampf/Crafting/Lager → Weltkarte → Speichern → Laden → Hauptmenü, danach Grafik-/Audio-Produktionsintegration.
+
+**Statusdisziplin:** Lokales Vorhandensein, statische Quellcodeprüfung, Unity-Kompilierung, Laufzeittest und Veröffentlichungsreife sind verschiedene Nachweisstufen. Nicht gleichsetzen.
+
+---
+
 ## Update 19.10.2026 – Große Events: Konzepte und lokale Datenbanken vorbereitet
 
 Die Konzeptplanung für **25 größere RoT-Events** ist abgeschlossen. Zu diesen Events wurden lokal **25 getrennte, auf JSON basierende Dateien mit der Endung `.json.db`** und eine zentrale Zuordnung über `event_index.json.db` vorbereitet. Vorhandene Planungswerte wurden soweit möglich übernommen, einzelne zuvor nicht festgelegte Balanceangaben für die Datenbasis ergänzt. Die internen Planungen, Datenbanken und Geheimnisse werden nicht auf GitHub veröffentlicht.
