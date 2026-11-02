@@ -1,7 +1,7 @@
 REMNANTS OF TOMORROW (RoT)
 EVENT S12 – SPERRZONE: KONTROLLVERLUST
 ÖFFENTLICHER PLANUNGSSTAND – SPOILERARME GITHUB-FASSUNG
-Stand: 18.10.2026
+Stand: 02.11.2026
 
 STATUS
 Konzeptplanung weitgehend abgeschlossen. Das Event befindet sich in der Planungsphase;
@@ -37,6 +37,27 @@ TECHNISCHER RAHMEN
 Geplant mit Unity 2017.2.5f1 (Built-in-Rendering-Pipeline). Bestehende, funktionierende
 Systeme von RoT sollen bevorzugt weiterverwendet werden. Erst Mechanik und Tests,
 danach aufwendige Modelle, Animationen und Audio-Gestaltung.
+
+GRAFIK- UND ASSETPLANUNG (ÖFFENTLICHER STAND 02.11.2026)
+- Für Landschaften, gewöhnliche Gebäude, Innenräume, Werkstätten, Medizin-
+  und Forschungseinrichtungen sowie allgemeine Ausstattung wurden zahlreiche
+  externe 3D-Assetquellen recherchiert und als Kandidaten eingegrenzt.
+- Realistische Gestaltung hat Vorrang vor Retro-, PS1- und stark stilisierten
+  Grafikpaketen. Kleine Inventargegenstände dürfen einfacher gestaltet sein.
+- Vorhandene, möglichst kostenlos kommerziell verwendbare Modelle sollen
+  bevorzugt werden. Erforderliche Namensnennungen und Lizenzbedingungen
+  werden vor Integration überprüft.
+- Bei Fahrzeugen werden bewegliche Bauteile, Mesh-Aufteilung, Texturen und
+  Optimierung für Unity 2017.2.5f1 gesondert untersucht.
+- Für projektspezifische Gebäude, markante Figuren und besondere Bereiche
+  sind eigene oder stark angepasste 3D-Modelle vorgesehen. Details bleiben
+  aus Gründen des Spoilerschutzes unveröffentlicht.
+- Die Asset-Recherche ist eine Vorauswahl, keine bestätigte Integration:
+  Originaldateien, Animationen, Lizenzen und technische Eignung sind noch
+  nicht durchgängig verifiziert.
+- Eine endgültige, gebündelte Asset-Beschaffungsliste wird erst nach Abschluss
+  der gesamten Grafikauswahl zusammengestellt. Kein Asset wurde allein
+  durch diesen Dokumentationsstand in das Unity-Projekt integriert.
 
 ENTWICKLUNGSSTAND
 [ABGESCHLOSSEN – KONZEPT] Spielwelt, Inhalte, grundlegende Mechaniken, Benutzeroberfläche
