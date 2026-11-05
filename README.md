@@ -1,5 +1,17 @@
 # Remnants of Tomorrow (RoT)
 
+## Update 05.11.2026 – Charakterentwicklung und neue Ideen (spoilerarm)
+
+**3D-Charakter:** Die eigenständige Entwicklung einer wichtigen Begleiterfigur wird mit Blender 5.2.3 LTS fortgesetzt. Die überarbeitete V25-Testfassung wurde für die direkte Begutachtung bereitgestellt und vom Entwickler geöffnet. Insbesondere Augensteuerung und Atembewegung wurden bearbeitet; eine optische Verbesserung wurde bestätigt. Weitere Feinabstimmung und eine abschließende visuelle Freigabe stehen noch aus.
+
+**Animationen:** Mehrere Bewegungen wie Stehen, Gehen, Anhalten und Sitzen sowie deren Übergänge wurden vorbereitet und technisch untersucht. Sie sind noch nicht vollständig visuell abgenommen. Die aktuelle Priorität bleibt die direkte Begutachtung des Modells in Blender. Ein Einbau ins Spiel ist noch nicht freigegeben.
+
+**Optionale Charaktergestaltung:** Zusätzliche vordefinierte Kleidungs- und Aussehensvarianten sowie ein gemeinsamer Editor für geeignete selbst gestaltete Figuren werden als spätere Möglichkeiten gesammelt.
+
+**Beziehungssystem – neue Idee:** Spieler sollen mit geeigneten Figuren freiwillig persönliche Beziehungen aufbauen können. Gespräche, gemeinsame Aktivitäten und Missionen können Dialoge und maßvolle Vorteile freischalten. **Einmal erreichte Beziehungsstufen, Punkte und Freischaltungen dürfen niemals sinken oder verloren gehen.** Näheres steht in [IDEEN.md](IDEEN.md). Dies ist noch keine implementierte Spielmechanik.
+
+**Abgrenzung:** Bestehende Story- und Entscheidungsmechaniken bleiben gesondert. Das Dokumentationsupdate bestätigt keine neue Unity-Kompilierung oder einen vollständigen Gameplay-Test und veröffentlicht keine internen Projektdateien, versteckten Geschichten, geschützten Assets oder Spielstände.
+
 ## Update 30.10.2026 – Spielstandverwaltung und Story-Integration (Entwicklungsstand)
 
 **SaveSystem:** Die lokale C#-Entwicklungsfassung wurde auf fünf getrennte Speicherslots vorbereitet. Slot 1 verwendet weiterhin `savegame.rotsave` und `savegame.sgsave`; Slots 2–5 besitzen eigene Dateinamen. Je Slot sind die Reserve `.sgsave` und zwei ältere technische Sicherungsgenerationen (`.backup1`, `.backup2`) vorgesehen. Der neue Speichervorgang prüft seine verschlüsselte temporäre Datei vor der Übernahme. Kontrollierte Wiederherstellung, Slotübersicht und Sperren gegen versehentliche Überschreibungen sind im Entwicklungsstand vorbereitet.
