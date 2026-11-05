@@ -1,5 +1,13 @@
 # Projektfortschritt
 
+## Update 05.11.2026 – Figurenentwicklung und Charakterideen
+
+- Die eigenständig gestaltete Begleiterfigur wird weiterhin in Blender 5.2.3 LTS bearbeitet. Eine korrigierte V25-Testfassung wurde geöffnet; eine sichtbare Verbesserung wurde vom Entwickler bestätigt.
+- Augensteuerung, Atembewegung und mehrere Ganzkörperanimationen sind Teil des aktuellen Prüfstands. Die vollständige optische Abnahme und der Einbau ins Spiel stehen aus.
+- Neue Ideen: weitere kosmetische Aussehensvarianten für geeignete selbst gestaltete Figuren sowie ein freiwilliges Beziehungssystem mit Dialogen, Aktivitäten und möglichen kleinen Vorteilen.
+- Verbindlich: Beziehungspunkte, Beziehungsstufen und bereits freigeschaltete Vorteile dürfen niemals zurückgehen. Siehe [IDEEN.md](IDEEN.md).
+- Keine neue Unity-Gesamtkompilierung oder ein vollständiger Gameplay-Test durch dieses Dokumentationsupdate bestätigt.
+
 ## Update 30.10.2026 – SaveSystem, fünf Slots und gesicherte Wiederherstellung
 
 - **Fünf Slots:** Lokaler Entwicklungsstand mit getrennten Haupt- und Reservespielständen pro Slot; Slot 1 behält die bisherigen Namen `savegame.rotsave` und `savegame.sgsave`. Weitere Slot-Dateien erhalten den Zusatz `_slot2` bis `_slot5`.
