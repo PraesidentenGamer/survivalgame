@@ -1,5 +1,11 @@
 # Entwicklungsstand
 
+## Ergänzung 05.11.2026 – Blender-Figur und Begleiterideen
+
+Die eigenständig erstellte Begleiterfigur wird in Blender 5.2.3 LTS überarbeitet. Eine korrigierte V25-Testfassung wurde direkt begutachtet und eine optische Verbesserung bestätigt. Die weitere Arbeit konzentriert sich auf Erscheinungsbild, Atmung und Bewegungsqualität; eine endgültige visuelle Abnahme und Unity-Integration stehen aus.
+
+Zusätzliche Kleidungs- und Aussehensvarianten sowie ein freiwilliges Beziehungssystem für geeignete Figuren stehen auf der [Ideenliste](IDEEN.md). Beziehungspunkte und erreichte Stufen dürfen nie sinken; eigenständige Story-Entscheidungsmechaniken bleiben davon getrennt. Diese Erweiterungen sind noch nicht implementiert. Es gibt durch diese Dokumentation keine neu bestätigten Unity-Laufzeittests.
+
 ## Update 01.11.2026 – Hauptspiel, Integrationsstand und Grafikziel
 
 **Referenzstand:** Lokales Unity-Projektarchiv `Survival Game(20261031-224245).zip`; Engine **Unity 2017.2.5f1**, Built-in Render Pipeline. Dieses GitHub-Update ist **Projekt- und Statusdokumentation**, kein Upload des vollständigen Unity-Projekts. Änderungen an lokalen Arbeitskopien und separat ausgelieferte C#-Dateien gelten erst nach Einbau und Unity-Test als bestätigt.
