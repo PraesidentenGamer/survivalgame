@@ -142,6 +142,18 @@ Grundregel:
 - wichtige menschliche Begleiter sind ohne normale Lebenspunkte/unverwundbar
 - Tiere/Hunde haben ebenfalls keine Lebenspunkte, aber ein getrenntes Fähigkeitssystem
 
+### Charakterbeziehungen und Begleiterbindung (Ideenliste, 05.11.2026)
+- Für geeignete selbst gestaltete Charaktere und weitere wichtige NPCs soll ein gemeinsames, optionales Beziehungssystem vorgesehen werden; jede Figur erhält einen eigenen Fortschritt und individuelle Dialoge, Verhaltensweisen und mögliche Belohnungen.
+- **Verbindliche Grundregel: Beziehungen entwickeln sich ausschließlich vorwärts oder bleiben gleich.** Weder die erreichte Beziehungsstufe noch die bereits gesammelten Beziehungspunkte dürfen jemals sinken (z. B. 6 → 5 ist ausgeschlossen). Das gilt auch bei Abwesenheit, ungünstigen Dialogentscheidungen oder nicht überreichten Geschenken.
+- Bereits freigeschaltete Beziehungsvorteile, Dialoge und besondere Fähigkeiten werden nicht wieder entzogen. Ungünstige Entscheidungen können höchstens weiteren Fortschritt vorübergehend aussetzen, niemals bestehenden Fortschritt zurücksetzen.
+- Mögliche Fortschrittsquellen: Gespräche, gemeinsame Aktivitäten, persönliche Missionen, passende Geschenke und gegenseitige Unterstützung; kein erzwungenes tägliches Einloggen.
+- Als **unverbindliches Designmodell** sind zehn Beziehungsstufen denkbar. Freundschaft, Kameradschaft und andere passende Bindungen sind eigenständig möglich; romantische Beziehungen nur bei geeigneten Figuren und freiwillig.
+- Mögliche Belohnungen: neue Dialoge, kosmetische Reaktionen/Animationen, Hinweise auf Ressourcen oder Gefahren, persönliche Quests und maßvolle Begleitervorteile. Kein verpflichtender Beziehungsaufbau für regulären Spielfortschritt.
+- **Yuna** (Forschungsbezeichnung **LUPA-07**) ist eine geeignete erste Figur: besondere Reaktionen über Mimik, Wolfsohren und Schweif sowie eventuell ein individuell gestalteter Wolfsinstinkt. Ihre bestehenden Schutz-/Begleiterregeln bleiben unverändert.
+- Für jede Figur werden erreichte Höchststufe, Fortschritt und Freischaltungen später dauerhaft in der verschlüsselten `.rotsave` geführt; Umsetzung, Balancing, Inhalte und UI stehen noch aus.
+- **Abgrenzung zu Sarah:** Das bereits dokumentierte positive/negative Karma- und Storypfadsystem ist eine *separate Mechanik*. Es darf den monotonen Beziehungsfortschritt nicht reduzieren; unterschiedliche Storyfolgen bleiben möglich. Die spätere Integration beider Systeme muss ausdrücklich auf Widerspruchsfreiheit geprüft werden.
+- **Status:** Nur Idee/Planung, keinerlei neue Unity-Skripte, Datenbanken oder Spielmechaniken implementiert.
+
 ### Story und Hinweise
 - Hauptstory und Nebenstory getrennt
 - Story soll großen Anteil am Spiel haben
