@@ -1,5 +1,15 @@
 # Projektfortschritt
 
+## Update 08.11.2026 – 3D-Charaktere, Animationen und modulare Kleidung (spoilerarm)
+
+- Die eigenständige Blender-Charakterentwicklung wurde fortgesetzt: Materialien, Geometriebereinigung und die Sichtbarkeitssteuerung separater Modellbestandteile wurden verbessert.
+- Bestehende Animationen wurden erweitert und technisch geprüft; die Sichtprüfung von Körperverformungen und Bewegungsübergängen läuft weiter.
+- Modulare Kleidung und getrennte Erscheinungsvarianten wurden vorbereitet. Die Kleidungsmodelle sind noch nicht fertiggestellt und werden erst nach ausreichender Qualitätsprüfung freigegeben.
+- FBX-Export und Rückimport in Blender wurden getestet. **Eine vollständige Unity-2017-Laufzeitintegration ist dadurch noch nicht bestätigt.**
+- Ausführlicher spoilerarmer Überblick: [Entwicklungsupdate vom 08.11.2026](docs/Entwicklungsupdate_2026-11-08_Charaktere_Kleidung_Animationen.md).
+- Dieses Dokumentationsupdate enthält keine unveröffentlichten Charakterdetails, keine neuen Unity-Spielbuilds und keine Änderungen am lokalen Spielprojekt.
+
+
 ## Update 05.11.2026 – Figurenentwicklung und Charakterideen
 
 - Die eigenständig gestaltete Begleiterfigur wird weiterhin in Blender 5.2.3 LTS bearbeitet. Eine korrigierte V25-Testfassung wurde geöffnet; eine sichtbare Verbesserung wurde vom Entwickler bestätigt.
